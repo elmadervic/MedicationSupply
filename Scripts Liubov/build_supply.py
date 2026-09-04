@@ -27,9 +27,9 @@ import sys
 
 import pandas as pd
 
-from .config import INTERIM, RAW
-from .countries import resolve
-from .normalize import normalise
+from config import INTERIM, RAW
+from countries import resolve
+from normalize import normalise
 
 COLUMN_OVERRIDES: dict[str, dict[str, str]] = {
     # "edqm_cep": {"substance": "Substance", "holder": "Certificate holder",

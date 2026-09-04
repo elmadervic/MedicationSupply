@@ -11,11 +11,11 @@ import random
 
 import pandas as pd
 
-from .config import RAW
+from config import RAW
 
 
 def main() -> int:
-    from .config import RAW
+    from config import RAW
 
     # --- ULCM: real layout (metadata rows, content header, group rows, junk cols)
     rows = []

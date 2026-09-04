@@ -12,7 +12,7 @@ import sys
 
 import pandas as pd
 
-from .config import MANUAL_SOURCES, RAW
+from config import MANUAL_SOURCES, RAW
 
 
 def _preview_frame(df: pd.DataFrame, name: str, note: str = "") -> None:

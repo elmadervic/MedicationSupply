@@ -7,13 +7,15 @@ pip install pandas openpyxl requests lxml pycountry pdfplumber
 
 ## Run order
 
+Run these from inside `Scripts Liubov/` (with `venv` activated), as plain scripts —
+not with `python -m`, since this folder isn't an importable package.
 
 ```bash
-python -m critmed.fetch
+python fetch.py
 ```
 
 ```bash
-python -m critmed.inspect_sources > schema_report.txt
+python inspect_sources.py > schema_report.txt
 ```
 
 Prints the real column names, row counts and sample values of every file in
@@ -21,7 +23,7 @@ Prints the real column names, row counts and sample values of every file in
 
 
 ```bash
-python -m critmed.build_supply
+python build_supply.py
 ```
 
 Parses every source, normalises substance names, resolves countries, writes
@@ -30,7 +32,7 @@ role.
 
 
 ```bash
-python -m critmed.analyse
+python analyse.py
 ```
 
 Writes to `data/out/`:
@@ -44,7 +46,7 @@ Writes to `data/out/`:
 | `sensitivity.csv` | the same numbers with valid-only vs all CEP statuses |
 
 ```bash
-python -m critmed.qc
+python qc.py
 ```
 
 Runs the sanity checks and prints PASS / WARN / FAIL.

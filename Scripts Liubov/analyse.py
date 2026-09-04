@@ -15,10 +15,10 @@ import sys
 
 import pandas as pd
 
-from .config import INTERIM, OUT, RAW
-from .countries import is_eu_eea
-from .normalize import normalise
-from .ulcm import read_ulcm
+from config import INTERIM, OUT, RAW
+from countries import is_eu_eea
+from normalize import normalise
+from ulcm import read_ulcm
 
 ROLES = ["api_cep", "bio_api", "batch_release", "mah_national"]
 

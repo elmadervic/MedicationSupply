@@ -12,9 +12,9 @@ import sys
 
 import pandas as pd
 
-from .config import INTERIM, MANIFEST, OUT, RAW
-from .normalize import normalise
-from .ulcm import read_ulcm
+from config import INTERIM, MANIFEST, OUT, RAW
+from normalize import normalise
+from ulcm import read_ulcm
 
 FAILS: list[str] = []
 

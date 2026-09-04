@@ -16,7 +16,7 @@ from datetime import datetime, timezone
 
 import requests
 
-from .config import AUTO_SOURCES, MANIFEST, MANUAL_SOURCES, RAW
+from config import AUTO_SOURCES, MANIFEST, MANUAL_SOURCES, RAW
 
 UA = "critmed-research/0.1 (academic supply-chain study; contact: your.email@tuwien.ac.at)"
 TIMEOUT = 120
