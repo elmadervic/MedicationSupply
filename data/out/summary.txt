@@ -1,0 +1,62 @@
+ULCM substances (normalised, deduplicated): 277
+
+[api_cep]
+  substances covered          157 (56.7% of ULCM)
+  median countries/substance  3
+  single-country substances   17 (10.8%)
+  median HHI (country)        3,750
+  HHI > 2500 (concentrated)   75.8%
+  mean EU/EEA share           31.5%
+  top countries by substances supplied:
+    IN   117
+    CN   105
+    IT    54
+    DE    47
+    NL    41
+    ES    32
+    US    26
+    FR    19
+    CH    16
+    GB    15
+
+[bio_api]
+  substances covered          23 (8.3% of ULCM)
+  median countries/substance  1
+  single-country substances   14 (60.9%)
+  median HHI (country)        10,000
+  HHI > 2500 (concentrated)   91.3%
+  mean EU/EEA share           70.4%
+  top countries by substances supplied:
+    DE     9
+    DK     6
+    US     6
+    IE     3
+    KR     3
+    CH     2
+    FR     2
+    IT     2
+    AT     1
+    AU     1
+
+[batch_release]
+  substances covered          88 (31.8% of ULCM)
+  median countries/substance  2
+  single-country substances   44 (50.0%)
+  median HHI (country)        7,778
+  HHI > 2500 (concentrated)   87.5%
+  mean EU/EEA share           98.2%
+  top countries by substances supplied:
+    DE    33
+    FR    26
+    IE    17
+    BE    15
+    ES    15
+    IT    15
+    NL    13
+    PL    11
+    DK     7
+    GR     6
+
+[mah_national] no data
+
+ULCM substances with NO supply data in any source: 67

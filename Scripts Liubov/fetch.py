@@ -1,10 +1,5 @@
-"""Snapshot every source and record what was fetched, when, and its hash.
-
-Run:  python -m critmed.fetch
-
-The manifest is the reproducibility artefact. When your numbers disagree with
-someone else's, the first question is always "same snapshot?" and this answers
-it without argument.
+"""
+Fetch all data sources into data/raw/ and record a manifest.json.
 """
 from __future__ import annotations
 
@@ -18,7 +13,7 @@ import requests
 
 from config import AUTO_SOURCES, MANIFEST, MANUAL_SOURCES, RAW
 
-UA = "critmed-research/0.1 (academic supply-chain study; contact: your.email@tuwien.ac.at)"
+UA = "medsupply-research/0.1 (academic supply-chain study)"
 TIMEOUT = 120
 
 
@@ -37,10 +32,6 @@ def _get(url: str) -> requests.Response:
 
 
 def fetch_fda(dest) -> dict:
-    """openFDA caps a single call at 100 records and a single query at 5000.
-
-    Page with skip= until exhausted. Keep the raw records; do not filter here.
-    """
     base = "https://api.fda.gov/drug/shortages.json"
     records, skip, limit = [], 0, 100
     while True:
@@ -52,7 +43,7 @@ def fetch_fda(dest) -> dict:
         skip += limit
         if not batch or (total is not None and skip >= total) or skip >= 26000:
             break
-        time.sleep(0.3)  # be polite; unauthenticated limit is 240 req/min
+        time.sleep(0.3)
     dest.write_text(json.dumps(records, ensure_ascii=False), encoding="utf-8")
     return {"n_records": len(records), "reported_total": total}
 
@@ -83,7 +74,7 @@ def main() -> int:
                 **extra,
             }
             print(f"  ok   {key:24s} {dest.stat().st_size:>10,d} B")
-        except Exception as exc:  # noqa: BLE001 - we want the reason in the manifest
+        except Exception as exc:
             failures.append(key)
             manifest["sources"][key] = {"url": url, "file": filename, "role": role,
                                         "error": f"{type(exc).__name__}: {exc}"}

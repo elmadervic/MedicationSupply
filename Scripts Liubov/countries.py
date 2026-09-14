@@ -1,23 +1,18 @@
-"""Resolve a country from an ISO code, a name, or a free-text address tail.
-
-Word-boundary matching only. Substring matching is how "India" gets found
-inside "Indiana" and a country count quietly shifts - that bug was already
-caught once in this project's EPAR pipeline; do not reintroduce it.
+"""
+Resolve country names and codes to ISO 3166-1 alpha-2 codes.
 """
 from __future__ import annotations
 
 import re
 from functools import lru_cache
 
-try:  # optional, gives full ISO coverage
-    import pycountry  # type: ignore
+try:
+    import pycountry
     _HAS_PYCOUNTRY = True
-except ImportError:  # pragma: no cover
+except ImportError:
     pycountry = None
     _HAS_PYCOUNTRY = False
 
-# Names and abbreviations that ISO tables miss or spell differently, plus the
-# ones that actually turn up in CEP holder strings and EPAR addresses.
 ALIASES = {
     "usa": "US", "u s a": "US", "united states of america": "US",
     "us": "US", "uk": "GB", "u k": "GB", "great britain": "GB",
@@ -53,7 +48,6 @@ ALIASES = {
     "liechtenstein": "LI", "monaco": "MC", "san marino": "SM",
     "netherlands": "NL", "sweden": "SE", "denmark": "DK", "norway": "NO",
     "finland": "FI", "slovakia": "SK",
-    # plain forms that pycountry has but the offline fallback would miss
     "united states": "US", "united kingdom": "GB", "china": "CN",
     "germany": "DE", "france": "FR", "italy": "IT", "spain": "ES",
     "belgium": "BE", "austria": "AT", "switzerland": "CH", "greece": "GR",
@@ -101,12 +95,6 @@ def _iso3_map() -> dict[str, str]:
 
 
 def resolve(value: str | None) -> str | None:
-    """Return an ISO alpha-2 code, or None if nothing can be resolved.
-
-    Tries, in order: bare ISO2, bare ISO3, full-string name match, then a
-    right-to-left word-boundary scan of the string (addresses put the country
-    last). Returns None rather than guessing.
-    """
     if value is None:
         return None
     s = str(value).strip()
@@ -125,7 +113,6 @@ def resolve(value: str | None) -> str | None:
     if low in nm:
         return nm[low]
 
-    # scan right to left: the country is normally the last address element
     words = low.split()
     for n in (4, 3, 2, 1):
         for i in range(len(words) - n, -1, -1):
@@ -133,7 +120,6 @@ def resolve(value: str | None) -> str | None:
             if cand in nm:
                 return nm[cand]
 
-    # trailing bare ISO2 token, e.g. "Janssen Pharmaceutica NV BE 2340 Beerse"
     for tok in reversed(re.findall(r"\b[A-Z]{2}\b", s)):
         if tok in _iso2_set():
             return tok

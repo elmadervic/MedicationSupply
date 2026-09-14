@@ -1,0 +1,336 @@
+norm_key,ulcm_substance_raw,atc_codes,ulcm_rows,is_combination,role,n_suppliers,n_countries,top_country,top_country_share,hhi_country,single_country,eu_eea_share,countries
+abacavir,ABACAVIR,J05AF06,1,False,api_cep,11.0,2.0,IN,0.8181818181818182,7024.8,False,0.0,CN|IN
+abacavir,ABACAVIR,J05AF06,1,False,batch_release,2.0,2.0,IE,0.5,5000.0,False,1.0,IE|PL
+abacavir|lamivudine,"ABACAVIR, LAMIVUDINE",J05AR02,1,True,batch_release,1.0,1.0,ES,1.0,10000.0,True,1.0,ES
+acetazolamide,ACETAZOLAMIDE,S01EC01,1,False,api_cep,3.0,1.0,IN,1.0,10000.0,True,0.0,IN
+acetylcholine,ACETYLCHOLINE,S01EB09,1,False,,,,,,,,,
+acetylcysteine,ACETYLCYSTEINE,R05CB01|V03AB23,2,False,api_cep,13.0,9.0,CN,0.23076923076923078,1360.9,False,0.38461538461538464,CH|CN|DE|ES|FR|IN|IT|JP|TW
+aciclovir,ACICLOVIR,J05AB01,1,False,api_cep,16.0,5.0,IN,0.375,2578.1,False,0.375,CN|DE|ES|IN|IT
+adenosine,ADENOSINE,C01EB10,1,False,api_cep,4.0,3.0,IN,0.5,3750.0,False,0.25,CN|DE|IN
+adrenaline,EPINEPHRINE,C01CA24,1,False,api_cep,8.0,5.0,CN,0.25,2187.5,False,0.5,CN|DE|IN|IT|LU
+adrenaline,EPINEPHRINE,C01CA24,1,False,batch_release,1.0,1.0,DK,1.0,10000.0,True,1.0,DK
+albendazole,ALBENDAZOLE,P02CA03,1,False,api_cep,7.0,3.0,IN,0.7142857142857143,5510.2,False,0.0,CN|IN|MX
+albumin,ALBUMIN,B05AA01|V09GA04|V09GB02,3,False,,,,,,,,,
+alteplase,ALTEPLASE,B01AD02,1,False,,,,,,,,,
+amikacin,AMIKACIN,J01GB06,1,False,api_cep,2.0,1.0,CN,1.0,10000.0,True,0.0,CN
+amiodarone,AMIODARONE,C01BD01,1,False,api_cep,12.0,6.0,IN,0.3333333333333333,2083.3,False,0.4166666666666667,CN|DE|FR|IL|IN|IT
+amoxicillin,AMOXICILLIN,J01CA04,1,False,api_cep,19.0,9.0,CN,0.2631578947368421,1634.3,False,0.2631578947368421,AT|CN|ES|GB|IL|IN|IT|MN|OM
+amoxicillin|clavulanic acid,"AMOXICILLIN, CLAVULANIC ACID",J01CR02,1,True,,,,,,,,,
+amphotericin,AMPHOTERICIN B,J02AA01,1,False,api_cep,3.0,3.0,CN,0.3333333333333333,3333.3,False,0.3333333333333333,CN|DK|IN
+ampicillin,AMPICILLIN,J01CA01,1,False,api_cep,15.0,7.0,CN,0.3333333333333333,1911.1,False,0.3333333333333333,AT|CN|ES|IN|IT|MN|OM
+anakinra,ANAKINRA,L04AC03,1,False,batch_release,1.0,1.0,SE,1.0,10000.0,True,1.0,SE
+anakinra,ANAKINRA,L04AC03,1,False,bio_api,2.0,2.0,AT,0.5,5000.0,False,1.0,AT|SE
+anti d immunoglobulin,HUMAN ANTI-D IMMUNOGLOBULIN,J06BB01,1,False,,,,,,,,,
+antilymphocyte immunoglobulin,ANTILYMPHOCYTE IMMUNOGLOBULIN (horse),L04AA03,1,False,,,,,,,,,
+antithrombin iii,ANTITHROMBIN III,B01AB02,1,False,,,,,,,,,
+antithymocyte immunoglobulin,ANTITHYMOCYTE IMMUNOGLOBULIN (rabbit),L04AA04,1,False,,,,,,,,,
+argipressin,ARGIPRESSIN,H01BA01,1,False,,,,,,,,,
+atracurium,ATRACURIUM,M03AC04,1,False,api_cep,6.0,6.0,CN,0.16666666666666666,1666.7,False,0.6666666666666666,CN|ES|HU|IN|LV|NL
+atropine,ATROPINE,A03BA01,1,False,api_cep,10.0,6.0,IN,0.5,3000.0,False,0.4,CN|DE|ES|IE|IN|LU
+atropine,ATROPINE,A03BA01,1,False,batch_release,1.0,1.0,FI,1.0,10000.0,True,1.0,FI
+avibactam|ceftazidime,"CEFTAZIDIME, AVIBACTAM",J01DD52,1,True,batch_release,1.0,1.0,IT,1.0,10000.0,True,1.0,IT
+azithromycin,AZITHROMYCIN,J01FA10,1,False,api_cep,3.0,2.0,CN,0.6666666666666666,5555.6,False,0.0,CN|IN
+aztreonam,AZTREONAM,J01DF01,1,False,batch_release,1.0,1.0,IE,1.0,10000.0,True,1.0,IE
+b vaccine|hepatitis a,HEPATITIS A AND B VACCINE,J07BC20,1,True,,,,,,,,,
+basiliximab,BASILIXIMAB,L04AC02,1,False,batch_release,2.0,2.0,DE,0.5,5000.0,False,1.0,DE|ES
+basiliximab,BASILIXIMAB,L04AC02,1,False,bio_api,1.0,1.0,FR,1.0,10000.0,True,1.0,FR
+bcg vaccine,BCG VACCINE (various forms),L03AX03,1,False,,,,,,,,,
+bedaquiline,BEDAQUILINE,J04AK05,1,False,batch_release,1.0,1.0,BE,1.0,10000.0,True,1.0,BE
+benzathine benzylpenicillin,BENZATHINE BENZYLPENICILLIN,J01CE08,1,False,,,,,,,,,
+benzylpenicillin,BENZYLPENICILLIN,J01CE01,1,False,api_cep,6.0,6.0,AT,0.16666666666666666,1666.7,False,0.5,AT|CN|DE|MN|MX|NL
+biperiden,BIPERIDEN,N04AA02,1,False,api_cep,4.0,3.0,IN,0.5,3750.0,False,0.25,HU|IN|US
+bleomycin,BLEOMYCIN,L01DC01,1,False,api_cep,3.0,3.0,CN,0.3333333333333333,3333.3,False,0.3333333333333333,CN|JP|NL
+brentuximab vedotin,BRENTUXIMAB VEDOTIN,L01FX05,1,False,batch_release,1.0,1.0,AT,1.0,10000.0,True,1.0,AT
+brentuximab vedotin,BRENTUXIMAB VEDOTIN,L01FX05,1,False,bio_api,3.0,3.0,CH,0.3333333333333333,3333.3,False,0.3333333333333333,CH|GB|IT
+busulfan,BUSULFAN,L01AB01,1,False,api_cep,7.0,4.0,IN,0.5714285714285714,3877.6,False,0.2857142857142857,DE|IN|IT|US
+busulfan,BUSULFAN,L01AB01,1,False,batch_release,1.0,1.0,DE,1.0,10000.0,True,1.0,DE
+caffeine,CAFFEINE,N06BC01,1,False,api_cep,9.0,3.0,CN,0.6666666666666666,5061.7,False,0.2222222222222222,CN|DE|IN
+caffeine,CAFFEINE,N06BC01,1,False,batch_release,4.0,3.0,FR,0.5,3750.0,False,1.0,AT|FR|IT
+carbamazepine,CARBAMAZEPINE,N03AF01,1,False,api_cep,15.0,6.0,IN,0.4666666666666667,2888.9,False,0.4,CH|CN|DE|IN|IT|NL
+carbetocin,CARBETOCIN,H01BB03,1,False,,,,,,,,,
+carbimazole,CARBIMAZOLE,H03BB01,1,False,api_cep,4.0,2.0,IN,0.75,6250.0,False,0.25,FR|IN
+carboplatin,CARBOPLATIN,L01XA02,1,False,api_cep,18.0,7.0,IN,0.3888888888888889,2222.2,False,0.2222222222222222,AR|CN|CZ|DE|IN|NL|US
+cefixime,CEFIXIME,J01DD08,1,False,api_cep,16.0,5.0,IN,0.625,4296.9,False,0.0625,AT|CN|IN|JP|KR
+cefotaxime,CEFOTAXIME,J01DD01,1,False,api_cep,13.0,5.0,IN,0.38461538461538464,2781.1,False,0.23076923076923078,AT|CN|IN|IT|KR
+ceftazidime,CEFTAZIDIME,J01DD02,1,False,api_cep,9.0,6.0,IN,0.2222222222222222,1851.9,False,0.3333333333333333,AT|CN|GB|IN|IT|KR
+ceftolozane|tazobactam,"TAZOBACTAM, CEFTOLOZANE",J01DI54,1,True,batch_release,1.0,1.0,FR,1.0,10000.0,True,1.0,FR
+ceftriaxone,CEFTRIAXONE,J01DD04,1,False,api_cep,13.0,6.0,IN,0.38461538461538464,2426.0,False,0.3076923076923077,AT|CH|CN|IN|IT|KR
+cefuroxime,CEFUROXIME,J01DC02,1,False,api_cep,27.0,7.0,IN,0.48148148148148145,2839.5,False,0.14814814814814814,CN|DE|GB|IN|IT|KR|TR
+chlorambucil,CHLORAMBUCIL,L01AA02,1,False,api_cep,1.0,1.0,IN,1.0,10000.0,True,0.0,IN
+cholera vaccine,CHOLERA VACCINE (inactivated),J07AE01,1,False,,,,,,,,,
+ciclosporin,CICLOSPORIN,L04AD01,1,False,api_cep,11.0,8.0,CN,0.36363636363636365,1900.8,False,0.18181818181818182,CA|CN|CZ|IL|IN|IT|KR|US
+ciclosporin,CICLOSPORIN,L04AD01,1,False,batch_release,4.0,4.0,DE,0.25,2500.0,False,1.0,DE|ES|FI|FR
+cilastatin|imipenem|relebactam,"CILASTATIN SODIUM, IMIPENEM, RELEBACTAM",J01DH56,1,True,batch_release,1.0,1.0,FR,1.0,10000.0,True,1.0,FR
+ciprofloxacin,CIPROFLOXACIN,J01MA02|S02AA15|S03AA07,3,False,api_cep,17.0,5.0,IN,0.6470588235294118,4602.1,False,0.11764705882352941,CN|DE|ES|IN|MX
+cisatracurium,CISATRACURIUM,M03AC11,1,False,api_cep,5.0,5.0,CN,0.2,2000.0,False,0.6,CN|ES|HU|IL|NL
+cisplatin,CISPLATIN,L01XA01,1,False,api_cep,14.0,6.0,IN,0.42857142857142855,2551.0,False,0.21428571428571427,AR|CN|DE|IN|NL|US
+clarithromycin,CLARITHROMYCIN,J01FA09,1,False,api_cep,15.0,6.0,CN,0.4666666666666667,3066.7,False,0.13333333333333333,CN|ES|IN|MY|NL|US
+clindamycin,CLINDAMYCIN,J01FF01,1,False,api_cep,12.0,3.0,CN,0.75,5972.2,False,0.25,CN|ES|IT
+clonazepam,CLONAZEPAM,N03AE01,1,False,api_cep,4.0,2.0,IN,0.75,6250.0,False,0.25,IN|IT
+clonidine,CLONIDINE,C02AC01,1,False,api_cep,6.0,3.0,IN,0.6666666666666666,5000.0,False,0.3333333333333333,DE|FR|IN
+clopidogrel,CLOPIDOGREL,B01AC04,1,False,api_cep,42.0,7.0,IN,0.6190476190476191,4444.4,False,0.11904761904761904,CN|DE|FR|IN|NL|SA|SI
+clopidogrel,CLOPIDOGREL,B01AC04,1,False,batch_release,18.0,12.0,IT,0.16666666666666666,987.7,False,0.9444444444444444,BG|DE|DK|FR|GB|GR|HR|HU|IT|PL|RO|SI
+cloxacillin,CLOXACILLIN,J01CF02,1,False,api_cep,8.0,4.0,IN,0.375,3125.0,False,0.625,ES|IN|IT|NL
+co trimoxazole,CO-TRIMOXAZOLE,J01EE01,1,False,,,,,,,,,
+coagulation factor ix,HUMAN COAGULATION FACTOR IX,B02BD04,1,False,,,,,,,,,
+coagulation factor vii,HUMAN COAGULATION FACTOR VII,B02BD05,1,False,,,,,,,,,
+coagulation factor viii,HUMAN COAGULATION FACTOR VIII,B02BD02,1,False,,,,,,,,,
+coagulation factor xiii,HUMAN COAGULATION FACTOR XIII,B02BD07,1,False,,,,,,,,,
+colistin,COLISTIN,J01XB01,1,False,api_cep,12.0,3.0,CN,0.6666666666666666,5138.9,False,0.08333333333333333,CN|DK|JP
+complement c1 esterase inhibitor,COMPLEMENT C1 ESTERASE INHIBITOR,B06AC01,1,False,,,,,,,,,
+cyclopentolate,CYCLOPENTOLATE,S01FA04,1,False,api_cep,2.0,2.0,ES,0.5,5000.0,False,1.0,ES|IE
+cyclophosphamide,CYCLOPHOSPHAMIDE,L01AA01,1,False,api_cep,7.0,2.0,IN,0.7142857142857143,5918.4,False,0.0,CN|IN
+cytarabine,CYTARABINE,L01BC01,1,False,api_cep,6.0,5.0,IN,0.3333333333333333,2222.2,False,0.16666666666666666,CN|IN|IT|JP|US
+dabigatran,DABIGATRAN,B01AE07,1,False,api_cep,15.0,5.0,IN,0.5333333333333333,3688.9,False,0.2,CN|ES|IN|NL|SI
+dabigatran,DABIGATRAN,B01AE07,1,False,batch_release,7.0,6.0,FR,0.2857142857142857,1836.7,False,1.0,DE|ES|FR|MT|NL|PL
+dabrafenib,DABRAFENIB,L01EC02,1,False,batch_release,4.0,3.0,SI,0.5,3750.0,False,1.0,DE|ES|SI
+dacarbazine,DACARBAZINE,L01AX04,1,False,api_cep,5.0,4.0,IN,0.4,2800.0,False,0.4,CN|CZ|DE|IN
+dantrolene,DANTROLENE,M03CA01,1,False,,,,,,,,,
+dapsone,DAPSONE,J04BA02,1,False,api_cep,5.0,2.0,IN,0.8,6800.0,False,0.0,CH|IN
+daratumumab,DARATUMUMAB,L01FC01,1,False,batch_release,2.0,2.0,BE,0.5,5000.0,False,1.0,BE|NL
+daratumumab,DARATUMUMAB,L01FC01,1,False,bio_api,4.0,4.0,DK,0.25,2500.0,False,0.5,DK|IE|KR|US
+daunorubicin,DAUNORUBICIN,L01DB02,1,False,api_cep,4.0,3.0,CN,0.5,3750.0,False,0.25,CN|JP|NL
+deferoxamine,DEFEROXAMINE,V03AC01,1,False,,,,,,,,,
+desmopressin,DESMOPRESSIN,H01BA02,1,False,api_cep,10.0,5.0,IN,0.4,2600.0,False,0.3,CN|ES|IN|NL|US
+dexmedetomidine,DEXMEDETOMIDINE,N05CM18,1,False,batch_release,1.0,1.0,FI,1.0,10000.0,True,1.0,FI
+dexrazoxane,DEXRAZOXANE,V03AF02,1,False,batch_release,1.0,1.0,BE,1.0,10000.0,True,1.0,BE
+diazepam,DIAZEPAM,N05BA01,1,False,api_cep,6.0,3.0,IN,0.6666666666666666,5000.0,False,0.16666666666666666,CN|IN|IT
+digoxin,DIGOXIN,C01AA05,1,False,api_cep,7.0,4.0,IN,0.42857142857142855,3061.2,False,0.5714285714285714,DE|IE|IN|LU
+diphtheria|hepatitis b vaccine|pertussis|poliomyelitis|tetanus,"DIPHTHERIA, TETANUS, PERTUSSIS, POLIOMYELITIS, HEPATITIS B VACCINE",J07CA12,1,True,,,,,,,,,
+diphtheria|pertussis vaccine|tetanus,"DIPHTHERIA, TETANUS, PERTUSSIS VACCINE (inactivated, whole cell)",J07AJ51|J07AJ52|J07CA06,3,True,,,,,,,,,
+diphtheria|pertussis|poliomyelitis vaccine|tetanus,"DIPHTHERIA, TETANUS, PERTUSSIS, POLIOMYELITIS VACCINE",J07CA02,1,True,,,,,,,,,
+diphtheria|poliomyelitis vaccine|tetanus,"DIPHTHERIA, TETANUS, POLIOMYELITIS VACCINE",J07CA01,1,True,,,,,,,,,
+diphtheria|tetanus vaccine,"DIPHTHERIA, TETANUS VACCINE",J07AM51,1,True,,,,,,,,,
+dobutamine,DOBUTAMINE,C01CA07,1,False,api_cep,7.0,4.0,DE,0.2857142857142857,2653.1,False,0.5714285714285714,CN|DE|IN|IT
+dopamine,DOPAMINE,C01CA04,1,False,api_cep,3.0,3.0,CN,0.3333333333333333,3333.3,False,0.3333333333333333,CN|DE|IN
+dopamine,DOPAMINE,C01CA04,1,False,batch_release,1.0,1.0,MT,1.0,10000.0,True,1.0,MT
+dornase alfa,DORNASE ALFA (DESOXYRIBONUCLEASE),R05CB13,1,False,,,,,,,,,
+doxorubicin,DOXORUBICIN,L01DB01,1,False,api_cep,12.0,8.0,CN,0.16666666666666666,1388.9,False,0.3333333333333333,CH|CN|DE|IN|IT|JP|KR|NL
+doxorubicin,DOXORUBICIN,L01DB01,1,False,batch_release,3.0,3.0,BE,0.3333333333333333,3333.3,False,1.0,BE|DE|ES
+doxycycline,DOXYCYCLINE,J01AA02,1,False,api_cep,9.0,3.0,CN,0.7777777777777778,6296.3,False,0.0,CN|IN|MO
+durvalumab,DURVALUMAB,L01FF03,1,False,batch_release,1.0,1.0,SE,1.0,10000.0,True,1.0,SE
+durvalumab,DURVALUMAB,L01FF03,1,False,bio_api,3.0,3.0,DE,0.3333333333333333,3333.3,False,0.3333333333333333,DE|KR|US
+emtricitabine,EMTRICITABINE,J05AF09,1,False,batch_release,1.0,1.0,IE,1.0,10000.0,True,1.0,IE
+encephalitis,"ENCEPHALITIS (Japanese, whole virus, inactivated)",J07BA02,1,False,,,,,,,,,
+encorafenib,ENCORAFENIB,L01EC03,1,False,batch_release,1.0,1.0,FR,1.0,10000.0,True,1.0,FR
+ephedrine,EPHEDRINE,C01CA26|R03CA02,2,False,api_cep,4.0,3.0,CN,0.5,3750.0,False,0.5,CN|CZ|DE
+epirubicin,EPIRUBICIN,L01DB03,1,False,api_cep,11.0,8.0,DE,0.2727272727272727,1570.2,False,0.45454545454545453,CH|CN|DE|IN|IT|JP|KR|NL
+eptacog alfa,EPTACOG ALFA,B02BD08,1,False,batch_release,1.0,1.0,DK,1.0,10000.0,True,1.0,DK
+eptacog alfa,EPTACOG ALFA,B02BD08,1,False,bio_api,1.0,1.0,DK,1.0,10000.0,True,1.0,DK
+eptifibatide,EPTIFIBATIDE,B01AC16,1,False,batch_release,3.0,3.0,GR,0.3333333333333333,3333.3,False,1.0,GR|IT|PL
+erythromycin,ERYTHROMYCIN,J01FA01,1,False,api_cep,10.0,5.0,IN,0.4,2800.0,False,0.1,CN|ES|IN|MY|US
+esketamine,ESKETAMINE,N01AX14|N06AX27,2,False,api_cep,4.0,2.0,DE,0.5,5000.0,False,0.5,DE|IN
+esketamine,ESKETAMINE,N01AX14|N06AX27,2,False,batch_release,1.0,1.0,BE,1.0,10000.0,True,1.0,BE
+esomeprazole,ESOMEPRAZOLE,A02BC05,1,False,api_cep,39.0,8.0,IN,0.5384615384615384,3543.7,False,0.1794871794871795,CN|ES|FR|IN|IT|MX|SI|TR
+esomeprazole,ESOMEPRAZOLE,A02BC05,1,False,batch_release,1.0,1.0,IT,1.0,10000.0,True,1.0,IT
+ethambutol,ETHAMBUTOL,J04AK02,1,False,api_cep,2.0,1.0,IN,1.0,10000.0,True,0.0,IN
+ethosuximide,ETHOSUXIMIDE,N03AD01,1,False,api_cep,1.0,1.0,NL,1.0,10000.0,True,1.0,NL
+etoposide,ETOPOSIDE,L01CB01,1,False,api_cep,8.0,5.0,CN,0.375,2500.0,False,0.125,CN|IL|IN|JP|NL
+factor viii inhibitor bypassing activity,FACTOR VIII INHIBITOR BYPASSING ACTIVITY,B02BD03,1,False,,,,,,,,,
+fentanyl,FENTANYL,N01AH01,1,False,api_cep,15.0,11.0,US,0.26666666666666666,1288.9,False,0.4,BE|CN|DE|ES|GB|IN|LV|NL|SK|US|ZA
+fentanyl,FENTANYL,N01AH01,1,False,batch_release,3.0,3.0,DE,0.3333333333333333,3333.3,False,1.0,DE|IT|NO
+fibrinogen,HUMAN FIBRINOGEN,B02BB01,1,False,,,,,,,,,
+fidaxomicin,FIDAXOMICIN,A07AA12,1,False,batch_release,2.0,2.0,DE,0.5,5000.0,False,0.5,DE|GB
+flecainide,FLECAINIDE,C01BC04,1,False,api_cep,12.0,5.0,IN,0.6666666666666666,4722.2,False,0.25,AR|FR|IN|IT|LV
+flucloxacillin,FLUCLOXACILLIN,J01CF05,1,False,api_cep,8.0,4.0,IT,0.5,3437.5,False,0.625,IN|IT|NL|OM
+fluconazole,FLUCONAZOLE,J02AC01,1,False,api_cep,15.0,3.0,IN,0.8,6622.2,False,0.2,ES|HU|IN
+fludarabine,FLUDARABINE,L01BB05,1,False,api_cep,7.0,4.0,CN,0.5714285714285714,3877.6,False,0.2857142857142857,CH|CN|IT|NL
+fludrocortisone,FLUDROCORTISONE,H02AA02,1,False,api_cep,2.0,2.0,CN,0.5,5000.0,False,0.5,CN|IT
+flumazenil,FLUMAZENIL,V03AB25,1,False,api_cep,4.0,4.0,CN,0.25,2500.0,False,0.25,CN|IL|NL|TW
+fluorouracil,FLUOROURACIL,L01BC02,1,False,api_cep,4.0,3.0,CN,0.5,3750.0,False,0.25,CH|CN|NL
+folinic acid,FOLINIC ACID,V03AF03,1,False,,,,,,,,,
+fomepizole,FOMEPIZOLE,V03AB34,1,False,,,,,,,,,
+foscarnet,FOSCARNET,J05AD01,1,False,api_cep,4.0,3.0,IN,0.5,3750.0,False,0.0,CN|IN|US
+fosfomycin,FOSFOMYCIN,J01XX01,1,False,api_cep,9.0,6.0,CN,0.3333333333333333,2098.8,False,0.5555555555555556,CN|ES|FR|IE|IT|MX
+furosemide,FUROSEMIDE,C03CA01,1,False,api_cep,9.0,4.0,IN,0.5555555555555556,3827.2,False,0.4444444444444444,DE|IN|IT|NL
+ganciclovir,GANCICLOVIR,J05AB06,1,False,api_cep,2.0,1.0,CN,1.0,10000.0,True,0.0,CN
+gemcitabine,GEMCITABINE,L01BC05,1,False,api_cep,18.0,7.0,IN,0.5,3148.1,False,0.1111111111111111,CH|CN|ES|IN|NL|TW|US
+gemtuzumab ozogamicin,GEMTUZUMAB OZOGAMICIN,L01FX02,1,False,batch_release,1.0,1.0,BE,1.0,10000.0,True,1.0,BE
+gemtuzumab ozogamicin,GEMTUZUMAB OZOGAMICIN,L01FX02,1,False,bio_api,1.0,1.0,US,1.0,10000.0,True,0.0,US
+gentamicin,GENTAMICIN,J01GB03,1,False,api_cep,3.0,2.0,CN,0.6666666666666666,5555.6,False,0.3333333333333333,CN|SI
+glatiramer,GLATIRAMER,L03AX13,1,False,,,,,,,,,
+glucagon,GLUCAGON,H04AA01,1,False,batch_release,2.0,2.0,FR,0.5,5000.0,False,1.0,FR|NL
+glyceryl trinitrate,GLYCERYL TRINITRATE,C01DA02,1,False,api_cep,1.0,1.0,DE,1.0,10000.0,True,1.0,DE
+haloperidol,HALOPERIDOL,N05AD01,1,False,api_cep,8.0,4.0,IN,0.625,4375.0,False,0.375,BE|DE|IE|IN
+hemin,HUMAN HEMIN,B06AB01,1,False,,,,,,,,,
+heparin,HEPARIN,B01AB01,1,False,api_cep,3.0,2.0,CN,0.6666666666666666,5555.6,False,0.3333333333333333,CN|PT
+hepatitis a vaccine,HEPATITIS A VACCINE,J07BC02,1,False,,,,,,,,,
+hepatitis b immunoglobulin,HUMAN HEPATITIS B IMMUNOGLOBULIN,J06BB04,1,False,batch_release,1.0,1.0,DE,1.0,10000.0,True,1.0,DE
+hepatitis b immunoglobulin,HUMAN HEPATITIS B IMMUNOGLOBULIN,J06BB04,1,False,bio_api,1.0,1.0,DE,1.0,10000.0,True,1.0,DE
+hepatitis b vaccine,HEPATITIS B VACCINE,J07BC01,1,False,,,,,,,,,
+hydrocortisone,HYDROCORTISONE,H02AB09,1,False,api_cep,15.0,6.0,CN,0.4666666666666667,2888.9,False,0.3333333333333333,CN|ES|FR|IN|IT|US
+hydrocortisone,HYDROCORTISONE,H02AB09,1,False,batch_release,4.0,2.0,FR,0.5,5000.0,False,1.0,FR|IE
+hydroxocobalamin,HYDROXOCOBALAMIN,B03BA03|V03AB33,2,False,api_cep,3.0,3.0,CN,0.3333333333333333,3333.3,False,0.3333333333333333,CN|FR|MX
+hydroxocobalamin,HYDROXOCOBALAMIN,B03BA03|V03AB33,2,False,batch_release,3.0,2.0,FR,0.6666666666666666,5555.6,False,1.0,BE|FR
+hydroxycarbamide,HYDROXYCARBAMIDE,L01XX05,1,False,api_cep,4.0,3.0,IT,0.5,3750.0,False,0.5,CN|IN|IT
+hydroxycarbamide,HYDROXYCARBAMIDE,L01XX05,1,False,batch_release,3.0,3.0,DE,0.3333333333333333,3333.3,False,1.0,DE|FR|IE
+ibrutinib,IBRUTINIB,L01EL01,1,False,batch_release,2.0,2.0,BE,0.5,5000.0,False,1.0,BE|IT
+idarubicin,IDARUBICIN,L01DB06,1,False,,,,,,,,,
+idarucizumab,IDARUCIZUMAB,V03AB37,1,False,batch_release,3.0,2.0,FR,0.6666666666666666,5555.6,False,1.0,DE|FR
+idarucizumab,IDARUCIZUMAB,V03AB37,1,False,bio_api,1.0,1.0,DE,1.0,10000.0,True,1.0,DE
+ifosfamide,IFOSFAMIDE,L01AA06,1,False,api_cep,2.0,2.0,CN,0.5,5000.0,False,0.5,CN|PL
+imiglucerase,IMIGLUCERASE,A16AB02,1,False,batch_release,1.0,1.0,IE,1.0,10000.0,True,1.0,IE
+imiglucerase,IMIGLUCERASE,A16AB02,1,False,bio_api,3.0,1.0,US,1.0,10000.0,True,0.0,US
+influenza vaccine,"INFLUENZA VACCINE (various forms, strains)",J07BB01|J07BB02,2,False,,,,,,,,,
+inotuzumab ozogamicin,INOTUZUMAB OZOGAMICIN,L01FB01,1,False,batch_release,1.0,1.0,BE,1.0,10000.0,True,1.0,BE
+inotuzumab ozogamicin,INOTUZUMAB OZOGAMICIN,L01FB01,1,False,bio_api,1.0,1.0,US,1.0,10000.0,True,0.0,US
+insulin,INSULIN HUMAN (fast-acting),A10AB01|A10AC01|A10AD01,3,False,batch_release,7.0,3.0,DK,0.7142857142857143,5510.2,False,1.0,DE|DK|FR
+insulin,INSULIN HUMAN (fast-acting),A10AB01|A10AC01|A10AD01,3,False,bio_api,2.0,2.0,DE,0.5,5000.0,False,1.0,DE|DK
+insulin aspart,INSULIN ASPART,A10AB05,1,False,batch_release,9.0,5.0,DK,0.5555555555555556,3580.2,False,1.0,DE|DK|FR|HU|IE
+insulin aspart,INSULIN ASPART,A10AB05,1,False,bio_api,3.0,3.0,DE,0.3333333333333333,3333.3,False,0.6666666666666666,DE|DK|MY
+insulin degludec,INSULIN DEGLUDEC,A10AE06,1,False,batch_release,2.0,2.0,DK,0.5,5000.0,False,1.0,DK|FR
+insulin degludec,INSULIN DEGLUDEC,A10AE06,1,False,bio_api,1.0,1.0,DK,1.0,10000.0,True,1.0,DK
+ipratropium,IPRATROPIUM,R03BB01,1,False,api_cep,9.0,3.0,IN,0.6666666666666666,5061.7,False,0.3333333333333333,DE|IN|IT
+isavuconazole,ISAVUCONAZOLE,J02AC05,1,False,batch_release,2.0,2.0,GB,0.5,5000.0,False,0.5,GB|IE
+isoniazid,ISONIAZID,J04AC01,1,False,api_cep,5.0,3.0,IN,0.6,4400.0,False,0.0,CN|IN|JP
+isoniazid|rifampicin,"ISONIAZID, RIFAMPICIN",J04AM02,1,True,,,,,,,,,
+isoprenaline,ISOPRENALINE,C01CA02,1,False,api_cep,5.0,3.0,IN,0.6,4400.0,False,0.2,CN|IN|IT
+ketamine,KETAMINE,N01AX03,1,False,api_cep,6.0,3.0,IN,0.5,3888.9,False,0.3333333333333333,DE|GB|IN
+labetalol,LABETALOL,C07AG01,1,False,api_cep,7.0,3.0,IN,0.5714285714285714,4285.7,False,0.2857142857142857,GB|IN|IT
+lamivudine,LAMIVUDINE,J05AF05,1,False,api_cep,11.0,2.0,IN,0.8181818181818182,7024.8,False,0.0,CN|IN
+lamivudine,LAMIVUDINE,J05AF05,1,False,batch_release,6.0,4.0,IE,0.3333333333333333,2777.8,False,1.0,HU|IE|NL|PL
+levofloxacin,LEVOFLOXACIN,J01MA12,1,False,api_cep,17.0,4.0,IN,0.5294117647058824,4117.6,False,0.11764705882352941,CN|ES|IN|NL
+levofloxacin,LEVOFLOXACIN,J01MA12,1,False,batch_release,1.0,1.0,IT,1.0,10000.0,True,1.0,IT
+lidocaine,LIDOCAINE,C01BB01,1,False,api_cep,12.0,7.0,IN,0.4166666666666667,2361.1,False,0.25,CN|ES|IN|IT|SE|TW|US
+lithium,LITHIUM,N05AN01,1,False,,,,,,,,,
+lorazepam,LORAZEPAM,N05BA06,1,False,api_cep,6.0,3.0,IN,0.5,3888.9,False,0.5,DE|IN|IT
+magnesium sulfate,MAGNESIUM SULFATE,A12CC02|B05XA05,2,False,api_cep,2.0,2.0,CZ,0.5,5000.0,False,0.5,CZ|US
+mannitol,MANNITOL,B05BC01,1,False,api_cep,1.0,1.0,FR,1.0,10000.0,True,1.0,FR
+mannitol,MANNITOL,B05BC01,1,False,batch_release,1.0,1.0,IE,1.0,10000.0,True,1.0,IE
+measles|mumps|rubella vaccine,"MEASLES, MUMPS, RUBELLA VACCINE",J07BD52,1,True,,,,,,,,,
+measles|mumps|rubella|varicella vaccine,"MEASLES, MUMPS, RUBELLA, VARICELLA VACCINE",J07BD54,1,True,,,,,,,,,
+medicinal charcoal,MEDICINAL CHARCOAL,A07BA01,1,False,,,,,,,,,
+melphalan,MELPHALAN,L01AA03,1,False,api_cep,2.0,2.0,CN,0.5,5000.0,False,0.0,CN|IN
+melphalan,MELPHALAN,L01AA03,1,False,batch_release,2.0,1.0,IT,1.0,10000.0,True,1.0,IT
+meningococcal group b vaccine,MENINGOCOCCAL GROUP B VACCINE,J07AH09,1,False,,,,,,,,,
+meningococcal group c vaccine,MENINGOCOCCAL GROUP C VACCINE,J07AH07,1,False,,,,,,,,,
+mercaptopurine,MERCAPTOPURINE,L01BB02,1,False,api_cep,2.0,2.0,FI,0.5,5000.0,False,0.5,FI|IN
+mesna,MESNA,V03AF01,1,False,api_cep,2.0,1.0,IN,1.0,10000.0,True,0.0,IN
+methotrexate,METHOTREXATE,L01BA01|L04AX03,2,False,api_cep,8.0,6.0,CN,0.25,1875.0,False,0.375,CN|DE|FI|GB|HU|IN
+methotrexate,METHOTREXATE,L01BA01|L04AX03,2,False,batch_release,3.0,3.0,BE,0.3333333333333333,3333.3,False,1.0,BE|DK|GR
+methyldopa,METHYLDOPA (levorotatory),C02AB01|C02AB02,2,False,api_cep,4.0,3.0,CN,0.5,3750.0,False,0.5,CN|HU|NL
+methylergometrine,METHYLERGOMETRINE,G02AB01,1,False,api_cep,1.0,1.0,CZ,1.0,10000.0,True,1.0,CZ
+methylprednisolone,METHYLPREDNISOLONE,H02AB04,1,False,api_cep,10.0,5.0,CN,0.4,2800.0,False,0.4,CN|FR|IN|IT|US
+methylthioninium,METHYLTHIONINIUM,V03AB17,1,False,api_cep,2.0,2.0,DE,0.5,5000.0,False,1.0,DE|IT
+methylthioninium,METHYLTHIONINIUM,V03AB17,1,False,batch_release,2.0,2.0,FR,0.5,5000.0,False,1.0,FR|IT
+metoclopramide,METOCLOPRAMIDE,A03FA01,1,False,api_cep,4.0,3.0,IT,0.5,3750.0,False,0.5,CN|IN|IT
+metronidazole,METRONIDAZOLE,J01XD01|P01AB01,2,False,api_cep,10.0,3.0,IN,0.5,4200.0,False,0.1,CN|IN|IT
+mexiletine,MEXILETINE,C01BB02,1,False,api_cep,4.0,2.0,IN,0.75,6250.0,False,0.25,ES|IN
+mexiletine,MEXILETINE,C01BB02,1,False,batch_release,2.0,2.0,DE,0.5,5000.0,False,0.5,DE|GB
+midazolam,MIDAZOLAM,N05CD08,1,False,api_cep,8.0,5.0,IN,0.375,2500.0,False,0.375,CN|IL|IN|IT|NL
+midazolam,MIDAZOLAM,N05CD08,1,False,batch_release,1.0,1.0,DE,1.0,10000.0,True,1.0,DE
+mifepristone,MIFEPRISTONE,G03XB01,1,False,,,,,,,,,
+milrinone,MILRINONE,C01CE02,1,False,,,,,,,,,
+mitomycin,MITOMYCIN,L01DC03,1,False,api_cep,5.0,3.0,CN,0.6,4400.0,False,0.2,CN|IN|NL
+mitotane,MITOTANE,L01XX23,1,False,batch_release,2.0,2.0,FR,0.5,5000.0,False,1.0,FR|IT
+mitoxantrone,MITOXANTRONE,L01DB07,1,False,api_cep,4.0,3.0,CN,0.5,3750.0,False,0.0,CN|IN|MX
+morphine,MORPHINE,N02AA01,1,False,api_cep,4.0,4.0,ES,0.25,2500.0,False,0.75,ES|FR|GB|IT
+naloxone,NALOXONE,V03AB15,1,False,api_cep,9.0,8.0,IN,0.2222222222222222,1358.0,False,0.5555555555555556,DE|FR|GB|IN|IT|NL|SK|US
+naloxone,NALOXONE,V03AB15,1,False,batch_release,1.0,1.0,NL,1.0,10000.0,True,1.0,NL
+neostigmine,NEOSTIGMINE,N07AA01,1,False,api_cep,1.0,1.0,AT,1.0,10000.0,True,1.0,AT
+nevirapine,NEVIRAPINE,J05AG01,1,False,api_cep,7.0,2.0,IN,0.7142857142857143,5918.4,False,0.0,CN|IN
+nevirapine,NEVIRAPINE,J05AG01,1,False,batch_release,4.0,3.0,FR,0.5,3750.0,False,1.0,DE|FR|GR
+nilotinib,NILOTINIB,L01EA03,1,False,api_cep,3.0,2.0,IN,0.6666666666666666,5555.6,False,0.0,CN|IN
+nilotinib,NILOTINIB,L01EA03,1,False,batch_release,9.0,7.0,ES,0.2222222222222222,1604.9,False,1.0,AT|DE|ES|GR|MT|PL|SI
+nimodipine,NIMODIPINE,C08CA06,1,False,api_cep,4.0,4.0,CH,0.25,2500.0,False,0.5,CH|ES|IN|IT
+nivolumab,NIVOLUMAB,L01FF01,1,False,batch_release,1.0,1.0,IE,1.0,10000.0,True,1.0,IE
+nivolumab,NIVOLUMAB,L01FF01,1,False,bio_api,1.0,1.0,IE,1.0,10000.0,True,1.0,IE
+noradrenaline,NOREPINEPHRINE,C01CA03,1,False,api_cep,8.0,6.0,IN,0.25,1875.0,False,0.625,CN|DE|ES|IN|IT|SK
+normal immunoglobulin,HUMAN NORMAL IMMUNOGLOBULIN,J06BA01|J06BA02,2,False,batch_release,3.0,3.0,BE,0.3333333333333333,3333.3,False,1.0,BE|DE|ES
+normal immunoglobulin,HUMAN NORMAL IMMUNOGLOBULIN,J06BA01|J06BA02,2,False,bio_api,5.0,4.0,BE,0.4,2800.0,False,0.6,AU|BE|CH|ES
+obinutuzumab,OBINUTUZUMAB,L01FA03,1,False,batch_release,1.0,1.0,DE,1.0,10000.0,True,1.0,DE
+obinutuzumab,OBINUTUZUMAB,L01FA03,1,False,bio_api,2.0,2.0,DE,0.5,5000.0,False,1.0,DE|DK
+olanzapine,OLANZAPINE,N05AH03,1,False,api_cep,21.0,5.0,IN,0.7142857142857143,5328.8,False,0.19047619047619047,CN|DE|FR|IN|NL
+olanzapine,OLANZAPINE,N05AH03,1,False,batch_release,18.0,8.0,DE,0.3888888888888889,2222.2,False,1.0,CZ|DE|ES|HU|IE|NL|PL|SI
+oxaliplatin,OXALIPLATIN,L01XA03,1,False,api_cep,23.0,7.0,CN,0.30434782608695654,2211.7,False,0.13043478260869565,AR|CH|CN|CZ|IN|NL|US
+oxytocin,OXYTOCIN,H01BB02,1,False,api_cep,6.0,4.0,CN,0.5,3333.3,False,0.3333333333333333,CN|IN|LV|NL
+paclitaxel,PACLITAXEL,L01CD01,1,False,api_cep,1.0,1.0,CN,1.0,10000.0,True,0.0,CN
+paclitaxel,PACLITAXEL,L01CD01,1,False,batch_release,8.0,5.0,NL,0.375,2500.0,False,1.0,DE|ES|GR|NL|PL
+papillomavirus vaccine,PAPILLOMAVIRUS VACCINE,J07BM01|J07BM02|J07BM03,3,False,,,,,,,,,
+paracetamol,PARACETAMOL,N02BE01,1,False,api_cep,19.0,7.0,CN,0.3157894736842105,2354.6,False,0.21052631578947367,CH|CN|FR|GB|IN|IT|US
+pegaspargase,PEGASPARGASE,L01XX24,1,False,batch_release,1.0,1.0,FR,1.0,10000.0,True,1.0,FR
+pegaspargase,PEGASPARGASE,L01XX24,1,False,bio_api,1.0,1.0,US,1.0,10000.0,True,0.0,US
+peginterferon alfa 2a,PEGINTERFERON ALFA-2A,L03AB11,1,False,batch_release,2.0,1.0,AT,1.0,10000.0,True,1.0,AT
+peginterferon alfa 2a,PEGINTERFERON ALFA-2A,L03AB11,1,False,bio_api,1.0,1.0,DE,1.0,10000.0,True,1.0,DE
+pembrolizumab,PEMBROLIZUMAB,L01FF02,1,False,batch_release,2.0,2.0,BE,0.5,5000.0,False,1.0,BE|NL
+pembrolizumab,PEMBROLIZUMAB,L01FF02,1,False,bio_api,4.0,4.0,DE,0.25,2500.0,False,0.75,DE|IE|KR|NL
+penicillamine,PENICILLAMINE,M01CC01,1,False,api_cep,3.0,1.0,IN,1.0,10000.0,True,0.0,IN
+pentamidine,PENTAMIDINE,P01CX01,1,False,,,,,,,,,
+phenobarbital,PHENOBARBITAL,N03AA02,1,False,api_cep,6.0,4.0,CN,0.3333333333333333,2777.8,False,0.3333333333333333,CN|DE|HU|IN
+phenoxymethylpenicillin,PHENOXYMETHYLPENICILLIN,J01CE02,1,False,api_cep,4.0,4.0,AT,0.25,2500.0,False,0.75,AT|CN|NL|SK
+phenytoin,PHENYTOIN,N03AB02,1,False,api_cep,2.0,2.0,IN,0.5,5000.0,False,0.5,IN|NL
+phytomenadione,PHYTOMENADIONE,B02BA01,1,False,,,,,,,,,
+pilocarpine,PILOCARPINE,S01EB01,1,False,api_cep,4.0,3.0,BR,0.5,3750.0,False,0.0,BR|CN|JP
+piperacillin|tazobactam,"PIPERACILLIN, TAZOBACTAM",J01CR05,1,True,,,,,,,,,
+plasma protein fraction,PLASMA PROTEIN FRACTION,B05AA02,1,False,,,,,,,,,
+plerixafor,PLERIXAFOR,L03AX16,1,False,batch_release,5.0,5.0,ES,0.2,2000.0,False,1.0,ES|IE|MT|NL|PL
+poliomyelitis vaccine,POLIOMYELITIS VACCINE (trivalent),J07BF03,1,False,,,,,,,,,
+polystyrene sulfonic acid,POLYSTYRENE SULFONIC ACID,V03AE01,1,False,,,,,,,,,
+posaconazole,POSACONAZOLE,J02AC04,1,False,batch_release,7.0,6.0,NL,0.2857142857142857,1836.7,False,1.0,BE|CY|ES|MT|NL|PL
+potassium chloride,POTASSIUM CHLORIDE,B05BB01|B05XA01,2,False,api_cep,4.0,4.0,CZ,0.25,2500.0,False,0.5,CZ|DE|GB|US
+prednisolone,PREDNISOLONE,H02AB06,1,False,api_cep,11.0,6.0,CN,0.45454545454545453,2727.3,False,0.18181818181818182,CN|FR|IN|IT|MY|US
+procarbazine,PROCARBAZINE,L01XB01,1,False,,,,,,,,,
+propofol,PROPOFOL,N01AX10,1,False,api_cep,12.0,6.0,IN,0.4166666666666667,2500.0,False,0.25,CH|CN|DE|IN|IT|US
+propranolol,PROPRANOLOL,C07AA05,1,False,api_cep,2.0,1.0,IN,1.0,10000.0,True,0.0,IN
+propranolol,PROPRANOLOL,C07AA05,1,False,batch_release,2.0,1.0,FR,1.0,10000.0,True,1.0,FR
+propylthiouracil,PROPYLTHIOURACIL,H03BA02,1,False,api_cep,2.0,2.0,CN,0.5,5000.0,False,0.0,CN|IN
+protamine,PROTAMINE,V03AB14,1,False,api_cep,1.0,1.0,JP,1.0,10000.0,True,0.0,JP
+prothrombin complex,HUMAN PROTHROMBIN COMPLEX,B02BD01,1,False,,,,,,,,,
+pyrazinamide,PYRAZINAMIDE,J04AK01,1,False,api_cep,5.0,3.0,IN,0.6,4400.0,False,0.0,CO|IN|TH
+rabies immunoglobulin,HUMAN RABIES IMMUNOGLOBULIN,J06BB05,1,False,,,,,,,,,
+rabies vaccine,RABIES VACCINE,J07BG01,1,False,,,,,,,,,
+radium dichloride,RADIUM (223RA) DICHLORIDE,V10XX03,1,False,batch_release,1.0,1.0,NO,1.0,10000.0,True,1.0,NO
+rasburicase,RASBURICASE,V03AF07,1,False,batch_release,1.0,1.0,IT,1.0,10000.0,True,1.0,IT
+rasburicase,RASBURICASE,V03AF07,1,False,bio_api,1.0,1.0,FR,1.0,10000.0,True,1.0,FR
+remifentanil,REMIFENTANIL,N01AH06,1,False,api_cep,8.0,8.0,CH,0.125,1250.0,False,0.5,CH|CN|DE|ES|FR|GB|SK|ZA
+rifabutin,RIFABUTIN,J04AB04,1,False,,,,,,,,,
+rifampicin,RIFAMPICIN,J04AB02,1,False,api_cep,2.0,2.0,CN,0.5,5000.0,False,0.5,CN|IT
+riluzole,RILUZOLE,N07XX02,1,False,batch_release,1.0,1.0,FR,1.0,10000.0,True,1.0,FR
+rocuronium,ROCURONIUM,M03AC09,1,False,api_cep,11.0,5.0,CN,0.2727272727272727,2231.4,False,0.45454545454545453,CN|ES|IN|IT|NL
+rotavirus pentavalent vaccine,ROTAVIRUS PENTAVALENT VACCINE,J07BH02,1,False,,,,,,,,,
+sacituzumab govitecan,SACITUZUMAB GOVITECAN,L01FX17,1,False,batch_release,1.0,1.0,IE,1.0,10000.0,True,1.0,IE
+sacituzumab govitecan,SACITUZUMAB GOVITECAN,L01FX17,1,False,bio_api,1.0,1.0,IT,1.0,10000.0,True,1.0,IT
+salbutamol,SALBUTAMOL,R03AC02|R03CC02,2,False,api_cep,11.0,5.0,IN,0.5454545454545454,3553.7,False,0.36363636363636365,DE|GB|IN|IT|NL
+sirolimus,SIROLIMUS,L04AH01,1,False,batch_release,4.0,3.0,DE,0.5,3750.0,False,1.0,BE|DE|IE
+sodium nitroprusside,SODIUM NITROPRUSSIDE,C02DD01,1,False,api_cep,2.0,2.0,CN,0.5,5000.0,False,0.0,CN|IN
+sodium thiosulfate,SODIUM THIOSULFATE,V03AB06,1,False,api_cep,1.0,1.0,ES,1.0,10000.0,True,1.0,ES
+sodium thiosulfate,SODIUM THIOSULFATE,V03AB06,1,False,batch_release,1.0,1.0,NL,1.0,10000.0,True,1.0,NL
+sufentanil,SUFENTANIL,N01AH03,1,False,api_cep,6.0,5.0,US,0.3333333333333333,2222.2,False,0.5,BE|ES|GB|SK|US
+sufentanil,SUFENTANIL,N01AH03,1,False,batch_release,1.0,1.0,FR,1.0,10000.0,True,1.0,FR
+sugammadex,SUGAMMADEX,V03AB35,1,False,batch_release,9.0,5.0,NL,0.3333333333333333,2345.7,False,1.0,DE|FR|HU|NL|PT
+suxamethonium,SUXAMETHONIUM,M03AB01,1,False,api_cep,4.0,2.0,IN,0.75,6250.0,False,0.25,DE|IN
+tacrolimus,TACROLIMUS,L04AD02,1,False,api_cep,10.0,5.0,CN,0.4,2800.0,False,0.2,CN|IN|NL|SI|TW
+tacrolimus,TACROLIMUS,L04AD02,1,False,batch_release,11.0,9.0,DE,0.18181818181818182,1239.7,False,1.0,AT|CZ|DE|ES|HR|HU|IE|IT|PL
+tamoxifen,TAMOXIFEN,L02BA01,1,False,api_cep,6.0,4.0,DE,0.5,3333.3,False,1.0,DE|HU|IT|NL
+teicoplanin,TEICOPLANIN,J01XA02,1,False,api_cep,5.0,3.0,CN,0.4,3600.0,False,0.2,CN|IT|KR
+tenecteplase,TENECTEPLASE,B01AD11,1,False,batch_release,3.0,2.0,FR,0.6666666666666666,5555.6,False,1.0,DE|FR
+tenecteplase,TENECTEPLASE,B01AD11,1,False,bio_api,1.0,1.0,DE,1.0,10000.0,True,1.0,DE
+tetanus immunoglobulin,HUMAN TETANUS IMMUNOGLOBULIN,J06BB02,1,False,,,,,,,,,
+thalidomide,THALIDOMIDE,L04AX02,1,False,batch_release,2.0,2.0,DE,0.5,5000.0,False,1.0,DE|NL
+thiamazole,THIAMAZOLE,H03BB02,1,False,api_cep,2.0,2.0,DE,0.5,5000.0,False,0.5,DE|IN
+thiotepa,THIOTEPA,L01AC01,1,False,batch_release,1.0,1.0,IT,1.0,10000.0,True,1.0,IT
+tioguanine,TIOGUANINE,L01BB03,1,False,,,,,,,,,
+tobramycin,TOBRAMYCIN,J01GB01,1,False,api_cep,5.0,3.0,CN,0.4,3600.0,False,0.2,CN|NL|US
+tobramycin,TOBRAMYCIN,J01GB01,1,False,batch_release,2.0,2.0,DE,0.5,5000.0,False,1.0,DE|IE
+topotecan,TOPOTECAN,L01CE01,1,False,batch_release,7.0,5.0,DE,0.2857142857142857,2244.9,False,1.0,BE|DE|ES|IT|RO
+trametinib,TRAMETINIB,L01EE01,1,False,batch_release,4.0,3.0,SI,0.5,3750.0,False,1.0,DE|ES|SI
+tranexamic acid,TRANEXAMIC ACID,B02AA02,1,False,api_cep,10.0,3.0,CN,0.4,3400.0,False,0.0,CN|IN|JP
+treosulfan,TREOSULFAN,L01AB02,1,False,batch_release,1.0,1.0,DE,1.0,10000.0,True,1.0,DE
+tretinoin,TRETINOIN,L01XF01,1,False,api_cep,5.0,5.0,CH,0.2,2000.0,False,0.4,CH|CN|DE|IN|IT
+trimethoprim,TRIMETHOPRIM,J01EA01,1,False,api_cep,11.0,5.0,CN,0.36363636363636365,2892.6,False,0.09090909090909091,CN|DE|IL|IN|KR
+tuberculin,TUBERCULIN,V04CF01,1,False,,,,,,,,,
+typhoid vaccine,TYPHOID VACCINE (polysaccharide),J07AP03,1,False,,,,,,,,,
+valganciclovir,VALGANCICLOVIR,J05AB14,1,False,api_cep,5.0,2.0,IN,0.6,5200.0,False,0.0,CN|IN
+valproic acid,VALPROIC ACID,N03AG01,1,False,api_cep,9.0,6.0,IN,0.4444444444444444,2592.6,False,0.3333333333333333,DK|FR|IN|JP|NL|TW
+vancomycin,VANCOMYCIN,J01XA01,1,False,api_cep,7.0,7.0,CN,0.14285714285714285,1428.6,False,0.42857142857142855,CN|DK|HU|IN|KR|SI|US
+varicella vaccine,VARICELLA VACCINE (live),J07BK01,1,False,,,,,,,,,
+verapamil,VERAPAMIL,C08DA01,1,False,api_cep,9.0,5.0,IN,0.5555555555555556,3580.2,False,0.2222222222222222,CH|IN|IT|NL|US
+verteporfin,VERTEPORFIN,S01LA01,1,False,batch_release,2.0,2.0,DE,0.5,5000.0,False,1.0,DE|FR
+vigabatrin,VIGABATRIN,N03AG04,1,False,api_cep,4.0,1.0,IN,1.0,10000.0,True,0.0,IN
+vigabatrin,VIGABATRIN,N03AG04,1,False,batch_release,3.0,1.0,FR,1.0,10000.0,True,1.0,FR
+vinblastine,VINBLASTINE,L01CA01,1,False,api_cep,4.0,4.0,BE,0.25,2500.0,False,0.75,BE|HU|IE|IN
+vincristine,VINCRISTINE,L01CA02,1,False,api_cep,6.0,6.0,BE,0.16666666666666666,1666.7,False,0.5,BE|CN|HU|IE|IN|ZA
+vismodegib,VISMODEGIB,L01XJ01,1,False,batch_release,1.0,1.0,DE,1.0,10000.0,True,1.0,DE
+warfarin,WARFARIN,B01AA03,1,False,api_cep,8.0,5.0,IN,0.5,3125.0,False,0.375,AT|DE|IL|IN|SE
+yellow fever vaccine,YELLOW FEVER VACCINE,J07BL01,1,False,,,,,,,,,
+zidovudine,ZIDOVUDINE,J05AF01,1,False,api_cep,11.0,5.0,IN,0.36363636363636365,2562.0,False,0.09090909090909091,CN|ES|GB|IN|KR

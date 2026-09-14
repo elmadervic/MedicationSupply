@@ -1,9 +1,5 @@
-"""Report the actual shape of every downloaded file.
-
-Run:  python -m critmed.inspect_sources > schema_report.txt
-
-None of these publishers documents a stable schema, and several put the real
-header several rows down. Read this report before trusting any parser.
+"""
+Analyze the raw source files in data/raw/ and print a summary of their contents.
 """
 from __future__ import annotations
 
@@ -26,12 +22,6 @@ def _preview_frame(df: pd.DataFrame, name: str, note: str = "") -> None:
 
 
 def _read_excel_guess_header(path, max_scan: int = 12) -> pd.DataFrame:
-    """EMA workbooks carry title and classification rows above the header, and
-    the ULCM sheet trails ~16,000 entirely empty columns.
-
-    Drop all-empty columns before scoring, or every candidate row looks equally
-    bad (one named column out of sixteen thousand) and the pick is arbitrary.
-    """
     best, best_score, best_h = None, -1, 0
     for h in range(max_scan):
         try:
@@ -52,13 +42,6 @@ def _read_excel_guess_header(path, max_scan: int = 12) -> pd.DataFrame:
 
 
 def _preview_pdf(path, max_pages: int = 3, max_tables: int = 3) -> None:
-    """Report whether a text layer exists, then show tables and a layout sample.
-
-    The BfArM substance lists are typed tables in a text-layer PDF, so
-    extract_tables() normally works. If pdfplumber finds no text at all the
-    file is a scan and no amount of table tuning will help - say so rather
-    than emit an empty frame.
-    """
     try:
         import pdfplumber
     except ImportError:
@@ -114,7 +97,7 @@ def _preview_pdf(path, max_pages: int = 3, max_tables: int = 3) -> None:
         txt = pdf.pages[0].extract_text(layout=True) or pdf.pages[0].extract_text() or ""
         shown = 0
         for line in txt.splitlines():
-            if not line.strip():          # layout=True pads with blank rows
+            if not line.strip():
                 continue
             print(f"     {line.rstrip()[:120]}")
             shown += 1
@@ -143,7 +126,7 @@ def _sniff_text(path) -> None:
 def main() -> int:
     files = sorted(RAW.glob("*"))
     if not files:
-        print("data/raw is empty - run python -m critmed.fetch first")
+        print("data/raw is empty - run python fetch.py first")
         return 1
 
     for path in files:
@@ -175,7 +158,7 @@ def main() -> int:
                 data = json.loads(path.read_text(encoding="utf-8"))
                 df = pd.json_normalize(data)
                 _preview_frame(df, path.name)
-        except Exception as exc:  # noqa: BLE001
+        except Exception as exc:
             print(f"  ERROR: {type(exc).__name__}: {exc}")
 
     missing = [k for k, s in MANUAL_SOURCES.items() if not (RAW / s["filename"]).exists()]

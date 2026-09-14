@@ -1,9 +1,5 @@
-"""Source registry and paths.
-
-Every source is a live, overwritten-in-place URL. Nothing here is versioned by
-the publisher, so the snapshot date + SHA256 recorded by fetch.py *is* the
-version identifier. Never compare results across snapshots without checking
-manifest.json first.
+"""
+Source registry and paths.
 """
 from pathlib import Path
 
@@ -15,11 +11,6 @@ for _p in (RAW, INTERIM, OUT):
     _p.mkdir(parents=True, exist_ok=True)
 
 
-# --- automatically fetchable -------------------------------------------------
-# key -> (url, filename, role)
-#   role: "universe"  = defines which substances are in scope
-#         "supply"    = tells us who/where supplies a substance
-#         "outcome"   = tells us whether supply failed (shortage)
 AUTO_SOURCES = {
     "ulcm": (
         "https://www.ema.europa.eu/en/documents/other/union-list-critical-medicines-en.xlsx",
@@ -49,16 +40,12 @@ AUTO_SOURCES = {
         "supply",
     ),
     "fda_shortages": (
-        "https://api.fda.gov/drug/shortages.json?limit=1000",  # paginated in fetch.py
+        "https://api.fda.gov/drug/shortages.json?limit=1000",
         "fda_shortages.json",
         "outcome",
     ),
 }
 
-# --- must be downloaded by hand ---------------------------------------------
-# EDQM disallows automated access in robots.txt; BfArM's shortage register is a
-# JSF application with server-side view state. Both are one click each; do them
-# on the same day as the automatic fetch and drop the files into data/raw/.
 MANUAL_SOURCES = {
     "edqm_cep": dict(
         filename="edqm_cep.txt",

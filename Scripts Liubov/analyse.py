@@ -1,13 +1,5 @@
-"""Country counts and concentration statistics for the Union list substances.
-
-Run:  python -m critmed.analyse
-
-Outputs (data/out/):
-  substance_supply.csv     one row per ULCM substance x role
-  country_totals.csv       one row per country
-  distribution.csv         how many substances are supplied from exactly k countries
-  sensitivity.csv          the same headline numbers with CEP status filtered
-  summary.txt             the numbers to hand over for the double-check
+"""
+Analyze supply data and produce summary tables and figures.
 """
 from __future__ import annotations
 
@@ -26,7 +18,7 @@ ROLES = ["api_cep", "bio_api", "batch_release", "mah_national"]
 def load_ulcm() -> pd.DataFrame:
     path = RAW / "ulcm.xlsx"
     if not path.exists():
-        raise SystemExit("ulcm.xlsx missing - run python -m critmed.fetch")
+        raise SystemExit("ulcm.xlsx missing - run python fetch.py")
     ul = read_ulcm(path)
 
     out = pd.DataFrame({"ulcm_substance_raw": ul["substance"].astype(str),
@@ -35,9 +27,6 @@ def load_ulcm() -> pd.DataFrame:
     out["norm_key"] = [n.key for n in norm]
     out["is_combination"] = [n.is_combination for n in norm]
     out = out[out["norm_key"].astype(bool)]
-    # One substance appears on several rows: different ATC codes (acetylcysteine
-    # is both R05CB01 and V03AB23) and different routes. Collapse to substance
-    # level, keeping every ATC seen.
     return (out.groupby("norm_key")
               .agg(ulcm_substance_raw=("ulcm_substance_raw", "first"),
                    atc_codes=("atc", lambda s: "|".join(sorted(set(x for x in s if x and x != "nan")))),
@@ -47,8 +36,6 @@ def load_ulcm() -> pd.DataFrame:
 
 
 def hhi(shares: pd.Series) -> float:
-    """Herfindahl-Hirschman index on 0-10000, the convention used in the
-    2010 DOJ/FTC guidelines (1500 / 2500 thresholds)."""
     p = shares / shares.sum()
     return float((p.pow(2).sum()) * 10000)
 
@@ -74,8 +61,6 @@ def per_substance(sup: pd.DataFrame, ulcm: pd.DataFrame) -> pd.DataFrame:
             "countries": "|".join(sorted(counts.index)),
         })
     res = pd.DataFrame(rows)
-    # left join keeps ULCM substances with zero coverage - that absence is a
-    # finding, not a row to discard
     full = ulcm.merge(res, on="norm_key", how="left")
     return full
 
@@ -83,7 +68,7 @@ def per_substance(sup: pd.DataFrame, ulcm: pd.DataFrame) -> pd.DataFrame:
 def main() -> int:
     src = INTERIM / "supply_long.csv"
     if not src.exists():
-        raise SystemExit("supply_long.csv missing - run python -m critmed.build_supply")
+        raise SystemExit("supply_long.csv missing - run python build_supply.py")
     sup = pd.read_csv(src, dtype=str)
     ulcm = load_ulcm()
     print(f"  ULCM substances after normalisation: {len(ulcm):,}")
@@ -91,7 +76,6 @@ def main() -> int:
     full = per_substance(sup, ulcm)
     full.to_csv(OUT / "substance_supply.csv", index=False)
 
-    # --- how many countries supply how many substances -----------------------
     in_scope = sup[sup["norm_key"].isin(set(ulcm["norm_key"])) & sup["country_iso2"].notna()]
     ct = (in_scope.groupby(["country_iso2", "role"])
           .agg(n_substances=("norm_key", "nunique"),
@@ -101,14 +85,12 @@ def main() -> int:
     ct["eu_eea"] = ct["country_iso2"].map(is_eu_eea)
     ct.to_csv(OUT / "country_totals.csv", index=False)
 
-    # --- distribution of country counts -------------------------------------
     dist = (full.dropna(subset=["n_countries"])
             .assign(n_countries=lambda d: d["n_countries"].astype(int))
             .groupby(["role", "n_countries"]).size()
             .rename("n_substances").reset_index())
     dist.to_csv(OUT / "distribution.csv", index=False)
 
-    # --- sensitivity: valid CEPs only vs everything -------------------------
     sens = []
     for label, subset in [("all_statuses", sup),
                           ("valid_only", sup[sup["status"].astype(str).str.lower().str.contains("valid", na=False)])]:
@@ -124,7 +106,6 @@ def main() -> int:
         })
     pd.DataFrame(sens).to_csv(OUT / "sensitivity.csv", index=False)
 
-    # --- headline numbers ----------------------------------------------------
     lines = [f"ULCM substances (normalised, deduplicated): {len(ulcm):,}"]
     for role in ROLES:
         r = full[full["role"] == role]
