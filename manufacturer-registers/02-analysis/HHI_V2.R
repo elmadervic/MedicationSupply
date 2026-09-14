@@ -76,9 +76,6 @@ cep     <- read.csv("Data/EXPORT_WEB_CEP_with_ATC_drugbank.csv", stringsAsFactor
 names(cep) <- janitor::make_clean_names(names(cep))
 ## -> columns now e.g. substance, certificate_cep_holder, status_cep, atc_code, ...
 
-critical <- read.csv("Data/critical.csv", stringsAsFactors = FALSE)
-
-
 country_map <- c(
   "Argentinien" = "Argentina", "Australien" = "Australia", "Belgien" = "Belgium",
   "Brasilien" = "Brazil", "Bulgarien" = "Bulgaria", "Kroatien" = "Croatia",
@@ -249,10 +246,35 @@ hhi_ireland <- compute_hhi(ireland_std, "Ireland")
 # cell like "G03CA03, G03HB01" would never exactly match a single
 # code in critical.csv, silently dropping the whole row otherwise).
 # ---------------------------------------------------------------
+## -----------------------------------------------------------------
+## Determine the critical ATC code universe.
+##
+## FALLBACK (added): this script read Data/critical.csv unconditionally
+## near the top, but that file isn't part of this data set, so a fresh
+## session stopped there. Handled the same way as ComebineAll4SourcesV2.R:
+## use Data/critical.csv when it exists, and otherwise fall back to the
+## derived union of EMA/Germany/Ireland's own ATC codes. The read moved
+## down to here, where the three cleaned frames the fallback needs exist,
+## and where its only use -- the CEP filter below -- is. Germany, EPAR
+## and Ireland are already pre-filtered to critical substances; CEP is
+## not, which is why only CEP is filtered against this universe.
+## -----------------------------------------------------------------
+if (file.exists("Data/critical.csv")) {
+  critical <- read.csv("Data/critical.csv", stringsAsFactors = FALSE)
+  critical_codes <- unique(critical$ATC.level.5)
+  critical_codes <- critical_codes[!is.na(critical_codes) & critical_codes != ""]
+  cat("Critical ATC codes loaded from Data/critical.csv:", length(critical_codes), "\n")
+} else {
+  critical_codes <- unique(c(epar_clean$atc_code, germany_clean$atc_code, ireland_std$atc_code))
+  critical_codes <- critical_codes[!is.na(critical_codes) & critical_codes != ""]
+  cat("Data/critical.csv not found -- falling back to the derived union of",
+      "EMA/Germany/Ireland's own ATC codes:", length(critical_codes), "\n")
+}
+
 cep_clean <- cep %>%
   filter(!is.na(atc_code), atc_code != "") %>%
   separate_rows(atc_code, sep = ",\\s*") %>%
-  filter(atc_code %in% critical$ATC.level.5) %>%
+  filter(atc_code %in% critical_codes) %>%
   mutate(
     holder_country_iso = str_extract(certificate_cep_holder, "[A-Z]{2}$"),
     country = unname(iso2_to_name[holder_country_iso])

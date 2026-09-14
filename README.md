@@ -24,19 +24,20 @@ These scripts read from a `Data/` folder relative to the working directory.
 ### Run order
 
 `ComebineAll4SourcesV2.R` first, it writes
-`manufacturer_registers_combined.csv`, which `PlotbySource_V2.R` reads. The
-rest are independent and read the four source files directly.
+`manufacturer_registers_combined.csv`, which `PlotbySource_V2.R` and
+`bubblePlot.R` read. The rest are independent and read the four source
+files directly.
 
 | script | produces |
 |---|---|
-| `ComebineAll4SourcesV2.R` | `manufacturer_registers_combined.csv` — one standardised table, filtered to critical ATC codes |
-| `PlotbySource_V2.R` | `Data/plots_by_source.png` — descriptive plots per source |
-| `HHI_V2.R` | `Data/hhi_*.csv` and `Data/hhi_*.png` — country-level HHI per ATC code, and which source drives the worst-case concentration |
-| `EEAnonEEASteps_V2.R` | `Data/manufacturing_sites_by_chapter_step_source.png` — sites by ATC chapter, split EEA-API / EEA-batch-release / non-EEA |
-| `IndiaChina_Steps_V2.R` | `Data/manufacturing_sites_by_chapter_country_group_source.png` — site share by China / India / EU-EEA / Other |
-| `api_diversification_by_source.R` | `Data/api_diversification_*.png` — API-producer count vs. China+India share per substance |
-| `bubblePlot.R` | `Data/bubble_matrix_*.png` — country × ATC main group bubble matrix |
-| `summaryCodeNameCountry_V2.R` | `Data/atc_summary_report_plot*.png` — summary by code, name and country |
+| `01-data-prep/ComebineAll4SourcesV2.R` | `manufacturer_registers_combined.csv` — one standardised table, filtered to critical ATC codes |
+| `03-figures/PlotbySource_V2.R` | `Data/plots_by_source.png` — descriptive plots per source |
+| `02-analysis/HHI_V2.R` | `Data/hhi_*.csv` and `Data/hhi_*.png` — country-level HHI per ATC code, and which source drives the worst-case concentration |
+| `03-figures/EEAnonEEASteps_V2.R` | `Data/manufacturing_sites_by_chapter_step_source.png` — sites by ATC chapter, split EEA-API / EEA-batch-release / non-EEA |
+| `03-figures/IndiaChina_Steps_V2.R` | `Data/manufacturing_sites_by_chapter_country_group_source.png` — site share by China / India / EU-EEA / Other |
+| `02-analysis/api_diversification_by_source.R` | `Data/api_diversification_*.png` — API-producer count vs. China+India share per substance |
+| `03-figures/bubblePlot.R` | `Data/bubble_matrix_*.png` — country × ATC main group bubble matrix |
+| `03-figures/summaryCodeNameCountry_V2.R` | `Data/atc_summary_report_plot*.png` — summary by code, name and country |
 
 Plots and intermediate CSVs are written back into `Data/`.
 
@@ -78,7 +79,7 @@ runs.
 | `bfarm_shortages.csv` | downloaded manually on 23.08.2026|
 | `manufacturers.csv` | copied from an earlier project, see below |
 
-config.py` records where each
+`config.py` records where each
 came from and how to repeat the download.
 
 `manufacturers.csv` is not produced in this project. It is the output of the student project, which
@@ -91,11 +92,11 @@ Run these from inside `supply-analysis/` (with `venv` activated), as plain scrip
 not with `python -m`, since this folder isn't an importable package.
 
 ```bash
-python fetch.py
+python 01-data-prep/fetch.py
 ```
 
 ```bash
-python inspect_sources.py > ../data/out/schema_report.txt
+python 01-data-prep/inspect_sources.py > ../data/out/schema_report.txt
 ```
 
 Prints the real column names, row counts and sample values of every file in
@@ -103,7 +104,7 @@ Prints the real column names, row counts and sample values of every file in
 
 
 ```bash
-python build_supply.py
+python 01-data-prep/build_supply.py
 ```
 
 Parses every source, normalises substance names, resolves countries, writes
@@ -112,7 +113,7 @@ role.
 
 
 ```bash
-python analyse.py
+python 02-analysis/analyse.py
 ```
 
 Writes to `data/out/`:
@@ -126,7 +127,7 @@ Writes to `data/out/`:
 | `sensitivity.csv` | the same numbers with valid-only vs all CEP statuses |
 
 ```bash
-python qc.py
+python 02-analysis/qc.py
 ```
 
 Prints PASS / WARN / FAIL for each check below, then exits non-zero if any of
@@ -142,4 +143,4 @@ them failed. Warnings never affect the exit code.
 | combination handling | — | never fails. Reports how many ULCM entries parsed as combinations, to be spot-checked by hand |
 | ULCM parse | FAIL | 2% or more of ULCM rows normalise to an empty key |
 
-All manual checks after `qc.py` were performaed and confirmed the script's results.
+All manual checks after `qc.py` were performed and confirmed the script's results.

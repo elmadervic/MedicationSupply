@@ -3,7 +3,8 @@ Source registry and paths.
 """
 from pathlib import Path
 
-ROOT = Path(__file__).resolve().parent.parent
+# common/ -> supply-analysis/ -> repository root
+ROOT = Path(__file__).resolve().parent.parent.parent
 RAW = ROOT / "data" / "raw"
 INTERIM = ROOT / "data" / "interim"
 OUT = ROOT / "data" / "out"

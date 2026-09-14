@@ -41,11 +41,13 @@ bold_unicode <- function(x) {
 data <- read.csv("manufacturer_registers_combined.csv", stringsAsFactors = FALSE)
 nrow(data)
 
-if (!exists("critical")) {
-  critical <- read.csv("Data/critical.csv", stringsAsFactors = FALSE)
-}
-
-data <- data %>% filter(atc_code %in% critical$ATC.level.5)
+# FIX (added): this re-filtered `data` to critical$ATC.level.5, read from
+# Data/critical.csv -- but that file isn't part of this data set, so a
+# fresh session stopped here. The `exists("critical")` guard only helped
+# when some earlier script had already left `critical` in the session.
+# The re-filter is redundant in any case: manufacturer_registers_combined.csv
+# was already filtered to critical ATC codes when it was produced (see
+# ComebineAll4SourcesV2.R). Same fix as PlotbySource_V2.R -- removed.
 
 
 # fix: translate German (and other non-English) country names to English

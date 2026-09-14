@@ -91,9 +91,6 @@ EPAR <- read.csv("Data/EMA_data_critical.csv") %>%
 ireland <- read.csv("Data/ireland_critical_atc_review.csv")
 str(ireland)
 
-critical <- read.csv("Data/critical.csv")
-str(critical)
-
 # FIX #4: use the file's own pre-cleaned matched_critical_atc column
 # directly, instead of re-deriving atc_code from the raw combined text
 # field with a regex that could also match chapter-level parent codes.
@@ -107,6 +104,33 @@ ireland <- ireland %>%
   unnest(atc_split) %>%
   mutate(atc_code = str_trim(atc_split)) %>%
   select(-atc_split)
+
+## -----------------------------------------------------------------
+## Determine the critical ATC code universe.
+##
+## FALLBACK (added): this script read Data/critical.csv unconditionally,
+## but that file isn't part of this data set, so a fresh session stopped
+## here. Handled the same way as ComebineAll4SourcesV2.R: use
+## Data/critical.csv when it exists, and otherwise fall back to the
+## derived union of EMA/Germany/Ireland's own ATC codes. Those three
+## files are already pre-filtered to critical substances, so their union
+## approximates the reference list; CEP is not pre-filtered, and is what
+## the filter below actually constrains. The derived union is only an
+## approximation -- when the real reference file is present, this script
+## and ComebineAll4SourcesV2.R use exactly the same universe.
+## -----------------------------------------------------------------
+if (file.exists("Data/critical.csv")) {
+  critical <- read.csv("Data/critical.csv")
+  str(critical)
+  critical_codes <- unique(critical$ATC.level.5)
+  critical_codes <- critical_codes[!is.na(critical_codes) & critical_codes != ""]
+  cat("Critical ATC codes loaded from Data/critical.csv:", length(critical_codes), "\n")
+} else {
+  critical_codes <- unique(c(EPAR$atc_code, germany$atc_code, ireland$atc_code))
+  critical_codes <- critical_codes[!is.na(critical_codes) & critical_codes != ""]
+  cat("Data/critical.csv not found -- falling back to the derived union of",
+      "EMA/Germany/Ireland's own ATC codes:", length(critical_codes), "\n")
+}
 
 # FIX #3 (revised): split mfr_company AND mfr_country TOGETHER so each
 # manufacturer stays paired with its own country, instead of only
@@ -162,7 +186,7 @@ if (n_fallback > 0) {
 
 ireland <- bind_rows(ireland_matched, ireland_fallback)
 
-ireland <- ireland %>% filter(atc_code %in% critical$ATC.level.5)
+ireland <- ireland %>% filter(atc_code %in% critical_codes)
 str(germany)
 
 
@@ -175,7 +199,7 @@ str(germany)
 # in with spaced column names ("Substance", "Certificate (CEP) Holder")
 # and no holder_country, so we clean names and derive it ourselves.
 if (!exists("cep_atc")) {
-  cep_atc <- read_csv("EXPORT_WEB_CEP_with_ATC_drugbank.csv", show_col_types = FALSE)
+  cep_atc <- read_csv("Data/EXPORT_WEB_CEP_with_ATC_drugbank.csv", show_col_types = FALSE)
 }
 
 # Always clean names, whether cep_atc was just read or reused from an
@@ -223,7 +247,7 @@ iso2_to_name <- c(
 cep_full <- cep_atc %>%
   filter(!is.na(atc_code), atc_code != "") %>%
   separate_rows(atc_code, sep = ",\\s*") %>%       # split multi-code cells first
-  filter(atc_code %in% critical$ATC.level.5) %>%
+  filter(atc_code %in% critical_codes) %>%
   transmute(
     atc_code,
     medicine    = substance,

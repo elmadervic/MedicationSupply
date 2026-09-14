@@ -8,6 +8,13 @@ import sys
 
 import pandas as pd
 
+# The shared modules live in supply-analysis/common -- put that directory on
+# the import path so this script can still be run directly, from any working
+# directory, exactly as the README describes.
+from pathlib import Path
+
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "common"))
+
 from config import INTERIM, MANIFEST, OUT, RAW
 from normalize import normalise
 from ulcm import read_ulcm
