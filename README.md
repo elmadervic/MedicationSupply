@@ -4,7 +4,7 @@ R analysis scripts for the manufacturer-register work: they combine four
 manufacturing-site registers into one table and produce the concentration
 analyses and plots.
 
-### Reproducibility caveat
+### Reproducibility
 
 **The scraping scripts will not reproduce the resulting data 100% exactly.** The
 data was checked manually and some rows were corrected by hand. 
