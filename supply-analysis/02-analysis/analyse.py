@@ -7,19 +7,15 @@ import sys
 
 import pandas as pd
 
-# The shared modules live in supply-analysis/common -- put that directory on
-# the import path so this script can still be run directly, from any working
-# directory, exactly as the README describes.
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "common"))
 
-from config import INTERIM, OUT, RAW
+from atc import level1
+from config import COUNTRY_ROLES, INTERIM, OUT, RAW, ROLES
 from countries import is_eu_eea
 from normalize import normalise
 from ulcm import read_ulcm
-
-ROLES = ["api_cep", "bio_api", "batch_release", "mah_national"]
 
 
 def load_ulcm() -> pd.DataFrame:
@@ -72,6 +68,52 @@ def per_substance(sup: pd.DataFrame, ulcm: pd.DataFrame) -> pd.DataFrame:
     return full
 
 
+def explode_atc(sup: pd.DataFrame) -> pd.DataFrame:
+    out = sup.copy()
+    out["atc_codes"] = out["atc_codes"].fillna("")
+    out = out[out["atc_codes"].astype(bool)].copy()
+    out["atc_code"] = out["atc_codes"].str.split("|")
+    out = out.explode("atc_code")
+    out = out[out["atc_code"].astype(bool)]
+    out["atc_level1"] = out["atc_code"].map(level1)
+    return out
+
+
+def _country_stats(grp: pd.DataFrame) -> dict:
+    known = grp[grp["country_iso2"].notna()]
+    if known.empty:
+        return {"n_countries": pd.NA, "top_country": pd.NA,
+                "top_country_share": pd.NA, "hhi_country": pd.NA,
+                "eu_eea_share": pd.NA}
+    counts = known.groupby("country_iso2")["supplier_norm"].nunique()
+    return {
+        "n_countries": int((counts > 0).sum()),
+        "top_country": counts.idxmax(),
+        "top_country_share": round(float(counts.max() / counts.sum()), 4),
+        "hhi_country": round(hhi(counts), 1),
+        "eu_eea_share": round(float(counts[[is_eu_eea(c) for c in counts.index]].sum() / counts.sum()), 4),
+    }
+
+
+def per_atc(sup_atc: pd.DataFrame, ulcm_keys: set[str], level: str = "atc_code") -> pd.DataFrame:
+    rows = []
+    for (code, role), grp in sup_atc.groupby([level, "role"]):
+        row = {level: code}
+        if level != "atc_level1":
+            row["atc_level1"] = level1(code)
+        row.update({
+            "role": role,
+            "n_substances": grp["norm_key"].nunique(),
+            "n_suppliers": grp["supplier_norm"].nunique(),
+            "n_ulcm_substances": grp.loc[grp["norm_key"].isin(ulcm_keys), "norm_key"].nunique(),
+            **_country_stats(grp),
+        })
+        rows.append(row)
+    return (pd.DataFrame(rows)
+            .sort_values([level, "role"])
+            .reset_index(drop=True))
+
+
 def main() -> int:
     src = INTERIM / "supply_long.csv"
     if not src.exists():
@@ -113,11 +155,34 @@ def main() -> int:
         })
     pd.DataFrame(sens).to_csv(OUT / "sensitivity.csv", index=False)
 
+    ulcm_keys = set(ulcm["norm_key"])
+    sup_atc = explode_atc(sup)
+    per_atc(sup_atc, ulcm_keys, "atc_code").to_csv(OUT / "atc_supply.csv", index=False)
+    chapters = per_atc(sup_atc, ulcm_keys, "atc_level1")
+    chapters.to_csv(OUT / "atc_chapter_totals.csv", index=False)
+
     lines = [f"ULCM substances (normalised, deduplicated): {len(ulcm):,}"]
+
+    have = sup["atc_codes"].fillna("").astype(bool)
+    lines.append(f"\n[ATC coverage] {have.sum():,} of {len(sup):,} supply rows "
+                 f"carry an ATC code ({have.mean():.1%}); "
+                 f"{sup_atc['atc_code'].nunique():,} distinct codes")
+    for source, grp in sup.assign(has=have).groupby("source"):
+        lines.append(f"    {source:<10} {int(grp['has'].sum()):>6,} / {len(grp):>6,}  "
+                     f"{grp['has'].mean():>6.1%}")
     for role in ROLES:
         r = full[full["role"] == role]
         if r.empty:
-            lines.append(f"\n[{role}] no data")
+            n_rows = int((sup["role"] == role).sum())
+            if role not in COUNTRY_ROLES and n_rows:
+                subs = sup.loc[sup["role"] == role, "norm_key"]
+                lines.append(
+                    f"\n[{role}] {n_rows:,} rows covering {subs.nunique():,} substances "
+                    f"({subs.isin(ulcm_keys).sum():,} rows on ULCM substances) - "
+                    "no country published for this source, so it is excluded "
+                    "from the concentration measures above")
+            else:
+                lines.append(f"\n[{role}] no data")
             continue
         lines += [
             f"\n[{role}]",
@@ -132,13 +197,25 @@ def main() -> int:
         lines.append("  top countries by substances supplied:")
         for _, row in top.iterrows():
             lines.append(f"    {row['country_iso2']}  {int(row['n_substances']):>4d}")
+    api_chapters = (chapters[chapters["role"] == "api_cep"]
+                    .dropna(subset=["hhi_country"])
+                    .sort_values("hhi_country", ascending=False))
+    if len(api_chapters):
+        lines.append("\n[api_cep by ATC chapter] most country-concentrated first")
+        lines.append(f"    {'ch':<3} {'subst':>6} {'suppl':>6} {'ctry':>5} {'HHI':>7} {'top':>4} {'EU/EEA':>7}")
+        for _, row in api_chapters.iterrows():
+            lines.append(f"    {row['atc_level1']:<3} {int(row['n_substances']):>6,} "
+                         f"{int(row['n_suppliers']):>6,} {int(row['n_countries']):>5} "
+                         f"{row['hhi_country']:>7,.0f} {str(row['top_country']):>4} "
+                         f"{row['eu_eea_share']:>6.0%}")
+
     uncovered = full[full["role"].isna()]
     lines.append(f"\nULCM substances with NO supply data in any source: {len(uncovered):,}")
 
     text = "\n".join(lines)
     (OUT / "summary.txt").write_text(text, encoding="utf-8")
     print("\n" + text)
-    return 0
+    return 0 
 
 
 if __name__ == "__main__":

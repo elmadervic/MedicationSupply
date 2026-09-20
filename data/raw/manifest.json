@@ -1,5 +1,5 @@
 {
-  "snapshot_utc": "2026-09-14T12:05:29+00:00",
+  "snapshot_utc": "2026-09-20T21:14:42+00:00",
   "sources": {
     "ulcm": {
       "url": "https://www.ema.europa.eu/en/documents/other/union-list-critical-medicines-en.xlsx",
@@ -7,25 +7,25 @@
       "role": "universe",
       "bytes": 402203,
       "sha256": "9bb29f47486a16ad90168a2fb0bd7a746a2ea2ee99b2f4913e572fe69805eb2c",
-      "fetched_utc": "2026-09-14T12:05:30+00:00",
+      "fetched_utc": "2026-09-20T21:14:43+00:00",
       "content_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
     },
     "ema_medicines": {
       "url": "https://www.ema.europa.eu/en/documents/report/medicines-output-medicines-report_en.xlsx",
       "file": "ema_medicines.xlsx",
       "role": "supply",
-      "bytes": 898421,
-      "sha256": "989dc9fa041e3b0aaac2a483c224fc42ba7b0fcdf16a881f2db8c8d6b804a306",
-      "fetched_utc": "2026-09-14T12:05:30+00:00",
+      "bytes": 901428,
+      "sha256": "4d56f88ef3e0d11d6fb4ea2597b52770ddae5f0b62e20f480c6aef13290881bd",
+      "fetched_utc": "2026-09-20T21:14:43+00:00",
       "content_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
     },
     "ema_shortages": {
       "url": "https://www.ema.europa.eu/en/documents/report/medicines-output-shortages-report_en.xlsx",
       "file": "ema_shortages.xlsx",
       "role": "outcome",
-      "bytes": 88238,
-      "sha256": "343de7e6731c8fd2751363b4791dd0e593e9f1b3a81b39ccc352870b6717dfb9",
-      "fetched_utc": "2026-09-14T12:05:30+00:00",
+      "bytes": 88170,
+      "sha256": "230accc9638c9e5819a12d3dbb50603f81fc3f0f217be993e667d4cb1faa0782",
+      "fetched_utc": "2026-09-20T21:14:43+00:00",
       "content_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
     },
     "bfarm_versorgungsrelevant": {
@@ -34,27 +34,27 @@
       "role": "universe",
       "bytes": 528986,
       "sha256": "dee5f6e2536761e0604f63301e1104981e079ec80479cf3cf46090da564d4366",
-      "fetched_utc": "2026-09-14T12:05:31+00:00",
+      "fetched_utc": "2026-09-20T21:14:44+00:00",
       "content_type": "application/pdf"
     },
     "hpra_products": {
       "url": "http://www.hpra.ie/img/uploaded/swedocuments/latestHMlist.xml",
       "file": "hpra_products.xml",
       "role": "supply",
-      "bytes": 13540080,
-      "sha256": "2b732fede5f38b8813c357dd84ef77371ab9c29f3f0fdea7b337dc03150f507a",
-      "fetched_utc": "2026-09-14T12:05:34+00:00",
+      "bytes": 13546133,
+      "sha256": "975f0a8d6837a91e1a5626b76cee96616898030bd5285980f3559ee571499034",
+      "fetched_utc": "2026-09-20T21:14:52+00:00",
       "content_type": "application/xml"
     },
     "fda_shortages": {
       "url": "https://api.fda.gov/drug/shortages.json?limit=1000",
       "file": "fda_shortages.json",
       "role": "outcome",
-      "bytes": 2086119,
-      "sha256": "f7df7ef84c0a3b1dca0d2065961245fac09226cbbfef03479617bae7ae5d2f33",
-      "fetched_utc": "2026-09-14T12:05:58+00:00",
-      "n_records": 1602,
-      "reported_total": 1602
+      "bytes": 2081336,
+      "sha256": "2dd0b491b5c7439c91bdc9350c02beacdc1dd2e0732285b0b5efbc0f68a1551a",
+      "fetched_utc": "2026-09-20T21:15:17+00:00",
+      "n_records": 1603,
+      "reported_total": 1603
     },
     "edqm_cep": {
       "url": "https://extranet.edqm.eu/publications/recherches_CEP.shtml",
@@ -63,7 +63,7 @@
       "manual": true,
       "bytes": 1457610,
       "sha256": "92c69bdaced8a585290377b687edaf63ab46beae9531bef1008935769c55db80",
-      "mtime_local": "2026-08-23T21:25:24"
+      "mtime_local": "2026-08-23T20:25:24"
     },
     "bfarm_shortages": {
       "url": "https://anwendungen.pharmnet-bund.de/lieferengpassmeldungen/faces/public/meldungen.xhtml",
@@ -72,7 +72,7 @@
       "manual": true,
       "bytes": 2753490,
       "sha256": "637cd7e88f84613f20ed99def6414e5efbbe6f88ee1c3899e2c81e4c9991894d",
-      "mtime_local": "2026-08-23T21:31:13"
+      "mtime_local": "2026-08-23T20:31:13"
     }
   }
 }

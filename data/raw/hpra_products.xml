@@ -1,4 +1,4 @@
-<Products xmlns="https://assets.hpra.ie/products//xml/Human" xsi:schemaLocation="https://assets.hpra.ie/products//xml/Human https://assets.hpra.ie/products//xml/Human.xsd" schemaVersion="1.0" datePublished="2026-09-14T02:30:03" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<Products xmlns="https://assets.hpra.ie/products//xml/Human" xsi:schemaLocation="https://assets.hpra.ie/products//xml/Human https://assets.hpra.ie/products//xml/Human.xsd" schemaVersion="1.0" datePublished="2026-09-20T02:30:08" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <Product>
     <DrugIDPK>PA0179/002/013</DrugIDPK>
     <LicenceNumber>PA0179/002/013</LicenceNumber>
@@ -2223,6 +2223,7 @@ Characteristics, section 4.2).</SupplyComments>
   <Product>
     <DrugIDPK>PA22697/001/001</DrugIDPK>
     <LicenceNumber>PA22697/001/001</LicenceNumber>
+    <InterchangeableListCode>IC0203-223-027</InterchangeableListCode>
     <ProductName>Aciclovir 200 mg/5ml Oral Suspension</ProductName>
     <PAHolder>Syri Pharma Limited t/a Thame Laboratories</PAHolder>
     <AuthorisedDate>26/05/2016</AuthorisedDate>
@@ -12820,7 +12821,7 @@ Promotion to the general public only for indications appropriat</SupplyComments>
     <DrugIDPK>PA2315/076/001</DrugIDPK>
     <LicenceNumber>PA2315/076/001</LicenceNumber>
     <InterchangeableListCode>IC0011-039-003</InterchangeableListCode>
-    <ProductName>Anastrozole 1mg Film-coated Tablets</ProductName>
+    <ProductName>Anastrozole 1 mg film-coated tablets</ProductName>
     <PAHolder>Accord Healthcare Ireland Ltd.</PAHolder>
     <AuthorisedDate>02/07/2010</AuthorisedDate>
     <ProductType>HM</ProductType>
@@ -12848,6 +12849,7 @@ Promotion to the general public only for indications appropriat</SupplyComments>
   <Product>
     <DrugIDPK>PA25364/005/001</DrugIDPK>
     <LicenceNumber>PA25364/005/001</LicenceNumber>
+    <InterchangeableListCode>IC0011-039-003</InterchangeableListCode>
     <ProductName>Anastrozole Amarox 1 mg film-coated tablets</ProductName>
     <PAHolder>Amarox Pharma B.V.</PAHolder>
     <AuthorisedDate>09/04/2026</AuthorisedDate>
@@ -12876,7 +12878,7 @@ Promotion to the general public only for indications appropriat</SupplyComments>
     <DrugIDPK>PA0840/004/001</DrugIDPK>
     <LicenceNumber>PA0840/004/001</LicenceNumber>
     <InterchangeableListCode>IC0011-039-003</InterchangeableListCode>
-    <ProductName>Anastrozole Synthon 1 mg, film-coated tablets</ProductName>
+    <ProductName>Anastrozole Synthon 1 mg film-coated tablets</ProductName>
     <PAHolder>Synthon BV</PAHolder>
     <AuthorisedDate>28/09/2007</AuthorisedDate>
     <ProductType>HM</ProductType>
@@ -12905,7 +12907,7 @@ Promotion to the general public only for indications appropriat</SupplyComments>
     <DrugIDPK>PA0749/028/001</DrugIDPK>
     <LicenceNumber>PA0749/028/001</LicenceNumber>
     <InterchangeableListCode>IC0011-039-003</InterchangeableListCode>
-    <ProductName>Anastrozole Teva 1 mg Film-coated Tablets</ProductName>
+    <ProductName>Anastrozole Teva 1 mg film-coated tablets</ProductName>
     <PAHolder>Teva Pharma B.V.</PAHolder>
     <AuthorisedDate>23/11/2007</AuthorisedDate>
     <ProductType>HM</ProductType>
@@ -13243,7 +13245,7 @@ Promotion to the general public only for indications appropriat</SupplyComments>
     <DrugIDPK>PA0711/278/001</DrugIDPK>
     <LicenceNumber>PA0711/278/001</LicenceNumber>
     <ProductName>Anidulafungin 100 mg Powder for concentrate for solution for infusion</ProductName>
-    <PAHolder>Rowex Ltd</PAHolder>
+    <PAHolder>Rowex Limited,</PAHolder>
     <AuthorisedDate>15/02/2019</AuthorisedDate>
     <ProductType>HM</ProductType>
     <MarketInfo>Marketed</MarketInfo>
@@ -17296,12 +17298,70 @@ Characteristics, section 4.2)</SupplyComments>
     <SupplyComments>Medicinal product subject to restricted medical prescription (see Annex I: Summary of Product Characteristics, section 4.2).</SupplyComments>
   </Product>
   <Product>
+    <DrugIDPK>PA23154/001/001</DrugIDPK>
+    <LicenceNumber>PA23154/001/001</LicenceNumber>
+    <InterchangeableListCode>IC0011-039-003</InterchangeableListCode>
+    <ProductName>Arimidex 1 mg film-coated tablets</ProductName>
+    <PAHolder>Laboratoires Juvise Pharmaceuticals</PAHolder>
+    <AuthorisedDate>11/08/2000</AuthorisedDate>
+    <ProductType>HM</ProductType>
+    <MarketInfo>Marketed</MarketInfo>
+    <RegistrationStatus>AU</RegistrationStatus>
+    <DosageForm>Film-coated tablet</DosageForm>
+    <ATCs>
+      <ATC>L02BG</ATC>
+      <ATC>L02BG03</ATC>
+    </ATCs>
+    <LegalBasis>Full application (Article 8(3) of Directive No 2001/83/EC)</LegalBasis>
+    <RoutesOfAdministration>
+      <RoutesOfAdministration>Oral use</RoutesOfAdministration>
+    </RoutesOfAdministration>
+    <ActiveSubstances>
+      <ActiveSubstance>Anastrozole</ActiveSubstance>
+    </ActiveSubstances>
+    <DispensingLegalStatus>
+      <Status>Product subject to prescription which may not be renewed (A)</Status>
+    </DispensingLegalStatus>
+    <SupplyLegalStatus>Supply through pharmacies only</SupplyLegalStatus>
+    <PromotionLegalStatus>Advertising to healthcare professionals only</PromotionLegalStatus>
+    <SupplyComments xsi:nil="true" />
+  </Product>
+  <Product>
     <DrugIDPK>PPA0465/218/001</DrugIDPK>
     <LicenceNumber>PPA0465/218/001</LicenceNumber>
     <InterchangeableListCode>IC0011-039-003</InterchangeableListCode>
     <ProductName>Arimidex 1 mg film-coated tablets</ProductName>
     <PAHolder>PCO Manufacturing Ltd.</PAHolder>
     <AuthorisedDate>28/05/2009</AuthorisedDate>
+    <ProductType>HM</ProductType>
+    <MarketInfo>Unknown</MarketInfo>
+    <RegistrationStatus>AU</RegistrationStatus>
+    <DosageForm>Film-coated tablet</DosageForm>
+    <ATCs>
+      <ATC>L02BG</ATC>
+      <ATC>L02BG03</ATC>
+    </ATCs>
+    <LegalBasis>Parallel importation notified in accordance with Article 76(3) of Directive 2001/83/EC</LegalBasis>
+    <RoutesOfAdministration>
+      <RoutesOfAdministration>Oral use</RoutesOfAdministration>
+    </RoutesOfAdministration>
+    <ActiveSubstances>
+      <ActiveSubstance>Anastrozole</ActiveSubstance>
+    </ActiveSubstances>
+    <DispensingLegalStatus>
+      <Status>Product subject to prescription which may not be renewed (A)</Status>
+    </DispensingLegalStatus>
+    <SupplyLegalStatus>Supply through pharmacies only</SupplyLegalStatus>
+    <PromotionLegalStatus>Advertising to healthcare professionals only</PromotionLegalStatus>
+    <SupplyComments xsi:nil="true" />
+  </Product>
+  <Product>
+    <DrugIDPK>PPA1463/070/001</DrugIDPK>
+    <LicenceNumber>PPA1463/070/001</LicenceNumber>
+    <InterchangeableListCode>IC0011-039-003</InterchangeableListCode>
+    <ProductName>Arimidex 1 mg film-coated tablets</ProductName>
+    <PAHolder>IMED Healthcare Ltd.,</PAHolder>
+    <AuthorisedDate>28/09/2012</AuthorisedDate>
     <ProductType>HM</ProductType>
     <MarketInfo>Unknown</MarketInfo>
     <RegistrationStatus>AU</RegistrationStatus>
@@ -17339,64 +17399,6 @@ Characteristics, section 4.2)</SupplyComments>
       <ATC>L02BG03</ATC>
     </ATCs>
     <LegalBasis>Parallel importation notified in accordance with Article 76(3) of Directive 2001/83/EC</LegalBasis>
-    <RoutesOfAdministration>
-      <RoutesOfAdministration>Oral use</RoutesOfAdministration>
-    </RoutesOfAdministration>
-    <ActiveSubstances>
-      <ActiveSubstance>Anastrozole</ActiveSubstance>
-    </ActiveSubstances>
-    <DispensingLegalStatus>
-      <Status>Product subject to prescription which may not be renewed (A)</Status>
-    </DispensingLegalStatus>
-    <SupplyLegalStatus>Supply through pharmacies only</SupplyLegalStatus>
-    <PromotionLegalStatus>Advertising to healthcare professionals only</PromotionLegalStatus>
-    <SupplyComments xsi:nil="true" />
-  </Product>
-  <Product>
-    <DrugIDPK>PPA1463/070/001</DrugIDPK>
-    <LicenceNumber>PPA1463/070/001</LicenceNumber>
-    <InterchangeableListCode>IC0011-039-003</InterchangeableListCode>
-    <ProductName>Arimidex 1 mg Film-coated Tablets</ProductName>
-    <PAHolder>IMED Healthcare Ltd.,</PAHolder>
-    <AuthorisedDate>28/09/2012</AuthorisedDate>
-    <ProductType>HM</ProductType>
-    <MarketInfo>Unknown</MarketInfo>
-    <RegistrationStatus>AU</RegistrationStatus>
-    <DosageForm>Film-coated tablet</DosageForm>
-    <ATCs>
-      <ATC>L02BG</ATC>
-      <ATC>L02BG03</ATC>
-    </ATCs>
-    <LegalBasis>Parallel importation notified in accordance with Article 76(3) of Directive 2001/83/EC</LegalBasis>
-    <RoutesOfAdministration>
-      <RoutesOfAdministration>Oral use</RoutesOfAdministration>
-    </RoutesOfAdministration>
-    <ActiveSubstances>
-      <ActiveSubstance>Anastrozole</ActiveSubstance>
-    </ActiveSubstances>
-    <DispensingLegalStatus>
-      <Status>Product subject to prescription which may not be renewed (A)</Status>
-    </DispensingLegalStatus>
-    <SupplyLegalStatus>Supply through pharmacies only</SupplyLegalStatus>
-    <PromotionLegalStatus>Advertising to healthcare professionals only</PromotionLegalStatus>
-    <SupplyComments xsi:nil="true" />
-  </Product>
-  <Product>
-    <DrugIDPK>PA23154/001/001</DrugIDPK>
-    <LicenceNumber>PA23154/001/001</LicenceNumber>
-    <InterchangeableListCode>IC0011-039-003</InterchangeableListCode>
-    <ProductName>Arimidex 1mg Film-coated Tablets</ProductName>
-    <PAHolder>Laboratoires Juvise Pharmaceuticals</PAHolder>
-    <AuthorisedDate>11/08/2000</AuthorisedDate>
-    <ProductType>HM</ProductType>
-    <MarketInfo>Marketed</MarketInfo>
-    <RegistrationStatus>AU</RegistrationStatus>
-    <DosageForm>Film-coated tablet</DosageForm>
-    <ATCs>
-      <ATC>L02BG</ATC>
-      <ATC>L02BG03</ATC>
-    </ATCs>
-    <LegalBasis>Full application (Article 8(3) of Directive No 2001/83/EC)</LegalBasis>
     <RoutesOfAdministration>
       <RoutesOfAdministration>Oral use</RoutesOfAdministration>
     </RoutesOfAdministration>
@@ -29589,9 +29591,7 @@ Characteristics, section 4.2).</SupplyComments>
       <ATC>L02BB03</ATC>
     </ATCs>
     <LegalBasis>Generic application (Article 10(1) of Directive No 2001/83/EC)</LegalBasis>
-    <RoutesOfAdministration>
-      <RoutesOfAdministration>Oral use</RoutesOfAdministration>
-    </RoutesOfAdministration>
+    <RoutesOfAdministration xsi:nil="true" />
     <ActiveSubstances>
       <ActiveSubstance>Bicalutamide</ActiveSubstance>
     </ActiveSubstances>
@@ -29618,9 +29618,7 @@ Characteristics, section 4.2).</SupplyComments>
       <ATC>L02BB03</ATC>
     </ATCs>
     <LegalBasis>Generic application (Article 10(1) of Directive No 2001/83/EC)</LegalBasis>
-    <RoutesOfAdministration>
-      <RoutesOfAdministration>Oral use</RoutesOfAdministration>
-    </RoutesOfAdministration>
+    <RoutesOfAdministration xsi:nil="true" />
     <ActiveSubstances>
       <ActiveSubstance>Bicalutamide</ActiveSubstance>
     </ActiveSubstances>
@@ -34683,7 +34681,7 @@ Characteristics, section 4.2).</SupplyComments>
     <PAHolder>Clonmel Healthcare Ltd</PAHolder>
     <AuthorisedDate>28/03/2025</AuthorisedDate>
     <ProductType>HM</ProductType>
-    <MarketInfo>Not marketed</MarketInfo>
+    <MarketInfo>Marketed</MarketInfo>
     <RegistrationStatus>AU</RegistrationStatus>
     <DosageForm>Film-coated tablet</DosageForm>
     <ATCs>
@@ -34710,7 +34708,7 @@ Characteristics, section 4.2).</SupplyComments>
     <PAHolder>Clonmel Healthcare Ltd</PAHolder>
     <AuthorisedDate>28/03/2025</AuthorisedDate>
     <ProductType>HM</ProductType>
-    <MarketInfo>Not marketed</MarketInfo>
+    <MarketInfo>Marketed</MarketInfo>
     <RegistrationStatus>AU</RegistrationStatus>
     <DosageForm>Film-coated tablet</DosageForm>
     <ATCs>
@@ -34737,7 +34735,7 @@ Characteristics, section 4.2).</SupplyComments>
     <PAHolder>Clonmel Healthcare Ltd</PAHolder>
     <AuthorisedDate>28/03/2025</AuthorisedDate>
     <ProductType>HM</ProductType>
-    <MarketInfo>Not marketed</MarketInfo>
+    <MarketInfo>Marketed</MarketInfo>
     <RegistrationStatus>AU</RegistrationStatus>
     <DosageForm>Film-coated tablet</DosageForm>
     <ATCs>
@@ -34764,7 +34762,7 @@ Characteristics, section 4.2).</SupplyComments>
     <PAHolder>Clonmel Healthcare Ltd</PAHolder>
     <AuthorisedDate>28/03/2025</AuthorisedDate>
     <ProductType>HM</ProductType>
-    <MarketInfo>Not marketed</MarketInfo>
+    <MarketInfo>Marketed</MarketInfo>
     <RegistrationStatus>AU</RegistrationStatus>
     <DosageForm>Film-coated tablet</DosageForm>
     <ATCs>
@@ -34791,7 +34789,7 @@ Characteristics, section 4.2).</SupplyComments>
     <PAHolder>Clonmel Healthcare Ltd</PAHolder>
     <AuthorisedDate>28/03/2025</AuthorisedDate>
     <ProductType>HM</ProductType>
-    <MarketInfo>Not marketed</MarketInfo>
+    <MarketInfo>Marketed</MarketInfo>
     <RegistrationStatus>AU</RegistrationStatus>
     <DosageForm>Film-coated tablet</DosageForm>
     <ATCs>
@@ -42944,10 +42942,10 @@ Characteristics, section 4.2).</SupplyComments>
     <DrugIDPK>PA0281/223/002</DrugIDPK>
     <LicenceNumber>PA0281/223/002</LicenceNumber>
     <ProductName>Cefotaxime 1g Powder for solution for injection or infusion</ProductName>
-    <PAHolder>Pinewood Laboratories Ltd</PAHolder>
+    <PAHolder>Pinewood Laboratories Limited</PAHolder>
     <AuthorisedDate>19/09/2003</AuthorisedDate>
     <ProductType>HM</ProductType>
-    <MarketInfo>Marketed</MarketInfo>
+    <MarketInfo>Not marketed</MarketInfo>
     <RegistrationStatus>AU</RegistrationStatus>
     <DosageForm>Powder for solution for injection/infusion</DosageForm>
     <ATCs>
@@ -44688,6 +44686,31 @@ Characteristics, section 4.2).</SupplyComments>
     <SupplyComments>Medicinal product subject to restricted medical prescription (see Annex I: Summary of Product Characteristics, section 4.2).</SupplyComments>
   </Product>
   <Product>
+    <DrugIDPK>EU/1/25/2011/001-003</DrugIDPK>
+    <LicenceNumber>EU/1/25/2011/001-003</LicenceNumber>
+    <ProductName>Cenrifki 60 mg film-coated tablets</ProductName>
+    <PAHolder>Sanofi Winthrop Industrie</PAHolder>
+    <AuthorisedDate xsi:nil="true" />
+    <ProductType>HM</ProductType>
+    <MarketInfo>Unknown</MarketInfo>
+    <RegistrationStatus>AU</RegistrationStatus>
+    <DosageForm>Film-coated tablet</DosageForm>
+    <ATCs xsi:nil="true" />
+    <LegalBasis>Full application (Article 8(3) of Directive No 2001/83/EC)</LegalBasis>
+    <RoutesOfAdministration>
+      <RoutesOfAdministration>Oral use</RoutesOfAdministration>
+    </RoutesOfAdministration>
+    <ActiveSubstances>
+      <ActiveSubstance>Tolebrutinib</ActiveSubstance>
+    </ActiveSubstances>
+    <DispensingLegalStatus>
+      <Status>*** AWAITING VALUE ***</Status>
+    </DispensingLegalStatus>
+    <SupplyLegalStatus xsi:nil="true" />
+    <PromotionLegalStatus>*** AWAITING VALUE ***</PromotionLegalStatus>
+    <SupplyComments xsi:nil="true" />
+  </Product>
+  <Product>
     <DrugIDPK>PA22650/002/002</DrugIDPK>
     <LicenceNumber>PA22650/002/002</LicenceNumber>
     <ProductName>Centyl K 2.5 mg/573 mg modified-release tablets</ProductName>
@@ -45560,7 +45583,8 @@ Characteristics, section 4.2).</SupplyComments>
   <Product>
     <DrugIDPK>EU/1/06/360/01</DrugIDPK>
     <LicenceNumber>EU/1/06/360/01</LicenceNumber>
-    <ProductName>Champix 0.5 mg Film-coated tablet</ProductName>
+    <InterchangeableListCode>IC0205-040-003</InterchangeableListCode>
+    <ProductName>Champix 0.5 mg film-coated tablets</ProductName>
     <PAHolder>Pfizer Europe MA EEIG</PAHolder>
     <AuthorisedDate>26/09/2006</AuthorisedDate>
     <ProductType>HM</ProductType>
@@ -45571,7 +45595,7 @@ Characteristics, section 4.2).</SupplyComments>
       <ATC>N07BA</ATC>
       <ATC>N07BA03</ATC>
     </ATCs>
-    <LegalBasis>New active substance (Article 8(3) of Directive No 2001/83/EC)</LegalBasis>
+    <LegalBasis>Full application (Article 8(3) of Directive No 2001/83/EC)</LegalBasis>
     <RoutesOfAdministration xsi:nil="true" />
     <ActiveSubstances>
       <ActiveSubstance>Varenicline tartrate</ActiveSubstance>
@@ -45586,7 +45610,8 @@ Characteristics, section 4.2).</SupplyComments>
   <Product>
     <DrugIDPK>EU/1/06/360/003</DrugIDPK>
     <LicenceNumber>EU/1/06/360/003</LicenceNumber>
-    <ProductName>Champix 0.5mg &amp; 1mg Film-coated tablets</ProductName>
+    <InterchangeableListCode>IC0205-224-003</InterchangeableListCode>
+    <ProductName>Champix 0.5 mg film-coated tablets Champix 1 mg film-coated tablets</ProductName>
     <PAHolder>Pfizer Europe MA EEIG</PAHolder>
     <AuthorisedDate>25/09/2006</AuthorisedDate>
     <ProductType>HM</ProductType>
@@ -45596,7 +45621,7 @@ Characteristics, section 4.2).</SupplyComments>
     <ATCs>
       <ATC>N07BA03</ATC>
     </ATCs>
-    <LegalBasis>Not Currently Available</LegalBasis>
+    <LegalBasis>Full application (Article 8(3) of Directive No 2001/83/EC)</LegalBasis>
     <RoutesOfAdministration xsi:nil="true" />
     <ActiveSubstances>
       <ActiveSubstance>Varenicline</ActiveSubstance>
@@ -45611,7 +45636,8 @@ Characteristics, section 4.2).</SupplyComments>
   <Product>
     <DrugIDPK>EU/1/06/360/02</DrugIDPK>
     <LicenceNumber>EU/1/06/360/02</LicenceNumber>
-    <ProductName>Champix 1 mg Film-coated tablet</ProductName>
+    <InterchangeableListCode>IC0205-039-003</InterchangeableListCode>
+    <ProductName>Champix 1 mg film-coated tablets</ProductName>
     <PAHolder>Pfizer Europe MA EEIG</PAHolder>
     <AuthorisedDate>26/09/2006</AuthorisedDate>
     <ProductType>HM</ProductType>
@@ -45622,7 +45648,7 @@ Characteristics, section 4.2).</SupplyComments>
       <ATC>N07BA</ATC>
       <ATC>N07BA03</ATC>
     </ATCs>
-    <LegalBasis>New active substance (Article 8(3) of Directive No 2001/83/EC)</LegalBasis>
+    <LegalBasis>Full application (Article 8(3) of Directive No 2001/83/EC)</LegalBasis>
     <RoutesOfAdministration xsi:nil="true" />
     <ActiveSubstances>
       <ActiveSubstance>Varenicline tartrate</ActiveSubstance>
@@ -51895,7 +51921,7 @@ Characteristics, section 4.2).</SupplyComments>
     <DrugIDPK>PA0281/005/001</DrugIDPK>
     <LicenceNumber>PA0281/005/001</LicenceNumber>
     <ProductName>Codinex Codeine Phosphate 15mg/5ml Oral Solution</ProductName>
-    <PAHolder>Pinewood Laboratories Ltd</PAHolder>
+    <PAHolder>Pinewood Laboratories Limited</PAHolder>
     <AuthorisedDate>25/08/1981</AuthorisedDate>
     <ProductType>HM</ProductType>
     <MarketInfo>Marketed</MarketInfo>
@@ -51919,7 +51945,7 @@ Characteristics, section 4.2).</SupplyComments>
     <PromotionLegalStatus>Advertising to healthcare professionals only</PromotionLegalStatus>
     <SupplyComments>This product contains a substance listed in schedule 5 to the Misuse of Drugs Regulations 2017.
 Retail sale through pharmacies only in child-resistant containers with a pack size not greater than 100 ml.
-Prescription only in pack sizes greater than 100 m</SupplyComments>
+Prescription only in pack sizes greater than 100 ml.</SupplyComments>
   </Product>
   <Product>
     <DrugIDPK>PA1142/023/002</DrugIDPK>
@@ -68712,7 +68738,7 @@ Promotion to the general public only for indications appropriate for self-diagno
   <Product>
     <DrugIDPK>PA1226/001/004</DrugIDPK>
     <LicenceNumber>PA1226/001/004</LicenceNumber>
-    <ProductName>Distaclor LA 375 mg Prolonged Release Tablets</ProductName>
+    <ProductName>Distaclor LA 375 mg prolonged-release tablets</ProductName>
     <PAHolder>Flynn Pharma Limited</PAHolder>
     <AuthorisedDate>16/06/1994</AuthorisedDate>
     <ProductType>HM</ProductType>
@@ -68740,7 +68766,7 @@ Promotion to the general public only for indications appropriate for self-diagno
   <Product>
     <DrugIDPK>PA1226/001/005</DrugIDPK>
     <LicenceNumber>PA1226/001/005</LicenceNumber>
-    <ProductName>Distaclor LA Forte 500 mg prolonged release tablets</ProductName>
+    <ProductName>Distaclor LA Forte 500 mg prolonged-release tablets</ProductName>
     <PAHolder>Flynn Pharma Limited</PAHolder>
     <AuthorisedDate>16/06/1994</AuthorisedDate>
     <ProductType>HM</ProductType>
@@ -74398,6 +74424,60 @@ Characteristics, section 4.2).</SupplyComments>
     <SupplyComments xsi:nil="true" />
   </Product>
   <Product>
+    <DrugIDPK>PA0711/337/002</DrugIDPK>
+    <LicenceNumber>PA0711/337/002</LicenceNumber>
+    <ProductName>Edoxaban Rowex  30 mg film-coated tablets</ProductName>
+    <PAHolder>Rowex Limited,</PAHolder>
+    <AuthorisedDate>10/01/2025</AuthorisedDate>
+    <ProductType>HM</ProductType>
+    <MarketInfo>Not marketed</MarketInfo>
+    <RegistrationStatus>AU</RegistrationStatus>
+    <DosageForm>Film-coated tablet</DosageForm>
+    <ATCs>
+      <ATC>B01AF03</ATC>
+    </ATCs>
+    <LegalBasis>Generic application (Article 10(1) of Directive No 2001/83/EC)</LegalBasis>
+    <RoutesOfAdministration>
+      <RoutesOfAdministration>Oral use</RoutesOfAdministration>
+    </RoutesOfAdministration>
+    <ActiveSubstances>
+      <ActiveSubstance>Edoxaban tosylate monohydrate</ActiveSubstance>
+    </ActiveSubstances>
+    <DispensingLegalStatus>
+      <Status>Product subject to prescription which may be renewed (B)</Status>
+    </DispensingLegalStatus>
+    <SupplyLegalStatus>Supply through pharmacies only</SupplyLegalStatus>
+    <PromotionLegalStatus>Advertising to healthcare professionals only</PromotionLegalStatus>
+    <SupplyComments xsi:nil="true" />
+  </Product>
+  <Product>
+    <DrugIDPK>PA0711/337/001</DrugIDPK>
+    <LicenceNumber>PA0711/337/001</LicenceNumber>
+    <ProductName>Edoxaban Rowex 15 mg film-coated tablets</ProductName>
+    <PAHolder>Rowex Limited,</PAHolder>
+    <AuthorisedDate>10/01/2025</AuthorisedDate>
+    <ProductType>HM</ProductType>
+    <MarketInfo>Not marketed</MarketInfo>
+    <RegistrationStatus>AU</RegistrationStatus>
+    <DosageForm>Film-coated tablet</DosageForm>
+    <ATCs>
+      <ATC>B01AF03</ATC>
+    </ATCs>
+    <LegalBasis>Generic application (Article 10(1) of Directive No 2001/83/EC)</LegalBasis>
+    <RoutesOfAdministration>
+      <RoutesOfAdministration>Oral use</RoutesOfAdministration>
+    </RoutesOfAdministration>
+    <ActiveSubstances>
+      <ActiveSubstance>Edoxaban tosylate monohydrate</ActiveSubstance>
+    </ActiveSubstances>
+    <DispensingLegalStatus>
+      <Status>Product subject to prescription which may be renewed (B)</Status>
+    </DispensingLegalStatus>
+    <SupplyLegalStatus>Supply through pharmacies only</SupplyLegalStatus>
+    <PromotionLegalStatus>Advertising to healthcare professionals only</PromotionLegalStatus>
+    <SupplyComments xsi:nil="true" />
+  </Product>
+  <Product>
     <DrugIDPK>PA0436/057/001</DrugIDPK>
     <LicenceNumber>PA0436/057/001</LicenceNumber>
     <ProductName>Edoxaban Teva 15 mg film-coated tablets</ProductName>
@@ -74457,60 +74537,6 @@ Characteristics, section 4.2).</SupplyComments>
     <ProductName>Edoxaban Teva 60 mg film-coated tablets</ProductName>
     <PAHolder>Norton Waterford</PAHolder>
     <AuthorisedDate>28/02/2025</AuthorisedDate>
-    <ProductType>HM</ProductType>
-    <MarketInfo>Not marketed</MarketInfo>
-    <RegistrationStatus>AU</RegistrationStatus>
-    <DosageForm>Film-coated tablet</DosageForm>
-    <ATCs>
-      <ATC>B01AF03</ATC>
-    </ATCs>
-    <LegalBasis>Generic application (Article 10(1) of Directive No 2001/83/EC)</LegalBasis>
-    <RoutesOfAdministration>
-      <RoutesOfAdministration>Oral use</RoutesOfAdministration>
-    </RoutesOfAdministration>
-    <ActiveSubstances>
-      <ActiveSubstance>Edoxaban tosylate monohydrate</ActiveSubstance>
-    </ActiveSubstances>
-    <DispensingLegalStatus>
-      <Status>Product subject to prescription which may be renewed (B)</Status>
-    </DispensingLegalStatus>
-    <SupplyLegalStatus>Supply through pharmacies only</SupplyLegalStatus>
-    <PromotionLegalStatus>Advertising to healthcare professionals only</PromotionLegalStatus>
-    <SupplyComments xsi:nil="true" />
-  </Product>
-  <Product>
-    <DrugIDPK>PA0711/337/001</DrugIDPK>
-    <LicenceNumber>PA0711/337/001</LicenceNumber>
-    <ProductName>Edoxaban tosylate monohydrate 15 mg film-coated tablets</ProductName>
-    <PAHolder>Rowex Limited,</PAHolder>
-    <AuthorisedDate>10/01/2025</AuthorisedDate>
-    <ProductType>HM</ProductType>
-    <MarketInfo>Not marketed</MarketInfo>
-    <RegistrationStatus>AU</RegistrationStatus>
-    <DosageForm>Film-coated tablet</DosageForm>
-    <ATCs>
-      <ATC>B01AF03</ATC>
-    </ATCs>
-    <LegalBasis>Generic application (Article 10(1) of Directive No 2001/83/EC)</LegalBasis>
-    <RoutesOfAdministration>
-      <RoutesOfAdministration>Oral use</RoutesOfAdministration>
-    </RoutesOfAdministration>
-    <ActiveSubstances>
-      <ActiveSubstance>Edoxaban tosylate monohydrate</ActiveSubstance>
-    </ActiveSubstances>
-    <DispensingLegalStatus>
-      <Status>Product subject to prescription which may be renewed (B)</Status>
-    </DispensingLegalStatus>
-    <SupplyLegalStatus>Supply through pharmacies only</SupplyLegalStatus>
-    <PromotionLegalStatus>Advertising to healthcare professionals only</PromotionLegalStatus>
-    <SupplyComments xsi:nil="true" />
-  </Product>
-  <Product>
-    <DrugIDPK>PA0711/337/002</DrugIDPK>
-    <LicenceNumber>PA0711/337/002</LicenceNumber>
-    <ProductName>Edoxaban tosylate monohydrate 30 mg film-coated tablets</ProductName>
-    <PAHolder>Rowex Limited,</PAHolder>
-    <AuthorisedDate>10/01/2025</AuthorisedDate>
     <ProductType>HM</ProductType>
     <MarketInfo>Not marketed</MarketInfo>
     <RegistrationStatus>AU</RegistrationStatus>
@@ -75271,9 +75297,9 @@ This product contains a substance listed in schedule 2 to the Misuse of Drugs Re
       <RoutesOfAdministration>Subcutaneous use</RoutesOfAdministration>
     </RoutesOfAdministration>
     <ActiveSubstances>
-      <ActiveSubstance>Influenza Inactivated Split Virus Strain A (H1N1)</ActiveSubstance>
-      <ActiveSubstance>Influenza Inactivated Split Virus Strain A (H3N2)</ActiveSubstance>
-      <ActiveSubstance>Influenza Inactivated Split Virus Strain B</ActiveSubstance>
+      <ActiveSubstance>Influenza A virus, subtype H1N1, strain A/Missouri/11/2025 pdm09-like strain (A/Switzerland/6849/2025, IVR-278), Inactivated</ActiveSubstance>
+      <ActiveSubstance>Influenza A virus, subtype H3N2, strain A/Darwin/1454/2025-like strain (A/Michigan/105/2025, SAN-049A), Inactivated</ActiveSubstance>
+      <ActiveSubstance>Influenza B virus, strain B/Tokyo/EIS13-175/2025-like strain (B/Tokyo/EIS13-175/2025, wild type), Inactivated</ActiveSubstance>
     </ActiveSubstances>
     <DispensingLegalStatus>
       <Status>Product subject to prescription which may not be renewed (A)</Status>
@@ -79695,6 +79721,35 @@ Characteristics, section 4.2).</SupplyComments>
       <ATC>D05AX52</ATC>
     </ATCs>
     <LegalBasis>Full application (Article 8(3) of Directive No 2001/83/EC)</LegalBasis>
+    <RoutesOfAdministration>
+      <RoutesOfAdministration>Cutaneous use</RoutesOfAdministration>
+    </RoutesOfAdministration>
+    <ActiveSubstances>
+      <ActiveSubstance>Calcipotriol</ActiveSubstance>
+      <ActiveSubstance>Betamethasone</ActiveSubstance>
+    </ActiveSubstances>
+    <DispensingLegalStatus>
+      <Status>Product subject to prescription which may not be renewed (A)</Status>
+    </DispensingLegalStatus>
+    <SupplyLegalStatus>Supply through pharmacies only</SupplyLegalStatus>
+    <PromotionLegalStatus>Advertising to healthcare professionals only</PromotionLegalStatus>
+    <SupplyComments xsi:nil="true" />
+  </Product>
+  <Product>
+    <DrugIDPK>PPA1463/265/001</DrugIDPK>
+    <LicenceNumber>PPA1463/265/001</LicenceNumber>
+    <ProductName>Enstilar 50 micrograms/g + 0.5 mg/g cutaneous foam</ProductName>
+    <PAHolder>IMED Healthcare Ltd.,</PAHolder>
+    <AuthorisedDate>18/09/2026</AuthorisedDate>
+    <ProductType>HM</ProductType>
+    <MarketInfo>Unknown</MarketInfo>
+    <RegistrationStatus>AU</RegistrationStatus>
+    <DosageForm>Cutaneous foam</DosageForm>
+    <ATCs>
+      <ATC>D05AX</ATC>
+      <ATC>D05AX52</ATC>
+    </ATCs>
+    <LegalBasis>Parallel importation notified in accordance with Article 76(3) of Directive 2001/83/EC</LegalBasis>
     <RoutesOfAdministration>
       <RoutesOfAdministration>Cutaneous use</RoutesOfAdministration>
     </RoutesOfAdministration>
@@ -94020,7 +94075,7 @@ Characteristics, section 4.2).</SupplyComments>
     <LicenceNumber>PA0281/215/002</LicenceNumber>
     <InterchangeableListCode>IC0139-009-024</InterchangeableListCode>
     <ProductName>Fesoterodine Pinewood 8 mg prolonged-release tablets</ProductName>
-    <PAHolder>Pinewood Laboratories Ltd</PAHolder>
+    <PAHolder>Pinewood Laboratories Limited</PAHolder>
     <AuthorisedDate>15/07/2022</AuthorisedDate>
     <ProductType>HM</ProductType>
     <MarketInfo>Marketed</MarketInfo>
@@ -104384,7 +104439,7 @@ Characteristics, section 4.2).</SupplyComments>
   <Product>
     <DrugIDPK>PA1122/023/001</DrugIDPK>
     <LicenceNumber>PA1122/023/001</LicenceNumber>
-    <ProductName>Gentamicin 20 mg/mL Solution for injection/infusion</ProductName>
+    <ProductName>Gentamicin 20 mg/mL solution for injection/infusion</ProductName>
     <PAHolder>Noridem Enterprises Limited</PAHolder>
     <AuthorisedDate>12/11/2021</AuthorisedDate>
     <ProductType>HM</ProductType>
@@ -104412,7 +104467,7 @@ Characteristics, section 4.2).</SupplyComments>
   <Product>
     <DrugIDPK>PA1122/023/002</DrugIDPK>
     <LicenceNumber>PA1122/023/002</LicenceNumber>
-    <ProductName>Gentamicin 40 mg/mL Solution for injection/infusion</ProductName>
+    <ProductName>Gentamicin 40 mg/mL solution for injection/infusion</ProductName>
     <PAHolder>Noridem Enterprises Limited</PAHolder>
     <AuthorisedDate>12/11/2021</AuthorisedDate>
     <ProductType>HM</ProductType>
@@ -104468,7 +104523,7 @@ Characteristics, section 4.2).</SupplyComments>
   <Product>
     <DrugIDPK>PA1122/023/003</DrugIDPK>
     <LicenceNumber>PA1122/023/003</LicenceNumber>
-    <ProductName>Gentamicin 80 mg/mL Solution for injection/infusion</ProductName>
+    <ProductName>Gentamicin 80 mg/mL solution for injection/infusion</ProductName>
     <PAHolder>Noridem Enterprises Limited</PAHolder>
     <AuthorisedDate>12/11/2021</AuthorisedDate>
     <ProductType>HM</ProductType>
@@ -111370,7 +111425,7 @@ Characteristics, section 4.2).</SupplyComments>
     <PAHolder>AS Kalceks</PAHolder>
     <AuthorisedDate>14/04/2022</AuthorisedDate>
     <ProductType>HM</ProductType>
-    <MarketInfo>Unknown</MarketInfo>
+    <MarketInfo>Not marketed</MarketInfo>
     <RegistrationStatus>AU</RegistrationStatus>
     <DosageForm>Solution for injection/infusion</DosageForm>
     <ATCs>
@@ -116961,9 +117016,9 @@ Characteristics, section 4.2).</SupplyComments>
       <RoutesOfAdministration>Subcutaneous use</RoutesOfAdministration>
     </RoutesOfAdministration>
     <ActiveSubstances>
-      <ActiveSubstance>A/Victoria/4897/2022 (H1N1)pdm09-like strain (A/Victoria/4897/2022, IVR-238</ActiveSubstance>
-      <ActiveSubstance>Influenza virus B/Austria/1359417/2021-like strain (B/Austria/1359417/2021, BVR-26)</ActiveSubstance>
-      <ActiveSubstance>Influenza A virus, A/Croatia/10136RV/2023 (H3N2) like strain X-425A, Inactivated</ActiveSubstance>
+      <ActiveSubstance>Influenza A virus, subtype H1N1, strain A/Missouri/11/2025 pdm09-like strain (A/Switzerland/6849/2025, IVR-278), Inactivated</ActiveSubstance>
+      <ActiveSubstance>Influenza A virus, subtype H3N2, strain A/Darwin/1454/2025-like strain (A/Michigan/105/2025, SAN-049A), Inactivated</ActiveSubstance>
+      <ActiveSubstance>Influenza B virus, strain B/Tokyo/EIS13-175/2025-like strain (B/Tokyo/EIS13-175/2025, wild type), Inactivated</ActiveSubstance>
     </ActiveSubstances>
     <DispensingLegalStatus>
       <Status>Product subject to prescription which may not be renewed (A)</Status>
@@ -124880,7 +124935,7 @@ Characteristics, section 4.2).</SupplyComments>
     <DrugIDPK>PA0281/002/001</DrugIDPK>
     <LicenceNumber>PA0281/002/001</LicenceNumber>
     <ProductName>Junior Parapaed Paracetamol Oral Suspension 120 mg/5 ml</ProductName>
-    <PAHolder>Pinewood Laboratories Ltd</PAHolder>
+    <PAHolder>Pinewood Laboratories Limited</PAHolder>
     <AuthorisedDate>01/12/1982</AuthorisedDate>
     <ProductType>HM</ProductType>
     <MarketInfo>Marketed</MarketInfo>
@@ -124902,7 +124957,14 @@ Characteristics, section 4.2).</SupplyComments>
     </DispensingLegalStatus>
     <SupplyLegalStatus>Supply through pharmacies only</SupplyLegalStatus>
     <PromotionLegalStatus>Advertising to the general public</PromotionLegalStatus>
-    <SupplyComments>General sale in child resistant packs containing not more than 60ml of the 120mg/5ml unit dosage form. The product concerned should contain paracetamol as its only active analgesic substance and only one pack should be supplied in the course of any one ret</SupplyComments>
+    <SupplyComments>General sale in child resistant packs containing not more than 60ml of the 120mg/5ml unit dosage form. The product concerned should contain paracetamol as its only active analgesic substance and only one pack should be supplied in the course of any one retail transaction.
+
+Retail sale through pharmacies only in child resistant packs containing not more than 140 ml of the120mg/5ml unit dosage form. Not more than two such packs should be supplied in the course of any one retail transaction unless a valid prescription exists.
+
+Prescription only for any pack size exceeding 140ml content of the 120mg/5ml unit dosage form.
+
+Promotion to the general public for packs containing not more than 140 ml of the 120mg/5ml unit dose.
+Promotion to healthcare professionals only for packs containing more than 140 ml of the 120mg/5ml unit dosage form.</SupplyComments>
   </Product>
   <Product>
     <DrugIDPK>EU/1/25/1933/001</DrugIDPK>
@@ -140328,7 +140390,7 @@ Characteristics, section 4.2).</SupplyComments>
     <DrugIDPK>PA0711/335/001</DrugIDPK>
     <LicenceNumber>PA0711/335/001</LicenceNumber>
     <ProductName>Linagliptin/Metformin hydrochloride 2.5 mg/ 850 mg</ProductName>
-    <PAHolder>Rowex Ltd</PAHolder>
+    <PAHolder>Rowex Limited,</PAHolder>
     <AuthorisedDate>22/11/2024</AuthorisedDate>
     <ProductType>HM</ProductType>
     <MarketInfo>Not marketed</MarketInfo>
@@ -140356,7 +140418,7 @@ Characteristics, section 4.2).</SupplyComments>
     <DrugIDPK>PA0711/335/002</DrugIDPK>
     <LicenceNumber>PA0711/335/002</LicenceNumber>
     <ProductName>Linagliptin/Metformin hydrochloride 2.5 mg/1000 mg</ProductName>
-    <PAHolder>Rowex Ltd</PAHolder>
+    <PAHolder>Rowex Limited,</PAHolder>
     <AuthorisedDate>22/11/2024</AuthorisedDate>
     <ProductType>HM</ProductType>
     <MarketInfo>Not marketed</MarketInfo>
@@ -152052,6 +152114,33 @@ In accordance with Article 114 of Directive 2001/83/EC, the official batch relea
     <SupplyComments xsi:nil="true" />
   </Product>
   <Product>
+    <DrugIDPK>PA1968/024/001</DrugIDPK>
+    <LicenceNumber>PA1968/024/001</LicenceNumber>
+    <ProductName>Metaraminol  0.5mg/ ml Solution for injection in pre-filled syringe</ProductName>
+    <PAHolder>Laboratoire Aguettant</PAHolder>
+    <AuthorisedDate>18/09/2026</AuthorisedDate>
+    <ProductType>HM</ProductType>
+    <MarketInfo>Unknown</MarketInfo>
+    <RegistrationStatus>AU</RegistrationStatus>
+    <DosageForm>Solution for injection in pre-filled syringe</DosageForm>
+    <ATCs>
+      <ATC>C01CA09</ATC>
+    </ATCs>
+    <LegalBasis>Hybrid application (Article 10(3) of Directive No 2001/83/EC)</LegalBasis>
+    <RoutesOfAdministration>
+      <RoutesOfAdministration>Intravenous use</RoutesOfAdministration>
+    </RoutesOfAdministration>
+    <ActiveSubstances>
+      <ActiveSubstance>Metaraminol bitartrate</ActiveSubstance>
+    </ActiveSubstances>
+    <DispensingLegalStatus>
+      <Status>Product subject to prescription which may not be renewed (A)</Status>
+    </DispensingLegalStatus>
+    <SupplyLegalStatus>Supply through pharmacies only</SupplyLegalStatus>
+    <PromotionLegalStatus>Advertising to healthcare professionals only</PromotionLegalStatus>
+    <SupplyComments xsi:nil="true" />
+  </Product>
+  <Product>
     <DrugIDPK>PA2315/245/003</DrugIDPK>
     <LicenceNumber>PA2315/245/003</LicenceNumber>
     <InterchangeableListCode>IC0067-119-003</InterchangeableListCode>
@@ -152138,6 +152227,7 @@ In accordance with Article 114 of Directive 2001/83/EC, the official batch relea
   <Product>
     <DrugIDPK>PA1567/009/003</DrugIDPK>
     <LicenceNumber>PA1567/009/003</LicenceNumber>
+    <InterchangeableListCode>IC0067-119-003</InterchangeableListCode>
     <ProductName>Metformin Activase 1000 mg film-coated tablets</ProductName>
     <PAHolder>Activase Pharmaceuticals Limited</PAHolder>
     <AuthorisedDate>09/04/2026</AuthorisedDate>
@@ -152165,6 +152255,7 @@ In accordance with Article 114 of Directive 2001/83/EC, the official batch relea
   <Product>
     <DrugIDPK>PA1567/009/001</DrugIDPK>
     <LicenceNumber>PA1567/009/001</LicenceNumber>
+    <InterchangeableListCode>IC0067-117-003</InterchangeableListCode>
     <ProductName>Metformin Activase 500 mg film-coated tablets</ProductName>
     <PAHolder>Activase Pharmaceuticals Limited</PAHolder>
     <AuthorisedDate>09/04/2026</AuthorisedDate>
@@ -152192,6 +152283,7 @@ In accordance with Article 114 of Directive 2001/83/EC, the official batch relea
   <Product>
     <DrugIDPK>PA1567/009/002</DrugIDPK>
     <LicenceNumber>PA1567/009/002</LicenceNumber>
+    <InterchangeableListCode>IC0067-118-003</InterchangeableListCode>
     <ProductName>Metformin Activase 850 mg film-coated tablets</ProductName>
     <PAHolder>Activase Pharmaceuticals Limited</PAHolder>
     <AuthorisedDate>09/04/2026</AuthorisedDate>
@@ -152307,7 +152399,7 @@ In accordance with Article 114 of Directive 2001/83/EC, the official batch relea
     <DrugIDPK>PA1436/009/003</DrugIDPK>
     <LicenceNumber>PA1436/009/003</LicenceNumber>
     <InterchangeableListCode>IC0067-119-003</InterchangeableListCode>
-    <ProductName>Metformin Bluefish 1000 mg, film-coated tablets</ProductName>
+    <ProductName>Metformin Bluefish 1000 mg film-coated tablets</ProductName>
     <PAHolder>Bluefish Pharmaceuticals AB</PAHolder>
     <AuthorisedDate>27/03/2009</AuthorisedDate>
     <ProductType>HM</ProductType>
@@ -152336,7 +152428,7 @@ In accordance with Article 114 of Directive 2001/83/EC, the official batch relea
     <DrugIDPK>PA1436/009/001</DrugIDPK>
     <LicenceNumber>PA1436/009/001</LicenceNumber>
     <InterchangeableListCode>IC0067-117-003</InterchangeableListCode>
-    <ProductName>Metformin Bluefish 500 mg, Film-coated tablets</ProductName>
+    <ProductName>Metformin Bluefish 500 mg film-coated tablets</ProductName>
     <PAHolder>Bluefish Pharmaceuticals AB</PAHolder>
     <AuthorisedDate>27/03/2009</AuthorisedDate>
     <ProductType>HM</ProductType>
@@ -152365,7 +152457,7 @@ In accordance with Article 114 of Directive 2001/83/EC, the official batch relea
     <DrugIDPK>PA1436/009/002</DrugIDPK>
     <LicenceNumber>PA1436/009/002</LicenceNumber>
     <InterchangeableListCode>IC0067-118-003</InterchangeableListCode>
-    <ProductName>Metformin Bluefish 850 mg, film-coated tablets</ProductName>
+    <ProductName>Metformin Bluefish 850 mg film-coated tablets</ProductName>
     <PAHolder>Bluefish Pharmaceuticals AB</PAHolder>
     <AuthorisedDate>27/03/2009</AuthorisedDate>
     <ProductType>HM</ProductType>
@@ -152423,7 +152515,7 @@ In accordance with Article 114 of Directive 2001/83/EC, the official batch relea
     <LicenceNumber>PA0281/213/003</LicenceNumber>
     <InterchangeableListCode>IC0067-119-003</InterchangeableListCode>
     <ProductName>Metformin Pinewood 1000 mg film-coated tablets</ProductName>
-    <PAHolder>Pinewood Laboratories Ltd</PAHolder>
+    <PAHolder>Pinewood Laboratories Limited</PAHolder>
     <AuthorisedDate>19/07/2019</AuthorisedDate>
     <ProductType>HM</ProductType>
     <MarketInfo>Marketed</MarketInfo>
@@ -152451,7 +152543,7 @@ In accordance with Article 114 of Directive 2001/83/EC, the official batch relea
     <LicenceNumber>PA0281/213/001</LicenceNumber>
     <InterchangeableListCode>IC0067-117-003</InterchangeableListCode>
     <ProductName>Metformin Pinewood 500 mg film-coated tablets</ProductName>
-    <PAHolder>Pinewood Laboratories Ltd</PAHolder>
+    <PAHolder>Pinewood Laboratories Limited</PAHolder>
     <AuthorisedDate>19/07/2019</AuthorisedDate>
     <ProductType>HM</ProductType>
     <MarketInfo>Marketed</MarketInfo>
@@ -152479,7 +152571,7 @@ In accordance with Article 114 of Directive 2001/83/EC, the official batch relea
     <LicenceNumber>PA0281/213/002</LicenceNumber>
     <InterchangeableListCode>IC0067-118-003</InterchangeableListCode>
     <ProductName>Metformin Pinewood 850 mg film-coated tablets</ProductName>
-    <PAHolder>Pinewood Laboratories Ltd</PAHolder>
+    <PAHolder>Pinewood Laboratories Limited</PAHolder>
     <AuthorisedDate>19/07/2019</AuthorisedDate>
     <ProductType>HM</ProductType>
     <MarketInfo>Marketed</MarketInfo>
@@ -152506,7 +152598,7 @@ In accordance with Article 114 of Directive 2001/83/EC, the official batch relea
     <DrugIDPK>PA0749/185/003</DrugIDPK>
     <LicenceNumber>PA0749/185/003</LicenceNumber>
     <InterchangeableListCode>IC0067-119-003</InterchangeableListCode>
-    <ProductName>Metformin Teva 1000 mg Film-coated tablets</ProductName>
+    <ProductName>Metformin Teva 1000 mg film-coated tablets</ProductName>
     <PAHolder>Teva Pharma B.V.</PAHolder>
     <AuthorisedDate>03/11/2014</AuthorisedDate>
     <ProductType>HM</ProductType>
@@ -152534,7 +152626,7 @@ In accordance with Article 114 of Directive 2001/83/EC, the official batch relea
     <DrugIDPK>PA0749/185/001</DrugIDPK>
     <LicenceNumber>PA0749/185/001</LicenceNumber>
     <InterchangeableListCode>IC0067-117-003</InterchangeableListCode>
-    <ProductName>Metformin Teva 500 mg Film-coated Tablets</ProductName>
+    <ProductName>Metformin Teva 500 mg film-coated tablets</ProductName>
     <PAHolder>Teva Pharma B.V.</PAHolder>
     <AuthorisedDate>03/11/2014</AuthorisedDate>
     <ProductType>HM</ProductType>
@@ -152563,7 +152655,7 @@ In accordance with Article 114 of Directive 2001/83/EC, the official batch relea
     <DrugIDPK>PA0749/185/002</DrugIDPK>
     <LicenceNumber>PA0749/185/002</LicenceNumber>
     <InterchangeableListCode>IC0067-118-003</InterchangeableListCode>
-    <ProductName>Metformin Teva 850 mg Film-coated Tablets</ProductName>
+    <ProductName>Metformin Teva 850 mg film-coated tablets</ProductName>
     <PAHolder>Teva Pharma B.V.</PAHolder>
     <AuthorisedDate>03/11/2014</AuthorisedDate>
     <ProductType>HM</ProductType>
@@ -162985,6 +163077,7 @@ Characteristics, section 4.2).</SupplyComments>
   <Product>
     <DrugIDPK>PA23250/025/001</DrugIDPK>
     <LicenceNumber>PA23250/025/001</LicenceNumber>
+    <InterchangeableListCode>IC0027-049-021</InterchangeableListCode>
     <ProductName>Naproxen/Esomeprazole MSN 500 mg/20 mg modified-release tablets</ProductName>
     <PAHolder>MSN Labs Europe Limited</PAHolder>
     <AuthorisedDate>05/06/2026</AuthorisedDate>
@@ -194780,7 +194873,7 @@ Characteristics, section 4.2).</SupplyComments>
     <DrugIDPK>PA0711/171/001</DrugIDPK>
     <LicenceNumber>PA0711/171/001</LicenceNumber>
     <ProductName>Pendrex Plus 4mg/1.25mg tablets</ProductName>
-    <PAHolder>Rowex Ltd</PAHolder>
+    <PAHolder>Rowex Limited,</PAHolder>
     <AuthorisedDate>16/07/2010</AuthorisedDate>
     <ProductType>HM</ProductType>
     <MarketInfo>Marketed</MarketInfo>
@@ -203554,7 +203647,7 @@ Characteristics, section 4.2).</SupplyComments>
     <LicenceNumber>PA0711/058/001</LicenceNumber>
     <InterchangeableListCode>IC0014-002-014</InterchangeableListCode>
     <ProductName>Pravitin 10 mg Tablets</ProductName>
-    <PAHolder>Rowex Ltd</PAHolder>
+    <PAHolder>Rowex Limited,</PAHolder>
     <AuthorisedDate>14/05/2004</AuthorisedDate>
     <ProductType>HM</ProductType>
     <MarketInfo>Marketed</MarketInfo>
@@ -203583,7 +203676,7 @@ Characteristics, section 4.2).</SupplyComments>
     <LicenceNumber>PA0711/058/002</LicenceNumber>
     <InterchangeableListCode>IC0014-003-014</InterchangeableListCode>
     <ProductName>Pravitin 20 mg Tablets</ProductName>
-    <PAHolder>Rowex Ltd</PAHolder>
+    <PAHolder>Rowex Limited,</PAHolder>
     <AuthorisedDate>14/05/2004</AuthorisedDate>
     <ProductType>HM</ProductType>
     <MarketInfo>Marketed</MarketInfo>
@@ -203612,7 +203705,7 @@ Characteristics, section 4.2).</SupplyComments>
     <LicenceNumber>PA0711/058/004</LicenceNumber>
     <InterchangeableListCode>IC0014-004-014</InterchangeableListCode>
     <ProductName>Pravitin 40 mg Tablets</ProductName>
-    <PAHolder>Rowex Ltd</PAHolder>
+    <PAHolder>Rowex Limited,</PAHolder>
     <AuthorisedDate>14/05/2004</AuthorisedDate>
     <ProductType>HM</ProductType>
     <MarketInfo>Marketed</MarketInfo>
@@ -221467,6 +221560,7 @@ Characteristics, section 4.2).</SupplyComments>
   <Product>
     <DrugIDPK>PPA0465/525/001</DrugIDPK>
     <LicenceNumber>PPA0465/525/001</LicenceNumber>
+    <InterchangeableListCode>IC0012-047-019</InterchangeableListCode>
     <ProductName>RISPERDAL 1 mg/ml oral solution</ProductName>
     <PAHolder>PCO Manufacturing Ltd.</PAHolder>
     <AuthorisedDate>01/05/2026</AuthorisedDate>
@@ -221722,7 +221816,7 @@ Characteristics, section 4.2).</SupplyComments>
     <LicenceNumber>PA0281/248/001</LicenceNumber>
     <InterchangeableListCode>IC0012-047-019</InterchangeableListCode>
     <ProductName>Risperidone 1 mg/ml oral solution</ProductName>
-    <PAHolder>Pinewood Laboratories Ltd</PAHolder>
+    <PAHolder>Pinewood Laboratories Limited</PAHolder>
     <AuthorisedDate>28/11/2008</AuthorisedDate>
     <ProductType>HM</ProductType>
     <MarketInfo>Not marketed</MarketInfo>
@@ -243297,6 +243391,34 @@ Retail sale through pharmacies only in blister packs containing not more than 24
     <SupplyComments>Medicinal product subject to restricted medical prescription (see Annex I: Summary of Product Characteristics, section 4.2).</SupplyComments>
   </Product>
   <Product>
+    <DrugIDPK>PPA2306/026/002</DrugIDPK>
+    <LicenceNumber>PPA2306/026/002</LicenceNumber>
+    <ProductName>Somatuline Autogel 120 mg solution for injection in a pre-filled syringe</ProductName>
+    <PAHolder>Originalis B.V.</PAHolder>
+    <AuthorisedDate>10/02/2023</AuthorisedDate>
+    <ProductType>HM</ProductType>
+    <MarketInfo>Unknown</MarketInfo>
+    <RegistrationStatus>AU</RegistrationStatus>
+    <DosageForm>Solution for injection in pre-filled syringe</DosageForm>
+    <ATCs>
+      <ATC>H01CB</ATC>
+      <ATC>H01CB03</ATC>
+    </ATCs>
+    <LegalBasis>Parallel importation notified in accordance with Article 76(3) of Directive 2001/83/EC</LegalBasis>
+    <RoutesOfAdministration>
+      <RoutesOfAdministration>Intramuscular use</RoutesOfAdministration>
+    </RoutesOfAdministration>
+    <ActiveSubstances>
+      <ActiveSubstance>Lanreotide</ActiveSubstance>
+    </ActiveSubstances>
+    <DispensingLegalStatus>
+      <Status>Product subject to prescription which may not be renewed (A)</Status>
+    </DispensingLegalStatus>
+    <SupplyLegalStatus>Supply through pharmacies only</SupplyLegalStatus>
+    <PromotionLegalStatus>Advertising to healthcare professionals only</PromotionLegalStatus>
+    <SupplyComments xsi:nil="true" />
+  </Product>
+  <Product>
     <DrugIDPK>PPA0465/478/001</DrugIDPK>
     <LicenceNumber>PPA0465/478/001</LicenceNumber>
     <ProductName>Somatuline Autogel 120 mg, solution for injection in a pre-filled syringe</ProductName>
@@ -243344,34 +243466,6 @@ Retail sale through pharmacies only in blister packs containing not more than 24
     </RoutesOfAdministration>
     <ActiveSubstances>
       <ActiveSubstance>Lanreotide acetate</ActiveSubstance>
-    </ActiveSubstances>
-    <DispensingLegalStatus>
-      <Status>Product subject to prescription which may not be renewed (A)</Status>
-    </DispensingLegalStatus>
-    <SupplyLegalStatus>Supply through pharmacies only</SupplyLegalStatus>
-    <PromotionLegalStatus>Advertising to healthcare professionals only</PromotionLegalStatus>
-    <SupplyComments xsi:nil="true" />
-  </Product>
-  <Product>
-    <DrugIDPK>PPA2306/026/002</DrugIDPK>
-    <LicenceNumber>PPA2306/026/002</LicenceNumber>
-    <ProductName>Somatuline Autogel 120mg, solution for injection in a pre-filled syringe</ProductName>
-    <PAHolder>Originalis B.V.</PAHolder>
-    <AuthorisedDate>10/02/2023</AuthorisedDate>
-    <ProductType>HM</ProductType>
-    <MarketInfo>Unknown</MarketInfo>
-    <RegistrationStatus>AU</RegistrationStatus>
-    <DosageForm>Solution for injection in pre-filled syringe</DosageForm>
-    <ATCs>
-      <ATC>H01CB</ATC>
-      <ATC>H01CB03</ATC>
-    </ATCs>
-    <LegalBasis>Parallel importation notified in accordance with Article 76(3) of Directive 2001/83/EC</LegalBasis>
-    <RoutesOfAdministration>
-      <RoutesOfAdministration>Intramuscular use</RoutesOfAdministration>
-    </RoutesOfAdministration>
-    <ActiveSubstances>
-      <ActiveSubstance>Lanreotide</ActiveSubstance>
     </ActiveSubstances>
     <DispensingLegalStatus>
       <Status>Product subject to prescription which may not be renewed (A)</Status>
@@ -244056,7 +244150,7 @@ Characteristics, section 4.2).</SupplyComments>
     <PAHolder>Accord Healthcare Ireland Ltd.</PAHolder>
     <AuthorisedDate>12/02/2021</AuthorisedDate>
     <ProductType>HM</ProductType>
-    <MarketInfo>Marketed</MarketInfo>
+    <MarketInfo>Not marketed</MarketInfo>
     <RegistrationStatus>AU</RegistrationStatus>
     <DosageForm>Powder and solvent for prolonged-release suspension for injection</DosageForm>
     <ATCs>
@@ -244084,7 +244178,7 @@ Characteristics, section 4.2).</SupplyComments>
     <PAHolder>Accord Healthcare Ireland Ltd.</PAHolder>
     <AuthorisedDate>12/02/2021</AuthorisedDate>
     <ProductType>HM</ProductType>
-    <MarketInfo>Marketed</MarketInfo>
+    <MarketInfo>Not marketed</MarketInfo>
     <RegistrationStatus>AU</RegistrationStatus>
     <DosageForm>Powder and solvent for prolonged-release suspension for injection</DosageForm>
     <ATCs>
@@ -244112,7 +244206,7 @@ Characteristics, section 4.2).</SupplyComments>
     <PAHolder>Accord Healthcare Ireland Ltd.</PAHolder>
     <AuthorisedDate>12/02/2021</AuthorisedDate>
     <ProductType>HM</ProductType>
-    <MarketInfo>Marketed</MarketInfo>
+    <MarketInfo>Not marketed</MarketInfo>
     <RegistrationStatus>AU</RegistrationStatus>
     <DosageForm>Powder and solvent for prolonged-release suspension for injection</DosageForm>
     <ATCs>
@@ -271558,6 +271652,7 @@ Characteristics, section 4.2).</SupplyComments>
   <Product>
     <DrugIDPK>PA23429/004/001</DrugIDPK>
     <LicenceNumber>PA23429/004/001</LicenceNumber>
+    <InterchangeableListCode>IC0205-040-003</InterchangeableListCode>
     <ProductName>Varenicline Ascend 0.5 mg film-coated tablet</ProductName>
     <PAHolder>Ascend GmbH</PAHolder>
     <AuthorisedDate>31/01/2025</AuthorisedDate>
@@ -271585,7 +271680,8 @@ Characteristics, section 4.2).</SupplyComments>
   <Product>
     <DrugIDPK>PA23429/004/003</DrugIDPK>
     <LicenceNumber>PA23429/004/003</LicenceNumber>
-    <ProductName>Varenicline Ascend 0.5 mg film-coated Tablets &amp; Varenicline Ascend 1 mg film-coated Tablets</ProductName>
+    <InterchangeableListCode>IC0205-224-003</InterchangeableListCode>
+    <ProductName>Varenicline Ascend 0.5 mg film-coated tabletsVarenicline Ascend 1 mg film-coated tablets</ProductName>
     <PAHolder>Ascend GmbH</PAHolder>
     <AuthorisedDate>31/01/2025</AuthorisedDate>
     <ProductType>HM</ProductType>
@@ -271613,6 +271709,7 @@ Characteristics, section 4.2).</SupplyComments>
   <Product>
     <DrugIDPK>PA23429/004/002</DrugIDPK>
     <LicenceNumber>PA23429/004/002</LicenceNumber>
+    <InterchangeableListCode>IC0205-039-003</InterchangeableListCode>
     <ProductName>Varenicline Ascend 1 mg film-coated tablets</ProductName>
     <PAHolder>Ascend GmbH</PAHolder>
     <AuthorisedDate>31/01/2025</AuthorisedDate>
@@ -271640,6 +271737,7 @@ Characteristics, section 4.2).</SupplyComments>
   <Product>
     <DrugIDPK>PA1986/129/001</DrugIDPK>
     <LicenceNumber>PA1986/129/001</LicenceNumber>
+    <InterchangeableListCode>IC0205-040-003</InterchangeableListCode>
     <ProductName>Varenicline Teva 0.5 mg film-coated tablets</ProductName>
     <PAHolder>Teva B.V.</PAHolder>
     <AuthorisedDate>14/06/2024</AuthorisedDate>
@@ -271667,6 +271765,7 @@ Characteristics, section 4.2).</SupplyComments>
   <Product>
     <DrugIDPK>PA1986/129/003</DrugIDPK>
     <LicenceNumber>PA1986/129/003</LicenceNumber>
+    <InterchangeableListCode>IC0205-224-003</InterchangeableListCode>
     <ProductName>Varenicline Teva 0.5 mg film-coated tablets Varenicline Teva 1 mg film-coated tablets</ProductName>
     <PAHolder>Teva B.V.</PAHolder>
     <AuthorisedDate>14/06/2024</AuthorisedDate>
@@ -271695,6 +271794,7 @@ Characteristics, section 4.2).</SupplyComments>
   <Product>
     <DrugIDPK>PA1986/129/002</DrugIDPK>
     <LicenceNumber>PA1986/129/002</LicenceNumber>
+    <InterchangeableListCode>IC0205-039-003</InterchangeableListCode>
     <ProductName>Varenicline Teva 1 mg film-coated tablets</ProductName>
     <PAHolder>Teva B.V.</PAHolder>
     <AuthorisedDate>14/06/2024</AuthorisedDate>
@@ -271998,9 +272098,9 @@ Batches of Vaccine marketed in Ireland shall be subject to control authority bat
       <RoutesOfAdministration>Subcutaneous use</RoutesOfAdministration>
     </RoutesOfAdministration>
     <ActiveSubstances>
-      <ActiveSubstance>Influenza Inactivated Split Virus Strain A (H1N1)</ActiveSubstance>
-      <ActiveSubstance>Influenza Inactivated Split Virus Strain A (H3N2)</ActiveSubstance>
-      <ActiveSubstance>Influenza Inactivated Split Virus Strain B</ActiveSubstance>
+      <ActiveSubstance>Influenza A virus, subtype H1N1, strain A/Missouri/11/2025 pdm09-like strain (A/Switzerland/6849/2025, IVR-278), Inactivated</ActiveSubstance>
+      <ActiveSubstance>Influenza A virus, subtype H3N2, strain A/Darwin/1454/2025-like strain (A/Michigan/105/2025, SAN-049A), Inactivated</ActiveSubstance>
+      <ActiveSubstance>Influenza B virus, strain B/Tokyo/EIS13-175/2025-like strain (B/Tokyo/EIS13-175/2025, wild type), Inactivated</ActiveSubstance>
     </ActiveSubstances>
     <DispensingLegalStatus>
       <Status>Product subject to prescription which may not be renewed (A)</Status>
@@ -274000,7 +274100,7 @@ Characteristics, section 4.2).</SupplyComments>
     <DrugIDPK>PA2242/007/001</DrugIDPK>
     <LicenceNumber>PA2242/007/001</LicenceNumber>
     <ProductName>Versatis 700 mg medicated plaster</ProductName>
-    <PAHolder>Grunenthal Pharma Ltd</PAHolder>
+    <PAHolder>Grunenthal Pharma Limited.</PAHolder>
     <AuthorisedDate>08/10/2010</AuthorisedDate>
     <ProductType>HM</ProductType>
     <MarketInfo>Marketed</MarketInfo>
@@ -275159,7 +275259,7 @@ Product Characteristics, section 4.2).</SupplyComments>
     <PAHolder>Viatris Healthcare Limited</PAHolder>
     <AuthorisedDate>08/08/2025</AuthorisedDate>
     <ProductType>HM</ProductType>
-    <MarketInfo>Not marketed</MarketInfo>
+    <MarketInfo>Marketed</MarketInfo>
     <RegistrationStatus>AU</RegistrationStatus>
     <DosageForm>Orodispersible film</DosageForm>
     <ATCs>
@@ -275860,7 +275960,7 @@ Characteristics, section 4.2).</SupplyComments>
     <DrugIDPK>EU/1/14/914/001</DrugIDPK>
     <LicenceNumber>EU/1/14/914/001</LicenceNumber>
     <ProductName>Vimizim 1 mg/ml concentrate for solution for infusion</ProductName>
-    <PAHolder>BioMarin International Limited</PAHolder>
+    <PAHolder>Biomarin International Limited</PAHolder>
     <AuthorisedDate xsi:nil="true" />
     <ProductType>HM</ProductType>
     <MarketInfo>Unknown</MarketInfo>
@@ -280921,7 +281021,7 @@ Characteristics, section 4.2).</SupplyComments>
     <DrugIDPK>EU/1/24/1823/004</DrugIDPK>
     <LicenceNumber>EU/1/24/1823/004</LicenceNumber>
     <ProductName>WEZENLA 130 mg Concentrate for solution for infusion</ProductName>
-    <PAHolder>Amgen Technology (Ireland) UC</PAHolder>
+    <PAHolder>Amgen Technology (Ireland) Unlimited Company</PAHolder>
     <AuthorisedDate>20/06/2024</AuthorisedDate>
     <ProductType>HM</ProductType>
     <MarketInfo>Unknown</MarketInfo>
@@ -280948,7 +281048,7 @@ Characteristics, section 4.2).</SupplyComments>
     <DrugIDPK>EU/1/24/1823/001</DrugIDPK>
     <LicenceNumber>EU/1/24/1823/001</LicenceNumber>
     <ProductName>WEZENLA 45 mg Solution for injection</ProductName>
-    <PAHolder>Amgen Technology (Ireland) UC</PAHolder>
+    <PAHolder>Amgen Technology (Ireland) Unlimited Company</PAHolder>
     <AuthorisedDate>20/06/2024</AuthorisedDate>
     <ProductType>HM</ProductType>
     <MarketInfo>Unknown</MarketInfo>
@@ -280975,7 +281075,7 @@ Characteristics, section 4.2).</SupplyComments>
     <DrugIDPK>EU/1/24/1823/002</DrugIDPK>
     <LicenceNumber>EU/1/24/1823/002</LicenceNumber>
     <ProductName>WEZENLA 45 mg Solution for injection pre-filled syringe</ProductName>
-    <PAHolder>Amgen Technology (Ireland) UC</PAHolder>
+    <PAHolder>Amgen Technology (Ireland) Unlimited Company</PAHolder>
     <AuthorisedDate>20/06/2024</AuthorisedDate>
     <ProductType>HM</ProductType>
     <MarketInfo>Unknown</MarketInfo>
@@ -281002,7 +281102,7 @@ Characteristics, section 4.2).</SupplyComments>
     <DrugIDPK>EU/1/24/1823/003</DrugIDPK>
     <LicenceNumber>EU/1/24/1823/003</LicenceNumber>
     <ProductName>WEZENLA 90 mg Solution for injection pre-filled syringe</ProductName>
-    <PAHolder>Amgen Technology (Ireland) UC</PAHolder>
+    <PAHolder>Amgen Technology (Ireland) Unlimited Company</PAHolder>
     <AuthorisedDate>20/06/2024</AuthorisedDate>
     <ProductType>HM</ProductType>
     <MarketInfo>Unknown</MarketInfo>
@@ -284460,7 +284560,7 @@ Characteristics, section 4.2).</SupplyComments>
     <DrugIDPK>EU/1/24/1892/004</DrugIDPK>
     <LicenceNumber>EU/1/24/1892/004</LicenceNumber>
     <ProductName>Yesintek 130 mg Concentrate for solution for infusion</ProductName>
-    <PAHolder>Biosimilar Collaborations Ireland Limited</PAHolder>
+    <PAHolder>Biocon Biologics Ireland Limited</PAHolder>
     <AuthorisedDate>14/02/2025</AuthorisedDate>
     <ProductType>HM</ProductType>
     <MarketInfo>Unknown</MarketInfo>
@@ -284487,7 +284587,7 @@ Characteristics, section 4.2).</SupplyComments>
     <DrugIDPK>EU/1/24/1892/002</DrugIDPK>
     <LicenceNumber>EU/1/24/1892/002</LicenceNumber>
     <ProductName>Yesintek 45 mg Solution for injection</ProductName>
-    <PAHolder>Biosimilar Collaborations Ireland Limited</PAHolder>
+    <PAHolder>Biocon Biologics Ireland Limited</PAHolder>
     <AuthorisedDate>14/02/2025</AuthorisedDate>
     <ProductType>HM</ProductType>
     <MarketInfo>Unknown</MarketInfo>
@@ -284514,7 +284614,7 @@ Characteristics, section 4.2).</SupplyComments>
     <DrugIDPK>EU/1/24/1892/001</DrugIDPK>
     <LicenceNumber>EU/1/24/1892/001</LicenceNumber>
     <ProductName>Yesintek 45 mg Solution for injection Subcutaneous use</ProductName>
-    <PAHolder>Biosimilar Collaborations Ireland Limited</PAHolder>
+    <PAHolder>Biocon Biologics Ireland Limited</PAHolder>
     <AuthorisedDate>14/02/2025</AuthorisedDate>
     <ProductType>HM</ProductType>
     <MarketInfo>Unknown</MarketInfo>
@@ -284541,7 +284641,7 @@ Characteristics, section 4.2).</SupplyComments>
     <DrugIDPK>EU/1/24/1892/003</DrugIDPK>
     <LicenceNumber>EU/1/24/1892/003</LicenceNumber>
     <ProductName>Yesintek 90 mg Solution for injection</ProductName>
-    <PAHolder>Biosimilar Collaborations Ireland Limited</PAHolder>
+    <PAHolder>Biocon Biologics Ireland Limited</PAHolder>
     <AuthorisedDate>14/02/2025</AuthorisedDate>
     <ProductType>HM</ProductType>
     <MarketInfo>Unknown</MarketInfo>
@@ -289843,7 +289943,7 @@ Characteristics, section 4.2).</SupplyComments>
     <PAHolder>Accord Healthcare Ireland Ltd.</PAHolder>
     <AuthorisedDate>14/08/2009</AuthorisedDate>
     <ProductType>HM</ProductType>
-    <MarketInfo>Marketed</MarketInfo>
+    <MarketInfo>Not marketed</MarketInfo>
     <RegistrationStatus>AU</RegistrationStatus>
     <DosageForm>Orodispersible tablet</DosageForm>
     <ATCs>
@@ -291028,6 +291128,7 @@ Characteristics, section 4.2).</SupplyComments>
   <Product>
     <DrugIDPK>PPA0465/038/008</DrugIDPK>
     <LicenceNumber>PPA0465/038/008</LicenceNumber>
+    <InterchangeableListCode>IC0203-223-027</InterchangeableListCode>
     <ProductName>Zovirax 200 mg/5 mL oral suspension</ProductName>
     <PAHolder>PCO Manufacturing Ltd.</PAHolder>
     <AuthorisedDate>19/05/2017</AuthorisedDate>
@@ -291055,6 +291156,7 @@ Characteristics, section 4.2).</SupplyComments>
   <Product>
     <DrugIDPK>PA1077/084/005</DrugIDPK>
     <LicenceNumber>PA1077/084/005</LicenceNumber>
+    <InterchangeableListCode>IC0203-223-027</InterchangeableListCode>
     <ProductName>Zovirax 200 mg/5 mL Oral Suspension</ProductName>
     <PAHolder>GlaxoSmithKline (Ireland) Limited</PAHolder>
     <AuthorisedDate>24/03/1986</AuthorisedDate>
@@ -291083,6 +291185,7 @@ Characteristics, section 4.2).</SupplyComments>
   <Product>
     <DrugIDPK>PPA1463/199/003</DrugIDPK>
     <LicenceNumber>PPA1463/199/003</LicenceNumber>
+    <InterchangeableListCode>IC0203-223-027</InterchangeableListCode>
     <ProductName>Zovirax 200 mg/5 mL Oral Suspension</ProductName>
     <PAHolder>IMED Healthcare Ltd.,</PAHolder>
     <AuthorisedDate>26/04/2024</AuthorisedDate>

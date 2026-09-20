@@ -1,5 +1,10 @@
 ULCM substances (normalised, deduplicated): 277
 
+[ATC coverage] 19,819 of 25,877 supply rows carry an ATC code (76.6%); 2,421 distinct codes
+    edqm_cep    2,809 /  8,734   32.2%
+    ema_epar    3,307 /  3,333   99.2%
+    hpra       13,703 / 13,810   99.2%
+
 [api_cep]
   substances covered          157 (56.7% of ULCM)
   median countries/substance  3
@@ -57,6 +62,23 @@ ULCM substances (normalised, deduplicated): 277
     DK     7
     GR     6
 
-[mah_national] no data
+[mah_national] 13,810 rows covering 2,142 substances (1,960 rows on ULCM substances) - no country published for this source, so it is excluded from the concentration measures above
+
+[api_cep by ATC chapter] most country-concentrated first
+    ch   subst  suppl  ctry     HHI  top  EU/EEA
+    P        4     18     4   4,259   IN     6%
+    G        9     87    15   3,613   IN    17%
+    B       14    133    21   3,198   IN    17%
+    M        7     41    12   2,933   IN    29%
+    A       18    158    22   2,926   IN    24%
+    D        2     21     9   2,789   IN    24%
+    C       31    162    24   2,600   IN    28%
+    J       83    283    30   2,410   CN    17%
+    N       56    265    32   2,204   IN    26%
+    R        9     69    16   1,821   IN    41%
+    L       69    230    27   1,789   IN    20%
+    H       23     63    15   1,769   CN    31%
+    S       11     73    20   1,664   IN    25%
+    V       14     63    18   1,389   IN    32%
 
 ULCM substances with NO supply data in any source: 67

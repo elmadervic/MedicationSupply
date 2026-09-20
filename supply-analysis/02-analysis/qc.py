@@ -7,15 +7,12 @@ import json
 import sys
 
 import pandas as pd
-
-# The shared modules live in supply-analysis/common -- put that directory on
-# the import path so this script can still be run directly, from any working
-# directory, exactly as the README describes.
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "common"))
 
-from config import INTERIM, MANIFEST, OUT, RAW
+from atc import ATC_RE
+from config import COUNTRY_ROLES, INTERIM, MANIFEST, OUT, RAW
 from normalize import normalise
 from ulcm import read_ulcm
 
@@ -42,11 +39,18 @@ def main() -> int:
     else:
         check("snapshot complete", False, "no manifest.json")
 
-    unresolved = sup["country_iso2"].isna().mean()
+    geo = sup[sup["role"].isin(COUNTRY_ROLES)]
+    unresolved = geo["country_iso2"].isna().mean()
     check("country resolution", unresolved < 0.05,
-          f"{sup['country_iso2'].isna().sum():,} of {len(sup):,} supplier rows "
-          "have no country "
-          f"(sample: {sup.loc[sup['country_iso2'].isna(), 'supplier_name'].dropna().head(3).tolist()})")
+          f"{geo['country_iso2'].isna().sum():,} of {len(geo):,} supplier rows "
+          f"in {COUNTRY_ROLES} have no country "
+          f"(sample: {geo.loc[geo['country_iso2'].isna(), 'supplier_name'].dropna().head(3).tolist()})")
+    countryless = sup[~sup["role"].isin(COUNTRY_ROLES)]
+    check("country-less roles", True,
+          f"{len(countryless):,} rows in roles without a published country "
+          f"({sorted(countryless['role'].dropna().unique())}) - counted for "
+          "substance and ATC coverage only",
+          warn_only=True)
 
     dup = sup.duplicated(subset=["norm_key", "role", "supplier_norm"]).mean()
     check("duplicate supplier rows", dup < 0.30,
@@ -60,6 +64,29 @@ def main() -> int:
     check("normalisation collapse", collapse.max() < 60,
           f"largest key absorbs {collapse.max()} distinct raw strings; "
           f"top: {dict(worst)}", warn_only=True)
+
+    atc = sup["atc_codes"].fillna("")
+    have = atc.astype(bool)
+    by_source = sup.assign(has=have).groupby("source")["has"].mean()
+    check("ATC coverage", have.mean() > 0.40,
+          f"{have.sum():,} of {len(sup):,} rows carry an ATC code "
+          f"({have.mean():.1%}); by source: "
+          f"{ {k: f'{v:.0%}' for k, v in by_source.items()} }",
+          warn_only=True)
+
+    codes = [c for cell in atc for c in str(cell).split("|") if c]
+    bad = sorted({c for c in codes if not ATC_RE.match(c)})
+    check("ATC format", not bad,
+          f"{len(codes):,} codes written, {len(set(codes)):,} distinct, "
+          f"{len(bad)} malformed{': ' + str(bad[:5]) if bad else ''}")
+
+    native = sup[sup["atc_origin"] == "native"]
+    lookup = sup[sup["atc_origin"] == "lookup"]
+    check("ATC provenance", True,
+          f"{len(native):,} rows from the source's own ATC column, "
+          f"{len(lookup):,} from the cross-source substance lookup, "
+          f"{int((~have).sum()):,} with none",
+          warn_only=True)
 
     cov_by_sub = full.groupby("norm_key")["role"].apply(lambda s: s.notna().any())
     cov = float(cov_by_sub.mean())

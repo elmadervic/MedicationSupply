@@ -11,6 +11,11 @@ OUT = ROOT / "data" / "out"
 for _p in (RAW, INTERIM, OUT):
     _p.mkdir(parents=True, exist_ok=True)
 
+REGISTERS_RAW = ROOT / "data" / "manufacturer-registers" / "raw"
+
+ROLES = ["api_cep", "bio_api", "batch_release", "mah_national"]
+COUNTRY_ROLES = ["api_cep", "bio_api", "batch_release"]
+
 
 AUTO_SOURCES = {
     "ulcm": (
