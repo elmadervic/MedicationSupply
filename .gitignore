@@ -5,3 +5,9 @@ venv/
 
 # macOS
 .DS_Store
+
+# Too large for git (795 MB source dump, kept locally only)
+data/manufacturer-registers/raw/DrugBank_FullDatabase.xml
+
+# Rscript default graphics device dump
+Rplots.pdf

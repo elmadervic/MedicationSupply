@@ -16,6 +16,15 @@
 ## then used to filter the CEP data (which is NOT pre-filtered).
 ## =================================================================
 
+## -----------------------------------------------------------------
+## Paths. Run this script from the repository root.
+##   DATA_DIR - the four source registers + critical.csv (read-only)
+##   OUT_DIR  - everything this script writes (tables and figures)
+## -----------------------------------------------------------------
+DATA_DIR <- "data/manufacturer-registers/raw"
+OUT_DIR  <- "data/manufacturer-registers/out"
+dir.create(OUT_DIR, recursive = TRUE, showWarnings = FALSE)
+
 library(readr)
 library(dplyr)
 library(janitor)
@@ -50,7 +59,7 @@ atc_level1 <- tribble(
 ##    numeric manufacturer_step (1 = active substance, 2 = finished
 ##    product / batch release). Already pre-filtered to critical ATCs.
 ## -----------------------------------------------------------------
-ema_raw <- read_csv("Data/EMA_data_critical.csv", show_col_types = FALSE) |>
+ema_raw <- read_csv(file.path(DATA_DIR, "EMA_data_critical.csv"), show_col_types = FALSE) |>
   clean_names()
 
 ema_std <- ema_raw |>
@@ -84,7 +93,7 @@ cat("ema_std rows:", nrow(ema_std), "\n")
 ##    batch release -> step 2). 'land' is in German and needs
 ##    translating. Already pre-filtered to critical ATCs.
 ## -----------------------------------------------------------------
-germany_raw <- read_csv("Data/bfarm_api_origin_critical_rest_LONG.csv", show_col_types = FALSE) |>
+germany_raw <- read_csv(file.path(DATA_DIR, "bfarm_api_origin_critical_rest_LONG.csv"), show_col_types = FALSE) |>
   clean_names()
 
 de_to_en_country <- c(
@@ -151,7 +160,7 @@ cat("germany_std rows:", nrow(germany_std), "\n")
 ##    (~19 rows), fall back to keeping the row unsplit rather than
 ##    guessing a pairing. Already pre-filtered to critical ATCs.
 ## -----------------------------------------------------------------
-ireland_raw <- read_csv("Data/ireland_critical_atc_review.csv", show_col_types = FALSE) |>
+ireland_raw <- read_csv(file.path(DATA_DIR, "ireland_critical_atc_review.csv"), show_col_types = FALSE) |>
   clean_names()
 
 ## FIX: one row has matched_critical_atc = "L01BA01, L04AX03" -- two
@@ -238,14 +247,14 @@ cat("ireland_std rows:", nrow(ireland_std), "\n")
 ## derived union if it doesn't -- so the two pipelines agree whenever
 ## the real reference file is present.
 ## -----------------------------------------------------------------
-if (file.exists("Data/critical.csv")) {
-  critical <- read.csv("Data/critical.csv", stringsAsFactors = FALSE)
+if (file.exists(file.path(DATA_DIR, "critical.csv"))) {
+  critical <- read.csv(file.path(DATA_DIR, "critical.csv"), stringsAsFactors = FALSE)
   critical_codes <- unique(critical$ATC.level.5)
   critical_codes <- critical_codes[!is.na(critical_codes) & critical_codes != ""]
-  cat("Critical ATC codes loaded from Data/critical.csv:", length(critical_codes), "\n")
+  cat("Critical ATC codes loaded from critical.csv:", length(critical_codes), "\n")
 } else {
   critical_codes <- unique(c(ema_std$atc_code, germany_std$atc_code, ireland_std$atc_code))
-  cat("Data/critical.csv not found -- falling back to the derived union of",
+  cat("critical.csv not found in", DATA_DIR, "-- falling back to the derived union of",
       "EMA/Germany/Ireland's own ATC codes:", length(critical_codes), "\n")
 }
 
@@ -256,7 +265,7 @@ if (file.exists("Data/critical.csv")) {
 ##    per code before filtering. holder_country comes from the
 ##    trailing 2-letter ISO code in certificate_cep_holder.
 ## -----------------------------------------------------------------
-cep_atc <- read_csv("Data/EXPORT_WEB_CEP_with_ATC_drugbank.csv", show_col_types = FALSE) |>
+cep_atc <- read_csv(file.path(DATA_DIR, "EXPORT_WEB_CEP_with_ATC_drugbank.csv"), show_col_types = FALSE) |>
   clean_names()
 
 cat("CEP rows before splitting multi-code cells:", nrow(cep_atc), "\n")
@@ -346,4 +355,4 @@ cat("Combined rows (critical only):", nrow(manufacturer_registers), "\n")
 cat("Rows by source:\n")
 print(table(manufacturer_registers$source, useNA = "ifany"))
 
-write_csv(manufacturer_registers, "manufacturer_registers_combined.csv")
+write_csv(manufacturer_registers, file.path(OUT_DIR, "manufacturer_registers_combined.csv"))

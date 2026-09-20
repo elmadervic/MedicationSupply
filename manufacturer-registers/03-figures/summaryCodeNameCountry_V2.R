@@ -1,4 +1,13 @@
 library(ggplot2)
+## -----------------------------------------------------------------
+## Paths. Run this script from the repository root.
+##   DATA_DIR - the four source registers + critical.csv (read-only)
+##   OUT_DIR  - everything this script writes (tables and figures)
+## -----------------------------------------------------------------
+DATA_DIR <- "data/manufacturer-registers/raw"
+OUT_DIR  <- "data/manufacturer-registers/out"
+dir.create(OUT_DIR, recursive = TRUE, showWarnings = FALSE)
+
 library(dplyr)
 library(tidyr)
 library(patchwork)
@@ -77,18 +86,18 @@ country_map <- c(
   "Österreich" = "Austria"
 )
 
-germany <- read.csv("Data/bfarm_api_origin_critical_rest_LONG.csv")
+germany <- read.csv(file.path(DATA_DIR, "bfarm_api_origin_critical_rest_LONG.csv"))
 str(germany)
 germany <- germany %>%
   filter(role != "Zulassungsinhaber") %>%
   mutate(land = recode(str_trim(land), !!!country_map))   # FIX #1: translate/normalize
 
-write.csv(germany, "Data/germany_critical.csv", row.names = F)
+write.csv(germany, file.path(OUT_DIR, "germany_critical.csv"), row.names = F)
 
-EPAR <- read.csv("Data/EMA_data_critical.csv") %>%
+EPAR <- read.csv(file.path(DATA_DIR, "EMA_data_critical.csv")) %>%
   mutate(country = recode(str_trim(country), !!!country_map))   # FIX #2: normalize
 
-ireland <- read.csv("Data/ireland_critical_atc_review.csv")
+ireland <- read.csv(file.path(DATA_DIR, "ireland_critical_atc_review.csv"))
 str(ireland)
 
 # FIX #4: use the file's own pre-cleaned matched_critical_atc column
@@ -119,16 +128,16 @@ ireland <- ireland %>%
 ## approximation -- when the real reference file is present, this script
 ## and ComebineAll4SourcesV2.R use exactly the same universe.
 ## -----------------------------------------------------------------
-if (file.exists("Data/critical.csv")) {
-  critical <- read.csv("Data/critical.csv")
+if (file.exists(file.path(DATA_DIR, "critical.csv"))) {
+  critical <- read.csv(file.path(DATA_DIR, "critical.csv"))
   str(critical)
   critical_codes <- unique(critical$ATC.level.5)
   critical_codes <- critical_codes[!is.na(critical_codes) & critical_codes != ""]
-  cat("Critical ATC codes loaded from Data/critical.csv:", length(critical_codes), "\n")
+  cat("Critical ATC codes loaded from critical.csv:", length(critical_codes), "\n")
 } else {
   critical_codes <- unique(c(EPAR$atc_code, germany$atc_code, ireland$atc_code))
   critical_codes <- critical_codes[!is.na(critical_codes) & critical_codes != ""]
-  cat("Data/critical.csv not found -- falling back to the derived union of",
+  cat("critical.csv not found in", DATA_DIR, "-- falling back to the derived union of",
       "EMA/Germany/Ireland's own ATC codes:", length(critical_codes), "\n")
 }
 
@@ -199,7 +208,7 @@ str(germany)
 # in with spaced column names ("Substance", "Certificate (CEP) Holder")
 # and no holder_country, so we clean names and derive it ourselves.
 if (!exists("cep_atc")) {
-  cep_atc <- read_csv("Data/EXPORT_WEB_CEP_with_ATC_drugbank.csv", show_col_types = FALSE)
+  cep_atc <- read_csv(file.path(DATA_DIR, "EXPORT_WEB_CEP_with_ATC_drugbank.csv"), show_col_types = FALSE)
 }
 
 # Always clean names, whether cep_atc was just read or reused from an
@@ -359,11 +368,11 @@ panelB <- ggplot(per_code, aes(x = n_manufacturers, y = n_countries)) +
 # ---------------- combine ----------------
 report_plot <- panelA / panelB + plot_layout(heights = c(1, 1.6))
 
-ggsave("Data/atc_summary_report_plot.png", report_plot, width = 15, height = 9, dpi = 300)
+ggsave(file.path(OUT_DIR, "atc_summary_report_plot.png"), report_plot, width = 15, height = 9, dpi = 300)
 print(report_plot)
 
 
 
 # ---------------- V2: Panel B only, white background ----------------
-ggsave("Data/atc_summary_report_plot_v2.png", panelB, width = 16, height = 5, dpi = 300,
+ggsave(file.path(OUT_DIR, "atc_summary_report_plot_v2.png"), panelB, width = 16, height = 5, dpi = 300,
        bg = "white")

@@ -19,7 +19,7 @@
 #     on run order and on that other script's exact version. Now
 #     reads directly from bfarm_api_origin_critical_rest_LONG.csv and
 #     does its own role filtering, making it self-contained.
-#  2. ireland was read from "Data/ireland.csv", which doesn't exist --
+#  2. ireland was read from data/manufacturer-registers/out/ireland.csv, which doesn't exist --
 #     the real file is ireland_critical_atc_review.csv.
 #  3. ireland_std referenced an `active_substances` column that
 #     doesn't exist in ireland_critical_atc_review.csv at all (its
@@ -47,6 +47,15 @@
 #
 # Requires: install.packages(c("dplyr","tidyr","ggplot2","stringr","ggrepel","purrr"))
 # ---------------------------------------------------------------
+## -----------------------------------------------------------------
+## Paths. Run this script from the repository root.
+##   DATA_DIR - the four source registers + critical.csv (read-only)
+##   OUT_DIR  - everything this script writes (tables and figures)
+## -----------------------------------------------------------------
+DATA_DIR <- "data/manufacturer-registers/raw"
+OUT_DIR  <- "data/manufacturer-registers/out"
+dir.create(OUT_DIR, recursive = TRUE, showWarnings = FALSE)
+
 library(dplyr)
 library(tidyr)
 library(ggplot2)
@@ -54,10 +63,10 @@ library(stringr)
 library(ggrepel)
 library(purrr)
 
-germany <- read.csv("Data/bfarm_api_origin_critical_rest_LONG.csv", stringsAsFactors = FALSE) %>%
+germany <- read.csv(file.path(DATA_DIR, "bfarm_api_origin_critical_rest_LONG.csv"), stringsAsFactors = FALSE) %>%
   filter(role != "Zulassungsinhaber")   # keep manufacturers only, drop marketing-authorization holders
-EPAR    <- read.csv("Data/EMA_data_critical.csv", stringsAsFactors = FALSE)
-ireland <- read.csv("Data/ireland_critical_atc_review.csv", stringsAsFactors = FALSE)
+EPAR    <- read.csv(file.path(DATA_DIR, "EMA_data_critical.csv"), stringsAsFactors = FALSE)
+ireland <- read.csv(file.path(DATA_DIR, "ireland_critical_atc_review.csv"), stringsAsFactors = FALSE)
 
 country_map <- c(
   "Argentinien" = "Argentina", "Australien" = "Australia", "Belgien" = "Belgium",
@@ -236,11 +245,11 @@ p_ireland <- make_diversification_plot(ireland_std, "Ireland")
 # ---------------------------------------------------------------
 # Save each separately
 # ---------------------------------------------------------------
-ggsave("Data/api_diversification_Germany.png", p_germany, width = 12, height = 7, dpi = 300)
-ggsave("Data/api_diversification_Germany.pdf", p_germany, width = 12, height = 7)
+ggsave(file.path(OUT_DIR, "api_diversification_Germany.png"), p_germany, width = 12, height = 7, dpi = 300)
+ggsave(file.path(OUT_DIR, "api_diversification_Germany.pdf"), p_germany, width = 12, height = 7)
 
-ggsave("Data/api_diversification_EPAR.png",    p_epar,    width = 12, height = 7, dpi = 300)
-ggsave("Data/api_diversification_Ireland.png", p_ireland, width = 12, height = 7, dpi = 300)
+ggsave(file.path(OUT_DIR, "api_diversification_EPAR.png"),    p_epar,    width = 12, height = 7, dpi = 300)
+ggsave(file.path(OUT_DIR, "api_diversification_Ireland.png"), p_ireland, width = 12, height = 7, dpi = 300)
 
 print(p_germany)
 print(p_epar)

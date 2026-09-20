@@ -7,6 +7,15 @@
 #
 # Requires: install.packages(c("dplyr","tidyr","ggplot2","stringr","forcats","patchwork","scales"))
 # ---------------------------------------------------------------
+## -----------------------------------------------------------------
+## Paths. Run this script from the repository root.
+##   DATA_DIR - the four source registers + critical.csv (read-only)
+##   OUT_DIR  - everything this script writes (tables and figures)
+## -----------------------------------------------------------------
+DATA_DIR <- "data/manufacturer-registers/raw"
+OUT_DIR  <- "data/manufacturer-registers/out"
+dir.create(OUT_DIR, recursive = TRUE, showWarnings = FALSE)
+
 library(dplyr)
 library(tidyr)
 library(ggplot2)
@@ -38,7 +47,7 @@ bold_unicode <- function(x) {
 
 # UPDATED: now reads the 4-source combined file (adds CEP) rather than
 # the original 3-source Combined_data.csv.
-data <- read.csv("manufacturer_registers_combined.csv", stringsAsFactors = FALSE)
+data <- read.csv(file.path(OUT_DIR, "manufacturer_registers_combined.csv"), stringsAsFactors = FALSE)
 nrow(data)
 
 # FIX (added): this re-filtered `data` to critical$ATC.level.5, read from
@@ -195,10 +204,10 @@ p_ireland <- make_bubble_plot(matrix_data, "Ireland", source_pal["Ireland"], sho
 p_cep     <- make_bubble_plot(matrix_data, "CEP",     source_pal["CEP"],     show_y_labels = TRUE)
 
 # ---- save each plot as its own separate file ----
-ggsave("Data/bubble_matrix_EPAR.png",     p_ema,     width = 8,  height = 11, dpi = 300)
-ggsave("Data/bubble_matrix_Germany.png", p_germany, width = 8,  height = 11, dpi = 300)
-ggsave("Data/bubble_matrix_Ireland.png", p_ireland, width = 8,  height = 11, dpi = 300)
-ggsave("Data/bubble_matrix_CEP.png",     p_cep,     width = 8,  height = 11, dpi = 300)
+ggsave(file.path(OUT_DIR, "bubble_matrix_EPAR.png"),     p_ema,     width = 8,  height = 11, dpi = 300)
+ggsave(file.path(OUT_DIR, "bubble_matrix_Germany.png"), p_germany, width = 8,  height = 11, dpi = 300)
+ggsave(file.path(OUT_DIR, "bubble_matrix_Ireland.png"), p_ireland, width = 8,  height = 11, dpi = 300)
+ggsave(file.path(OUT_DIR, "bubble_matrix_CEP.png"),     p_cep,     width = 8,  height = 11, dpi = 300)
 
 # ---- also save the combined side-by-side version ----
 # no plot_layout(guides = "collect") here -- we want each panel to
@@ -208,5 +217,5 @@ ggsave("Data/bubble_matrix_CEP.png",     p_cep,     width = 8,  height = 11, dpi
 # read comfortably.
 p <- (p_ema | p_germany) / (p_ireland | p_cep)
 
-ggsave("Data/bubble_matrix_by_source.png", p, width = 18, height = 20, dpi = 300)
+ggsave(file.path(OUT_DIR, "bubble_matrix_by_source.png"), p, width = 18, height = 20, dpi = 300)
 print(p)

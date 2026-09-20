@@ -22,7 +22,7 @@
 #     script would silently inherit the problem with no way to tell.
 #     Now reads directly from bfarm_api_origin_critical_rest_LONG.csv
 #     and does its own filtering, making it self-contained.
-#  2. ireland was read from "Data/ireland.csv", which doesn't exist --
+#  2. ireland was read from data/manufacturer-registers/out/ireland.csv, which doesn't exist --
 #     the real file is ireland_critical_atc_review.csv. Also used the
 #     raw atc_code column directly, which holds messy combined text
 #     (e.g. "J02AC Triazole derivatives, J02AC01 fluconazole") rather
@@ -61,18 +61,27 @@
 #
 # Requires: install.packages(c("dplyr","tidyr","ggplot2","stringr","purrr","janitor"))
 # ---------------------------------------------------------------
+## -----------------------------------------------------------------
+## Paths. Run this script from the repository root.
+##   DATA_DIR - the four source registers + critical.csv (read-only)
+##   OUT_DIR  - everything this script writes (tables and figures)
+## -----------------------------------------------------------------
+DATA_DIR <- "data/manufacturer-registers/raw"
+OUT_DIR  <- "data/manufacturer-registers/out"
+dir.create(OUT_DIR, recursive = TRUE, showWarnings = FALSE)
+
 library(dplyr)
 library(tidyr)
 library(ggplot2)
 library(stringr)
 library(purrr)
 
-germany_raw <- read.csv("Data/bfarm_api_origin_critical_rest_LONG.csv", stringsAsFactors = FALSE) %>%
+germany_raw <- read.csv(file.path(DATA_DIR, "bfarm_api_origin_critical_rest_LONG.csv"), stringsAsFactors = FALSE) %>%
   filter(role != "Zulassungsinhaber")   # keep manufacturers only, drop marketing-authorization holders
 
-EPAR    <- read.csv("Data/EMA_data_critical.csv", stringsAsFactors = FALSE)
-ireland <- read.csv("Data/ireland_critical_atc_review.csv", stringsAsFactors = FALSE)
-cep     <- read.csv("Data/EXPORT_WEB_CEP_with_ATC_drugbank.csv", stringsAsFactors = FALSE)
+EPAR    <- read.csv(file.path(DATA_DIR, "EMA_data_critical.csv"), stringsAsFactors = FALSE)
+ireland <- read.csv(file.path(DATA_DIR, "ireland_critical_atc_review.csv"), stringsAsFactors = FALSE)
+cep     <- read.csv(file.path(DATA_DIR, "EXPORT_WEB_CEP_with_ATC_drugbank.csv"), stringsAsFactors = FALSE)
 names(cep) <- janitor::make_clean_names(names(cep))
 ## -> columns now e.g. substance, certificate_cep_holder, status_cep, atc_code, ...
 
@@ -259,15 +268,15 @@ hhi_ireland <- compute_hhi(ireland_std, "Ireland")
 ## and Ireland are already pre-filtered to critical substances; CEP is
 ## not, which is why only CEP is filtered against this universe.
 ## -----------------------------------------------------------------
-if (file.exists("Data/critical.csv")) {
-  critical <- read.csv("Data/critical.csv", stringsAsFactors = FALSE)
+if (file.exists(file.path(DATA_DIR, "critical.csv"))) {
+  critical <- read.csv(file.path(DATA_DIR, "critical.csv"), stringsAsFactors = FALSE)
   critical_codes <- unique(critical$ATC.level.5)
   critical_codes <- critical_codes[!is.na(critical_codes) & critical_codes != ""]
-  cat("Critical ATC codes loaded from Data/critical.csv:", length(critical_codes), "\n")
+  cat("Critical ATC codes loaded from critical.csv:", length(critical_codes), "\n")
 } else {
   critical_codes <- unique(c(epar_clean$atc_code, germany_clean$atc_code, ireland_std$atc_code))
   critical_codes <- critical_codes[!is.na(critical_codes) & critical_codes != ""]
-  cat("Data/critical.csv not found -- falling back to the derived union of",
+  cat("critical.csv not found in", DATA_DIR, "-- falling back to the derived union of",
       "EMA/Germany/Ireland's own ATC codes:", length(critical_codes), "\n")
 }
 
@@ -302,7 +311,7 @@ hhi_cep <- compute_hhi(cep_std, "CEP")
 hhi_all <- bind_rows(hhi_epar, hhi_germany, hhi_ireland, hhi_cep) %>%
   mutate(source = factor(source, levels = c("EPAR", "Germany", "Ireland", "CEP")))
 
-write.csv(hhi_all, "Data/hhi_step1_priority_final.csv", row.names = FALSE)
+write.csv(hhi_all, file.path(OUT_DIR, "hhi_step1_priority_final.csv"), row.names = FALSE)
 
 # ---------------------------------------------------------------
 # 3. How often does each source hold the HIGHEST HHI per ATC code?
@@ -333,7 +342,7 @@ print(winner_pct)
 cat("\nTotal distinct ATC codes with data from at least one source:", n_distinct(hhi_all$atc_code), "\n")
 cat("ATC codes with an exact tie for highest HHI between 2+ sources:", n_ties, "\n")
 
-write.csv(winner_pct, "Data/hhi_highest_by_source_final.csv", row.names = FALSE)
+write.csv(winner_pct, file.path(OUT_DIR, "hhi_highest_by_source_final.csv"), row.names = FALSE)
 
 library(xtable)
 xtable(winner_pct)
@@ -358,7 +367,7 @@ library(ggplot2)
 library(stringr)
 library(forcats)
 
-hhi_all <- read.csv("Data/hhi_step1_priority_final.csv", stringsAsFactors = FALSE)
+hhi_all <- read.csv(file.path(OUT_DIR, "hhi_step1_priority_final.csv"), stringsAsFactors = FALSE)
 
 # ---- ATC Level 1 chapter names ----
 chapter_names <- c(
@@ -422,7 +431,7 @@ p <- ggplot(hhi_all, aes(x = hhi, y = chapter, fill = chapter)) +
     panel.grid.major.y = element_blank()
   )
 
-ggsave("Data/hhi_by_chapter_by_source.png", p, width = 17, height = 8, dpi = 300)
+ggsave(file.path(OUT_DIR, "hhi_by_chapter_by_source.png"), p, width = 17, height = 8, dpi = 300)
 print(p)
 
 # ---- also save each source individually ----
@@ -442,7 +451,7 @@ for (src in levels(hhi_all$source)) {
       panel.grid.minor = element_blank(),
       panel.grid.major.y = element_blank()
     )
-  ggsave(paste0("Data/hhi_by_chapter_", src, ".png"), p_single, width = 8, height = 8, dpi = 300)
+  ggsave(file.path(OUT_DIR, paste0("hhi_by_chapter_", src, ".png")), p_single, width = 8, height = 8, dpi = 300)
 }
 
 
@@ -459,7 +468,7 @@ for (src in levels(hhi_all$source)) {
 library(dplyr)
 library(ggplot2)
 
-hhi_all <- read.csv("Data/hhi_step1_priority_final.csv", stringsAsFactors = FALSE) %>%
+hhi_all <- read.csv(file.path(OUT_DIR, "hhi_step1_priority_final.csv"), stringsAsFactors = FALSE) %>%
   mutate(source = factor(source, levels = c("EPAR", "Germany", "Ireland", "CEP")))
 
 source_pal <- c(EPAR = "#1D6F5C", Germany = "#B9861A", Ireland = "#C1461D", CEP = "#4B5FAD")
@@ -481,5 +490,5 @@ p <- ggplot(hhi_all, aes(x = hhi, fill = source)) +
     panel.grid.minor = element_blank()
   )
 
-ggsave("Data/hhi_step1_priority_by_source.png", p, width = 12, height = 5, dpi = 300)
+ggsave(file.path(OUT_DIR, "hhi_step1_priority_by_source.png"), p, width = 12, height = 5, dpi = 300)
 print(p)

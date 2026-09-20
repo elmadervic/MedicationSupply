@@ -60,6 +60,15 @@
 #
 # Requires: install.packages(c("dplyr","tidyr","ggplot2","stringr","patchwork","readr","janitor","purrr"))
 # ---------------------------------------------------------------
+## -----------------------------------------------------------------
+## Paths. Run this script from the repository root.
+##   DATA_DIR - the four source registers + critical.csv (read-only)
+##   OUT_DIR  - everything this script writes (tables and figures)
+## -----------------------------------------------------------------
+DATA_DIR <- "data/manufacturer-registers/raw"
+OUT_DIR  <- "data/manufacturer-registers/out"
+dir.create(OUT_DIR, recursive = TRUE, showWarnings = FALSE)
+
 library(dplyr)
 library(tidyr)
 library(ggplot2)
@@ -69,9 +78,9 @@ library(readr)
 library(janitor)
 library(purrr)
 
-germany   <- read.csv("Data/bfarm_api_origin_critical_rest_LONG.csv", stringsAsFactors = FALSE)
-EPAR    <- read.csv("Data/EMA_data_critical.csv", stringsAsFactors = FALSE)
-ireland <- read.csv("Data/ireland_critical_atc_review.csv", stringsAsFactors = FALSE)  # adjust path/name if needed
+germany   <- read.csv(file.path(DATA_DIR, "bfarm_api_origin_critical_rest_LONG.csv"), stringsAsFactors = FALSE)
+EPAR    <- read.csv(file.path(DATA_DIR, "EMA_data_critical.csv"), stringsAsFactors = FALSE)
+ireland <- read.csv(file.path(DATA_DIR, "ireland_critical_atc_review.csv"), stringsAsFactors = FALSE)  # adjust path/name if needed
 
 # ---- CEP (EDQM Certificates of Suitability), 4th source ----
 # Always re-read + clean_names() here (no exists() guard) -- reusing a
@@ -79,7 +88,7 @@ ireland <- read.csv("Data/ireland_critical_atc_review.csv", stringsAsFactors = F
 # session is what caused the "object 'status_cep' not found" error,
 # since an old cep_atc without clean_names() applied has raw column
 # names like "Status CEP" instead of status_cep.
-cep_atc <- read_csv("Data/EXPORT_WEB_CEP_with_ATC_drugbank.csv", show_col_types = FALSE) |>
+cep_atc <- read_csv(file.path(DATA_DIR, "EXPORT_WEB_CEP_with_ATC_drugbank.csv"), show_col_types = FALSE) |>
   clean_names()
 
 country_map <- c(
@@ -355,5 +364,5 @@ p <- ggplot(chapter_summary, aes(x = pct, y = chapter, fill = category)) +
     plot.margin = margin(t = 5, r = 10, b = 5, l = 5)
   )
 
-ggsave("Data/manufacturing_sites_by_chapter_step_source.png", p, width = 25, height = 9.5, dpi = 300)
+ggsave(file.path(OUT_DIR, "manufacturing_sites_by_chapter_step_source.png"), p, width = 25, height = 9.5, dpi = 300)
 print(p)

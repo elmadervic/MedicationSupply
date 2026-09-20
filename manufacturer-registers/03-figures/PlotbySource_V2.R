@@ -16,6 +16,15 @@
 #
 # Requires: install.packages(c("dplyr","tidyr","ggplot2","patchwork","stringr","tidytext","scales"))
 # ---------------------------------------------------------------
+## -----------------------------------------------------------------
+## Paths. Run this script from the repository root.
+##   DATA_DIR - the four source registers + critical.csv (read-only)
+##   OUT_DIR  - everything this script writes (tables and figures)
+## -----------------------------------------------------------------
+DATA_DIR <- "data/manufacturer-registers/raw"
+OUT_DIR  <- "data/manufacturer-registers/out"
+dir.create(OUT_DIR, recursive = TRUE, showWarnings = FALSE)
+
 library(dplyr)
 library(tidyr)
 library(ggplot2)
@@ -41,7 +50,7 @@ integer_breaks <- function(n = 5) {
 }
 
 
-data <- read.csv("manufacturer_registers_combined.csv", stringsAsFactors = FALSE)
+data <- read.csv(file.path(OUT_DIR, "manufacturer_registers_combined.csv"), stringsAsFactors = FALSE)
 
 cat("rows read from manufacturer_registers_combined.csv:", nrow(data), "\n")
 
@@ -244,5 +253,5 @@ p_top_countries <- ggplot(top_countries, aes(x = reorder_within(mfr_country, n_r
 report_plot <- p_totals / p_manu / p_ctry / p_top_countries +
   plot_layout(heights = c(1, 1, 1, 1.2))
 
-ggsave("Data/plots_by_source.png", report_plot, width = 15, height = 20, dpi = 300)
+ggsave(file.path(OUT_DIR, "plots_by_source.png"), report_plot, width = 15, height = 20, dpi = 300)
 print(report_plot)
