@@ -58,7 +58,7 @@ J07BM03,Merck Sharp & Dohme LLC,United States,1,ema,J,Antiinfectives (systemic)
 J07BM03,Merck Sharp & Dohme LLC,United States,1,ema,J,Antiinfectives (systemic)
 J07BM03,Boehringer Ingelheim RCV GmbH & Co KG,Austria,1,ema,J,Antiinfectives (systemic)
 J07BM03,Merck Sharp & Dohme B.V.,Netherlands,2,ema,J,Antiinfectives (systemic)
-L01XX24,"Exelead, Inc.",USA,1,ema,L,Antineoplastic & immunomodulating
+L01XX24,"Exelead, Inc.",United States,1,ema,L,Antineoplastic & immunomodulating
 L01XX24,Les Laboratoires Servier Industrie,France,2,ema,L,Antineoplastic & immunomodulating
 L01XX05,Pronav Clinical Ltd.,Ireland,2,ema,L,Antineoplastic & immunomodulating
 L01XX05,Lipomed GmbH,Germany,2,ema,L,Antineoplastic & immunomodulating
@@ -66,8 +66,8 @@ L01XX05,Delpharm Lille,France,2,ema,L,Antineoplastic & immunomodulating
 L01FC01,Biogen Inc.,United States,1,ema,L,Antineoplastic & immunomodulating
 L01FC01,FUJIFILM Diosynth Biotechnologies Denmark ApS,Denmark,1,ema,L,Antineoplastic & immunomodulating
 L01FC01,Janssen Sciences Ireland UC,Ireland,1,ema,L,Antineoplastic & immunomodulating
-L01FC01,"Samsung Biologics Co, Ltd.",Republic of Korea,1,ema,L,Antineoplastic & immunomodulating
-L01FC01,Janssen Biologics B.V.,The Netherlands,2,ema,L,Antineoplastic & immunomodulating
+L01FC01,"Samsung Biologics Co, Ltd.",South Korea,1,ema,L,Antineoplastic & immunomodulating
+L01FC01,Janssen Biologics B.V.,Netherlands,2,ema,L,Antineoplastic & immunomodulating
 L01FC01,Janssen Pharmaceutica NV,Belgium,2,ema,L,Antineoplastic & immunomodulating
 B02BD02,Baxalta Manufacturing Sàrl,Switzerland,1,ema,B,Blood & blood forming organs
 B02BD02,Takeda Manufacturing Singapore Pte. Ltd.,Singapore,1,ema,B,Blood & blood forming organs
@@ -146,7 +146,7 @@ L01CE01,Novartis Pharma GmbH,Germany,2,ema,L,Antineoplastic & immunomodulating
 L01CE01,GlaxoSmithKline Manufacturing S.p.A.,Italy,2,ema,L,Antineoplastic & immunomodulating
 L01CE01,Salutas Pharma GmbH,Germany,2,ema,L,Antineoplastic & immunomodulating
 L01CE01,Salutas Pharma GmbH,Germany,2,ema,L,Antineoplastic & immunomodulating
-J07BB02,Seqirus Vaccines Ltd,UK,1,ema,J,Antiinfectives (systemic)
+J07BB02,Seqirus Vaccines Ltd,United Kingdom,1,ema,J,Antiinfectives (systemic)
 J07BB02,Seqirus Netherlands B.V.,Netherlands,2,ema,J,Antiinfectives (systemic)
 J05AF06,Delpharm Poznań Spółka Akcyjna,Poland,2,ema,J,Antiinfectives (systemic)
 J05AF06,ViiV Healthcare Trading Services UK Limited,Ireland,2,ema,J,Antiinfectives (systemic)
@@ -16979,7 +16979,7 @@ L01BB05,Accord Healthcare Polska Sp.z o.o.,Poland,NA,ireland,L,Antineoplastic & 
 L01BB05,Accord Healthcare Single Member S.A,Greece,NA,ireland,L,Antineoplastic & immunomodulating
 V03AB35,PHARMIDEA,Latvia,NA,ireland,V,Various
 V03AB35,COMBINO PHARM MALTA LTD,Malta,NA,ireland,V,Various
-V03AB35,MEDICHEM S.A.,SPAIN,NA,ireland,V,Various
+V03AB35,MEDICHEM S.A.,Spain,NA,ireland,V,Various
 B01AE07,Gedeon Richter Polska Sp. z o.o.,Poland,NA,ireland,B,Blood & blood forming organs
 B01AE07,Gedeon Richter Plc.,Hungary,NA,ireland,B,Blood & blood forming organs
 B01AE07,Hungary,Hungary,NA,ireland,B,Blood & blood forming organs
@@ -17668,7 +17668,7 @@ B05XA01,Bieffe Medital Sabiñánigo,Spain,NA,ireland,B,Blood & blood forming org
 C01CA04,Pfizer Service Company BV,Belgium,NA,ireland,C,Cardiovascular system
 J01DD01,hameln rds s.r.o.,Slovakia,NA,ireland,J,Antiinfectives (systemic)
 J01DD01,hameln rds s.r.o.,Slovakia,NA,ireland,J,Antiinfectives (systemic)
-C01CE02,CP Pharmaceuticals Ltd,United Kingdom.,NA,ireland,C,Cardiovascular system
+C01CE02,CP Pharmaceuticals Ltd,United Kingdom,NA,ireland,C,Cardiovascular system
 A03BA01,LABORATOIRE AGUETTANT,France,NA,ireland,A,Alimentary tract & metabolism
 A03BA01,Laboratoire AGUETTANT,France,NA,ireland,A,Alimentary tract & metabolism
 A03BA01,Laboratoire AGUETTANT,France,NA,ireland,A,Alimentary tract & metabolism
@@ -17825,7 +17825,7 @@ J01FA09,AbbVie S.r.l.,Italy,NA,ireland,J,Antiinfectives (systemic)
 L01BA01,"Medac,Gesellschaft für klinische Spezialpräparate mbH",Germany,NA,ireland,L,Antineoplastic & immunomodulating
 H01BA02,Ferring GmbH,Germany,NA,ireland,H,Systemic hormonal preparations
 N02BE01,bene-Arzneimittel GmbH,Germany,NA,ireland,N,Nervous system
-J01GB03,Biologici Italia Laboratories S.r.l.,Italy.,NA,ireland,J,Antiinfectives (systemic)
+J01GB03,Biologici Italia Laboratories S.r.l.,Italy,NA,ireland,J,Antiinfectives (systemic)
 A02BC05,Perrigo Supply Chain International DAC,Ireland,NA,ireland,A,Alimentary tract & metabolism
 J01GB03,Biologici Italia Laboratories S.r.l.,Italy,NA,ireland,J,Antiinfectives (systemic)
 J01XX01,INFECTOPHARM Arzneimittel und Consilium GmbH,Germany,NA,ireland,J,Antiinfectives (systemic)

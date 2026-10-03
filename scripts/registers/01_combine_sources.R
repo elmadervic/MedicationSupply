@@ -225,8 +225,17 @@ cat("cep_std rows:", nrow(cep_std), "\n")
 
 ireland_std <- ireland_std |> filter(atc_code %in% critical_codes)
 
+country_spelling <- c(
+  "SPAIN" = "Spain", "UK" = "United Kingdom", "USA" = "United States",
+  "The Netherlands" = "Netherlands", "Republic of Korea" = "South Korea"
+)
+
 manufacturer_registers <- bind_rows(ema_std, germany_std, ireland_std, cep_std) |>
-  mutate(level1_code = str_extract(atc_code, "^[A-Z]")) |>
+  mutate(
+    mfr_country = str_remove(mfr_country, "\\.$"),
+    mfr_country = coalesce(unname(country_spelling[mfr_country]), mfr_country),
+    level1_code = str_extract(atc_code, "^[A-Z]")
+  ) |>
   left_join(atc_level1, by = "level1_code")
 
 cat("Combined rows (critical only):", nrow(manufacturer_registers), "\n")

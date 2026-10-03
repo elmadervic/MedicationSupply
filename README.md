@@ -86,7 +86,7 @@ After restriction to critical medicines the four sources cover:
 | Source | ATC codes | Manufacturers | Countries |
 |---|---|---|---|
 | Germany (BfArM) | 251 | 1,824 | 48 |
-| Ireland (HPRA) | 205 | 523 | 32 |
+| Ireland (HPRA) | 205 | 523 | 29 |
 | CEP (EDQM) | 79 | 313 | 29 |
 | EPAR (EMA) | 51 | 140 | 26 |
 
@@ -122,7 +122,9 @@ manufacturer × country × manufacturing step × source, with the ATC level-1 ch
   result is then restricted to the critical codes. The holder's country is the trailing ISO-2 code of
   the holder field.
 - In all sources whitespace in names is collapsed, so names that differ only by an embedded line break
-  count as one manufacturer.
+  count as one manufacturer. Country spellings are unified across sources ("Italy." → Italy,
+  "SPAIN" → Spain, "UK" → United Kingdom, "USA" → United States, "Republic of Korea" → South Korea).
+  The paper draft still shows 32 countries for Ireland, three of them duplicate spellings.
 - If `critical.csv` is missing, the scripts fall back to the union of ATC codes in the EPAR,
   German and Irish files, which are already restricted to critical medicines.
 

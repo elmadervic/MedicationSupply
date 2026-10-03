@@ -8,21 +8,6 @@ library(forcats)
 library(patchwork)
 library(scales)
 
-bold_unicode <- function(x) {
-  upper       <- LETTERS
-  lower       <- letters
-  digits      <- as.character(0:9)
-  bold_upper  <- vapply(0:25, function(i) intToUtf8(0x1D400 + i), character(1))
-  bold_lower  <- vapply(0:25, function(i) intToUtf8(0x1D41A + i), character(1))
-  bold_digits <- vapply(0:9,  function(i) intToUtf8(0x1D7CE + i), character(1))
-  map <- setNames(c(bold_upper, bold_lower, bold_digits), c(upper, lower, digits))
-  
-  vapply(x, function(s) {
-    chars <- strsplit(s, "")[[1]]
-    paste0(ifelse(chars %in% names(map), map[chars], chars), collapse = "")
-  }, character(1), USE.NAMES = FALSE)
-}
-
 data <- read.csv(file.path(PROC_DIR, "manufacturer_registers_combined.csv"), stringsAsFactors = FALSE)
 nrow(data)
 
@@ -93,15 +78,16 @@ country_order <- matrix_data %>%
 
 matrix_data <- matrix_data %>%
   mutate(
-    mfr_country_label = ifelse(mfr_country %in% EU_EEA, mfr_country, bold_unicode(mfr_country)),
-    mfr_country_label = factor(mfr_country_label,
-                               levels = rev(ifelse(country_order %in% EU_EEA, country_order,
-                                                   bold_unicode(country_order)))),
+    mfr_country_label = factor(mfr_country, levels = rev(country_order)),
     source = factor(source, levels = c("EPAR", "Germany", "Ireland", "CEP"))
   )
 
 group_order <- atc_group_names[c("A","B","C","D","G","H","J","L","M","N","P","R","S","V")]
 matrix_data$atc_group_label <- factor(matrix_data$atc_group_label, levels = group_order)
+
+country_labels <- function(x) {
+  parse(text = ifelse(x %in% EU_EEA, sprintf("'%s'", x), sprintf("bold('%s')", x)))
+}
 
 source_pal <- c(EPAR = "#1D6F5C", Germany = "#B9861A", Ireland = "#C1461D", CEP = "#1A4D7A")
 
@@ -118,7 +104,7 @@ make_bubble_plot <- function(df, source_name, base_color, show_y_labels = TRUE) 
     scale_fill_gradient(low = "#F0EDE3", high = base_color, name = "Unique ATC\ncodes",
                         breaks = function(x) unique(round(scales::extended_breaks()(x))),
                         labels = scales::label_number(accuracy = 1)) +
-    scale_y_discrete(drop = FALSE,
+    scale_y_discrete(drop = FALSE, labels = country_labels,
                      expand = expansion(add = 1.2)) +
     guides(size = guide_legend(override.aes = list(fill = "grey50", color = "grey50"))) +
     labs(x = NULL, y = NULL, title = source_name) +
