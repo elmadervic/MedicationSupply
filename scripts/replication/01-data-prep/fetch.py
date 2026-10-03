@@ -6,7 +6,6 @@ from __future__ import annotations
 import hashlib
 import json
 import sys
-import time
 from datetime import datetime, timezone
 
 import requests
@@ -35,23 +34,6 @@ def _get(url: str) -> requests.Response:
     return r
 
 
-def fetch_fda(dest) -> dict:
-    base = "https://api.fda.gov/drug/shortages.json"
-    records, skip, limit = [], 0, 100
-    while True:
-        r = _get(f"{base}?limit={limit}&skip={skip}")
-        payload = r.json()
-        batch = payload.get("results", [])
-        records.extend(batch)
-        total = payload.get("meta", {}).get("results", {}).get("total")
-        skip += limit
-        if not batch or (total is not None and skip >= total) or skip >= 26000:
-            break
-        time.sleep(0.3)
-    dest.write_text(json.dumps(records, ensure_ascii=False), encoding="utf-8")
-    return {"n_records": len(records), "reported_total": total}
-
-
 def main() -> int:
     manifest = {
         "snapshot_utc": datetime.now(timezone.utc).isoformat(timespec="seconds"),
@@ -62,12 +44,9 @@ def main() -> int:
     for key, (url, filename, role) in AUTO_SOURCES.items():
         dest = RAW / filename
         try:
-            if key == "fda_shortages":
-                extra = fetch_fda(dest)
-            else:
-                r = _get(url)
-                dest.write_bytes(r.content)
-                extra = {"content_type": r.headers.get("Content-Type", "")}
+            r = _get(url)
+            dest.write_bytes(r.content)
+            extra = {"content_type": r.headers.get("Content-Type", "")}
             manifest["sources"][key] = {
                 "url": url,
                 "file": filename,

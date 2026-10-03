@@ -3,7 +3,6 @@ Analyze the raw source files in data/replication/raw/ and print a summary of the
 """
 from __future__ import annotations
 
-import json
 import sys
 
 import pandas as pd
@@ -43,70 +42,6 @@ def _read_excel_guess_header(path, max_scan: int = 12) -> pd.DataFrame:
         raise ValueError(f"could not read {path}")
     print(f"    [header row guessed: {best_h}; {best.shape[1]} non-empty columns]")
     return best
-
-
-def _preview_pdf(path, max_pages: int = 3, max_tables: int = 3) -> None:
-    try:
-        import pdfplumber
-    except ImportError:
-        print("  pdfplumber not installed - pip install pdfplumber")
-        return
-
-    with pdfplumber.open(path) as pdf:
-        n = len(pdf.pages)
-        print(f"  pages: {n}")
-        meta = {k: v for k, v in (pdf.metadata or {}).items()
-                if k in {"Title", "Author", "CreationDate", "ModDate", "Producer"}}
-        if meta:
-            print(f"  metadata: {meta}")
-
-        probe = "".join((p.extract_text() or "") for p in pdf.pages[:min(3, n)])
-        if not probe.strip():
-            print("  NO TEXT LAYER on the first pages - this is a scan. "
-                  "extract_tables() will return nothing; rasterise and OCR instead "
-                  "(pdftoppm -png -r 300, then pytesseract).")
-            return
-        print(f"  text layer: yes ({len(probe):,} chars on first "
-              f"{min(3, n)} page(s))")
-
-        found = 0
-        for pno, page in enumerate(pdf.pages[:max_pages], start=1):
-            for tno, tbl in enumerate(page.extract_tables(), start=1):
-                if not tbl or len(tbl) < 2:
-                    continue
-                found += 1
-                widths = {len(r) for r in tbl}
-                print(f"\n  -- page {pno} table {tno}: {len(tbl)} rows, "
-                      f"col counts {sorted(widths)}")
-                if len(widths) > 1:
-                    print("     ragged column counts: merged or wrapped cells, "
-                          "so a naive DataFrame(tbl[1:], columns=tbl[0]) will "
-                          "misalign. Filter to the modal width first.")
-                for row in tbl[:4]:
-                    cells = [("" if c is None else str(c).replace("\n", " "))[:26]
-                             for c in row]
-                    print("     | " + " | ".join(cells))
-                if found >= max_tables:
-                    break
-            if found >= max_tables:
-                break
-
-        if not found:
-            print("  extract_tables() found nothing - the list is probably laid "
-                  "out with whitespace, not ruling lines. Use "
-                  "`pdftotext -layout` and split on column positions, or pass "
-                  'table_settings={"vertical_strategy": "text"}.')
-
-        print("\n  -- layout text sample (page 1)")
-        txt = pdf.pages[0].extract_text(layout=True) or pdf.pages[0].extract_text() or ""
-        shown = 0
-        for line in txt.splitlines():
-            if not line.strip():
-                continue
-            print(f"     {line.rstrip()[:120]}")
-            shown += 1
-            if shown >= 12:
-                break
 
 
 def _sniff_text(path) -> None:
@@ -153,14 +88,8 @@ def main() -> int:
                     if df.shape[1] > 1:
                         _preview_frame(df, path.name, f"(sep={sep!r}, first 5000 rows)")
                         break
-            elif path.suffix == ".pdf":
-                _preview_pdf(path)
             elif path.suffix == ".xml":
                 df = pd.read_xml(path)
-                _preview_frame(df, path.name)
-            elif path.suffix == ".json":
-                data = json.loads(path.read_text(encoding="utf-8"))
-                df = pd.json_normalize(data)
                 _preview_frame(df, path.name)
         except Exception as exc:
             print(f"  ERROR: {type(exc).__name__}: {exc}")

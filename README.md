@@ -214,8 +214,7 @@ or a UTF-8 terminal.
 ## Independent replication (Python)
 
 `scripts/replication/` is a second, independently written pipeline. It is not used for any number in
-the paper. It rebuilds substance-level supply from the current public downloads (EDQM CEP export, EMA
-EPAR manufacturers, HPRA XML, EMA medicine and shortage reports, Union list of critical medicines) and
+the paper. It rebuilds substance-level supply from separately obtained public data and
 computes the same country-level concentration measures. It shows that the register results do not hinge
 on the hand-curated files above.
 
@@ -239,12 +238,17 @@ pip install -r requirements.txt
 python scripts/replication/01-data-prep/fetch.py
 ```
 
-Downloads the automatically fetchable sources into `data/replication/raw/` and records URL, time and
-SHA-256 of each in `manifest.json`. The committed snapshot was fetched on 20 September 2026. Running
-`fetch.py` again replaces it with today's versions. Two files have to be downloaded by hand,
-as described in `common/config.py`: `edqm_cep.txt` (EDQM, 23 August 2026) and `bfarm_shortages.csv`
-(BfArM, all reports, 23 August 2026). `manufacturers.csv` comes from an earlier project that scraped
-the EPAR Annex II manufacturer blocks and geocoded the addresses.
+Downloads the three automatically fetchable sources into `data/replication/raw/` and records URL,
+time and SHA-256 of each in `manifest.json`. The committed snapshot was fetched on 20 September 2026.
+Running `fetch.py` again replaces it with today's versions.
+
+| File in `data/replication/raw/` | Content | How it is obtained |
+|---|---|---|
+| `ulcm.xlsx` | Union list of critical medicines (EMA) | `fetch.py` |
+| `ema_medicines.xlsx` | EMA medicines report, used only for substance → ATC codes | `fetch.py` |
+| `hpra_products.xml` | HPRA human-medicines list (`latestHMlist.xml`) | `fetch.py` |
+| `edqm_cep.txt` | EDQM CEP export | downloaded by hand on 23 August 2026, see `common/config.py` |
+| `manufacturers.csv` | EPAR Annex II manufacturers with geocoded addresses | copied from an earlier project that scraped the EPAR product-information PDFs |
 
 ```bash
 python scripts/replication/01-data-prep/inspect_sources.py > results/replication/schema_report.txt

@@ -8,7 +8,6 @@ atc_codes / atc_origin columns.
 """
 from __future__ import annotations
 
-import re
 import sys
 import xml.etree.ElementTree as ET
 

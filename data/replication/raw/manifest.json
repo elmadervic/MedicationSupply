@@ -19,24 +19,6 @@
       "fetched_utc": "2026-09-20T21:14:43+00:00",
       "content_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
     },
-    "ema_shortages": {
-      "url": "https://www.ema.europa.eu/en/documents/report/medicines-output-shortages-report_en.xlsx",
-      "file": "ema_shortages.xlsx",
-      "role": "outcome",
-      "bytes": 88170,
-      "sha256": "230accc9638c9e5819a12d3dbb50603f81fc3f0f217be993e667d4cb1faa0782",
-      "fetched_utc": "2026-09-20T21:14:43+00:00",
-      "content_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
-    },
-    "bfarm_versorgungsrelevant": {
-      "url": "https://www.bfarm.de/SharedDocs/Downloads/DE/Arzneimittel/Zulassung/amInformationen/Lieferengpaesse/ListeVersorgungsrelevanteWirkstoffe.pdf?__blob=publicationFile",
-      "file": "bfarm_versorgungsrelevant.pdf",
-      "role": "universe",
-      "bytes": 528986,
-      "sha256": "dee5f6e2536761e0604f63301e1104981e079ec80479cf3cf46090da564d4366",
-      "fetched_utc": "2026-09-20T21:14:44+00:00",
-      "content_type": "application/pdf"
-    },
     "hpra_products": {
       "url": "http://www.hpra.ie/img/uploaded/swedocuments/latestHMlist.xml",
       "file": "hpra_products.xml",
@@ -46,16 +28,6 @@
       "fetched_utc": "2026-09-20T21:14:52+00:00",
       "content_type": "application/xml"
     },
-    "fda_shortages": {
-      "url": "https://api.fda.gov/drug/shortages.json?limit=1000",
-      "file": "fda_shortages.json",
-      "role": "outcome",
-      "bytes": 2081336,
-      "sha256": "2dd0b491b5c7439c91bdc9350c02beacdc1dd2e0732285b0b5efbc0f68a1551a",
-      "fetched_utc": "2026-09-20T21:15:17+00:00",
-      "n_records": 1603,
-      "reported_total": 1603
-    },
     "edqm_cep": {
       "url": "https://extranet.edqm.eu/publications/recherches_CEP.shtml",
       "file": "edqm_cep.txt",
@@ -64,15 +36,6 @@
       "bytes": 1457610,
       "sha256": "92c69bdaced8a585290377b687edaf63ab46beae9531bef1008935769c55db80",
       "mtime_local": "2026-08-23T20:25:24"
-    },
-    "bfarm_shortages": {
-      "url": "https://anwendungen.pharmnet-bund.de/lieferengpassmeldungen/faces/public/meldungen.xhtml",
-      "file": "bfarm_shortages.csv",
-      "role": "outcome",
-      "manual": true,
-      "bytes": 2753490,
-      "sha256": "637cd7e88f84613f20ed99def6414e5efbbe6f88ee1c3899e2c81e4c9991894d",
-      "mtime_local": "2026-08-23T20:31:13"
     }
   }
 }
