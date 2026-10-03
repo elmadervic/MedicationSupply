@@ -1,73 +1,4 @@
-# ---------------------------------------------------------------
-# Manufacturing sites by ATC chapter, split into:
-#   EEA - API (step 1), EEA - batch release (step 2), Non-EEA
-# One panel per source (EPAR, Germany, Ireland, CEP).
-#
-# FIXES APPLIED vs. the previous version of this script:
-#  1. Data/germany_critical.csv doesn't exist in this data set --
-#     replaced with bfarm_api_origin_critical_rest_LONG.csv. Note this
-#     file's 'land' column lists manufacturers worldwide, not just
-#     Germany -- it's the German national registry (BfArM) of
-#     marketed products, kept labeled "Germany" as the source name
-#     per the original script's convention.
-#  2. Data/critical.csv doesn't exist either. Germany/EPAR/Ireland are
-#     already pre-filtered to critical substances (per their file
-#     names), so critical_codes is now the union of their ATC codes,
-#     used to filter CEP instead of critical$ATC.level.5.
-#  3. cep_atc was read without janitor::clean_names(), but the raw
-#     file has columns like "Certificate (CEP) Holder" / "Status CEP"
-#     / "Substance" while the script referenced certificate_cep_holder
-#     / status_cep / substance -- clean_names() added so those exist.
-#  4. holder_country was referenced (for CEP country lookup) but never
-#     computed -- now extracted from the trailing 2-letter ISO code in
-#     certificate_cep_holder.
-#  5. CEP rows with multiple comma-separated ATC codes (28 rows) are
-#     now split one-code-per-row before filtering, so they're no
-#     longer silently dropped by the exact-match filter.
-#  6. Ireland's mfr_country has a couple of trailing-period values
-#     ("Italy.", "United Kingdom.") that failed to match the EEA list
-#     after recode() and were misclassified as Non-EEA -- trailing
-#     periods are now stripped before country normalization.
-#  7. Ireland's mfr_company / mfr_country are "|"-separated parallel
-#     lists (multiple manufacturers per product row). Left unsplit,
-#     "Company A | Company B" counted as one fake "site" -- directly
-#     wrong for a plot about unique site counts. Now split and paired
-#     up, with a same-logic fallback (keep row unsplit) on the rows
-#     where the two lists don't line up in length.
-#  8. Ireland's chapter/ATC now comes from matched_critical_atc (the
-#     clean single code) instead of the raw atc_code text field, which
-#     can hold combined text like "J02AC Triazole derivatives, J02AC01
-#     fluconazole".
-#
-# NOTE: Ireland has no manufacturing-step field, so its EEA sites
-# cannot be split into API vs batch-release -- they are shown as a
-# single "EEA - not disclosed" category instead. This is a genuine
-# data limitation, not a plotting simplification. CEP (EDQM
-# Certificates of Suitability) has the same limitation: certificates
-# name the holder but do not disclose API vs finished-product
-# manufacturing role, so CEP is classified the same way as Ireland.
-#
-# Sites are deduplicated: Germany by pu_nummer (true unique site ID,
-# each assigned its modal country); EPAR and Ireland by manufacturer
-# name (no unique site ID available in those sources); CEP by
-# certificate holder name (no unique site ID either).
-#
-# NOTE: unlike the HHI step-1-priority analysis, NO step-2 records are
-# deleted here. A site is counted as "API (step 1)" if it has any
-# step-1 record and "batch release" only if it has step-2 records but
-# no step-1 record -- but the underlying data is unfiltered; every
-# disclosed manufacturer/site is retained and classified.
-#
-# Requires: install.packages(c("dplyr","tidyr","ggplot2","stringr","patchwork","readr","janitor","purrr"))
-# ---------------------------------------------------------------
-## -----------------------------------------------------------------
-## Paths. Run this script from the repository root.
-##   DATA_DIR - the four source registers + critical.csv (read-only)
-##   OUT_DIR  - everything this script writes (tables and figures)
-## -----------------------------------------------------------------
-DATA_DIR <- "data/manufacturer-registers/raw"
-OUT_DIR  <- "data/manufacturer-registers/out"
-dir.create(OUT_DIR, recursive = TRUE, showWarnings = FALSE)
+source("scripts/registers/paths.R")
 
 library(dplyr)
 library(tidyr)
@@ -78,17 +9,11 @@ library(readr)
 library(janitor)
 library(purrr)
 
-germany   <- read.csv(file.path(DATA_DIR, "bfarm_api_origin_critical_rest_LONG.csv"), stringsAsFactors = FALSE)
-EPAR    <- read.csv(file.path(DATA_DIR, "EMA_data_critical.csv"), stringsAsFactors = FALSE)
-ireland <- read.csv(file.path(DATA_DIR, "ireland_critical_atc_review.csv"), stringsAsFactors = FALSE)  # adjust path/name if needed
+germany   <- read.csv(file.path(RAW_DIR, "bfarm_api_origin_critical_rest_LONG.csv"), stringsAsFactors = FALSE)
+EPAR    <- read.csv(file.path(RAW_DIR, "EMA_data_critical.csv"), stringsAsFactors = FALSE)
+ireland <- read.csv(file.path(RAW_DIR, "ireland_critical_atc_review.csv"), stringsAsFactors = FALSE)
 
-# ---- CEP (EDQM Certificates of Suitability), 4th source ----
-# Always re-read + clean_names() here (no exists() guard) -- reusing a
-# cep_atc object left over from an earlier script run in the same R
-# session is what caused the "object 'status_cep' not found" error,
-# since an old cep_atc without clean_names() applied has raw column
-# names like "Status CEP" instead of status_cep.
-cep_atc <- read_csv(file.path(DATA_DIR, "EXPORT_WEB_CEP_with_ATC_drugbank.csv"), show_col_types = FALSE) |>
+cep_atc <- read_csv(file.path(RAW_DIR, "EXPORT_WEB_CEP_with_ATC_drugbank.csv"), show_col_types = FALSE) |>
   clean_names()
 
 country_map <- c(
@@ -108,13 +33,8 @@ country_map <- c(
   "Vereinigte Staaten" = "United States", "Vereinigtes Königreich" = "United Kingdom",
   "Vereinigtes Königreich (Nordirland)" = "United Kingdom", "Zypern" = "Cyprus",
   "Österreich" = "Austria"
-  # China, Israel, Japan, Monaco, Puerto Rico, Taiwan, Ukraine, Chile are
-  # spelled the same in German and English, so they pass through unmapped
-  # (dplyr::recode keeps unmatched values as-is) -- no entry needed
 )
 
-# CEP's holder_country is a 2-letter ISO code (EDQM convention), unlike
-# the other three sources which already carry full country names.
 iso2_to_name <- c(
   AT = "Austria", BE = "Belgium", BG = "Bulgaria", HR = "Croatia",
   CY = "Cyprus", CZ = "Czech Republic", DK = "Denmark", EE = "Estonia",
@@ -129,7 +49,6 @@ iso2_to_name <- c(
   BR = "Brazil", MX = "Mexico", IL = "Israel", TR = "Turkey",
   ZA = "South Africa", AR = "Argentina", NZ = "New Zealand",
   SG = "Singapore", TW = "Taiwan", RU = "Russia", UA = "Ukraine"
-  # extend if you spot NAs printed by the check below
 )
 
 EEA <- c("Austria","Belgium","Bulgaria","Croatia","Cyprus","Czech Republic","Denmark",
@@ -147,12 +66,6 @@ atc_chapter_names <- c(
   S = "S - Sensory organs", V = "V - Various"
 )
 
-# ---------------------------------------------------------------
-# Derive the critical ATC code universe from Germany + EPAR + Ireland
-# (all three are already pre-filtered to critical substances; there
-# is no standalone critical.csv in this data set). Ireland uses
-# matched_critical_atc, the clean single code.
-# ---------------------------------------------------------------
 critical_codes <- unique(c(
   germany$atc_code,
   EPAR$atc_code,
@@ -164,8 +77,6 @@ cep_atc2 <- cep_atc[!is.na(cep_atc$atc_code), ]
 cep_atc <- cep_atc %>% filter(atc_code %in% critical_codes)
 cep_atc <- cep_atc %>% filter(status_cep == "Valid")
 
-# CEP cells can hold multiple comma-separated ATC codes -- split before
-# use so multi-code substances aren't silently dropped by the exact match
 cep_atc <- cep_atc %>%
   separate_rows(atc_code, sep = ",\\s*") %>%
   filter(atc_code %in% critical_codes)
@@ -177,9 +88,6 @@ str(unique(cep_atc$substance))
 
 str(unique(cep_atc$atc_code))
 
-# ---------------------------------------------------------------
-# Helper: build the site x chapter classification for one source
-# ---------------------------------------------------------------
 classify_sites <- function(df, source_name) {
   df %>%
     group_by(chapter, site_id) %>%
@@ -204,7 +112,6 @@ classify_sites <- function(df, source_name) {
     )
 }
 
-# ---- Germany: site = pu_nummer, modal country, step from role ----
 germany_sites <- germany %>%
   mutate(
     country = recode(str_remove(str_trim(land), "\\.$"), !!!country_map),
@@ -216,15 +123,12 @@ germany_sites <- germany %>%
   filter(!is.na(atc_code), atc_code != "", !is.na(pu_nummer), !is.na(country), country != "") %>%
   transmute(chapter, site_id = as.character(pu_nummer), country, step)
 
-# a site can appear under multiple chapters -- classify_sites operates
-# per chapter x site as intended (a site counts once per chapter it supplies)
 germany_classified <- classify_sites(germany_sites, "Germany")
 
-# ---- EPAR: site = manufacturer name, step from manufacturer_step ----
 epar_sites <- EPAR %>%
   mutate(
     country = recode(str_remove(str_trim(country), "\\.$"), !!!country_map),
-    step = coalesce(as.numeric(manufacturer_step), 2),  # missing/NA step -> assume 2 (batch release)
+    step = coalesce(as.numeric(manufacturer_step), 2),
     chapter = recode(substr(atc_code, 1, 1), !!!atc_chapter_names)
   ) %>%
   filter(!is.na(atc_code), atc_code != "", !is.na(manufacturer_name), manufacturer_name != "",
@@ -233,12 +137,6 @@ epar_sites <- EPAR %>%
 
 epar_classified <- classify_sites(epar_sites, "EPAR")
 
-# ---- Ireland: site = manufacturer name, NO step field.
-#      mfr_company / mfr_country are "|"-separated parallel lists
-#      (multiple manufacturers per product row) -- split and pair them
-#      up so each manufacturer is counted as its own site rather than
-#      one bogus combined "site"; rows where the two lists don't line
-#      up in length are kept unsplit as a fallback. ----
 split_trim <- function(x) {
   if (is.na(x) || x == "") return(character(0))
   str_trim(str_split(x, "\\|")[[1]])
@@ -277,9 +175,6 @@ ire_sites <- ireland_split %>%
 
 ire_classified <- classify_sites(ire_sites, "Ireland")
 
-# ---- CEP: site = certificate holder name, NO step field (same
-#      limitation as Ireland -- CEPs don't disclose API vs
-#      finished-product manufacturing role) ----
 cep_sites <- cep_atc %>%
   filter(!is.na(atc_code), atc_code %in% critical_codes) %>%
   mutate(
@@ -294,9 +189,6 @@ cep_sites <- cep_atc %>%
 
 cep_classified <- classify_sites(cep_sites, "CEP")
 
-# ---------------------------------------------------------------
-# Combine, compute shares per chapter x source
-# ---------------------------------------------------------------
 all_classified <- bind_rows(germany_classified, epar_classified, ire_classified, cep_classified)
 
 chapter_summary <- all_classified %>%
@@ -305,8 +197,6 @@ chapter_summary <- all_classified %>%
   mutate(total = sum(n), pct = 100 * n / total) %>%
   ungroup()
 
-# order chapters within each source by total site count (descending),
-# using Germany's order as the shared reference so panels are comparable
 chapter_order <- chapter_summary %>%
   filter(source == "Germany") %>%
   distinct(chapter, total) %>%
@@ -322,18 +212,14 @@ chapter_summary <- chapter_summary %>%
          )))
 
 step_colors <- c(
-  "EEA - API (step 1)"         = "#0B2545",  # dark navy (blue family, darkest = most disclosed)
-  "EEA - batch release"        = "#4A7FB5",  # medium blue
-  "EEA - not disclosed"        = "#8FB3D6",  # deepened pale blue (was #B8D0E6)
-  "Non-EEA - API (step 1)"     = "#7A1810",  # dark red (red family, darkest = most disclosed)
-  "Non-EEA - batch release"    = "#C1461D",  # medium red/orange
-  "Non-EEA - not disclosed"    = "#E28A6E"   # deepened pale salmon (was #F0B8A8)
+  "EEA - API (step 1)"         = "#0B2545",
+  "EEA - batch release"        = "#4A7FB5",
+  "EEA - not disclosed"        = "#8FB3D6",
+  "Non-EEA - API (step 1)"     = "#7A1810",
+  "Non-EEA - batch release"    = "#C1461D",
+  "Non-EEA - not disclosed"    = "#E28A6E"
 )
 
-# bar height (thickness), proportional to sqrt(n) -- same convention as
-# ggplot's varwidth for boxplots. Scaled per SOURCE (not globally) since
-# EPAR/Germany/Ireland/CEP have very different total chapter sizes; a floor
-# of 0.25 keeps the smallest chapters visible instead of vanishing.
 totals_label <- chapter_summary %>%
   distinct(source, chapter, total) %>%
   group_by(source) %>%
@@ -364,5 +250,5 @@ p <- ggplot(chapter_summary, aes(x = pct, y = chapter, fill = category)) +
     plot.margin = margin(t = 5, r = 10, b = 5, l = 5)
   )
 
-ggsave(file.path(OUT_DIR, "manufacturing_sites_by_chapter_step_source.png"), p, width = 25, height = 9.5, dpi = 300)
+ggsave(file.path(FIG_DIR, "manufacturing_sites_by_chapter_step_source.png"), p, width = 25, height = 9.5, dpi = 300)
 print(p)

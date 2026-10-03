@@ -1,20 +1,4 @@
-# ---------------------------------------------------------------
-# Bubble-matrix plot per source: rows = country, columns = ATC
-# anatomical main group (first letter of ATC code), dot size =
-# unique manufacturing sites, dot color = unique ATC-5 codes.
-# Styled after a reference plot with grouped columns, bold/boxed
-# non-EU countries, and a blue size+color legend.
-#
-# Requires: install.packages(c("dplyr","tidyr","ggplot2","stringr","forcats","patchwork","scales"))
-# ---------------------------------------------------------------
-## -----------------------------------------------------------------
-## Paths. Run this script from the repository root.
-##   DATA_DIR - the four source registers + critical.csv (read-only)
-##   OUT_DIR  - everything this script writes (tables and figures)
-## -----------------------------------------------------------------
-DATA_DIR <- "data/manufacturer-registers/raw"
-OUT_DIR  <- "data/manufacturer-registers/out"
-dir.create(OUT_DIR, recursive = TRUE, showWarnings = FALSE)
+source("scripts/registers/paths.R")
 
 library(dplyr)
 library(tidyr)
@@ -24,12 +8,6 @@ library(forcats)
 library(patchwork)
 library(scales)
 
-# ---------------------------------------------------------------
-# Convert text to Unicode mathematical bold characters.
-# Renders as genuinely bold text via plain character substitution --
-# no ggtext/markdown package or parsing required, so it can't
-# silently fail to render like "**text**" can.
-# ---------------------------------------------------------------
 bold_unicode <- function(x) {
   upper       <- LETTERS
   lower       <- letters
@@ -45,24 +23,9 @@ bold_unicode <- function(x) {
   }, character(1), USE.NAMES = FALSE)
 }
 
-# UPDATED: now reads the 4-source combined file (adds CEP) rather than
-# the original 3-source Combined_data.csv.
-data <- read.csv(file.path(OUT_DIR, "manufacturer_registers_combined.csv"), stringsAsFactors = FALSE)
+data <- read.csv(file.path(PROC_DIR, "manufacturer_registers_combined.csv"), stringsAsFactors = FALSE)
 nrow(data)
 
-# FIX (added): this re-filtered `data` to critical$ATC.level.5, read from
-# Data/critical.csv -- but that file isn't part of this data set, so a
-# fresh session stopped here. The `exists("critical")` guard only helped
-# when some earlier script had already left `critical` in the session.
-# The re-filter is redundant in any case: manufacturer_registers_combined.csv
-# was already filtered to critical ATC codes when it was produced (see
-# ComebineAll4SourcesV2.R). Same fix as PlotbySource_V2.R -- removed.
-
-
-# fix: translate German (and other non-English) country names to English
-# BEFORE any counting -- otherwise "Deutschland" and "Germany" (or
-# "Spanien" and "Spain") get counted as separate countries. (Same map
-# used across the other report scripts, kept here for consistency.)
 country_map <- c(
   "Argentinien" = "Argentina", "Australien" = "Australia", "Belgien" = "Belgium",
   "Brasilien" = "Brazil", "Bulgarien" = "Bulgaria", "Kroatien" = "Croatia",
@@ -94,7 +57,6 @@ data <- data %>%
          !is.na(mfr_company), mfr_company != "",
          !is.na(mfr_country), mfr_country != "")
 
-# ATC anatomical main group (first letter) -> full name
 atc_group_names <- c(
   A = "Alimentary tract\n& metabolism", B = "Blood & blood\nforming organs",
   C = "Cardiovascular\nsystem", D = "Dermatologicals",
@@ -109,15 +71,11 @@ data <- data %>%
   mutate(atc_group = substr(atc_code, 1, 1),
          atc_group_label = recode(atc_group, !!!atc_group_names))
 
-# EU/EEA countries shown as plain row labels; everyone else bold (non-EU dependency)
 EU_EEA <- c("Austria","Belgium","Bulgaria","Croatia","Cyprus","Czech Republic","Denmark",
             "Estonia","Finland","France","Germany","Greece","Hungary","Ireland","Italy",
             "Latvia","Lithuania","Luxembourg","Malta","Netherlands","Poland","Portugal",
             "Romania","Slovakia","Slovenia","Spain","Sweden","Iceland","Norway","Liechtenstein")
 
-# ---------------------------------------------------------------
-# Build the country x group summary, per source
-# ---------------------------------------------------------------
 matrix_data <- data %>%
   distinct(source, atc_code, mfr_company, mfr_country, atc_group_label) %>%
   group_by(source, mfr_country, atc_group_label) %>%
@@ -127,7 +85,6 @@ matrix_data <- data %>%
     .groups = "drop"
   )
 
-# order countries by total unique sites (descending), across all sources combined
 country_order <- matrix_data %>%
   group_by(mfr_country) %>%
   summarise(total_sites = sum(unique_sites)) %>%
@@ -136,7 +93,6 @@ country_order <- matrix_data %>%
 
 matrix_data <- matrix_data %>%
   mutate(
-    # bold non-EU/EEA country names via real Unicode bold characters (see bold_unicode() above)
     mfr_country_label = ifelse(mfr_country %in% EU_EEA, mfr_country, bold_unicode(mfr_country)),
     mfr_country_label = factor(mfr_country_label,
                                levels = rev(ifelse(country_order %in% EU_EEA, country_order,
@@ -144,19 +100,9 @@ matrix_data <- matrix_data %>%
     source = factor(source, levels = c("EPAR", "Germany", "Ireland", "CEP"))
   )
 
-# column order: fixed anatomical-group order (roughly matching ATC letter order)
 group_order <- atc_group_names[c("A","B","C","D","G","H","J","L","M","N","P","R","S","V")]
 matrix_data$atc_group_label <- factor(matrix_data$atc_group_label, levels = group_order)
 
-# ---------------------------------------------------------------
-# Plot
-# ---------------------------------------------------------------
-# ---------------------------------------------------------------
-# Plot -- one independent plot per source, each with its own
-# size/color scale and its own legend (not shared across sources),
-# colored using the established per-source palette:
-#   EPAR = teal, Germany = amber, Ireland = coral, CEP = navy
-# ---------------------------------------------------------------
 source_pal <- c(EPAR = "#1D6F5C", Germany = "#B9861A", Ireland = "#C1461D", CEP = "#1A4D7A")
 
 make_bubble_plot <- function(df, source_name, base_color, show_y_labels = TRUE) {
@@ -173,11 +119,10 @@ make_bubble_plot <- function(df, source_name, base_color, show_y_labels = TRUE) 
                         breaks = function(x) unique(round(scales::extended_breaks()(x))),
                         labels = scales::label_number(accuracy = 1)) +
     scale_y_discrete(drop = FALSE,
-                     expand = expansion(add = 1.2)) +  # extra room top & bottom so the
-    # biggest bubbles (top row) don't clip
-    guides(size = guide_legend(override.aes = list(fill = "grey50", color = "grey50"))) +  # grey size-legend dots
+                     expand = expansion(add = 1.2)) +
+    guides(size = guide_legend(override.aes = list(fill = "grey50", color = "grey50"))) +
     labs(x = NULL, y = NULL, title = source_name) +
-    coord_cartesian(clip = "off") +   # let bubbles overflow the panel edge instead of being cut
+    coord_cartesian(clip = "off") +
     theme_minimal(base_size = 13) +
     theme(
       axis.text.x = element_text(angle = 40, hjust = 1, size = 11),
@@ -203,19 +148,12 @@ p_germany <- make_bubble_plot(matrix_data, "Germany", source_pal["Germany"], sho
 p_ireland <- make_bubble_plot(matrix_data, "Ireland", source_pal["Ireland"], show_y_labels = TRUE)
 p_cep     <- make_bubble_plot(matrix_data, "CEP",     source_pal["CEP"],     show_y_labels = TRUE)
 
-# ---- save each plot as its own separate file ----
-ggsave(file.path(OUT_DIR, "bubble_matrix_EPAR.png"),     p_ema,     width = 8,  height = 11, dpi = 300)
-ggsave(file.path(OUT_DIR, "bubble_matrix_Germany.png"), p_germany, width = 8,  height = 11, dpi = 300)
-ggsave(file.path(OUT_DIR, "bubble_matrix_Ireland.png"), p_ireland, width = 8,  height = 11, dpi = 300)
-ggsave(file.path(OUT_DIR, "bubble_matrix_CEP.png"),     p_cep,     width = 8,  height = 11, dpi = 300)
+ggsave(file.path(ADD_DIR, "bubble_matrix_EPAR.png"),     p_ema,     width = 8,  height = 11, dpi = 300)
+ggsave(file.path(ADD_DIR, "bubble_matrix_Germany.png"), p_germany, width = 8,  height = 11, dpi = 300)
+ggsave(file.path(ADD_DIR, "bubble_matrix_Ireland.png"), p_ireland, width = 8,  height = 11, dpi = 300)
+ggsave(file.path(ADD_DIR, "bubble_matrix_CEP.png"),     p_cep,     width = 8,  height = 11, dpi = 300)
 
-# ---- also save the combined side-by-side version ----
-# no plot_layout(guides = "collect") here -- we want each panel to
-# keep its own independent legend since the scales genuinely differ.
-# Arranged as a 2x2 grid (EPAR/Germany on top, Ireland/CEP on bottom)
-# rather than a single row of 4, so each panel stays wide enough to
-# read comfortably.
 p <- (p_ema | p_germany) / (p_ireland | p_cep)
 
-ggsave(file.path(OUT_DIR, "bubble_matrix_by_source.png"), p, width = 18, height = 20, dpi = 300)
+ggsave(file.path(FIG_DIR, "bubble_matrix_by_source.png"), p, width = 18, height = 20, dpi = 300)
 print(p)

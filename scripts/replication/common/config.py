@@ -3,15 +3,14 @@ Source registry and paths.
 """
 from pathlib import Path
 
-# common/ -> supply-analysis/ -> repository root
-ROOT = Path(__file__).resolve().parent.parent.parent
-RAW = ROOT / "data" / "raw"
-INTERIM = ROOT / "data" / "interim"
-OUT = ROOT / "data" / "out"
+ROOT = Path(__file__).resolve().parents[3]
+RAW = ROOT / "data" / "replication" / "raw"
+INTERIM = ROOT / "data" / "replication" / "interim"
+OUT = ROOT / "results" / "replication"
 for _p in (RAW, INTERIM, OUT):
     _p.mkdir(parents=True, exist_ok=True)
 
-REGISTERS_RAW = ROOT / "data" / "manufacturer-registers" / "raw"
+REGISTERS_RAW = ROOT / "data" / "registers" / "raw"
 
 ROLES = ["api_cep", "bio_api", "batch_release", "mah_national"]
 COUNTRY_ROLES = ["api_cep", "bio_api", "batch_release"]
@@ -59,7 +58,7 @@ MANUAL_SOURCES = {
         url="https://extranet.edqm.eu/publications/recherches_CEP.shtml",
         howto=(
             "Open the page, scroll to the bottom, click 'Download CEP data file'. "
-            "Save as data/raw/edqm_cep.txt. The file is regenerated daily between "
+            "Save as data/replication/raw/edqm_cep.txt. The file is regenerated daily between "
             "12:00 and 13:00 CET, so note the time you downloaded it."
         ),
     ),
@@ -70,7 +69,7 @@ MANUAL_SOURCES = {
         howto=(
             "Choose 'alle Meldungen' (NOT 'Aktuelle Lieferengpaesse' - that view "
             "silently drops resolved reports) and export to CSV. Save as "
-            "data/raw/bfarm_shortages.csv."
+            "data/replication/raw/bfarm_shortages.csv."
         ),
     ),
 }

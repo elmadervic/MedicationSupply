@@ -14,9 +14,6 @@ import xml.etree.ElementTree as ET
 
 import pandas as pd
 
-# The shared modules live in supply-analysis/common -- put that directory on
-# the import path so this script can still be run directly, from any working
-# directory, exactly as the README describes.
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "common"))
@@ -236,7 +233,7 @@ def main() -> int:
     frames = [f for f in (build_cep(), build_ema_epar_manufacturers(), build_hpra())
               if not f.empty]
     if not frames:
-        print("nothing to build - no parsable supply sources in data/raw")
+        print("nothing to build - no parsable supply sources in data/replication/raw")
         return 1
     sup = pd.concat(frames, ignore_index=True)
 

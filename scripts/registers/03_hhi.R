@@ -1,74 +1,4 @@
-# ---------------------------------------------------------------
-# ONE-SHOT SCRIPT (now with CEP as a fourth source):
-#   1. For Germany and EPAR: per ATC code, delete step-2 producer
-#      rows for any code that ALSO has step-1 (API) data -- i.e.
-#      when both steps are present, keep only step-1. Codes with
-#      ONLY step-2 keep their step-2 rows (no step-1 alternative
-#      exists to prioritise). Ireland AND CEP have no step field,
-#      so both are used unchanged (all manufacturing records).
-#   2. Compute country-level HHI per ATC code, per source.
-#   3. Count how often each source reports the HIGHEST HHI for a
-#      given ATC code (i.e. which source drives the worst-case
-#      concentration view), both as a raw count and as a % of that
-#      source's own coverage.
-#
-# FIXES APPLIED vs. the previous version of this script:
-#  1. germany was read from Data/germany_critical.csv, an
-#     intermediate cache file WRITTEN BY A DIFFERENT SCRIPT
-#     (atc_summary_report_plot.R). That makes this script's output
-#     depend on run order and on that other script's exact version --
-#     if germany_critical.csv is stale (e.g. written by an older copy
-#     with the Germany UK-merge bug, or not regenerated at all), this
-#     script would silently inherit the problem with no way to tell.
-#     Now reads directly from bfarm_api_origin_critical_rest_LONG.csv
-#     and does its own filtering, making it self-contained.
-#  2. ireland was read from data/manufacturer-registers/out/ireland.csv, which doesn't exist --
-#     the real file is ireland_critical_atc_review.csv. Also used the
-#     raw atc_code column directly, which holds messy combined text
-#     (e.g. "J02AC Triazole derivatives, J02AC01 fluconazole") rather
-#     than a clean level-5 code -- switched to matched_critical_atc.
-#     mfr_company/mfr_country were used as-is without splitting the
-#     "|"-separated multi-manufacturer lists (353/1166 rows affected)
-#     -- for an HHI calculation, which is fundamentally about counting
-#      distinct sites, leaving these as one glued composite "site"
-#     string materially understates diversity and overstates
-#     concentration. Added the same length-checked split + fallback
-#     logic (with str_squish) used in the other report scripts.
-#  3. cep was read without the "Data/" path prefix used everywhere
-#     else in this pipeline -- fixed for consistency.
-#  4. `if (!exists("critical"))` skipped reloading Data/critical.csv if
-#     an object of that name was already in the R session -- removed;
-#     always reads fresh.
-#  5. `cep %>% filter(atc_code %in% critical$`ATC level 5`)` -- this is
-#     the exact same bug found earlier in plots_by_source.R: base R's
-#     read.csv() mangles the column name "ATC level 5" into
-#     "ATC.level.5" (dots replace spaces), so critical$`ATC level 5`
-#     resolved to NULL and `atc_code %in% NULL` was FALSE for every
-#     row -- silently dropping ALL of CEP's data before any other CEP
-#     processing ran. Fixed to critical$ATC.level.5. This filter was
-#     ALSO applied before splitting CEP's multi-code cells (comma-
-#     separated ATC codes in one field), so even with the column name
-#     fixed, a combined cell like "G03CA03, G03HB01" would never
-#     exactly match a single code in the critical list -- moved the
-#     filter to after separate_rows(), same fix already applied in
-#     combine_manufacturer_registers.R for the same underlying issue.
-#  6. EPAR/Germany's site_id (manufacturer_name / name) wasn't
-#     str_squish()'d -- some EMA manufacturer names have an embedded
-#     newline (a data-quality issue in the raw file) that under-splits
-#     what should be treated as one site into what looks like two
-#     different site_ids. Added str_squish() for consistency with the
-#     other report scripts.
-#
-# Requires: install.packages(c("dplyr","tidyr","ggplot2","stringr","purrr","janitor"))
-# ---------------------------------------------------------------
-## -----------------------------------------------------------------
-## Paths. Run this script from the repository root.
-##   DATA_DIR - the four source registers + critical.csv (read-only)
-##   OUT_DIR  - everything this script writes (tables and figures)
-## -----------------------------------------------------------------
-DATA_DIR <- "data/manufacturer-registers/raw"
-OUT_DIR  <- "data/manufacturer-registers/out"
-dir.create(OUT_DIR, recursive = TRUE, showWarnings = FALSE)
+source("scripts/registers/paths.R")
 
 library(dplyr)
 library(tidyr)
@@ -76,14 +6,13 @@ library(ggplot2)
 library(stringr)
 library(purrr)
 
-germany_raw <- read.csv(file.path(DATA_DIR, "bfarm_api_origin_critical_rest_LONG.csv"), stringsAsFactors = FALSE) %>%
-  filter(role != "Zulassungsinhaber")   # keep manufacturers only, drop marketing-authorization holders
+germany_raw <- read.csv(file.path(RAW_DIR, "bfarm_api_origin_critical_rest_LONG.csv"), stringsAsFactors = FALSE) %>%
+  filter(role != "Zulassungsinhaber")
 
-EPAR    <- read.csv(file.path(DATA_DIR, "EMA_data_critical.csv"), stringsAsFactors = FALSE)
-ireland <- read.csv(file.path(DATA_DIR, "ireland_critical_atc_review.csv"), stringsAsFactors = FALSE)
-cep     <- read.csv(file.path(DATA_DIR, "EXPORT_WEB_CEP_with_ATC_drugbank.csv"), stringsAsFactors = FALSE)
+EPAR    <- read.csv(file.path(RAW_DIR, "EMA_data_critical.csv"), stringsAsFactors = FALSE)
+ireland <- read.csv(file.path(RAW_DIR, "ireland_critical_atc_review.csv"), stringsAsFactors = FALSE)
+cep     <- read.csv(file.path(RAW_DIR, "EXPORT_WEB_CEP_with_ATC_drugbank.csv"), stringsAsFactors = FALSE)
 names(cep) <- janitor::make_clean_names(names(cep))
-## -> columns now e.g. substance, certificate_cep_holder, status_cep, atc_code, ...
 
 country_map <- c(
   "Argentinien" = "Argentina", "Australien" = "Australia", "Belgien" = "Belgium",
@@ -104,10 +33,6 @@ country_map <- c(
   "Österreich" = "Austria"
 )
 
-## CEP holder strings end in a trailing 2-letter ISO country code
-## (e.g. "Sigma-Aldrich Corporation Saint Louis US" -> "US"), not a
-## German location name like the BfArM (Germany) data uses -- so CEP
-## needs its own ISO2 -> full-name map, separate from country_map above.
 iso2_to_name <- c(
   AT = "Austria", BE = "Belgium", BG = "Bulgaria", HR = "Croatia",
   CY = "Cyprus", CZ = "Czech Republic", DK = "Denmark", EE = "Estonia",
@@ -127,11 +52,8 @@ iso2_to_name <- c(
   MH = "Marshall Islands", MO = "Macao", MY = "Malaysia",
   OM = "Oman", PK = "Pakistan", PR = "Puerto Rico",
   SA = "Saudi Arabia", TH = "Thailand"
-  # extend this list if you spot unmatched codes in the check below
 )
 
-# Splits an Ireland "|"-separated list and squishes each piece (see
-# fix #2 above). Returns character(0) for NA/blank input.
 split_squish <- function(x) {
   if (is.na(x) || x == "") return(character(0))
   str_squish(str_split(x, "\\|")[[1]])
@@ -153,9 +75,6 @@ compute_hhi <- function(df, source_name) {
     mutate(source = source_name)
 }
 
-# ---------------------------------------------------------------
-# 1a. Germany: delete step-2 producers for codes that also have step-1
-# ---------------------------------------------------------------
 germany_clean <- germany_raw %>%
   mutate(land = recode(str_trim(land), !!!country_map)) %>%
   filter(!is.na(atc_code), atc_code != "", !is.na(pu_nummer), !is.na(land), land != "")
@@ -177,9 +96,6 @@ cat("Germany: codes with ONLY step-2 -> step-2 kept as fallback:",
 
 hhi_germany <- compute_hhi(germany_priority, "Germany")
 
-# ---------------------------------------------------------------
-# 1b. EPAR: same logic
-# ---------------------------------------------------------------
 epar_clean <- EPAR %>%
   mutate(country = recode(str_trim(country), !!!country_map)) %>%
   filter(!is.na(atc_code), atc_code != "",
@@ -203,14 +119,6 @@ cat("EPAR: codes with ONLY step-2 -> step-2 kept as fallback:",
 
 hhi_epar <- compute_hhi(epar_priority, "EPAR")
 
-# ---------------------------------------------------------------
-# 1c. Ireland: unchanged (no step field to prioritise), but uses
-# matched_critical_atc (clean single code) instead of the messy raw
-# atc_code text field, and splits mfr_company/mfr_country "|"-lists
-# with a length check so each manufacturer pairs with its own
-# country instead of counting a glued multi-company string as one
-# site (see fix #2 above).
-# ---------------------------------------------------------------
 ireland_pairs <- ireland %>%
   filter(!is.na(matched_critical_atc), matched_critical_atc != "") %>%
   mutate(
@@ -248,35 +156,15 @@ ireland_std <- bind_rows(ireland_matched, ireland_fallback) %>%
 
 hhi_ireland <- compute_hhi(ireland_std, "Ireland")
 
-# ---------------------------------------------------------------
-# 1d. CEP: unchanged (no step field to prioritise, like Ireland).
-# atc_code can hold MULTIPLE comma-separated codes per row -- split
-# those into one row per code BEFORE filtering to critical (a combined
-# cell like "G03CA03, G03HB01" would never exactly match a single
-# code in critical.csv, silently dropping the whole row otherwise).
-# ---------------------------------------------------------------
-## -----------------------------------------------------------------
-## Determine the critical ATC code universe.
-##
-## FALLBACK (added): this script read Data/critical.csv unconditionally
-## near the top, but that file isn't part of this data set, so a fresh
-## session stopped there. Handled the same way as ComebineAll4SourcesV2.R:
-## use Data/critical.csv when it exists, and otherwise fall back to the
-## derived union of EMA/Germany/Ireland's own ATC codes. The read moved
-## down to here, where the three cleaned frames the fallback needs exist,
-## and where its only use -- the CEP filter below -- is. Germany, EPAR
-## and Ireland are already pre-filtered to critical substances; CEP is
-## not, which is why only CEP is filtered against this universe.
-## -----------------------------------------------------------------
-if (file.exists(file.path(DATA_DIR, "critical.csv"))) {
-  critical <- read.csv(file.path(DATA_DIR, "critical.csv"), stringsAsFactors = FALSE)
+if (file.exists(file.path(RAW_DIR, "critical.csv"))) {
+  critical <- read.csv(file.path(RAW_DIR, "critical.csv"), stringsAsFactors = FALSE)
   critical_codes <- unique(critical$ATC.level.5)
   critical_codes <- critical_codes[!is.na(critical_codes) & critical_codes != ""]
   cat("Critical ATC codes loaded from critical.csv:", length(critical_codes), "\n")
 } else {
   critical_codes <- unique(c(epar_clean$atc_code, germany_clean$atc_code, ireland_std$atc_code))
   critical_codes <- critical_codes[!is.na(critical_codes) & critical_codes != ""]
-  cat("critical.csv not found in", DATA_DIR, "-- falling back to the derived union of",
+  cat("critical.csv not found in", RAW_DIR, "-- falling back to the derived union of",
       "EMA/Germany/Ireland's own ATC codes:", length(critical_codes), "\n")
 }
 
@@ -305,20 +193,14 @@ cep_std <- cep_clean %>%
 
 hhi_cep <- compute_hhi(cep_std, "CEP")
 
-# ---------------------------------------------------------------
-# 2. Combine
-# ---------------------------------------------------------------
 hhi_all <- bind_rows(hhi_epar, hhi_germany, hhi_ireland, hhi_cep) %>%
   mutate(source = factor(source, levels = c("EPAR", "Germany", "Ireland", "CEP")))
 
-write.csv(hhi_all, file.path(OUT_DIR, "hhi_step1_priority_final.csv"), row.names = FALSE)
+write.csv(hhi_all, file.path(TAB_DIR, "hhi_step1_priority.csv"), row.names = FALSE)
 
-# ---------------------------------------------------------------
-# 3. How often does each source hold the HIGHEST HHI per ATC code?
-# ---------------------------------------------------------------
 winner_summary <- hhi_all %>%
   group_by(atc_code) %>%
-  filter(hhi == max(hhi)) %>%   # ties counted for every tied source
+  filter(hhi == max(hhi)) %>%
   ungroup() %>%
   count(source, name = "n_times_highest")
 
@@ -342,34 +224,18 @@ print(winner_pct)
 cat("\nTotal distinct ATC codes with data from at least one source:", n_distinct(hhi_all$atc_code), "\n")
 cat("ATC codes with an exact tie for highest HHI between 2+ sources:", n_ties, "\n")
 
-write.csv(winner_pct, file.path(OUT_DIR, "hhi_highest_by_source_final.csv"), row.names = FALSE)
+write.csv(winner_pct, file.path(TAB_DIR, "hhi_highest_by_source.csv"), row.names = FALSE)
 
 library(xtable)
-xtable(winner_pct)
+print(xtable(winner_pct, caption = "Number of critical ATC codes for which each source reports the highest country-level HHI, out of the codes that source covers.", label = "tab:hhi_highest_by_sourceT"), file = file.path(TAB_DIR, "hhi_highest_by_source.tex"))
 
-# ---------------------------------------------------------------
-# HHI distribution by ATC Level 1 chapter, faceted by source
-# (EPAR / Germany / Ireland / CEP), using the step-1-priority
-# filtered HHI data (Data/hhi_step1_priority_final.csv from
-# hhi_full_pipeline.R).
-#
-# Dashed reference lines at HHI = 1500 and 2500 mark the standard
-# antitrust thresholds (US DOJ/FTC Horizontal Merger Guidelines):
-#   < 1500 = unconcentrated, 1500-2500 = moderately concentrated,
-#   > 2500 = highly concentrated. Used here only as an intuition
-#   anchor, not a formal application of antitrust doctrine to a
-#   non-market setting.
-#
-# Requires: install.packages(c("dplyr","ggplot2","stringr","forcats","RColorBrewer","ggh4x"))
-# ---------------------------------------------------------------
 library(dplyr)
 library(ggplot2)
 library(stringr)
 library(forcats)
 
-hhi_all <- read.csv(file.path(OUT_DIR, "hhi_step1_priority_final.csv"), stringsAsFactors = FALSE)
+hhi_all <- read.csv(file.path(TAB_DIR, "hhi_step1_priority.csv"), stringsAsFactors = FALSE)
 
-# ---- ATC Level 1 chapter names ----
 chapter_names <- c(
   A = "A - Alimentary & metabolism", B = "B - Blood & blood forming organs",
   C = "C - Cardiovascular system", D = "D - Dermatologicals",
@@ -387,9 +253,6 @@ hhi_all <- hhi_all %>%
     source  = factor(source, levels = c("EPAR", "Germany", "Ireland", "CEP"))
   )
 
-# ---- fix chapter order once, using the MEDIAN HHI across all
-#      sources combined, so all panels share the same row order
-#      and stay easy to compare side by side ----
 chapter_order <- hhi_all %>%
   group_by(chapter) %>%
   summarise(med = median(hhi)) %>%
@@ -398,17 +261,13 @@ chapter_order <- hhi_all %>%
 
 hhi_all$chapter <- factor(hhi_all$chapter, levels = rev(chapter_order))
 
-# ---- qualitative palette, one color per chapter (consistent across panels) ----
 chapter_pal <- setNames(
   colorRampPalette(RColorBrewer::brewer.pal(12, "Paired"))(length(chapter_order)),
   chapter_order
 )
 
-# y-axis label colors, in the SAME order as the factor levels (rev(chapter_order))
-# so each label's text color matches its own box fill color
 axis_label_colors <- chapter_pal[rev(chapter_order)]
 
-# established source palette, reused from all earlier plots in this analysis
 source_pal <- c(EPAR = "#1D6F5C", Germany = "#B9861A", Ireland = "#C1461D", CEP = "#4B5FAD")
 
 p <- ggplot(hhi_all, aes(x = hhi, y = chapter, fill = chapter)) +
@@ -431,10 +290,9 @@ p <- ggplot(hhi_all, aes(x = hhi, y = chapter, fill = chapter)) +
     panel.grid.major.y = element_blank()
   )
 
-ggsave(file.path(OUT_DIR, "hhi_by_chapter_by_source.png"), p, width = 17, height = 8, dpi = 300)
+ggsave(file.path(FIG_DIR, "hhi_by_chapter_by_source.png"), p, width = 17, height = 8, dpi = 300)
 print(p)
 
-# ---- also save each source individually ----
 for (src in levels(hhi_all$source)) {
   p_single <- hhi_all %>%
     filter(source == src) %>%
@@ -451,24 +309,13 @@ for (src in levels(hhi_all$source)) {
       panel.grid.minor = element_blank(),
       panel.grid.major.y = element_blank()
     )
-  ggsave(file.path(OUT_DIR, paste0("hhi_by_chapter_", src, ".png")), p_single, width = 8, height = 8, dpi = 300)
+  ggsave(file.path(ADD_DIR, paste0("hhi_by_chapter_", src, ".png")), p_single, width = 8, height = 8, dpi = 300)
 }
 
-
-
-# ---------------------------------------------------------------
-# Single plot, 4 subplots (one per source): distribution of
-# country-level HHI, using ONLY the step-1-priority filtered data
-# (Germany/EPAR: step-2 producers deleted for any ATC code that
-# also has step-1 data; Ireland/CEP: unchanged, no step field exists).
-#
-# Requires: install.packages(c("dplyr","ggplot2"))
-# Reads: Data/hhi_step1_priority_final.csv (from hhi_full_pipeline.R)
-# ---------------------------------------------------------------
 library(dplyr)
 library(ggplot2)
 
-hhi_all <- read.csv(file.path(OUT_DIR, "hhi_step1_priority_final.csv"), stringsAsFactors = FALSE) %>%
+hhi_all <- read.csv(file.path(TAB_DIR, "hhi_step1_priority.csv"), stringsAsFactors = FALSE) %>%
   mutate(source = factor(source, levels = c("EPAR", "Germany", "Ireland", "CEP")))
 
 source_pal <- c(EPAR = "#1D6F5C", Germany = "#B9861A", Ireland = "#C1461D", CEP = "#4B5FAD")
@@ -490,5 +337,5 @@ p <- ggplot(hhi_all, aes(x = hhi, fill = source)) +
     panel.grid.minor = element_blank()
   )
 
-ggsave(file.path(OUT_DIR, "hhi_step1_priority_by_source.png"), p, width = 12, height = 5, dpi = 300)
+ggsave(file.path(FIG_DIR, "hhi_step1_priority_by_source.png"), p, width = 12, height = 5, dpi = 300)
 print(p)

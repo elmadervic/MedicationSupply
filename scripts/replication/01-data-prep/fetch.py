@@ -1,5 +1,5 @@
 """
-Fetch all data sources into data/raw/ and record a manifest.json.
+Fetch all data sources into data/replication/raw/ and record a manifest.json.
 """
 from __future__ import annotations
 
@@ -11,9 +11,6 @@ from datetime import datetime, timezone
 
 import requests
 
-# The shared modules live in supply-analysis/common -- put that directory on
-# the import path so this script can still be run directly, from any working
-# directory, exactly as the README describes.
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "common"))

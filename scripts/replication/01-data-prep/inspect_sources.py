@@ -1,5 +1,5 @@
 """
-Analyze the raw source files in data/raw/ and print a summary of their contents.
+Analyze the raw source files in data/replication/raw/ and print a summary of their contents.
 """
 from __future__ import annotations
 
@@ -8,9 +8,6 @@ import sys
 
 import pandas as pd
 
-# The shared modules live in supply-analysis/common -- put that directory on
-# the import path so this script can still be run directly, from any working
-# directory, exactly as the README describes.
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "common"))
@@ -133,7 +130,7 @@ def _sniff_text(path) -> None:
 def main() -> int:
     files = sorted(RAW.glob("*"))
     if not files:
-        print("data/raw is empty - run python fetch.py first")
+        print("data/replication/raw is empty - run python fetch.py first")
         return 1
 
     for path in files:

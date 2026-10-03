@@ -1,13 +1,13 @@
-# Python
 __pycache__/
 *.py[cod]
 venv/
 
-# macOS
 .DS_Store
 
-# Too large for git (795 MB source dump, kept locally only)
-data/manufacturer-registers/raw/DrugBank_FullDatabase.xml
-
-# Rscript default graphics device dump
+.Rhistory
+.RData
+.Rproj.user/
 Rplots.pdf
+
+data/registers/raw/DrugBank_FullDatabase.xml
+data/trade/
