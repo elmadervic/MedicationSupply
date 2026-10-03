@@ -2,7 +2,7 @@
 
 This repository contains the data, code and figures for the paper by
 E. Dervic, A. Pesce, L. Melnikova and P. Klimek (Supply Chain Intelligence Institute Austria,
-Complexity Science Hub, Medical University of Vienna, TU Wien), currently in preparation.
+Complexity Science Hub, Medical University of Vienna, TU Wien).
 
 The paper builds the first open dataset that merges manufacturing-site information for the
 299 medicines on the EU list of critical medicines from four public sources: the EMA's European
@@ -65,15 +65,15 @@ results/
 
 `data/registers/raw/critical.csv` lists the 299 ATC level-5 codes of the Union list of critical
 medicines published by the EMA and the Medicine Shortages Steering Group (MSSG). Every analysis is
-restricted to these codes and is carried out per ATC level-5 code, not per branded product.
+restricted to these codes and is carried out per ATC level-5 code.
 
 ### Manufacturer registers
 
 | File in `data/registers/raw/` | Source | Collected | Content |
 |---|---|---|---|
-| `EMA_data_critical.csv` | EMA EPAR product information, Annex II | May 2026 | one row per medicine × manufacturing site, with country and manufacturing step (1 = active substance, 2 = finished product / batch release); already restricted to critical ATC codes |
-| `bfarm_api_origin_critical_rest_LONG.csv` | German BfArM manufacturer register | 2026 | one row per product × role × company; role is *Zulassungsinhaber* (marketing-authorisation holder), *Wirkstoffherstellung* (active-substance manufacture) or *Hersteller/Endfreigabe* (manufacture / batch release); country names in German; already restricted to critical ATC codes |
-| `ireland_critical_atc_review.csv` | Irish HPRA product register | 2026 | one row per product with "\|"-separated lists of manufacturers and their countries; no manufacturing-step field; already restricted to critical ATC codes |
+| `EMA_data_critical.csv` | EMA EPAR product information, Annex II | May 2026 | one row per medicine × manufacturing site, with country and manufacturing step (1 = active substance, 2 = finished product / batch release); restricted to critical ATC codes |
+| `bfarm_api_origin_critical_rest_LONG.csv` | German BfArM manufacturer register | 2026 | one row per product × role × company; role is *Zulassungsinhaber* (marketing-authorisation holder), *Wirkstoffherstellung* (active-substance manufacture) or *Hersteller/Endfreigabe* (manufacture / batch release); country names in German; restricted to critical ATC codes |
+| `ireland_critical_atc_review.csv` | Irish HPRA product register | 2026 | one row per product with "\|"-separated lists of manufacturers and their countries; no manufacturing-step field;  restricted to critical ATC codes |
 | `EXPORT_WEB_CEP.txt` | EDQM CEP certification database export | August 2026 | all certificates: substance, holder (name, city and ISO-2 country code in one field), status |
 | `EXPORT_WEB_CEP_with_ATC_drugbank.csv` | `EXPORT_WEB_CEP.txt` with ATC codes attached via DrugBank | August 2026 | as above plus an `atc_code` column (comma-separated when several apply) |
 
@@ -122,9 +122,8 @@ manufacturer × country × manufacturing step × source, with the ATC level-1 ch
   result is then restricted to the critical codes. The holder's country is the trailing ISO-2 code of
   the holder field.
 - In all sources whitespace in names is collapsed, so names that differ only by an embedded line break
-  count as one manufacturer. Country spellings are unified across sources ("Italy." → Italy,
-  "SPAIN" → Spain, "UK" → United Kingdom, "USA" → United States, "Republic of Korea" → South Korea).
-  The paper draft still shows 32 countries for Ireland, three of them duplicate spellings.
+  count as one manufacturer. Country spellings are unified across sources ("Italy." to Italy,
+  "SPAIN" to Spain, "UK" to United Kingdom, "USA" to United States, "Republic of Korea" to South Korea).
 - If `critical.csv` is missing, the scripts fall back to the union of ATC codes in the EPAR,
   German and Irish files, which are already restricted to critical medicines.
 
@@ -137,8 +136,7 @@ EPAR and Germany distinguish active-substance manufacture (step 1) from finished
 and batch release (step 2). For the concentration measures (HHI, API diversification) a
 **step-1 priority** rule applies: for each ATC code, step-1 records are used whenever at least one
 exists, and step-2 records only for codes with no step-1 disclosure at all. Ireland has no step field
-and all its manufacturers are used, which likely overstates concentration relative to an API-only
-view. CEP certificates identify the active-substance manufacturer directly, so no step distinction
+and all its manufacturers are used. CEP certificates identify the active-substance manufacturer directly, so no step distinction
 applies.
 
 ### Country-level concentration — `03_hhi.R`
@@ -153,7 +151,7 @@ thresholds for moderate and high concentration.
 
 Writes `results/tables/hhi_step1_priority.csv` (one row per ATC code and source: number of
 countries and sites, HHI, effective number of countries $10\,000/\mathrm{HHI}$). It also writes
-`results/tables/hhi_highest_by_source.csv` and `.tex` (Table 1): for each source, how often it
+`results/tables/hhi_highest_by_source.csv`: for each source, how often it
 reports the highest HHI among all sources covering that code. Ties count for every tied source.
 
 ### Descriptive and geographic figures
@@ -267,13 +265,13 @@ python scripts/replication/04-comparison/compare_with_registers.py
 
 ### Design decisions
 
-- **ATC codes.** Only EPAR and HPRA publish ATC codes. CEP rows get theirs from a substance → ATC
-  map assembled from the Union list, the EPAR manufacturers file, the EMA medicines report and the
+- **ATC codes.** Only EPAR and HPRA publish ATC codes. CEP rows get theirs from a substance, so ATC
+  map are assembled from the Union list, the EPAR manufacturers file, the EMA medicines report and the
   register CEP file. Rows are not exploded per code, and codes are kept at the level the source
   published them. Coverage is 76.6 % of rows: 99 % for EPAR and HPRA, 32 % for CEP. The CEP figure is
   the ceiling of matching against Ph. Eur. monograph titles.
 - **HPRA has no country.** The XML has no address field, and resolving bare company names is wrong:
-  legal-form suffixes read as ISO codes (`Teva SA` → Saudi Arabia). `country_iso2` is therefore left
+  legal-form suffixes read as ISO codes (`Teva SA` to Saudi Arabia). `country_iso2` is therefore left
   empty for the `mah_national` role. That role is excluded from every country measure via
   `COUNTRY_ROLES` in `config.py`, but still counts towards substance and ATC coverage.
 - **HPRA XML parsing.** Repeated fields sit in container elements (`<ActiveSubstances>`), which
@@ -281,8 +279,3 @@ python scripts/replication/04-comparison/compare_with_registers.py
 - **API diversification** is restricted to Union-list substances. Without that filter, CEP substance
   strings carrying process descriptions ("Acetazolamide, process B") produce spurious single-supplier
   substances.
-
-## Contact
-
-- Elma Dervic, Complexity Science Hub Vienna / ASCII
-- Liubov Melnikova, TU Wien
