@@ -50,7 +50,7 @@
                (www.bfarm.de).
 
 ######################################################################
-# edqm_cep.txt  (1,457,610 bytes)
+# edqm_cep.txt  (1,448,183 bytes)
   encoding guess: utf-8
   line 0: delims={'\t': 10}
     ﻿Monograph Number	Substance	Type CEP	Certificate (CEP) Holder	Holder SPOR ORG-ID / SPOR LOC-ID	Certificate (CEP) Number	Issue Date CEP	Status CEP	Renewal due	End date CEP	Closure Date of last Procedure
@@ -62,7 +62,7 @@
     0	16-alpha-Hydroxyprednisolone	TSE	Pharmacia & Upjohn Company Kalamazoo US		R0-CEP 2001-018 - Rev 00	24/10/2001	Withdrawn by Holder		24/10/2006	24/10/2006
 
 ######################################################################
-# ema_medicines.xlsx  (898,421 bytes)
+# ema_medicines.xlsx  (899,174 bytes)
   sheets: ['Medicine']
     [header row guessed: 8; 38 non-empty columns]
 
@@ -70,49 +70,49 @@
 shape: 2,734 rows x 38 cols
 columns:
   - Category                                                       non-null=  2,734  e.g. ['Human', 'Human']
-  - Name of medicine                                               non-null=  2,734  e.g. ['Aybintio', 'Saphnelo']
-  - EMA product number                                             non-null=  2,734  e.g. ['EMEA/H/C/005106', 'EMEA/H/C/004975']
-  - Medicine status                                                non-null=  2,734  e.g. ['Authorised', 'Authorised']
+  - Name of medicine                                               non-null=  2,734  e.g. ['Zumrad', 'Zonisamide Viatris (previously Zonisamide Mylan)']
+  - EMA product number                                             non-null=  2,734  e.g. ['EMEA/H/C/006641', 'EMEA/H/C/004127']
+  - Medicine status                                                non-null=  2,734  e.g. ['Application withdrawn', 'Authorised']
   - Opinion status                                                 non-null=     37  e.g. ['Positive', 'Positive']
-  - Latest procedure affecting product information                 non-null=  2,076  e.g. ['N/0000371605', 'R/0000335943']
-  - International non-proprietary name (INN) / common name         non-null=  2,627  e.g. ['bevacizumab', 'anifrolumab']
-  - Active substance                                               non-null=  2,649  e.g. ['bevacizumab', 'anifrolumab']
-  - Therapeutic area (MeSH)                                        non-null=  2,272  e.g. ['Colorectal Neoplasms;Breast Neoplasms;Ovarian Neoplasms;Fallopian Tube Neoplasms;Peritoneal Neoplasms;Carcinoma, Non-Small-Cell Lung;Carcinoma, Renal Cell;Uterine Cervical Neoplasms', 'Lupus Erythematosus, Systemic']
+  - Latest procedure affecting product information                 non-null=  2,076  e.g. ['VR/0000363585', 'VR/0000366108']
+  - International non-proprietary name (INN) / common name         non-null=  2,627  e.g. ['sasanlimab', 'zonisamide']
+  - Active substance                                               non-null=  2,649  e.g. ['sasanlimab', 'zonisamide']
+  - Therapeutic area (MeSH)                                        non-null=  2,272  e.g. ['Urinary Bladder Neoplasms', 'Epilepsy']
   - Species
 (veterinary)                                           non-null=     65  e.g. ['Pigs', 'Chicken']
   - Patient safety                                                 non-null=  2,734  e.g. ['No', 'No']
-  - ATC code (human)                                               non-null=  2,211  e.g. ['L01FG01', 'L04AG11']
+  - ATC code (human)                                               non-null=  2,211  e.g. ['L01FF', 'N03AX15']
   - ATCvet code (veterinary)                                       non-null=     66  e.g. ['QI09AA07', 'QI01AE01']
   - Pharmacotherapeutic group
-(human)                              non-null=  2,177  e.g. ['Antineoplastic agents', 'Monoclonal antibodies']
+(human)                              non-null=  2,177  e.g. ['Antineoplastic agents', 'Antiepileptics']
   - Pharmacotherapeutic group
 (veterinary)                         non-null=    344  e.g. ['Immunologicals for suidae', 'Immunologicals for aves']
-  - Therapeutic indication                                         non-null=  2,296  e.g. ['Aybintio in combination with fluoropyrimidine-based chemotherapy is indicated for treatment of adult patients with metastatic carcinoma of the colon or rectum. Aybintio in combination with paclitaxel is indicated for first-line treatment of adult patients with metastatic breast cancer. For further information as to human epidermal growth factor receptor 2 (HER2) status, please refer to section 5.1 of the SmPC. Aybintio in combination with capecitabine is indicated for first-line treatment of adult patients with metastatic breast cancer in whom treatment with other chemotherapy options including taxanes or anthracyclines is not considered appropriate. Patients who have received taxane and anthracyclinecontaining regimens in the adjuvant setting within the last 12 months should be excluded from treatment with Aybintio in combination with capecitabine. For further information as to HER2 status, please refer to section 5.1 of the SmPC. Aybintio, in addition to platinum-based chemotherapy, is indicated for first-line treatment of adult patients with unresectable advanced, metastatic or recurrent non-small cell lung cancer other than predominantly squamous cell histology. Aybintio, in combination with erlotinib, is indicated for first-line treatment of adult patients with unresectable advanced, metastatic or recurrent non-squamous non-small cell lung cancer with Epidermal Growth Factor Receptor (EGFR) activating mutations (see section 5.1 of the SmPC). Aybintio in combination with interferon alfa-2a is indicated for first line treatment of adult patients with advanced and/or metastatic renal cell cancer. Aybintio, in combination with carboplatin and paclitaxel is indicated for the front-line treatment of adult patients with advanced (International Federation of Gynecology and Obstetrics (FIGO) stages III B, III C and IV) epithelial ovarian, fallopian tube, or primary peritoneal cancer (see section 5.1 of the SmPC). Aybintio, in combination with carboplatin and gemcitabine or in combination with carboplatin and paclitaxel, is indicated for treatment of adult patients with first recurrence of platinum-sensitive epithelial ovarian, fallopian tube or primary peritoneal cancer who have not received prior therapy with bevacizumab or other VEGF inhibitors or VEGF receptor targeted agents. Aybintio, in combination with topotecan, or pegylated liposomal doxorubicin is indicated for the treatment of adult patients with platinum-resistant recurrent epithelial ovarian, fallopian tube, or primary peritoneal cancer who received no more than two prior chemotherapy regimens and who have not received prior therapy with bevacizumab or other VEGF inhibitors or VEGF receptor targeted agents (see section 5.1 of the SmPC). Aybintio, in combination with paclitaxel and cisplatin or, alternatively, paclitaxel and topotecan in patients who cannot receive platinum therapy, is indicated for the treatment of adult patients with persistent, recurrent, or metastatic carcinoma of the cervix (see section 5.1 of the SmPC).', 'Saphnelo is indicated as an add-on therapy for the treatment of adult patients with moderate to severe, active autoantibody-positive systemic lupus erythematosus (SLE), despite standard therapy.']
+  - Therapeutic indication                                         non-null=  2,296  e.g. ['Treatment of bladder cancer in adults indicated for the treatment of adult indicated for treatement of bladder cancer.', 'Monotherapy in the treatment of partial seizures, with or without secondary generalisation, in adults with newly diagnosed epilepsy; adjunctive therapy in the treatment of partial seizures, with or without secondary generalisation, in adults, adolescents, and children aged 6 years and above.']
   - Accelerated assessment                                         non-null=  2,734  e.g. ['No', 'No']
-  - Additional monitoring                                          non-null=  2,734  e.g. ['No', 'Yes']
+  - Additional monitoring                                          non-null=  2,734  e.g. ['No', 'No']
   - Advanced therapy                                               non-null=  2,734  e.g. ['No', 'No']
-  - Biosimilar                                                     non-null=  2,734  e.g. ['Yes', 'No']
+  - Biosimilar                                                     non-null=  2,734  e.g. ['No', 'No']
   - Conditional approval                                           non-null=  2,734  e.g. ['No', 'No']
   - Exceptional circumstances                                      non-null=  2,734  e.g. ['No', 'No']
-  - Generic                                                        non-null=  2,734  e.g. ['No', 'No']
+  - Generic                                                        non-null=  2,734  e.g. ['No', 'Yes']
   - Orphan medicine                                                non-null=  2,734  e.g. ['No', 'No']
   - PRIME: priority medicine                                       non-null=  2,734  e.g. ['No', 'No']
-  - Marketing authorisation developer / applicant / holder         non-null=  2,384  e.g. ['Samsung Bioepis NL B.V.', 'AstraZeneca AB']
-  - European Commission decision date                              non-null=  2,220  e.g. ['11/09/2026', '27/08/2026']
+  - Marketing authorisation developer / applicant / holder         non-null=  2,384  e.g. ['Pfizer Europe MA EEIG', 'Viatris Limited']
+  - European Commission decision date                              non-null=  2,220  e.g. ['04/09/2026', '10/09/2026']
   - Start of rolling review date                                   non-null=      2  e.g. ['11/03/2021', '12/02/2021']
-  - Opinion adopted date                                           non-null=  1,466  e.g. ['25/06/2020', '16/12/2021']
+  - Opinion adopted date                                           non-null=  1,466  e.g. ['28/01/2016', '15/09/2022']
   - Withdrawal of application date                                 non-null=    286  e.g. ['22/07/2026', '13/08/2026']
-  - Marketing authorisation date                                   non-null=  2,024  e.g. ['19/08/2020', '14/02/2022']
+  - Marketing authorisation date                                   non-null=  2,024  e.g. ['31/03/2016', '20/12/2022']
   - Refusal of marketing authorisation date                        non-null=     86  e.g. ['26/04/2013', '22/02/2013']
   - Withdrawal / expiry / revocation / lapse of marketing author   non-null=    333  e.g. ['29/07/2026', '30/08/2026']
   - Suspension of marketing authorisation date                     non-null=      1  e.g. ['19/07/2021']
-  - Revision number                                                non-null=  1,910  e.g. ['13.0', '11.0']
-  - First published date                                           non-null=  2,734  e.g. ['02/09/2020', '16/12/2021']
-  - Last updated date                                              non-null=  2,651  e.g. ['11/09/2026', '11/09/2026']
-  - Medicine URL                                                   non-null=  2,734  e.g. ['https://www.ema.europa.eu/en/medicines/human/EPAR/aybintio', 'https://www.ema.europa.eu/en/medicines/human/EPAR/saphnelo']
+  - Revision number                                                non-null=  1,910  e.g. ['14.0', '8.0']
+  - First published date                                           non-null=  2,734  e.g. ['27/02/2026', '26/03/2018']
+  - Last updated date                                              non-null=  2,652  e.g. ['14/09/2026', '14/09/2026']
+  - Medicine URL                                                   non-null=  2,734  e.g. ['https://www.ema.europa.eu/en/medicines/human/EPAR/zumrad', 'https://www.ema.europa.eu/en/medicines/human/EPAR/zonisamide-viatris']
 
 ######################################################################
-# ema_shortages.xlsx  (88,238 bytes)
+# ema_shortages.xlsx  (88,239 bytes)
   sheets: ['Shortage']
     [header row guessed: 8; 13 non-empty columns]
 
@@ -134,75 +134,75 @@ columns:
   - Shortage URL                                                   non-null=     85  e.g. ['https://www.ema.europa.eu/en/medicines/human/shortages/eskazole-zentel', 'https://www.ema.europa.eu/en/medicines/human/shortages/natpar']
 
 ######################################################################
-# fda_shortages.json  (2,086,119 bytes)
+# fda_shortages.json  (2,096,068 bytes)
 
 === fda_shortages.json 
-shape: 1,602 rows x 36 cols
+shape: 1,607 rows x 36 cols
 columns:
-  - update_type                                                    non-null=  1,602  e.g. ['Reverified', 'Reverified']
-  - initial_posting_date                                           non-null=  1,602  e.g. ['01/19/2023', '02/20/2018']
-  - package_ndc                                                    non-null=  1,602  e.g. ['43547-411-09', '55150-159-74']
-  - generic_name                                                   non-null=  1,602  e.g. ['Quinapril Hydrochloride Tablet', 'Lidocaine Hydrochloride Injection']
-  - contact_info                                                   non-null=  1,602  e.g. ['866-931-9829', '888-238-7880']
-  - availability                                                   non-null=  1,153  e.g. ['Unavailable', 'Unavailable']
-  - related_info                                                   non-null=  1,103  e.g. ['Not available. Long-term backorder for all NDCs. No estimated release date at this time.', 'On backorder. Recovery: TBD. Check wholesalers for inventory']
-  - update_date                                                    non-null=  1,602  e.g. ['06/29/2026', '09/03/2026']
-  - therapeutic_category                                           non-null=  1,602  e.g. ["['Cardiovascular']", "['Anesthesia']"]
-  - dosage_form                                                    non-null=  1,583  e.g. ['Tablet', 'Injection']
-  - presentation                                                   non-null=  1,602  e.g. ['Quinapril Hydrochloride, Tablet, 10 mg (NDC 43547-411-09)', 'Lidocaine Hydrochloride, Injection, 10 mg/1 mL (NDC 55150-159-74)']
-  - company_name                                                   non-null=  1,602  e.g. ['Solco Healthcare US, LLC', 'Eugia US LLC']
-  - shortage_reason                                                non-null=    410  e.g. ['Shortage of an active ingredient', 'Demand increase for the drug']
-  - status                                                         non-null=  1,602  e.g. ['Current', 'Current']
-  - openfda.application_number                                     non-null=  1,419  e.g. ["['ANDA205823']", "['ANDA203040']"]
-  - openfda.brand_name                                             non-null=  1,448  e.g. ["['QUINAPRIL']", "['LIDOCAINE HYDROCHLORIDE']"]
-  - openfda.generic_name                                           non-null=  1,448  e.g. ["['QUINAPRIL']", "['LIDOCAINE HYDROCHLORIDE']"]
-  - openfda.manufacturer_name                                      non-null=  1,448  e.g. ["['Solco Healthcare US, LLC']", "['Eugia US LLC']"]
-  - openfda.product_ndc                                            non-null=  1,448  e.g. ["['43547-411', '43547-410', '43547-412', '43547-413']", "['55150-159', '55150-158', '55150-160']"]
-  - openfda.product_type                                           non-null=  1,448  e.g. ["['HUMAN PRESCRIPTION DRUG']", "['HUMAN PRESCRIPTION DRUG']"]
-  - openfda.route                                                  non-null=  1,440  e.g. ["['ORAL']", "['EPIDURAL', 'INFILTRATION', 'INTRACAUDAL', 'PERINEURAL']"]
-  - openfda.substance_name                                         non-null=  1,439  e.g. ["['QUINAPRIL HYDROCHLORIDE']", "['LIDOCAINE HYDROCHLORIDE']"]
-  - openfda.rxcui                                                  non-null=  1,398  e.g. ["['312748', '312749', '312750', '314203']", "['1737566', '1737568', '1737757']"]
-  - openfda.spl_id                                                 non-null=  1,448  e.g. ["['b8f1731a-cbac-4f64-a8d4-320b80b335e1']", "['cc439f66-fdd6-41f9-8a08-3f623898f20c']"]
-  - openfda.spl_set_id                                             non-null=  1,448  e.g. ["['cd46691d-5593-4a9f-a937-999c6803e312']", "['5524cbfd-d6e6-42eb-aaa5-22495e0a86b6']"]
-  - openfda.package_ndc                                            non-null=  1,448  e.g. ["['43547-410-09', '43547-411-09', '43547-412-09', '43547-413-09']", "['55150-158-72', '55150-159-74', '55150-160-72']"]
-  - openfda.unii                                                   non-null=  1,442  e.g. ["['33067B3N2M']", "['V13007Z41A']"]
-  - discontinued_date                                              non-null=    442  e.g. ['10/24/2025', '10/09/2025']
-  - openfda.nui                                                    non-null=    369  e.g. ["['N0000175525', 'N0000000147', 'N0000182140']", "['N0000175605', 'N0000175082', 'N0000190114']"]
-  - openfda.pharm_class_epc                                        non-null=    368  e.g. ["['Proton Pump Inhibitor [EPC]']", "['Kinase Inhibitor [EPC]']"]
-  - openfda.pharm_class_moa                                        non-null=    126  e.g. ["['Proton Pump Inhibitors [MoA]', 'Cytochrome P450 2C19 Inhibitors [MoA]']", "['Kinase Inhibitors [MoA]', 'Cytochrome P450 3A Inhibitors [MoA]']"]
-  - openfda.pharm_class_cs                                         non-null=    171  e.g. ["['Benzodiazepines [CS]']", "['Benzodiazepines [CS]']"]
-  - change_date                                                    non-null=     11  e.g. ['04/28/2023', '01/03/2025']
-  - related_info_link                                              non-null=     35  e.g. ['https://www.accessdata.fda.gov/scripts/drugshortages/dsp_ActiveIngredientDetails.cfm?AI=Furosemide%20Injection&st=d', 'https://www.fda.gov/media/193578/download']
-  - openfda.pharm_class_pe                                         non-null=     95  e.g. ["['Increased Diuresis at Loop of Henle [PE]']", "['General Anesthesia [PE]']"]
-  - resolved_note                                                  non-null=      6  e.g. ['Available', 'Available']
+  - discontinued_date                                              non-null=    445  e.g. ['11/03/2025', '10/31/2025']
+  - update_type                                                    non-null=  1,607  e.g. ['New', 'Reverified']
+  - initial_posting_date                                           non-null=  1,607  e.g. ['11/03/2025', '06/28/2022']
+  - package_ndc                                                    non-null=  1,607  e.g. ['63481-627-70', '63323-725-10']
+  - generic_name                                                   non-null=  1,607  e.g. ['Acetaminophen; Oxycodone Hydrochloride Tablet', 'Remifentanil Hydrochloride Injection']
+  - contact_info                                                   non-null=  1,607  e.g. ['800-828-9393', '888-386-1300']
+  - related_info                                                   non-null=  1,106  e.g. ['Discontinuation of the manufacture of the drug', 'Check wholesalers for inventory']
+  - update_date                                                    non-null=  1,607  e.g. ['11/03/2025', '09/01/2026']
+  - therapeutic_category                                           non-null=  1,607  e.g. ["['Analgesia/Addiction']", "['Analgesia/Addiction']"]
+  - dosage_form                                                    non-null=  1,588  e.g. ['Tablet', 'Injection']
+  - presentation                                                   non-null=  1,607  e.g. ['Acetaminophen; Oxycodone Hydrochloride, Tablet, 325 mg; 2.5 mg (NDC 63481-627-70)', 'Remifentanil Hydrochloride, Injection, 1 mg/1 mL (NDC 63323-725-10)']
+  - company_name                                                   non-null=  1,607  e.g. ['Endo Pharmaceuticals, Inc.', 'Fresenius Kabi USA, LLC']
+  - status                                                         non-null=  1,607  e.g. ['To Be Discontinued', 'Current']
+  - availability                                                   non-null=  1,155  e.g. ['Available', 'Unavailable']
+  - openfda.application_number                                     non-null=  1,425  e.g. ["['ANDA206223']", "['ANDA071165']"]
+  - openfda.brand_name                                             non-null=  1,454  e.g. ["['REMIFENTANIL HYDROCHLORIDE']", "['BUPIVACAINE HYDROCHLORIDE AND EPINEPHRINE']"]
+  - openfda.generic_name                                           non-null=  1,454  e.g. ["['REMIFENTANIL HYDROCHLORIDE']", "['BUPIVACAINE HYDROCHLORIDE AND EPINEPHRINE']"]
+  - openfda.manufacturer_name                                      non-null=  1,454  e.g. ["['Fresenius Kabi USA, LLC']", "['Hospira, Inc.']"]
+  - openfda.product_ndc                                            non-null=  1,454  e.g. ["['63323-725', '63323-723', '63323-724']", "['0409-9042', '0409-1159', '0409-1160', '0409-1162', '0409-1163', '0409-1165', '0409-9043', '0409-9046', '0409-9045']"]
+  - openfda.product_type                                           non-null=  1,454  e.g. ["['HUMAN PRESCRIPTION DRUG']", "['HUMAN PRESCRIPTION DRUG']"]
+  - openfda.route                                                  non-null=  1,446  e.g. ["['INTRAVENOUS']", "['EPIDURAL', 'INFILTRATION', 'INTRACAUDAL', 'PERINEURAL']"]
+  - openfda.substance_name                                         non-null=  1,445  e.g. ["['REMIFENTANIL HYDROCHLORIDE']", "['BUPIVACAINE HYDROCHLORIDE', 'EPINEPHRINE BITARTRATE']"]
+  - openfda.rxcui                                                  non-null=  1,404  e.g. ["['1729578', '1729584', '1729710']", "['1012377', '1012384', '1012396', '1012404', '1672917', '1672919', '1724786', '1724787', '1724880', '1724884', '1725078', '1725082', '1867594', '1867596']"]
+  - openfda.spl_id                                                 non-null=  1,454  e.g. ["['2f27e51f-2b55-47ee-bd4a-001b71c60622']", "['6e442bfd-d3da-4913-8585-ce3485644364']"]
+  - openfda.spl_set_id                                             non-null=  1,454  e.g. ["['d2374b84-81c9-44f9-a4a9-1071281b2531']", "['02a845c3-4521-4926-e397-25ab536e7cf6']"]
+  - openfda.package_ndc                                            non-null=  1,454  e.g. ["['63323-723-01', '63323-723-03', '63323-724-01', '63323-724-05', '63323-725-01', '63323-725-10']", "['0409-1159-18', '0409-1159-01', '0409-1159-19', '0409-1159-02', '0409-1160-18', '0409-1160-01', '0409-1162-18', '0409-1162-01', '0409-1162-19', '0409-1162-02', '0409-1163-18', '0409-1163-01', '0409-1165-18', '0409-1165-01', '0409-1165-19', '0409-1165-02', '0409-9043-11', '0409-9043-01', '0409-9046-11', '0409-9046-01', '0409-9045-11', '0409-9045-01', '0409-9045-16', '0409-9045-17', '0409-9042-11', '0409-9042-01', '0409-9042-16', '0409-9042-17']"]
+  - openfda.unii                                                   non-null=  1,448  e.g. ["['5V444H5WIC']", "['7TQO7W3VT8', '30Q7KI53AK']"]
+  - shortage_reason                                                non-null=    410  e.g. ['Other', 'Discontinuation of the manufacture of the drug']
+  - related_info_link                                              non-null=     35  e.g. ['https://www.accessdata.fda.gov/scripts/drugshortages/dsp_ActiveIngredientDetails.cfm?AI=Furosemide%20Injection&st=d', 'https://www.accessdata.fda.gov/scripts/drugshortages/dsp_ActiveIngredientDetails.cfm?AI=Rifampin%20Injection&st=d']
+  - openfda.nui                                                    non-null=    364  e.g. ["['N0000175366', 'N0000175590']", "['N0000175413', 'N0000175073']"]
+  - openfda.pharm_class_pe                                         non-null=     93  e.g. ["['Increased Diuresis at Loop of Henle [PE]']", "['Increased Diuresis [PE]']"]
+  - openfda.pharm_class_epc                                        non-null=    363  e.g. ["['Loop Diuretic [EPC]']", "['Platinum-based Drug [EPC]']"]
+  - openfda.pharm_class_cs                                         non-null=    166  e.g. ["['Thiazides [CS]']", "['Rifamycins [CS]']"]
+  - openfda.pharm_class_moa                                        non-null=    126  e.g. ["['Glucagon-like Peptide-1 (GLP-1) Agonists [MoA]']", "['Interleukin-23 Antagonists [MoA]']"]
+  - change_date                                                    non-null=     11  e.g. ['01/03/2025', '04/28/2023']
+  - resolved_note                                                  non-null=      6  e.g. ['(NDC 82154-0451-4) – Available', '(NDC 82154-0451-4) – Available']
 
 ######################################################################
-# hpra_products.xml  (13,540,080 bytes)
+# hpra_products.xml  (13,541,873 bytes)
 
 === hpra_products.xml 
-shape: 10,334 rows x 18 cols
+shape: 10,335 rows x 18 cols
 columns:
-  - DrugIDPK                                                       non-null= 10,334  e.g. ['PA0179/002/013', 'PA1968/018/001']
-  - LicenceNumber                                                  non-null= 10,334  e.g. ['PA0179/002/013', 'PA1968/018/001']
-  - ProductName                                                    non-null= 10,334  e.g. ['0.9 % w/v Sodium Chloride Injection BP', '0.9% Sodium Chloride Intravenous Infusion Solution']
-  - PAHolder                                                       non-null= 10,334  e.g. ['B. Braun Medical Limited', 'Laboratoire Aguettant']
+  - DrugIDPK                                                       non-null= 10,335  e.g. ['PA0179/002/013', 'PA1968/018/001']
+  - LicenceNumber                                                  non-null= 10,335  e.g. ['PA0179/002/013', 'PA1968/018/001']
+  - ProductName                                                    non-null= 10,335  e.g. ['0.9 % w/v Sodium Chloride Injection BP', '0.9% Sodium Chloride Intravenous Infusion Solution']
+  - PAHolder                                                       non-null= 10,335  e.g. ['B. Braun Medical Limited', 'Laboratoire Aguettant']
   - AuthorisedDate                                                 non-null=  9,615  e.g. ['08/04/1987', '31/05/1999']
-  - ProductType                                                    non-null= 10,334  e.g. ['HM', 'HM']
-  - MarketInfo                                                     non-null= 10,334  e.g. ['Marketed', 'Not marketed']
-  - RegistrationStatus                                             non-null= 10,334  e.g. ['AU', 'AU']
-  - DosageForm                                                     non-null= 10,334  e.g. ['Solution for injection', 'Solution for infusion']
+  - ProductType                                                    non-null= 10,335  e.g. ['HM', 'HM']
+  - MarketInfo                                                     non-null= 10,335  e.g. ['Marketed', 'Not marketed']
+  - RegistrationStatus                                             non-null= 10,335  e.g. ['AU', 'AU']
+  - DosageForm                                                     non-null= 10,335  e.g. ['Solution for injection', 'Solution for infusion']
   - ATCs                                                           non-null= 10,235  e.g. ['\n      ', '\n      ']
-  - LegalBasis                                                     non-null= 10,331  e.g. ['Well-established use application (Article 10a of Directive No 2001/83/EC)', 'Not Currently Available']
-  - RoutesOfAdministration                                         non-null= 10,073  e.g. ['\n      ', '\n      ']
-  - ActiveSubstances                                               non-null= 10,277  e.g. ['\n      ', '\n      ']
-  - DispensingLegalStatus                                          non-null= 10,334  e.g. ['\n      ', '\n      ']
+  - LegalBasis                                                     non-null= 10,332  e.g. ['Well-established use application (Article 10a of Directive No 2001/83/EC)', 'Not Currently Available']
+  - RoutesOfAdministration                                         non-null= 10,074  e.g. ['\n      ', '\n      ']
+  - ActiveSubstances                                               non-null= 10,278  e.g. ['\n      ', '\n      ']
+  - DispensingLegalStatus                                          non-null= 10,335  e.g. ['\n      ', '\n      ']
   - SupplyLegalStatus                                              non-null= 10,316  e.g. ['Supply through pharmacies only', 'Supply through pharmacies only']
-  - PromotionLegalStatus                                           non-null= 10,334  e.g. ['Advertising to healthcare professionals only', 'Advertising to healthcare professionals only']
+  - PromotionLegalStatus                                           non-null= 10,335  e.g. ['Advertising to healthcare professionals only', 'Advertising to healthcare professionals only']
   - SupplyComments                                                 non-null=  3,400  e.g. ['Medicinal product subject to restricted medical prescription (See Summary of Product Characteristics, section 4.2)', 'Medicinal product subject to restricted medical prescription (see Annex I: Summary of Product Characteristics, section 4.2).']
-  - InterchangeableListCode                                        non-null=  2,908  e.g. ['IC0092-047-019', 'IC0092-002-056']
+  - InterchangeableListCode                                        non-null=  2,918  e.g. ['IC0092-047-019', 'IC0092-002-056']
 
 ######################################################################
-# manufacturers.csv  (1,526,554 bytes)
+# manufacturers.csv  (1,523,209 bytes)
   encoding guess: utf-8
   line 0: delims={';': 11}
     medicine_name;active_substance;atc_code;ema_url;pdf_url;source_block;manufacturer_name;address;country;manufacturer_step;latitude;longitude
