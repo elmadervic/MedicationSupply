@@ -1,7 +1,13 @@
-# Python
 __pycache__/
 *.py[cod]
 venv/
 
-# macOS
 .DS_Store
+
+.Rhistory
+.RData
+.Rproj.user/
+Rplots.pdf
+
+data/registers/raw/DrugBank_FullDatabase.xml
+data/trade/

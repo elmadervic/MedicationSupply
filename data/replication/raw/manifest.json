@@ -1,0 +1,41 @@
+{
+  "snapshot_utc": "2026-09-20T21:14:42+00:00",
+  "sources": {
+    "ulcm": {
+      "url": "https://www.ema.europa.eu/en/documents/other/union-list-critical-medicines-en.xlsx",
+      "file": "ulcm.xlsx",
+      "role": "universe",
+      "bytes": 402203,
+      "sha256": "9bb29f47486a16ad90168a2fb0bd7a746a2ea2ee99b2f4913e572fe69805eb2c",
+      "fetched_utc": "2026-09-20T21:14:43+00:00",
+      "content_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+    },
+    "ema_medicines": {
+      "url": "https://www.ema.europa.eu/en/documents/report/medicines-output-medicines-report_en.xlsx",
+      "file": "ema_medicines.xlsx",
+      "role": "supply",
+      "bytes": 901428,
+      "sha256": "4d56f88ef3e0d11d6fb4ea2597b52770ddae5f0b62e20f480c6aef13290881bd",
+      "fetched_utc": "2026-09-20T21:14:43+00:00",
+      "content_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+    },
+    "hpra_products": {
+      "url": "http://www.hpra.ie/img/uploaded/swedocuments/latestHMlist.xml",
+      "file": "hpra_products.xml",
+      "role": "supply",
+      "bytes": 13546133,
+      "sha256": "975f0a8d6837a91e1a5626b76cee96616898030bd5285980f3559ee571499034",
+      "fetched_utc": "2026-09-20T21:14:52+00:00",
+      "content_type": "application/xml"
+    },
+    "edqm_cep": {
+      "url": "https://extranet.edqm.eu/publications/recherches_CEP.shtml",
+      "file": "edqm_cep.txt",
+      "role": "supply",
+      "manual": true,
+      "bytes": 1457610,
+      "sha256": "92c69bdaced8a585290377b687edaf63ab46beae9531bef1008935769c55db80",
+      "mtime_local": "2026-08-23T20:25:24"
+    }
+  }
+}
