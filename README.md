@@ -21,7 +21,6 @@ estimate how exposed EU member states are to a halt in Chinese and Indian antibi
 - [Methods and scripts](#methods-and-scripts)
 - [Paper figures and tables](#paper-figures-and-tables)
 - [How to reproduce](#how-to-reproduce)
-- [Known issues](#known-issues)
 - [Independent replication (Python)](#independent-replication-python)
 - [Contact](#contact)
 
@@ -35,7 +34,7 @@ estimate how exposed EU member states are to a halt in Chinese and Indian antibi
 | Data: manufacturing registers (descriptive overview) | complete |
 | Shortage risk model (BfArM shortage register, logistic regression) | complete: data, script and results; reproduces every number in the paper |
 | Data: critical medicines (treemap) and EU antibiotic consumption (ECDC) | complete: data, scripts and figures |
-| Trade-based risk comparison (BACI) | notebook and figures included; its input data are not yet in the repository, so it cannot be rerun |
+| Trade-based risk comparison (BACI) | notebook and figures included; its input data are not stored in the repository |
 | Single-source medicines and alternative capacity (FDA cross-check) | to be added |
 | Data collection (scraping the four registers) | scripts included; their output was corrected by hand, so they do not reproduce the register files exactly |
 
@@ -48,12 +47,12 @@ data/
 │   └── processed/     combined, standardised register table written by the scripts
 ├── shortages/         BfArM shortage reports, pulled 9 September 2026
 ├── consumption/       ECDC antibiotic (J01) consumption, one file per year 2016–2024
-├── trade/             trade-analysis inputs (BACI extract etc.; git-ignored, see "Data not included")
+├── trade/             trade-analysis inputs (git-ignored, see "Inputs not stored in the repository")
 └── replication/       inputs of the independent Python replication (see below)
 scripts/
 ├── run_all.R          runs every R analysis script in order
 ├── data_collection/   scrapers and download scripts that produced the raw register files
-│   ├── BfArM/  CEP/  EPAR/  EudraGMDP/  HPRA/
+│   ├── BfArM/  CEP/  EPAR/  HPRA/
 ├── registers/         R analysis of the registers
 │   ├── paths.R
 │   ├── 01_combine_sources.R … 08_api_diversification.R
@@ -83,7 +82,7 @@ restricted to these codes and is carried out per ATC level-5 code.
 | File in `data/registers/raw/` | Source | Collected | Content |
 |---|---|---|---|
 | `EMA_data_critical.csv` | EMA EPAR product information, Annex II | May 2026 | one row per medicine × manufacturing site, with country and manufacturing step (1 = active substance, 2 = finished product / batch release); restricted to critical ATC codes |
-| `bfarm_api_origin_critical_rest_LONG.csv` | German BfArM register (AMGuiFree) | 25–26 June 2026 | one row per product × role × company; role is *Zulassungsinhaber* (marketing-authorisation holder), *Wirkstoffherstellung* (active-substance manufacture) or *Hersteller/Endfreigabe* (manufacture / batch release); country names in German; covers the critical ATC codes **except the 35 J01 antibiotics** (see [Known issues](#known-issues)) |
+| `bfarm_api_origin_critical_rest_LONG.csv` | German BfArM register (AMGuiFree) | 25–26 June 2026 | one row per product × role × company; role is *Zulassungsinhaber* (marketing-authorisation holder), *Wirkstoffherstellung* (active-substance manufacture) or *Hersteller/Endfreigabe* (manufacture / batch release); country names in German; covers the critical ATC codes except the 35 J01 antibiotics, which were scraped separately |
 | `ireland_critical_atc_review.csv` | Irish HPRA product register | 2026 | one row per product with "\|"-separated lists of manufacturers and their countries; no manufacturing-step field;  restricted to critical ATC codes |
 | `EXPORT_WEB_CEP.txt` | EDQM CEP certification database export | August 2026 | all certificates: substance, holder (name, city and ISO-2 country code in one field), status |
 | `EXPORT_WEB_CEP_with_ATC_drugbank.csv` | `EXPORT_WEB_CEP.txt` with ATC codes attached via DrugBank | August 2026 | as above plus an `atc_code` column (comma-separated when several apply) |
@@ -122,18 +121,17 @@ the file name.
 
 The trade analysis uses CEPII's BACI database (2024), restricted to the four HS-6 lines that carry
 antibiotic active substances: 294110 (penicillins), 294130 (tetracyclines), 294150 (erythromycin and
-macrolides) and 294190 (other antibiotics). These inputs are not yet in the repository; see below.
+macrolides) and 294190 (other antibiotics). These inputs are not stored in the repository; see below.
 
-### Data not included in the repository
+### Inputs not stored in the repository
 
-| Data | Why | How to obtain |
+| File | Content | How to obtain |
 |---|---|---|
-| DrugBank full database (`DrugBank_FullDatabase.xml`, 795 MB) | licence does not permit redistribution; size | Create a free academic account at <https://go.drugbank.com/releases/latest> and download "All drugs" (XML). Place it in `data/registers/raw/` (git-ignored). Only `scripts/data_collection/CEP/cep_atc_drugbank.R` reads it. |
-| `data/trade/baci_2024_antibiotics_bilateral.csv` | not yet provided | The 2024 BACI flows for the four HS-6 lines, one row per exporter × importer × line with value (thousand USD) and quantity (tonnes). BACI: <https://www.cepii.fr/CEPII/en/bdd_modele/bdd_modele_item.asp?id=37>. The script that extracts it from BACI is not in the repository. |
-| `data/trade/sys_risk/*.parquet` | not yet provided | Per-flow systemic trade risk scores (`str`) by HS code, importer and exporter. The notebook loads them in its setup cell; they are only used for the `str`-weighted variants, which the paper does not report. |
-| `data/trade/cep_antibiotics_clean.csv` | not yet provided | Output of `scripts/data_collection/CEP/cep_clean.ipynb`, run on the CEP export of 28 July 2026. |
-| `data/registers/raw/bfarm_api_origin_critical_J01_LONG.csv` | not yet provided | The BfArM scrape for the 35 J01 antibiotics (`scrape_bfarm_api_origin.py --j01`). Read by section 6 of the trade notebook. |
-| `data/registers/raw/Critical_API_sites_activities_LONG.csv` | not yet provided | EudraGMDP API sites for critical codes, derived from the `scrape_eudragmdp_2026.py` output. Optional: without it `09_shortage_model.R` skips the V3 model, which the paper does not report. |
+| `data/registers/raw/DrugBank_FullDatabase.xml` | DrugBank full database, 795 MB; its licence does not permit redistribution | Create a free academic account at <https://go.drugbank.com/releases/latest> and download "All drugs" (XML). Only `scripts/data_collection/CEP/cep_atc_drugbank.R` reads it. |
+| `data/trade/baci_2024_antibiotics_bilateral.csv` | BACI 2024 flows for the four HS-6 lines: `year`, `hs6_code`, `exporter_iso3`, `exporter_name`, `importer_iso3`, `importer_name`, `value_1000_usd`, `quantity_tonnes` | Download BACI (HS-6) from <https://www.cepii.fr/CEPII/en/bdd_modele/bdd_modele_item.asp?id=37> and keep the 2024 rows for HS 294110, 294130, 294150 and 294190. |
+| `data/trade/sys_risk/*.parquet` | systemic trade risk scores (`str`) per HS code, importer and exporter, from a separate systemic-risk pipeline | Used only for the `str`-weighted variants, which the paper does not report. |
+| `data/trade/cep_antibiotics_clean.csv` | valid CEPs for the four antibiotic HS-6 classes, with holder country | Run `scripts/data_collection/CEP/download_cep.py` and `cep_clean.ipynb` (the paper uses the CEP export of 28 July 2026) and copy the output here. |
+| `data/registers/raw/bfarm_api_origin_critical_J01_LONG.csv` | BfArM register for the 35 J01 antibiotics, read by section 6 of the trade notebook | `python scrape_bfarm_api_origin.py --j01` in `scripts/data_collection/BfArM/`. |
 
 ## Data collection
 
@@ -151,9 +149,7 @@ the paper. See `scripts/data_collection/README.md` and the README in each subfol
 | `EXPORT_WEB_CEP.txt` | `CEP/download_cep.py`: the EDQM "download the online certification database" export | August 2026 |
 | `EXPORT_WEB_CEP_with_ATC_drugbank.csv` | `CEP/cep_atc_drugbank.R`: keeps valid certificates, matches substance names to DrugBank names and synonyms to get ATC codes, drops level-3/4 combination-product codes, cross-checks the remaining codes against NLM RxNav/RxClass, and attaches the codes to every row of the export | August 2026 |
 
-`EudraGMDP/` downloads all EU GMP certificates (June 2026). Its output is used only for the optional V3
-shortage model and is not part of the paper. `CEP/cep_clean.ipynb` prepares the CEP antibiotics table
-for the trade notebook.
+`CEP/cep_clean.ipynb` prepares the CEP antibiotics table for the trade notebook.
 
 `cep_atc_drugbank.R` runs from the repository root, needs DrugBank in `data/registers/raw/`, writes
 its intermediate tables to `data/registers/processed/cep_atc/`, and **overwrites**
@@ -239,8 +235,7 @@ base predicts that it is currently in shortage.
   country-level HHI, and share of manufacturers located in China or India.
 - **Bases.** V1 uses the German register alone (251 codes, 34 in shortage); V2 pools Germany and EPAR
   (259 codes, 35 in shortage). Ireland and CEP are left out because the German register is both the
-  deepest source and the origin of the shortage data. An optional V3 (Germany + CEP + EudraGMDP API
-  sites, with company names harmonised across registers) runs only if the EudraGMDP file is present.
+  deepest source and the origin of the shortage data.
 - **Model.** Logistic regression of shortage status on log(1 + manufacturers), HHI/10,000 and the
   China+India share. Terms are tested with likelihood-ratio tests (type II), confidence intervals are
   profile-likelihood intervals, and the script reports McFadden's pseudo-R², in-sample AUC, variance
@@ -285,10 +280,10 @@ then computes, in order:
 8. an exploratory unit-value screen (not in the paper).
 
 The notebook resolves all paths from its own folder, so run it from `scripts/trade/` (Jupyter does
-this by default). It reads its inputs from `data/trade/` and writes figures to `figures/trade/`. It
-cannot be rerun until the inputs listed under [Data not included](#data-not-included-in-the-repository)
-are added. The figures in `figures/trade/` are those in the manuscript, and the notebook keeps the
-outputs of its last run.
+this by default). It reads the inputs listed under
+[Inputs not stored in the repository](#inputs-not-stored-in-the-repository) from `data/trade/` and
+writes figures to `figures/trade/`. The figures in `figures/trade/` are those in the manuscript, and the
+notebook keeps the outputs of its last run.
 
 ## Paper figures and tables
 
@@ -365,24 +360,6 @@ locale, R reads these names in the scripts differently from the names in the dat
 rows for the United Kingdom then lose their country and the HHI of a few codes changes. `run_all.R`
 therefore switches to a UTF-8 locale and stops if none is available. Run single scripts from RStudio
 or a UTF-8 terminal.
-
-## Known issues
-
-Differences between the code, the data and the manuscript draft that the authors should resolve:
-
-- **No J01 antibiotics in the German register file.** `bfarm_api_origin_critical_rest_LONG.csv` is the
-  scraper's `--rest` run, so the 35 critical J01 codes are missing from every German result, including
-  the shortage model. The J01 run (`bfarm_api_origin_critical_J01_LONG.csv`) exists but is used only by
-  the trade notebook.
-- **Consumption ribbon.** In `eu_average_trend.png` the shaded band is ± one standard deviation of the
-  nine yearly EU means (`sd(EU_avg)`), the same width every year. The caption describes it as ± one
-  standard deviation across countries.
-- **Two CEP snapshots.** The register analysis uses the EDQM export from August 2026; the trade
-  notebook uses the export of 28 July 2026 (9,388 rows), which is not in the repository.
-- **Uniform-pooling sensitivity.** The Methods say the shock is repeated with $P = S$ and reported in
-  the Supplementary Information. Neither the notebook nor SI.tex contains it.
-- **Shortage results in the draft.** The abstract gives AUC = 0.72; the model gives 0.71. The
-  Discussion gives odds ratios of 9.55–10.7; V1 and V2 give 8.6 and 9.6.
 
 ## Independent replication (Python)
 

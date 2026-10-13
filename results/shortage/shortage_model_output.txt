@@ -4,8 +4,6 @@ Unique critical ATC codes covered by ANY source: 291
     cep     ema germany ireland 
     569     187   16002    1725 
 
- data/registers/raw/Critical_API_sites_activities_LONG.csv not found: V3 (Germany + CEP + EudraGMDP) is skipped.
-
 Shortage report rows: 739 
 Dropping 21 level-4-only rows and 16 rows with no assigned ATC code from the exact-match flag.
 Unique ATC5 codes with >=1 shortage report: 196 

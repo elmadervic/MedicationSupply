@@ -1,8 +1,7 @@
 # CEP — EDQM Certificates of Suitability
 
 Raw + cleaned data for the register-vs-trade match on antibiotics, using the EDQM
-**Certificate of Suitability (CEP)** database as a *third* register (alongside BfArM
-and EudraGMDP). A CEP certifies that an API manufacturer's substance is suitably
+**Certificate of Suitability (CEP)** database as a second register (alongside BfArM). A CEP certifies that an API manufacturer's substance is suitably
 controlled by the relevant European Pharmacopoeia monograph — i.e. it is a
 **substance-level, EU-wide list of who is certified to supply an API to the EU market**,
 and it names the holder's country (India/China included).
@@ -10,7 +9,7 @@ and it names the holder's country (India/China included).
 ## Why CEP (vs the other registers)
 - **Substance-level, not HS-6.** Keyed by substance name → maps cleanly onto ATC/INN and
   onto the 4 antibiotic HS-6 classes. This sidesteps the *population mismatch* that made the
-  BfArM/EudraGMDP ↔ HS-6 match not close (the BfArM comparison is section 6 of
+  BfArM ↔ HS-6 match not close (the BfArM comparison is section 6 of
   the trade notebook `scripts/trade/baci_systemic_risk.ipynb`).
 - **Broader population than the critical-only register.** CEP lists critical *and*
   non-critical antibiotics of the same chemical class, so it is closer to what the HS-6
