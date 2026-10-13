@@ -11,4 +11,3 @@ Rplots.pdf
 
 data/registers/raw/DrugBank_FullDatabase.xml
 data/trade/*
-!data/trade/wco_inn_table.xlsx

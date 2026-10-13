@@ -123,8 +123,6 @@ the file name.
 The trade analysis uses CEPII's BACI database (2024), restricted to the four HS-6 lines that carry
 antibiotic active substances: 294110 (penicillins), 294130 (tetracyclines), 294150 (erythromycin and
 macrolides) and 294190 (other antibiotics). These inputs are not yet in the repository; see below.
-`data/trade/wco_inn_table.xlsx` (WCO table of INNs by HS code) was uploaded with the notebook but is not
-read by it.
 
 ### Data not included in the repository
 
