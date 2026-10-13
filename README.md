@@ -129,7 +129,6 @@ macrolides) and 294190 (other antibiotics). These inputs are not stored in the r
 |---|---|---|
 | `data/registers/raw/DrugBank_FullDatabase.xml` | DrugBank full database, 795 MB; its licence does not permit redistribution | Create a free academic account at <https://go.drugbank.com/releases/latest> and download "All drugs" (XML). Only `scripts/data_collection/CEP/cep_atc_drugbank.R` reads it. |
 | `data/trade/baci_2024_antibiotics_bilateral.csv` | BACI 2024 flows for the four HS-6 lines: `year`, `hs6_code`, `exporter_iso3`, `exporter_name`, `importer_iso3`, `importer_name`, `value_1000_usd`, `quantity_tonnes` | Download BACI (HS-6) from <https://www.cepii.fr/CEPII/en/bdd_modele/bdd_modele_item.asp?id=37> and keep the 2024 rows for HS 294110, 294130, 294150 and 294190. |
-| `data/trade/sys_risk/*.parquet` | systemic trade risk scores (`str`) per HS code, importer and exporter, from a separate systemic-risk pipeline | Used only for the `str`-weighted variants, which the paper does not report. |
 | `data/trade/cep_antibiotics_clean.csv` | valid CEPs for the four antibiotic HS-6 classes, with holder country | Run `scripts/data_collection/CEP/download_cep.py` and `cep_clean.ipynb` (the paper uses the CEP export of 28 July 2026) and copy the output here. |
 | `data/registers/raw/bfarm_api_origin_critical_J01_LONG.csv` | BfArM register for the 35 J01 antibiotics, read by section 6 of the trade notebook | `python scrape_bfarm_api_origin.py --j01` in `scripts/data_collection/BfArM/`. |
 
@@ -263,7 +262,7 @@ predictors and the shortage flag) and diagnostic plots in `figures/additional/sh
 
 ### Trade-based risk — `scripts/trade/baci_systemic_risk.ipynb`
 
-Python notebook (pandas, numpy, scipy, matplotlib, pyarrow). It builds the sourcing-share matrix $S$
+Python notebook (pandas, numpy, scipy, matplotlib). It builds the sourcing-share matrix $S$
 (each importer's import shares by exporter, pooled over the four HS-6 lines, by value and by volume) and
 then computes, in order:
 
@@ -282,8 +281,9 @@ then computes, in order:
 The notebook resolves all paths from its own folder, so run it from `scripts/trade/` (Jupyter does
 this by default). It reads the inputs listed under
 [Inputs not stored in the repository](#inputs-not-stored-in-the-repository) from `data/trade/` and
-writes figures to `figures/trade/`. The figures in `figures/trade/` are those in the manuscript, and the
-notebook keeps the outputs of its last run.
+writes figures to `figures/trade/`. The figures in `figures/trade/` are those in the manuscript. The
+notebook keeps the outputs of its last run, except in the setup cell and sections 3, 6 and 7, whose outputs were cleared
+when the risk-adjusted (`str`) variants were removed.
 
 ## Paper figures and tables
 
@@ -349,7 +349,7 @@ script reads its raw data directly, so a single figure can be rebuilt with, for 
 `Rscript -e 'source("scripts/registers/03_hhi.R", encoding = "UTF-8")'`. Random label placement and
 jitter are seeded, so repeated runs give identical files.
 
-The trade notebook needs Python with `pandas numpy scipy matplotlib pyarrow jupyter` and its input data:
+The trade notebook needs Python with `pandas numpy scipy matplotlib jupyter` and its input data:
 
 ```bash
 cd scripts/trade && jupyter nbconvert --to notebook --execute --inplace baci_systemic_risk.ipynb
