@@ -1,17 +1,15 @@
-# Treemap of critical APIs by ATC Level 1 chapter
-# Input: critical.csv with one column "ATC level 5" (blank rows allowed)
-
 library(readr)
 library(dplyr)
 library(ggplot2)
-library(treemapify)   # install.packages("treemapify")
+library(treemapify)
 
-# ---- Data -------------------------------------------------------------------
-atc <- read_csv("Data/critical.csv", col_types = cols(.default = "c")) |>
+source("scripts/registers/paths.R")
+
+atc <- read_csv(file.path(RAW_DIR, "critical.csv"), col_types = cols(.default = "c")) |>
   rename(code = `ATC level 5`) |>
   mutate(code = trimws(code)) |>
   filter(!is.na(code), code != "") |>
-  distinct(code)                       # count unique ATC codes
+  distinct(code)
 
 chapter_names <- c(
   A = "Alimentary & metabolism",
@@ -50,7 +48,6 @@ tm <- atc |>
 
 print(tm |> select(chapter, name, n, pct))
 
-# ---- Plot -------------------------------------------------------------------
 p <- ggplot(tm, aes(area = n, fill = chapter, label = label)) +
   geom_treemap(colour = "white", size = 1.5) +
   geom_treemap_text(
@@ -73,6 +70,5 @@ p <- ggplot(tm, aes(area = n, fill = chapter, label = label)) +
     plot.background  = element_rect(fill = "white", colour = NA)
   )
 
-ggsave("atc_treemap.png", p, width = 10, height = 7, dpi = 300)
-ggsave("atc_treemap.pdf", p, width = 10, height = 7)
-p
+ggsave(file.path(FIG_DIR, "plot4_treemap_chapters.png"), p, width = 10, height = 7, dpi = 300)
+ggsave(file.path(ADD_DIR, "plot4_treemap_chapters.pdf"), p, width = 10, height = 7)

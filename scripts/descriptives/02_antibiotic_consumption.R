@@ -1,33 +1,20 @@
-# ============================================================
-# Antibacterial Consumption per Country Over Time
-# Data: ECDC Antibacterials for Systemic Use (DDD/1000/day)
-# ============================================================
-
-# --- 1. Dependencies -----------------------------------------------------------
-if (!requireNamespace("readxl",  quietly = TRUE)) install.packages("readxl")
-if (!requireNamespace("dplyr",   quietly = TRUE)) install.packages("dplyr")
-if (!requireNamespace("ggplot2", quietly = TRUE)) install.packages("ggplot2")
-if (!requireNamespace("stringr", quietly = TRUE)) install.packages("stringr")
-if (!requireNamespace("forcats", quietly = TRUE)) install.packages("forcats")
-
 library(readxl)
 library(dplyr)
 library(ggplot2)
 library(stringr)
 library(forcats)
 
-# --- 2. Read ALL Excel files from folder ---------------------------------------
-data_dir <- "Consumtion"   # <-- change if files are in a different folder
+source("scripts/registers/paths.R")
 
-# Pick up every .xls / .xlsx / .xlsm regardless of filename
+data_dir <- "data/consumption"
+
 xlsx_files <- list.files(
   path       = data_dir,
-  pattern    = "\\.xlsx?$",          # matches .xls, .xlsx, .xlsm
+  pattern    = "\\.xlsx?$",
   full.names = TRUE,
-  ignore.case = TRUE                 # handles .XLSX, .Xlsx, etc.
+  ignore.case = TRUE
 )
 
-# Fallback: also grab files via Sys.glob for case-insensitive systems
 if (length(xlsx_files) == 0) {
   xlsx_files <- c(
     Sys.glob(file.path(data_dir, "*.xlsx")),
@@ -45,12 +32,9 @@ if (length(xlsx_files) == 0) {
 cat("Found", length(xlsx_files), "file(s):\n")
 cat(paste(" -", basename(xlsx_files), collapse = "\n"), "\n\n")
 
-# --- 3. Read and stack all files -----------------------------------------------
 read_one <- function(path) {
   df <- read_excel(path, sheet = 1)
-  # Normalise to two columns regardless of header text
   names(df) <- c("Country", "DDD_per_1000_per_day")
-  # Extract year from filename (first 4-digit number found)
   year <- as.integer(str_extract(basename(path), "\\d{4}"))
   df$Year  <- year
   df$File  <- basename(path)
@@ -59,7 +43,6 @@ read_one <- function(path) {
 
 all_data <- bind_rows(lapply(xlsx_files, read_one))
 
-# Drop rows with NA, replace 0 with NA
 all_data <- all_data |>
   filter(!is.na(Country), !is.na(DDD_per_1000_per_day)) |>
   mutate(DDD_per_1000_per_day = na_if(DDD_per_1000_per_day, 0))
@@ -67,7 +50,6 @@ all_data <- all_data |>
 cat("Years loaded  :", sort(unique(all_data$Year)), "\n")
 cat("Countries     :", paste(sort(unique(all_data$Country)), collapse = ", "), "\n\n")
 
-# --- 4. Helpers ----------------------------------------------------------------
 country_order <- all_data |>
   group_by(Country) |>
   summarise(mean_ddd = mean(DDD_per_1000_per_day, na.rm = TRUE), .groups = "drop") |>
@@ -77,7 +59,6 @@ country_order <- all_data |>
 all_data <- all_data |>
   mutate(Country = factor(Country, levels = country_order))
 
-# --- 5. Plot A – Line chart ----------------------------------------------------
 p_lines <- ggplot(all_data,
                   aes(x = Year, y = DDD_per_1000_per_day,
                       colour = Country, group = Country)) +
@@ -100,10 +81,6 @@ p_lines <- ggplot(all_data,
     panel.grid.minor = element_blank()
   )
 
-# ggsave("antibacterial_lines.png", p_lines, width = 14, height = 7, dpi = 150)
-# cat("Saved: antibacterial_lines.png\n")
-
-# --- 6. Plot B – Small multiples -----------------------------------------------
 p_facet <- ggplot(all_data, aes(x = Year, y = DDD_per_1000_per_day)) +
   geom_line(colour = "#1a6faf", linewidth = 0.7) +
   geom_point(colour = "#1a6faf", size = 1.5) +
@@ -124,13 +101,11 @@ p_facet <- ggplot(all_data, aes(x = Year, y = DDD_per_1000_per_day)) +
     panel.grid.minor = element_blank()
   )
 
-ggsave("antibacterial_facets.png", p_facet, width = 16, height = 10, dpi = 150)
+ggsave(file.path(ADD_DIR, "antibacterial_facets.png"), p_facet, width = 16, height = 10, dpi = 150)
 cat("Saved: antibacterial_facets.png\n")
-
 
 all_data <- all_data[complete.cases(all_data),]
 
-# --- 7. Plot C – Heatmap -------------------------------------------------------
 p_heat <- ggplot(all_data,
                  aes(x = factor(Year), y = fct_rev(Country),
                      fill = DDD_per_1000_per_day)) +
@@ -148,10 +123,9 @@ p_heat <- ggplot(all_data,
     panel.grid   = element_blank()
   )
 
-ggsave("antibacterial_heatmap.png", p_heat, width = 14, height = 8, dpi = 150)
+ggsave(file.path(ADD_DIR, "antibacterial_heatmap.png"), p_heat, width = 14, height = 8, dpi = 150)
 cat("Saved: antibacterial_heatmap.png\n")
 
-# --- 8. Summary table ----------------------------------------------------------
 summary_tbl <- all_data |>
   group_by(Country) |>
   summarise(
@@ -170,25 +144,14 @@ summary_tbl <- all_data |>
 cat("\n--- Summary (ordered by mean consumption) ---\n")
 print(summary_tbl, n = Inf)
 
-write.csv(summary_tbl, "antibacterial_summary.csv", row.names = FALSE)
+write.csv(summary_tbl, file.path(TAB_DIR, "antibacterial_consumption_summary.csv"), row.names = FALSE)
 cat("\nSaved: antibacterial_summary.csv\n")
 
-
-
-
-
-# ============================================================
-# EU-level trend plot (average across all countries per year)
-# ============================================================
-
-# --- EU average per year -------------------------------------------------------
 eu_avg <- all_data |>
   group_by(Year) |>
   summarise(EU_avg = mean(DDD_per_1000_per_day, na.rm = TRUE), .groups = "drop")
 
-# --- Plot: country lines (grey) + EU average (green) --------------------------
 p_eu <- ggplot() +
-  # Shaded COVID period
   annotate("rect",
            xmin = 2019.5, xmax = 2021.5,
            ymin = -Inf,   ymax = Inf,
@@ -197,17 +160,14 @@ p_eu <- ggplot() +
            x = 2020.5, y = Inf, vjust = 1.5,
            label = "COVID-19", size = 3,
            colour = "#A32D2D") +
-  # Individual country lines (light grey, thin)
   geom_line(data = all_data,
             aes(x = Year, y = DDD_per_1000_per_day, group = Country),
             colour = "#B4B2A9", linewidth = 0.4, alpha = 0.6, na.rm = TRUE) +
-  # EU average ribbon (light fill)
   geom_ribbon(data = eu_avg,
               aes(x = Year,
                   ymin = EU_avg - sd(EU_avg),
                   ymax = EU_avg + sd(EU_avg)),
               fill = "#1D9E75", alpha = 0.12) +
-  # EU average line
   geom_line(data = eu_avg,
             aes(x = Year, y = EU_avg),
             colour = "#1D9E75", linewidth = 1.6) +
@@ -215,7 +175,6 @@ p_eu <- ggplot() +
              aes(x = Year, y = EU_avg),
              colour = "#1D9E75", fill = "white",
              shape = 21, size = 3.5, stroke = 2) +
-  # Value labels on EU average points
   geom_text(data = eu_avg,
             aes(x = Year, y = EU_avg,
                 label = round(EU_avg, 1)),
@@ -236,6 +195,6 @@ p_eu <- ggplot() +
     panel.grid.major = element_line(colour = "grey92")
   )
 
-ggsave("eu_average_trend.png", p_eu,
+ggsave(file.path(FIG_DIR, "eu_average_trend.png"), p_eu,
        width = 12, height = 6, dpi = 150)
 cat("Saved: eu_average_trend.png\n")

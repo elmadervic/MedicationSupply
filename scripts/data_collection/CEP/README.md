@@ -11,7 +11,7 @@ and it names the holder's country (India/China included).
 - **Substance-level, not HS-6.** Keyed by substance name → maps cleanly onto ATC/INN and
   onto the 4 antibiotic HS-6 classes. This sidesteps the *population mismatch* that made the
   BfArM/EudraGMDP ↔ HS-6 match not close (the BfArM comparison is section 6 of
-  the trade notebook `Baci_systemic_risk.ipynb`).
+  the trade notebook `scripts/trade/baci_systemic_risk.ipynb`).
 - **Broader population than the critical-only register.** CEP lists critical *and*
   non-critical antibiotics of the same chemical class, so it is closer to what the HS-6
   trade line actually carries.
@@ -57,7 +57,7 @@ EDQM serves only the **current** database. A new download gives a newer version 
    explicit, auditable keyword map, and writes:
    - `cep_antibiotics_clean.csv` — one row per CEP in the 4 classes (long, with iso3, hs, status …)
    - `cep_origins_by_class.csv` — per HS class → certified origin countries + CEP counts
-3. The CEP↔trade match is in section 7 of the trade notebook `Baci_systemic_risk.ipynb`
+3. The CEP↔trade match is in section 7 of the trade notebook `scripts/trade/baci_systemic_risk.ipynb`
    and uses `cep_antibiotics_clean.csv`.
 
 ## The 4 antibiotic HS-6 classes

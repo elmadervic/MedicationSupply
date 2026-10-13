@@ -1,0 +1,235 @@
+Manufacturer register rows: 18483 
+Unique critical ATC codes covered by ANY source: 291 
+
+    cep     ema germany ireland 
+    569     187   16002    1725 
+
+ data/registers/raw/Critical_API_sites_activities_LONG.csv not found: V3 (Germany + CEP + EudraGMDP) is skipped.
+
+Shortage report rows: 739 
+Dropping 21 level-4-only rows and 16 rows with no assigned ATC code from the exact-match flag.
+Unique ATC5 codes with >=1 shortage report: 196 
+
+Analysis table: 291 critical ATC codes.
+
+--- Single-COUNTRY (EPAR/EMA basis, HHI=10000) vs. currently-active shortage ---
+# A tibble: 2 × 3
+  single_country_epar `FALSE` `TRUE`
+  <lgl>                 <int>  <int>
+1 FALSE                    23      6
+2 TRUE                     21      1
+
+	Fisher's Exact Test for Count Data
+
+data:  table(d$single_country_epar, d$currently_active)
+p-value = 0.1239
+alternative hypothesis: true odds ratio is not equal to 1
+95 percent confidence interval:
+ 0.003796706 1.747861877
+sample estimates:
+odds ratio 
+ 0.1877433 
+
+
+--- Single-source COMPANY (EPAR/EMA basis, exactly 1 manufacturer) vs. currently-active shortage ---
+# A tibble: 2 × 3
+  single_source_epar `FALSE` `TRUE`
+  <lgl>                <int>  <int>
+1 FALSE                   27      6
+2 TRUE                    17      1
+
+	Fisher's Exact Test for Count Data
+
+data:  table(d$single_source_epar, d$currently_active)
+p-value = 0.3979
+alternative hypothesis: true odds ratio is not equal to 1
+95 percent confidence interval:
+ 0.005445209 2.540246283
+sample estimates:
+odds ratio 
+ 0.2704476 
+
+
+--- Single-source (V1: Germany only) vs. currently-active shortage ---
+# A tibble: 2 × 3
+  single_source_v1 `FALSE` `TRUE`
+  <lgl>              <int>  <int>
+1 FALSE                197     32
+2 TRUE                  20      2
+
+	Fisher's Exact Test for Count Data
+
+data:  table(d$single_source_v1, d$currently_active)
+p-value = 0.7478
+alternative hypothesis: true odds ratio is not equal to 1
+95 percent confidence interval:
+ 0.06675327 2.74550272
+sample estimates:
+odds ratio 
+ 0.6166558 
+
+
+--- Univariate association with currently-active shortage ---
+# A tibble: 8 × 7
+  metric                n median_no median_yes wilcox_p point_biserial_r   cor_p
+  <chr>             <int>     <dbl>      <dbl>    <dbl>            <dbl>   <dbl>
+1 N manufacturers …   251        5       7      5.41e-2            0.141 2.55e-2
+2 N countries (V1:…   251        3       4      2.40e-2            0.127 4.50e-2
+3 % China+India (V…   251        0       0.333  2.42e-4            0.215 6.21e-4
+4 Country HHI (V1:…   251     4743.   3531.     2.80e-2           -0.123 5.19e-2
+5 N manufacturers …   259        4       6      8.82e-2            0.125 4.41e-2
+6 N countries (V2:…   259        3       3      4.35e-2            0.110 7.62e-2
+7 % China+India (V…   259        0       0.333  9.08e-5            0.222 3.10e-4
+8 Country HHI (V2:…   259     5000    3571.     3.09e-2           -0.130 3.59e-2
+
+--- Logistic regression: shortage ~ manufacturer concentration (V1: Germany only) ---
+
+Call:
+glm(formula = currently_active ~ log_n_manufacturers + hhi_scaled + 
+    pct_china_india, family = binomial(), data = model_data_v1)
+
+Coefficients:
+                    Estimate Std. Error z value Pr(>|z|)    
+(Intercept)          -1.9118     1.0181  -1.878 0.060398 .  
+log_n_manufacturers   0.1449     0.3211   0.451 0.651813    
+hhi_scaled           -1.7442     1.1693  -1.492 0.135801    
+pct_china_india       2.1520     0.6508   3.307 0.000944 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+(Dispersion parameter for binomial family taken to be 1)
+
+    Null deviance: 199.11  on 250  degrees of freedom
+Residual deviance: 183.06  on 247  degrees of freedom
+AIC: 191.06
+
+Number of Fisher Scoring iterations: 5
+
+
+Odds ratios:
+# A tibble: 4 × 7
+  term                estimate std.error statistic  p.value conf.low conf.high
+  <chr>                  <dbl>     <dbl>     <dbl>    <dbl>    <dbl>     <dbl>
+1 (Intercept)            0.148     1.02     -1.88  0.0604     0.0199      1.10
+2 log_n_manufacturers    1.16      0.321     0.451 0.652      0.604       2.15
+3 hhi_scaled             0.175     1.17     -1.49  0.136      0.0150      1.52
+4 pct_china_india        8.60      0.651     3.31  0.000944   2.42       32.0 
+
+--- Logistic regression: shortage ~ manufacturer concentration (V2: Germany + EPAR) ---
+
+Call:
+glm(formula = currently_active ~ log_n_manufacturers + hhi_scaled + 
+    pct_china_india, family = binomial(), data = model_data_v2)
+
+Coefficients:
+                    Estimate Std. Error z value Pr(>|z|)    
+(Intercept)         -1.31983    1.03450  -1.276 0.202022    
+log_n_manufacturers -0.06537    0.33676  -0.194 0.846095    
+hhi_scaled          -2.17135    1.17686  -1.845 0.065032 .  
+pct_china_india      2.25896    0.64881   3.482 0.000498 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+(Dispersion parameter for binomial family taken to be 1)
+
+    Null deviance: 205.15  on 258  degrees of freedom
+Residual deviance: 187.90  on 255  degrees of freedom
+AIC: 195.9
+
+Number of Fisher Scoring iterations: 5
+
+
+Odds ratios:
+# A tibble: 4 × 7
+  term                estimate std.error statistic  p.value conf.low conf.high
+  <chr>                  <dbl>     <dbl>     <dbl>    <dbl>    <dbl>     <dbl>
+1 (Intercept)            0.267     1.03     -1.28  0.202     0.0354      2.09 
+2 log_n_manufacturers    0.937     0.337    -0.194 0.846     0.473       1.78 
+3 hhi_scaled             0.114     1.18     -1.85  0.0650    0.00958     0.998
+4 pct_china_india        9.57      0.649     3.48  0.000498  2.71       35.5  
+
+=== V1: Germany only ===
+
+Profile-likelihood CIs (odds ratios):
+                           OR      2.5 %    97.5 %
+(Intercept)         0.1478147 0.01991711  1.104782
+log_n_manufacturers 1.1559435 0.60437664  2.146293
+hhi_scaled          0.1747859 0.01498399  1.517878
+pct_china_india     8.6019232 2.42178577 31.971433
+
+Likelihood-ratio test per term (Type II, drop-in-deviance):
+Analysis of Deviance Table (Type II tests)
+
+Response: currently_active
+                    LR Chisq Df Pr(>Chisq)    
+log_n_manufacturers   0.2013  1  0.6536786    
+hhi_scaled            2.4483  1  0.1176512    
+pct_china_india      10.8791  1  0.0009726 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+McFadden's pseudo-R^2: 0.081
+AIC: 191.1   BIC: 205.2   log-likelihood: -91.5
+
+Variance inflation factors (multicollinearity check):
+log_n_manufacturers          hhi_scaled     pct_china_india 
+           1.613755            1.738764            1.110325 
+
+In-sample AUC: 0.714
+
+Confusion matrix at 0.5 cutoff:
+         actual
+predicted FALSE TRUE
+    FALSE   217   34
+    TRUE      0    0
+(With shortages this rare (~13.5% of codes), the model may never cross 0.5 -- that's expected class
+imbalance, not a broken model. A cutoff at the base rate is more informative:
+Confusion matrix at 0.135 (base-rate) cutoff:
+         actual
+predicted FALSE TRUE
+    FALSE   137   11
+    TRUE     80   23
+
+=== V2: Germany + EPAR ===
+
+Profile-likelihood CIs (odds ratios):
+                           OR       2.5 %     97.5 %
+(Intercept)         0.2671811 0.035418539  2.0918496
+log_n_manufacturers 0.9367250 0.472683616  1.7840717
+hhi_scaled          0.1140231 0.009578518  0.9977925
+pct_china_india     9.5731418 2.713149705 35.5415557
+
+Likelihood-ratio test per term (Type II, drop-in-deviance):
+Analysis of Deviance Table (Type II tests)
+
+Response: currently_active
+                    LR Chisq Df Pr(>Chisq)    
+log_n_manufacturers   0.0379  1  0.8456510    
+hhi_scaled            3.8493  1  0.0497670 *  
+pct_china_india      12.1071  1  0.0005023 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+McFadden's pseudo-R^2: 0.084
+AIC: 195.9   BIC: 210.1   log-likelihood: -94.0
+
+Variance inflation factors (multicollinearity check):
+log_n_manufacturers          hhi_scaled     pct_china_india 
+           1.756869            1.894529            1.135547 
+
+In-sample AUC: 0.713
+
+Confusion matrix at 0.5 cutoff:
+         actual
+predicted FALSE TRUE
+    FALSE   224   35
+    TRUE      0    0
+(With shortages this rare (~13.5% of codes), the model may never cross 0.5 -- that's expected class
+imbalance, not a broken model. A cutoff at the base rate is more informative:
+Confusion matrix at 0.135 (base-rate) cutoff:
+         actual
+predicted FALSE TRUE
+    FALSE   146   12
+    TRUE     78   23
+
+Done. Wrote atc_shortage_concentration_analysis.csv and 6 diagnostic plots.
