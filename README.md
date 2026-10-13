@@ -32,7 +32,7 @@ estimate how exposed EU member states are to a halt in Chinese and Indian antibi
 |---|---|
 | Manufacturing registers and the Herfindahl-Hirschman Index | complete: data, scripts, figures and Table 1 |
 | Data: manufacturing registers (descriptive overview) | complete |
-| Shortage risk model (BfArM shortage register, logistic regression) | complete: data, script and results; reproduces every number in the paper |
+| Shortage risk model (BfArM shortage register, logistic regression) | data, script and results for V1 and V2; V3 needs the EudraGMDP input |
 | Data: critical medicines (treemap) and EU antibiotic consumption (ECDC) | complete: data, scripts and figures |
 | Trade-based risk comparison (BACI) | notebook and figures included; its input data are not stored in the repository |
 | Single-source medicines and alternative capacity (FDA cross-check) | to be added |
@@ -52,7 +52,7 @@ data/
 scripts/
 ├── run_all.R          runs every R analysis script in order
 ├── data_collection/   scrapers and download scripts that produced the raw register files
-│   ├── BfArM/  CEP/  EPAR/  HPRA/
+│   ├── BfArM/  CEP/  EPAR/  EudraGMDP/  HPRA/
 ├── registers/         R analysis of the registers
 │   ├── paths.R
 │   ├── 01_combine_sources.R … 08_api_diversification.R
@@ -131,6 +131,8 @@ macrolides) and 294190 (other antibiotics). These inputs are not stored in the r
 | `data/trade/baci_2024_antibiotics_bilateral.csv` | BACI 2024 flows for the four HS-6 lines: `year`, `hs6_code`, `exporter_iso3`, `exporter_name`, `importer_iso3`, `importer_name`, `value_1000_usd`, `quantity_tonnes` | Download BACI (HS-6) from <https://www.cepii.fr/CEPII/en/bdd_modele/bdd_modele_item.asp?id=37> and keep the 2024 rows for HS 294110, 294130, 294150 and 294190. |
 | `data/trade/cep_antibiotics_clean.csv` | valid CEPs for the four antibiotic HS-6 classes, with holder country | Run `scripts/data_collection/CEP/download_cep.py` and `cep_clean.ipynb` (the paper uses the CEP export of 28 July 2026) and copy the output here. |
 | `data/registers/raw/bfarm_api_origin_critical_J01_LONG.csv` | BfArM register for the 35 J01 antibiotics, read by section 6 of the trade notebook | `python scrape_bfarm_api_origin.py --j01` in `scripts/data_collection/BfArM/`. |
+| `data/registers/raw/Critical_API_sites_activities_LONG.csv` | EudraGMDP API sites for critical codes, one row per site × certificate × activity (`atc`, `site_name`, `country`, `cert_type`, `activity_code`, `withdrawn`, `is_critical`) | Built from the output of `scripts/data_collection/EudraGMDP/scrape_eudragmdp_2026.py`. Needed for the V3 shortage model. |
+| `data/trade/sys_risk/*.parquet` | systemic trade risk scores (`str`) per HS code, importer and exporter | From a separate systemic-risk pipeline. The notebook loads them in its setup cell for the risk-adjusted (`str`) variants. |
 
 ## Data collection
 
@@ -148,7 +150,9 @@ the paper. See `scripts/data_collection/README.md` and the README in each subfol
 | `EXPORT_WEB_CEP.txt` | `CEP/download_cep.py`: the EDQM "download the online certification database" export | August 2026 |
 | `EXPORT_WEB_CEP_with_ATC_drugbank.csv` | `CEP/cep_atc_drugbank.R`: keeps valid certificates, matches substance names to DrugBank names and synonyms to get ATC codes, drops level-3/4 combination-product codes, cross-checks the remaining codes against NLM RxNav/RxClass, and attaches the codes to every row of the export | August 2026 |
 
-`CEP/cep_clean.ipynb` prepares the CEP antibiotics table for the trade notebook.
+`EudraGMDP/scrape_eudragmdp_2026.py` downloads all EU GMP compliance certificates (June 2026); its API
+sites for critical codes feed the V3 shortage model. `CEP/cep_clean.ipynb` prepares the CEP antibiotics
+table for the trade notebook.
 
 `cep_atc_drugbank.R` runs from the repository root, needs DrugBank in `data/registers/raw/`, writes
 its intermediate tables to `data/registers/processed/cep_atc/`, and **overwrites**
@@ -234,7 +238,12 @@ base predicts that it is currently in shortage.
   country-level HHI, and share of manufacturers located in China or India.
 - **Bases.** V1 uses the German register alone (251 codes, 34 in shortage); V2 pools Germany and EPAR
   (259 codes, 35 in shortage). Ireland and CEP are left out because the German register is both the
-  deepest source and the origin of the shortage data.
+  deepest source and the origin of the shortage data. V3 combines Germany with CEP certificate holders
+  and EudraGMDP API sites (sites certified for chemical synthesis, extraction, biological or sterile API
+  manufacture, or physical processing, not for packaging or testing only). CEP and EudraGMDP rows count
+  as step 1, and company names are harmonised across the three registers (legal forms and site suffixes
+  dropped, first two words of the name plus country), so one firm listed in several registers counts
+  once. V3 runs only if the EudraGMDP file is present.
 - **Model.** Logistic regression of shortage status on log(1 + manufacturers), HHI/10,000 and the
   China+India share. Terms are tested with likelihood-ratio tests (type II), confidence intervals are
   profile-likelihood intervals, and the script reports McFadden's pseudo-R², in-sample AUC, variance
@@ -244,6 +253,8 @@ base predicts that it is currently in shortage.
 Outputs: `results/shortage/shortage_model_output.txt` (the full console output), 
 `results/shortage/atc_shortage_concentration_analysis.csv` (one row per critical code with all
 predictors and the shortage flag) and diagnostic plots in `figures/additional/shortage/`.
+
+Results from the data in this repository:
 
 | | V1: Germany | V2: Germany + EPAR |
 |---|---|---|
@@ -262,9 +273,12 @@ predictors and the shortage flag) and diagnostic plots in `figures/additional/sh
 
 ### Trade-based risk — `scripts/trade/baci_systemic_risk.ipynb`
 
-Python notebook (pandas, numpy, scipy, matplotlib). It builds the sourcing-share matrix $S$
+Python notebook (pandas, numpy, scipy, matplotlib, pyarrow). It builds the sourcing-share matrix $S$
 (each importer's import shares by exporter, pooled over the four HS-6 lines, by value and by volume) and
 then computes, in order:
+
+Shares are computed by value and by volume, and for the comparisons that need only imports also by
+risk-adjusted value (`str`). Then, in order:
 
 1. sourcing similarity: pairwise cosine similarity of EU-27 sourcing profiles, and (1b) a
    marginal-preserving null model with 1,000 permutations;
@@ -281,9 +295,8 @@ then computes, in order:
 The notebook resolves all paths from its own folder, so run it from `scripts/trade/` (Jupyter does
 this by default). It reads the inputs listed under
 [Inputs not stored in the repository](#inputs-not-stored-in-the-repository) from `data/trade/` and
-writes figures to `figures/trade/`. The figures in `figures/trade/` are those in the manuscript. The
-notebook keeps the outputs of its last run, except in the setup cell and sections 3, 6 and 7, whose outputs were cleared
-when the risk-adjusted (`str`) variants were removed.
+writes figures to `figures/trade/`. The figures in `figures/trade/` are those in the manuscript, and the
+notebook keeps the outputs of its last run.
 
 ## Paper figures and tables
 
@@ -349,7 +362,7 @@ script reads its raw data directly, so a single figure can be rebuilt with, for 
 `Rscript -e 'source("scripts/registers/03_hhi.R", encoding = "UTF-8")'`. Random label placement and
 jitter are seeded, so repeated runs give identical files.
 
-The trade notebook needs Python with `pandas numpy scipy matplotlib jupyter` and its input data:
+The trade notebook needs Python with `pandas numpy scipy matplotlib pyarrow jupyter` and its input data:
 
 ```bash
 cd scripts/trade && jupyter nbconvert --to notebook --execute --inplace baci_systemic_risk.ipynb
