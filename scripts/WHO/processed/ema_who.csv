@@ -1,0 +1,2937 @@
+medicine_name,active_substance,atc_code,manufacturer_name,address,country,manufacturer_step,data_origin
+Efmody,hydrocortisone,H02AB09,Skyepharma Production S.A.S,"Zone Industrielle Chesnes Ouest
+55 Rue du Montmurier
+Saint-Quentin-Fallavier, 38070
+France",France,2,curated
+Sirturo,bedaquiline fumarate,J04AK05,Janssen Pharmaceutica NV,"Turnhoutseweg 30
+B-2340 Beerse
+Belgium",Belgium,2,curated
+Pazenir,paclitaxel,L01CD01,Merckle GmbH,"Ludwig-Merckle-Strasse 3
+89143 Blaubeuren
+Germany",Germany,2,curated
+Pazenir,paclitaxel,L01CD01,Pharmachemie B.V.,"Swensweg 5
+2031 GA Haarlem
+Netherlands",Netherlands,2,curated
+Pazenir,paclitaxel,L01CD01,Teva Nederland B.V. (additional entity),"Swensweg 5
+2031GA Haarlem
+NETHERLANDS",Netherlands,2,curated
+Opdivo,nivolumab,L01FF01,Swords Laboratories Unlimited Company t/a Bristol-Myers Squibb Cruiserath Biologics,"Cruiserath Road, Mulhuddart
+Dublin 15, D15 H6EF
+Ireland",Ireland,1,curated
+Eurneffy,epinephrine,C01CA24,ALK-Abelló A/S,"Venlighedsvej 10
+2970 Hørsholm
+Denmark",Denmark,2,curated
+Eurneffy,epinephrine,C01CA24,ALK-Abelló S.A.,"Miguel Fleta 19
+28037 Madrid
+Spain",Spain,2,curated
+Trumenba,Neisseria meningitidis serogroup B fHbp (recombinant lipidated fHbp (factor H binding protein)) subfamily A; Neisseria meningitidis serogroup B fHbp (recombinant lipidated fHbp (factor H binding protein)) subfamily B,J07AH09,Pfizer Health AB,"Mariefredsvägen 37
+S-645 41 Strängnäs
+Sweden",Sweden,1,curated
+Trumenba,Neisseria meningitidis serogroup B fHbp (recombinant lipidated fHbp (factor H binding protein)) subfamily A; Neisseria meningitidis serogroup B fHbp (recombinant lipidated fHbp (factor H binding protein)) subfamily B,J07AH09,Pfizer Manufacturing Belgium NV,"Rijksweg 12
+2870 Puurs-Sint-Amands
+Belgium",Belgium,2,curated
+Nuwiq,NA,B02BD02,Octapharma AB,"Lars Forssells gata 23
+Stockholm
+11275
+Sweden",Sweden,1,curated
+Dazparda,insulin aspart,A10AB05,Gan & Lee Pharmaceuticals,"No.8 Nanfeng West First Road
+Huoxian Town
+Tongzhou District
+Beijing, China, 101109",China,1,curated
+Dazparda,insulin aspart,A10AB05,IL-CSM Clinical Supplies Management GmbH,"Marie-Curie-Strasse 8
+Loerrach, Baden-Wuerttemberg, 79539, Germany",Germany,2,curated
+Olazax Disperzi,olanzapine,N05AH03,Glenmark Pharmaceuticals s.r.o,"Fibíchova 143, 566 17
+Vysoké Mýto
+Czech Republic",Czech Republic,2,curated
+Olazax,olanzapine,N05AH03,Glenmark Pharmaceuticals s.r.o,"Fibíchova 143, 566 17
+Vysoké Mýto
+Czech Republic",Czech Republic,2,curated
+Olanzapine Glenmark Europe,olanzapine,N05AH03,Glenmark Pharmaceuticals s.r.o,"Fibíchova 143, 566 17
+Vysoké Mýto
+Czech Republic",Czech Republic,2,curated
+Olanzapine Glenmark,olanzapine,N05AH03,Glenmark Pharmaceuticals s.r.o,"Fibíchova 143, 566 17
+Vysoké Mýto
+Czech Republic",Czech Republic,2,curated
+Ixiaro,"Japanese-encephalitis virus, inactivated (attenuated strain SA14-14-2 grown in vero cells)",J07BA02,Valneva Scotland Ltd.,"Oakbank Park Road
+Livingston EH53 0TG
+United Kingdom",United Kingdom,1,curated
+Ixiaro,"Japanese-encephalitis virus, inactivated (attenuated strain SA14-14-2 grown in vero cells)",J07BA02,Valneva Scotland Limited,"1 Oakbank Park Place
+Livingston EH53 0TN
+United Kingdom",United Kingdom,1,curated
+Ixiaro,"Japanese-encephalitis virus, inactivated (attenuated strain SA14-14-2 grown in vero cells)",J07BA02,Valneva Austria GmbH,"Campus Vienna Biocenter 3
+1030 Wien
+Austria",Austria,2,curated
+Oncaspar,pegaspargase,L01XX24,"Exelead, Inc.
+","Exelead, Inc.
+6925 Guion Road
+Indianapolis
+Indiana 46268
+USA",USA,1,curated
+Oncaspar,pegaspargase,L01XX24,"Les Laboratoires Servier Industrie
+","Les Laboratoires Servier Industrie
+905 Route de Saran
+45520 Gidy
+France",France,2,curated
+Xromi,hydroxycarbamide,L01XX05,"Pronav Clinical Ltd.
+","Pronav Clinical Ltd.
+Unit 5
+Dublin Road Business Park
+Carraroe, Sligo
+F91 D439
+Ireland",Ireland,2,curated
+Xromi,hydroxycarbamide,L01XX05,"Lipomed GmbH
+","Lipomed GmbH
+Hegenheimer Strasse 2
+79576 Weil am Rhein
+Germany",Germany,2,curated
+Siklos,hydroxycarbamide,L01XX05,"Delpharm Lille
+","Delpharm Lille
+Parc d’Activités Roubaix-Est
+22 rue de Toufflers
+CS 50070
+59452 Lys-lez-Lannoy
+France",France,2,curated
+Advate,octocog alfa,B02BD02,"Baxalta Manufacturing Sàrl
+","Baxalta Manufacturing Sàrl
+Route de Pierre-à-Bot 111
+CH-2000 Neuchâtel
+Switzerland",Switzerland,1,curated
+Advate,octocog alfa,B02BD02,"Takeda Manufacturing Singapore Pte. Ltd.
+","Takeda Manufacturing Singapore Pte. Ltd.
+2A Woodlands Industrial Park D Street 2
+Singapore 737779
+Singapore",Singapore,1,curated
+Advate,octocog alfa,B02BD02,"Baxalta Belgium Manufacturing SA
+","Baxalta Belgium Manufacturing SA
+Boulevard René Branquart 80
+B-7860 Lessines
+Belgium",Belgium,2,curated
+Dabigatran Etexilate Accord,dabigatran etexilate mesilate,B01AE07,NA,"ul.Lutomierska 50,
+95-200, Pabianice, Poland",Poland,2,curated
+Dabigatran Etexilate Accord,dabigatran etexilate mesilate,B01AE07,Pharmadox Healthcare Limited,"KW20A Kordin Industrial Park,
+Paola PLA 3000, Malta",Malta,2,curated
+Dabigatran Etexilate Accord,dabigatran etexilate mesilate,B01AE07,Accord Healthcare B.V.,"Winthontlaan 200,
+3526 KV Utrecht, Netherlands",Netherlands,2,curated
+Keytruda,pembrolizumab,L01FF02,AstraZeneca Pharmaceuticals LP,"Frederick Manufacturing Center (FMC)
+633 Research Court
+Frederick, Maryland 21703
+U.S.",United States,1,curated
+Keytruda,pembrolizumab,L01FF02,Boehringer Ingelheim (BIB),"Pharma GmbH & Co. KG
+Birkendorfer Straße 65
+88397 Biberach an der Riss
+Germany",Germany,1,curated
+Keytruda,pembrolizumab,L01FF02,MSD Biotech B.V.,"Vollenhovermeer 2
+5347 JV Oss
+The Netherlands",Netherlands,1,curated
+Keytruda,pembrolizumab,L01FF02,"Boehringer Ingelheim Fremont, Inc. (BIF)","6701 Kaiser Drive
+Fremont, California 94555
+U.S.",United States,1,curated
+Keytruda,pembrolizumab,L01FF02,MSD International GmbH (DUB),"Drynam Road
+Swords, Dublin K67 P263
+Ireland",Ireland,1,curated
+Keytruda,pembrolizumab,L01FF02,"Samsung Biologics Co., Ltd (SBL)","300 Songdo bio-daero, Yeonsu-gu
+Incheon, South Korea 21987",South Korea,1,curated
+Keytruda,pembrolizumab,L01FF02,Organon Heist bv,"Industriepark 30
+2220 Heist-op-den-Berg
+Belgium",Belgium,2,curated
+Keytruda,pembrolizumab,L01FF02,Merck Sharp & Dohme B.V.,"Waarderweg 39
+2031 BN Haarlem
+The Netherlands",Netherlands,2,curated
+Zolsketil pegylated liposomal,"doxorubicin hydrochloride, liposomal",L01DB01,"Accord Healthcare Polska Sp. z o.o.,","ul. Lutomierska 50, Pabianice, 95-200
+Poland",Poland,2,curated
+Zolsketil pegylated liposomal,"doxorubicin hydrochloride, liposomal",L01DB01,"Accord Healthcare Single Member S.A.,","64th Km National Road, Athens,
+Lamia, Schimatari, 32009,
+Greece",Greece,2,curated
+Supemtek,A/California/07/2009 (H1N1)pdm09-like strain (A/California/07/2009);A/Texas/50/2012 (H3N2)-like strain (A/Texas/50/2012);B/Brisbane/60/2008-like strain (B/Brisbane/60/2008),J07BB02,Unigen Inc.,"11 Azakamikasugo Miyaji Ikeda-cho
+Ibi-gun Gifu
+Japan",Japan,1,curated
+Supemtek,A/California/07/2009 (H1N1)pdm09-like strain (A/California/07/2009);A/Texas/50/2012 (H3N2)-like strain (A/Texas/50/2012);B/Brisbane/60/2008-like strain (B/Brisbane/60/2008),J07BB02,Sanofi Winthrop Industrie,"Voie de l’Institut - Parc Industriel d'Incarville
+B P 101
+27100 Val de Reuil
+France",France,2,curated
+Viramune,nevirapine,J05AG01,Boehringer Ingelheim Pharma GmbH & Co. KG,"Binger Strasse 173
+55216 Ingelheim am Rhein
+Germany",Germany,2,curated
+Viramune,nevirapine,J05AG01,Boehringer Ingelheim Hellas Single Member S.A.,"5th km Paiania – Markopoulo
+Koropi Attiki, 19441
+Greece",Greece,2,curated
+Viramune,nevirapine,J05AG01,Boehringer Ingelheim France,"100-104 avenue de France
+75013 Paris
+France",France,2,curated
+Flucelvax,A/Wisconsin/67/2022 (H1N1)pdm09-like strain (A/Georgia/12/2022 CVR-167) / A/District of Columbia/27/2023 (H3N2)-like strain (A/Victoria/800/2024 CVR-289) / B/Austria/1359417/2021-like strain (B/Singapore/WUH4618/2021),J07BB02,Seqirus Inc.,"475 Green Oaks Parkway
+Holly Springs
+NC 27540
+United States",United States,1,curated
+Flucelvax,A/Wisconsin/67/2022 (H1N1)pdm09-like strain (A/Georgia/12/2022 CVR-167) / A/District of Columbia/27/2023 (H3N2)-like strain (A/Victoria/800/2024 CVR-289) / B/Austria/1359417/2021-like strain (B/Singapore/WUH4618/2021),J07BB02,Seqirus Netherlands B.V.,"Paasheuvelweg 28
+1105 BJ Amsterdam
+Netherlands",Netherlands,2,curated
+Pradaxa,dabigatran etexilate mesilate,B01AE07,Boehringer Ingelheim Pharma GmbH & Co. KG,"Binger Strasse 173
+55216 Ingelheim am Rhein
+Germany",Germany,2,curated
+Pradaxa,dabigatran etexilate mesilate,B01AE07,Boehringer Ingelheim France,"100-104 avenue de France
+75013 Paris
+France",France,2,curated
+Kirsty (previously Kixelle),insulin aspart,A10AB05,Biocon Sdn. Bhd,"Kawasan Perindusterian SiLC
+79200 Iskandar Puteri,
+Johor
+Malaysia",NA,1,curated
+Kirsty (previously Kixelle),insulin aspart,A10AB05,Biosimilar Collaborations Ireland Limited,"Block B The Crescent Building
+Santry Demesne
+D09 C6X8
+Dublin
+Ireland",Ireland,2,curated
+Kirsty (previously Kixelle),insulin aspart,A10AB05,Ireland Limited,"The Crescent Building
+Demesne
+C6X8
+Dublin
+Ireland",Ireland,2,curated
+Alkindi,hydrocortisone,H02AB09,Delpharm Lille SAS,"Parc d'Activités Roubaix-Est
+22 rue de Toufflers CS 50070
+Lys Lez Lannoy, 59 452
+France",France,2,curated
+Alkindi,hydrocortisone,H02AB09,Skyepharma Production S.A.S.,"Zone Industrielle Chesnes Ouest
+55 Rue du Montmurier
+Saint-Quentin-Fallavier, 38070
+France.",France,2,curated
+Zyprexa,olanzapine,N05AH03,Fidelio Healthcare Limburg GmbH,"Mundipharmastraße 2
+65549 Limburg an der Lahn
+Germany.",Germany,2,curated
+Zyprexa,olanzapine,N05AH03,CHEPLAPHARM Registration GmbH,"Weiler Straße 5e
+79540 Lörrach
+Germany.",Germany,2,curated
+Zyprexa,olanzapine,N05AH03,Lilly S.A.,"Avda. de la Industria 30, 28108 Alcobendas, Madrid",Spain,2,curated
+Zyprexa,olanzapine,N05AH03,Prestige Promotion Verkaufsfoerderung & Werbeservice GmbH,"Prestige Promotion Verkaufsfoerderung & Werbeservice GmbH, Borsigstrasse 2, 63755 Alzenau,
+Germany.",Germany,2,curated
+Zyprexa,olanzapine,N05AH03,CHEPLAPHARM Registration GmbH,"CHEPLAPHARM Registration GmbH, Weiler Straße 5e, 79540 Lörrach, Germany.",Germany,2,curated
+Imbruvica,Ibrutinib,L01EL01,Janssen Pharmaceutica NV,"Turnhoutseweg 30
+B-2340 Beerse
+Belgium",Belgium,2,curated
+Imbruvica,Ibrutinib,L01EL01,Janssen-Cilag SpA,"Via C. Janssen
+Loc. Borgo S. Michele
+04100 Latina
+Italy",Italy,2,curated
+Zypadhera,olanzapine pamoate,N05AH03,Lilly S.A.,"Lilly S.A., Avda. de la Industria 30, 28108 Alcobendas, Madrid, Spain.",Spain,2,curated
+Zypadhera,olanzapine pamoate,N05AH03,Manufacturing Packaging Farmaca (MPF) B.V.,"Manufacturing Packaging Farmaca (MPF) B.V., Neptunus 12, 8448 CN Heerenveen, Netherlands",Netherlands,2,curated
+Zypadhera,olanzapine pamoate,N05AH03,CHEPLAPHARM Registration GmbH,"CHEPLAPHARM Registration GmbH, Weiler Straße 5e, 79540 Lörrach, Germany.",Germany,2,curated
+Zypadhera,olanzapine pamoate,N05AH03,CHEPLAPHARM Arzneimittel GmbH,"CHEPLAPHARM Arzneimittel GmbH, Ziegelhof 23-24, 17489 Greifswald, Germany.",Germany,2,curated
+Insulin aspart Sanofi,insulin aspart,A10AB05,Sanofi-Aventis Deutschland GmbH,"Brüningstrasse 50
+Industriepark Höchst
+65926 Frankfurt am Main
+Germany",Germany,1,curated
+Clopidogrel Zentiva (previously Clopidogrel Winthrop),clopidogrel,B01AC04,Sanofi Winthrop Industrie,"1, rue de la Vierge
+Ambarès & Lagrave
+F-33565 Carbon Blanc cedex
+France",France,2,curated
+Clopidogrel Zentiva (previously Clopidogrel Winthrop),clopidogrel,B01AC04,Delpharm Dijon,"6, Boulevard de l’Europe
+F-21800 Quétigny
+France",France,2,curated
+Clopidogrel Zentiva (previously Clopidogrel Winthrop),clopidogrel,B01AC04,S.C. Zentiva S.A.,"B-dul Theodor Pallady nr. 50, sector 3,
+032266 Bukarest
+Romania",Romania,2,curated
+Heplisav B,hepatitis B surface antigen,J07BC01,Dynavax GmbH,"Eichsfelder Strasse 11
+D-40595 Düsseldorf
+Germany",Germany,1,curated
+Abraxane,paclitaxel,L01CD01,Celgene Distribution B.V.,"Orteliuslaan 1000
+3528 BD Utrecht
+Netherlands",Netherlands,2,curated
+Aflunov,influenza virus surface antigens (haemagglutinin and neuraminidase) of strain: A/turkey/Turkey/1/05 (H5N1)-like strain (NIBRG-23),J07BB02,Seqirus Vaccines Ltd,"Gaskill Road, Speke, Liverpool
+L24 9GR
+UK",UK,1,curated
+Aflunov,influenza virus surface antigens (haemagglutinin and neuraminidase) of strain: A/turkey/Turkey/1/05 (H5N1)-like strain (NIBRG-23),J07BB02,Seqirus Netherlands B.V.,"Paasheuvelweg 28
+1105BJ Amsterdam
+Netherlands",Netherlands,2,curated
+Ziagen,abacavir,J05AF06,Delpharm Poznań Spółka Akcyjna,"ul. Grunwaldzka 189
+60-322 Poznan
+Poland",Poland,2,curated
+Ziagen,abacavir,J05AF06,ViiV Healthcare Trading Services UK Limited,"12 Riverwalk,
+Citywest Business Campus
+Dublin 24,
+Ireland",Ireland,2,curated
+Kivexa,abacavir;lamivudine,J05AR02,"Glaxo Wellcome S.A.,","Avenida de Extremadura 3,
+09400 Aranda de Duero Burgos,
+Spain",Spain,2,curated
+Olanzapine Viatris (previously Olanzapine Mylan),olanzapine,N05AH03,McDermott Laboratories Ltd. t/a Gerard Laboratories,"35/36 Baldoyle Industrial Estate
+Grange road
+Dublin 13
+Ireland",Ireland,2,curated
+Olanzapine Viatris (previously Olanzapine Mylan),olanzapine,N05AH03,Mylan Hungary Kft.,"Mylan utca 1.
+Komárom, 2900
+Hungary",Hungary,2,curated
+Tasigna,nilotinib,L01EA03,Novartis Pharmaceutical,"Verovškova
+1000
+Novartis
+Gran Via de
+08013
+Lek d.d.,
+Trimlini
+Lendava,
+Novartis
+Sophie-Germain-Strasse
+90443
+150 mg hard capsules
+Novartis Pharmaceutical
+Verovškova
+1000
+Lek d.d.,
+Trimlini
+Lendava,
+Novartis
+Sophie-Germain-Strasse
+90443",Slovenia,2,curated
+Tasigna,nilotinib,L01EA03,Novartis Farmacéutica SA,"Novartis Farmacéutica SA
+Gran Via de les Corts Catalanes, 764
+08013 Barcelona
+Spain",Spain,2,curated
+Tasigna,nilotinib,L01EA03,"Lek d.d., PE PROIZVODNJA LENDAVA","Lek d.d., PE PROIZVODNJA LENDAVA
+Trimlini 2D
+Lendava, 9220
+Slovenia",Slovenia,2,curated
+Tasigna,nilotinib,L01EA03,Manufacturing LLC,"ulica 57
+Ljubljana
+Slovenia
+Farmacéutica SA
+les Corts Catalanes, 764
+Barcelona
+Spain
+PE PROIZVODNJA LENDAVA
+2D
+9220
+Slovenia
+Pharma GmbH
+10
+Nuremberg
+Germany
+200 mg hard capsules
+Manufacturing LLC
+ulica 57
+Ljubljana
+Slovenia
+PE PROIZVODNJA LENDAVA
+2D
+9220
+Slovenia
+Pharma GmbH
+10
+Nuremberg
+Germany",Germany,2,curated
+Methylthioninium chloride Proveblue,methylthioninium chloride,V03AB17,Cenexi,"52, Rue Marcel et Jacques Gaucher
+94120 Fontenay-sous-Bois
+France",France,2,curated
+Methylthioninium chloride Proveblue,methylthioninium chloride,V03AB17,responsible for the release of the concerned batch.,NA,NA,2,curated
+Altuvoct,Efanesoctocog alfa,B02BD02,Biogen MA Inc.,"5000 Davis Drive
+Research Triangle Park
+NC 27709
+USA",United States,1,curated
+Altuvoct,Efanesoctocog alfa,B02BD02,Swedish Orphan Biovitrum AB (publ),"Norra Stationsgatan 93
+113 64 Stockholm
+Sweden",Sweden,2,curated
+RotaTeq,rotavirus serotype G1;rotavirus serotype G2;rotavirus serotype G3;rotavirus serotype G4;rotavirus serotype P1,J07BH02,Merck Sharp & Dohme LLC,"770 Sumneytown Pike
+West Point, Pennsylvania 19486
+USA",United States,1,curated
+RotaTeq,rotavirus serotype G1;rotavirus serotype G2;rotavirus serotype G3;rotavirus serotype G4;rotavirus serotype P1,J07BH02,Merck Sharp,"Waarderweg
+2031
+The",Netherlands,2,curated
+RotaTeq,rotavirus serotype G1;rotavirus serotype G2;rotavirus serotype G3;rotavirus serotype G4;rotavirus serotype P1,J07BH02,Dohme B.V.,"39
+BN Haarlem
+Netherlands",Netherlands,2,curated
+RotaTeq,rotavirus serotype G1;rotavirus serotype G2;rotavirus serotype G3;rotavirus serotype G4;rotavirus serotype P1,J07BH02,"BN, Haarlem, The Netherlands",NA,Netherlands,NA,curated
+"Adjupanrix (previously Pandemic influenza vaccine (H5N1) (split virion, inactivated, adjuvanted) GlaxoSmithKline Biologicals)","split influenza virus, inactivated, containing antigen: A/VietNam/1194/2004 (H5N1) like strain used (NIBRG-14)",J07BB02,GlaxoSmithKline Biologicals,"Branch of the SmithKline Beecham Pharma GmbH & Co. KG
+Zirkusstr. 40
+01069 Dresden
+Germany",Germany,1,curated
+"Adjupanrix (previously Pandemic influenza vaccine (H5N1) (split virion, inactivated, adjuvanted) GlaxoSmithKline Biologicals)","split influenza virus, inactivated, containing antigen: A/VietNam/1194/2004 (H5N1) like strain used (NIBRG-14)",J07BB02,GlaxoSmithKline Biologicals SA,"89, rue de l'Institut
+B-1330 Rixensart
+Belgium",Belgium,2,curated
+Clopidogrel Viatris (previously Clopidogrel Taw Pharma),clopidogrel besilate,B01AC04,B. CONDITIONS,NA,NA,NA,curated
+Clopidogrel Viatris (previously Clopidogrel Taw Pharma),clopidogrel besilate,B01AC04,RESTRICTION REGARDING SUPPLY AND USE,NA,NA,NA,curated
+Clopidogrel Viatris (previously Clopidogrel Taw Pharma),clopidogrel besilate,B01AC04,Pharmathen S.A.,"6, Dervenakion
+15351 Pallini Attiki
+Greece
+Pharmathen International S.A
+Industrial Park Sapes
+Rodopi Prefecture, Block No 5
+Rodopi 69300
+Greece",Greece,2,curated
+Afstyla,lonoctocog alfa,B02BD02,CSL Behring GmbH,"Emil-von-Behring Strasse 76
+35041 Marburg
+GERMANY",Germany,1,curated
+Kovaltry,octocog alfa,B02BD02,Bayer HealthCare LLC,"800 Dwight Way
+Berkeley
+CA 94710
+United States",United States,1,curated
+Kovaltry,octocog alfa,B02BD02,Bayer AG,"Kaiser-Wilhelm-Allee
+51368 Leverkusen
+Germany",Germany,2,curated
+Kovaltry,octocog alfa,B02BD02,Bayer AG,"Müllerstraße 178
+13353 Berlin
+Germany",Germany,2,curated
+Adynovi,rurioctocog alfa pegol,B02BD02,Baxalta US Inc,"1700 Rancho Conejo Boulevard
+Thousand Oaks
+California
+CA-91320
+UNITED STATES",United States,1,curated
+Adynovi,rurioctocog alfa pegol,B02BD02,Baxalta Belgium Manufacturing SA,"Boulevard Rene Branquart 80
+B-7860 Lessines
+BELGIUM",Belgium,2,curated
+Jivi,Damoctocog alfa pegol,B02BD02,Bayer HealthCare LLC,"800 Dwight Way
+Berkeley
+CA
+94710
+United States",United States,1,curated
+Jivi,Damoctocog alfa pegol,B02BD02,Bayer AG,"Kaiser-Wilhelm-Allee
+51368 Leverkusen
+Germany",Germany,2,curated
+Jivi,Damoctocog alfa pegol,B02BD02,Bayer AG,"Müllerstraße 178
+13353 Berlin
+Germany",Germany,2,curated
+Abrysvo,"respiratory syncytial virus vaccine (bivalent, recombinant)",J07BX05,Wyeth Pharmaceuticals LLC,"1 Burtt Rd
+Andover, MA 01810
+USA",United States,1,topup
+Abrysvo,"respiratory syncytial virus vaccine (bivalent, recombinant)",J07BX05,Pfizer Manufacturing Belgium NV,"Rijksweg 12
+2870 Puurs-Sint-Amands
+Belgium",Belgium,2,topup
+Kayshild,semaglutide,A10BJ06,Novo Nordisk A/S,"Hallas Alle 1
+DK-4400 Kalundborg
+Denmark",Denmark,1,topup
+Kayshild,semaglutide,A10BJ06,Novo Nordisk A/S,"Novo Alle 1
+DK-2880 Bagsvaerd
+Denmark",Denmark,2,topup
+Kayshild,semaglutide,A10BJ06,Novo Nordisk Production SAS,"45, Avenue d’Orléans
+28000 Chartres
+France",France,2,topup
+Neofordex,dexamethasone,H02AB02,THERAVIA,"16 Rue Montrosier
+92200 Neuilly-sur-Seine
+France",France,2,topup
+Ondibta,insulin glargine,A10AE04,Gan & Lee Pharmaceuticals,"No.8 Nanfeng West First Road
+Huoxian Town
+Tongzhou District
+Beijing, China, 101109",China,1,topup
+Ondibta,insulin glargine,A10AE04,IL-CSM Clinical Supplies Management GmbH,"Marie-Curie-Strasse 8
+Loerrach, Baden-Wuerttemberg, 79539, Germany",Germany,2,topup
+Keppra,levetiracetam,N03AX14,UCB Pharma SA or Aesica Pharmaceuticals S.r.l.,"Chemin du Foriest Via Praglia, 15
+B-1420 Braine-l’Alleud I-10044 Pianezza
+Belgium Italy",Belgium,2,topup
+Keppra,levetiracetam,N03AX14,NextPharma SAS or UCB Pharma SA,"17, Route de Meulan Chemin du Foriest
+F-78520 Limay B-1420 Braine-l’Alleud
+France Belgium",Belgium,2,topup
+Zoledronic acid Mylan,zoledronic acid,M05BA08,HIKMA FARMACÊUTICA (PORTUGAL) S.A.,"Estradra do Rio da Mó, n°8
+8-A e 8-B, Fervença
+Terrugem SNT, 2705-906
+Portugal
+VIATRIS SANTE
+1 Rue de Turin,
+69007 Lyon
+France
+STERISCIENCE Sp. z o.o.
+ul. Daniszewska 10
+03-230 Warsawa
+Poland
+FALORNI S.r.l
+Via dei Frilli 25
+50019 Sesto Fiorentino (FI)
+Italy
+KYMOS S.L.
+Ronda de Can Fatjó, 7B
+Parc Tecnologic Del Vallès
+Cerdanyola Del Vallès
+08290 Barcelona
+Spain",Spain,2,topup
+Uzpruvo,ustekinumab,L04AC05,"Alvotech Hf,","Saemundargata 15-19
+Reykjavik, 102
+Iceland",Iceland,1,topup
+Uzpruvo,ustekinumab,L04AC05,STADA Arzneimittel AG,"Stadastrasse 2–18
+61118 Bad Vilbel
+Germany",Germany,2,topup
+Imuldosa,ustekinumab,L04AC05,"STgen Bio Co., Ltd.","45, Jisikgiban-ro, Yeonsu-gu,
+Incheon-si, Republic of Korea",Republic of Korea,1,topup
+Imuldosa,ustekinumab,L04AC05,Accord Healthcare Polska Sp. z.o.o.,"ul. Lutomierska 50,
+95-200, Pabianice, Poland",Poland,2,topup
+Imuldosa,ustekinumab,L04AC05,Accord Healthcare B.V.,"Winthontlaan 200,
+3526 KV Utrecht, Netherlands",Netherlands,2,topup
+Wegovy,semaglutide,A10BJ06,Novo Nordisk A/S,"Hallas Allé
+DK-4400 Kalundborg
+Denmark",Denmark,1,topup
+Wegovy,semaglutide,A10BJ06,Novo Nordisk A/S,"Novo Allé
+DK-2880 Bagsværd
+Denmark",Denmark,2,topup
+Wegovy,semaglutide,A10BJ06,Novo Nordisk Production SAS,"45, Avenue d’Orléans
+28000 Chartres
+France",France,2,topup
+Ziextenzo,pegfilgrastim,L03AA13,Novartis Pharmaceuticals Manufacturing LLC,"Kolodvorska Cesta 27
+SI-1234 Menges
+Slovenia",Slovenia,1,topup
+Ziextenzo,pegfilgrastim,L03AA13,Novartis Pharmaceuticals Manufacturing GmbH,"Biochemiestrasse 10
+AT-6250 Kundl
+Austria",Austria,1,topup
+Ziextenzo,pegfilgrastim,L03AA13,Sandoz GmbH,"Schaftenau
+Biochemiestrasse 10
+6336 Langkampfen
+Austria",Austria,2,topup
+Ziextenzo,pegfilgrastim,L03AA13,Novartis Pharmaceutical Manufacturing GmbH,"Biochemiestrasse 10
+6336 Langkampfen
+Austria",Austria,2,topup
+Ritonavir Viatris (previously Ritonavir Mylan),ritonavir,J05AE03,Mylan Hungary Kft./Mylan Hungary Ltd.,"Mylan utca 1
+2900 Komarom
+HUNGARY",Hungary,2,topup
+Ritonavir Viatris (previously Ritonavir Mylan),ritonavir,J05AE03,Mylan Germany GmbH,"Zweigniederlassung Bad Homburg v. d. Hoehe,
+Benzstrasse 1,
+Bad Homburg v. d. Hoehe,
+Hessen, 61352,
+GERMANY",Germany,2,topup
+Otulfi,ustekinumab,L04AC05,Rentschler Biopharma SE,"Erwin-Rentschler-Str. 21
+88471 Laupheim
+Germany",Germany,1,topup
+Otulfi,ustekinumab,L04AC05,Fresenius Kabi Austria GmbH,"Hafnerstraße 36
+8055 Graz
+Austria",Austria,2,topup
+Ozempic,semaglutide,A10BJ06,Novo Nordisk A/S,"Hallas Allé
+DK-4400 Kalundborg
+Denmark",Denmark,1,topup
+Ozempic,semaglutide,A10BJ06,Novo Nordisk A/S,"Novo Allé
+DK-2880 Bagsværd
+Denmark",Denmark,2,topup
+Ozempic,semaglutide,A10BJ06,Novo Nordisk Production SAS,"45, Avenue d’Orléans
+28000 Chartres
+France",France,2,topup
+MenQuadfi,Neisseria meningitidis group C polysaccharide conjugated to tetanus toxoid;Neisseria meningitidis group A polysaccharide conjugated to tetanus toxoid;Neisseria meningitidis group Y polysaccharide conjugated to tetanus toxoid;Neisseria meningitidis group W-135 polysaccharide conjugated to tetanus toxoid,J07AH08,Sanofi Vaccines US Inc.,"One Discovery Drive
+Swiftwater PA 18370
+United States",United States,1,topup
+MenQuadfi,Neisseria meningitidis group C polysaccharide conjugated to tetanus toxoid;Neisseria meningitidis group A polysaccharide conjugated to tetanus toxoid;Neisseria meningitidis group Y polysaccharide conjugated to tetanus toxoid;Neisseria meningitidis group W-135 polysaccharide conjugated to tetanus toxoid,J07AH08,Sanofi Winthrop Industrie,"Voie de l’Institut
+Parc Industriel d’Incarville
+BP 101
+27100 Val de Reuil
+France",France,2,topup
+MenQuadfi,Neisseria meningitidis group C polysaccharide conjugated to tetanus toxoid;Neisseria meningitidis group A polysaccharide conjugated to tetanus toxoid;Neisseria meningitidis group Y polysaccharide conjugated to tetanus toxoid;Neisseria meningitidis group W-135 polysaccharide conjugated to tetanus toxoid,J07AH08,Sanofi-Aventis Zrt.,"Building DC5
+Campona utca 1.
+Budapest, 1225
+Hungary",Hungary,2,topup
+Grasustek,pegfilgrastim,L03AA13,USV Private Limited,"D-115, TTC Industrial Area, Shirvane
+Navi Mumbai - 400706,
+Maharashtra,
+India",India,1,topup
+Grasustek,pegfilgrastim,L03AA13,Juta Pharma GmbH,"Gutenbergstr. 13
+24941 Flensburg
+Germany",Germany,2,topup
+Qaialdo,spironolactone,C03DA01,Lipomed GmbH,"Hegenheimer Strasse 2
+79576 Weil am Rhein
+Germany",Germany,2,topup
+Artesunate Amivas,artesunate,P01BE03,"MIAS Pharma Limited,","Suite 1 Stafford House,
+Strand Road,
+Portmarnock,
+Co. Dublin, Ireland",Ireland,2,topup
+Jardiance,empagliflozin,A10BK03,Boehringer Ingelheim Pharma GmbH & Co. KG,"Binger Strasse 173
+55216 Ingelheim am Rhein
+Germany",Germany,2,topup
+Jardiance,empagliflozin,A10BK03,Boehringer Ingelheim Hellas Single Member S.A.,"5th km Paiania – Markopoulo
+Koropi Attiki, 19441
+Greece",Greece,2,topup
+Jardiance,empagliflozin,A10BK03,Rottendorf Pharma GmbH,"Ostenfelder Strasse 51 – 61
+59320 Ennigerloh
+Germany",Germany,2,topup
+Jardiance,empagliflozin,A10BK03,Boehringer Ingelheim France,"100-104 Avenue de France
+75013 Paris
+France",France,2,topup
+Arexvy,NA,J07BX05,GlaxoSmithKline Biologicals SA,"Avenue Fleming, 20
+1300 Wavre
+Belgium",Belgium,1,topup
+Arexvy,NA,J07BX05,GlaxoSmithKline Biologicals SA,"Rue de L’Institut 89
+1330 Rixensart
+Belgium",Belgium,2,topup
+Libmyris,adalimumab,L04AB04,Alvotech Hf,"Sæmundargata 15-19
+Reykjavik, 102
+Iceland",Iceland,1,topup
+Libmyris,adalimumab,L04AB04,Ivers-Lee CSM,"Marie-Curie-Str.8
+79539 Lörrach
+Germany
+Alvotech Hf
+Sæmundargata 15-19
+Reykjavik, 102
+Iceland",Iceland,2,topup
+Libmyris,adalimumab,L04AB04,STADA Arzneimittel AG,"Stadastrasse 2–18
+61118 Bad Vilbel
+Germany",Germany,2,topup
+Kaftrio,ivacaftor;tezacaftor;elexacaftor,R07AX32,Almac Pharma Services (Ireland) Limited,"Finnabair Industrial Estate
+Dundalk
+Co. Louth
+A91 P9KD
+Ireland",Ireland,2,topup
+Kaftrio,ivacaftor;tezacaftor;elexacaftor,R07AX32,Almac Pharma Services Limited,"Seagoe Industrial Estate
+Craigavon
+Northern Ireland
+BT63 5UA
+United Kingdom",United Kingdom,2,topup
+Deltyba,Delamanid,J04AK06,Otsuka Novel Products GmbH,"Erika-Mann-Straße 21
+80636 München
+Germany",Germany,2,topup
+Deltyba,Delamanid,J04AK06,R-Pharm Germany GmbH,"Heinrich-Mack-Straße 35
+89257 Illertissen
+Germany",Germany,2,topup
+Cegfila (previously Pegfilgrastim Mundipharma),pegfilgrastim,L03AA13,"C/ Mocholi 2, Poligono Industrial","Mocholi 31110 Noain
+Spain",Spain,1,topup
+Cegfila (previously Pegfilgrastim Mundipharma),pegfilgrastim,L03AA13,PharmaKorell GmbH,"Georges-Köhler-Str. 2,
+79539 Loerrach
+Germany",Germany,2,topup
+Cegfila (previously Pegfilgrastim Mundipharma),pegfilgrastim,L03AA13,PharmaKorell GmbH,"Schleissheimer Strasse 373,
+80935 Munich
+Germany",Germany,2,topup
+Cegfila (previously Pegfilgrastim Mundipharma),pegfilgrastim,L03AA13,Mundipharma DC B.V.,"Leusderend 16
+3832 RC Leusden
+The Netherlands",Netherlands,2,topup
+Pelmeg,pegfilgrastim,L03AA13,"C/ Mocholi 2, Poligono Industrial Mocholi","31110 Noain
+Spain",Spain,1,topup
+Pelmeg,pegfilgrastim,L03AA13,PharmaKorell GmbH,"Georges-Köhler-Str. 2,
+79539 Loerrach
+Germany",Germany,2,topup
+Pelmeg,pegfilgrastim,L03AA13,PharmaKorell GmbH,"Schleissheimer Strasse 373,
+80935 Munich
+Germany",Germany,2,topup
+Pelmeg,pegfilgrastim,L03AA13,Mundipharma DC B.V.,"Leusderend 16
+3832 RC Leusden
+The Netherlands",Netherlands,2,topup
+Arsenic trioxide Accord,arsenic trioxide,L01XX27,Accord Healthcare Polska Sp. z o.o.,"ul. Lutomierska 50
+95-200 Pabianice
+POLAND",Poland,2,topup
+Lenalidomide Krka (previously Lenalidomide Krka d.d. Novo mesto),lenalidomide hydrochloride monohydrate,L04AX04,"KRKA, d.d., Novo mesto","Šmarješka cesta 6
+8501 Novo mesto
+Slovenia",Slovenia,2,topup
+Lenalidomide Krka (previously Lenalidomide Krka d.d. Novo mesto),lenalidomide hydrochloride monohydrate,L04AX04,KRKA –FARMA d.o.o.,"V. Holjevca 20/E
+10450 Jastrebarsko
+Croatia",Croatia,2,topup
+Lenalidomide Krka (previously Lenalidomide Krka d.d. Novo mesto),lenalidomide hydrochloride monohydrate,L04AX04,TAD Pharma GmbH,"Heinz-Lohmann-Straße 5
+27472 Cuxhaven
+Germany",Germany,2,topup
+Sprycel,dasatinib,L01EA02,"Swords Laboratories Unlimited Company T/A Bristol-Myers Squibb Pharmaceutical Operations,","External Manufacturing
+Plaza 254
+Blanchardstown Corporate Park 2
+Dublin 15, D15 T867
+Ireland",Ireland,2,topup
+MicardisPlus,telmisartan;hydrochlorothiazide,C09DA07,Boehringer Ingelheim Hellas Single Member S.A.,"5th km Paiania – Markopoulo
+Koropi Attiki, 19441
+Greece",Greece,2,topup
+MicardisPlus,telmisartan;hydrochlorothiazide,C09DA07,Rottendorf Pharma GmbH,"Ostenfelder Strasse 51 - 61
+59320 Ennigerloh
+Germany",Germany,2,topup
+MicardisPlus,telmisartan;hydrochlorothiazide,C09DA07,Boehringer Ingelheim France,"100-104 Avenue de France
+75013 Paris
+France",France,2,topup
+Inhixa,enoxaparin sodium,B01AB05,"Shenzhen Techdow Pharmaceutical Co., Ltd.","No. 19, Gaoxinzhongyi Road, Hi-tech Industrial Park,
+Nanshan District,
+Shenzhen City,
+Guangdong Province,
+518057, People’s Republic of China",China,1,topup
+Inhixa,enoxaparin sodium,B01AB05,"Shenzhen Hepalink Pharmaceutical Group Co., Ltd.","No. 1 Rongtian Road, Kengzi Sub-district
+Pingshan District, Shenzhen
+518122, People’s Republic of China",China,1,topup
+Inhixa,enoxaparin sodium,B01AB05,SciencePharma spółka z ograniczoną odpowiedzialnością,"Chełmska 30/34
+00-725 Warsaw
+Poland",Poland,2,topup
+Toujeo (previously Optisulin),insulin glargine,A10AE04,Sanofi-Aventis Deutschland GmbH,"Industriepark Höchst
+Brüningstraße 50
+D-65926 Frankfurt / Main
+Germany",Germany,1,topup
+Apidra,insulin glulisine,A10AB06,Sanofi-Aventis Deutschland GmbH,"Industriepark Höchst, D-65926 Frankfurt
+Germany",Germany,1,topup
+VacPertagen,recombinant pertussis toxin;filamentous haemagglutinin,J07AJ02,MIAS Pharma Limited,"Suite 1, First Floor, Stafford House, Strand Road, Portmarnock, Co. Dublin, D13 WC83, Ireland",Ireland,2,topup
+Lantus,insulin glargine,A10AE04,Sanofi-Aventis Deutschland GmbH,"Industriepark Höchst
+Brüningstraße 50
+D-65926 Frankfurt / Main
+Germany",Germany,1,topup
+Insuman,Insulin human,A10AC01,Sanofi-Aventis Deutschland GmbH,"Industriepark Höchst
+Brüningstraße 50
+D-65926 Frankfurt / Main
+Germany",Germany,1,topup
+Imatinib Teva,imatinib,L01EA01,Teva Czech Industries s.r.o.,"Ostravská 29, c.p. 305
+CZ-74770 Opava - Komárov
+Czech Republic",Czech Republic,2,topup
+Imatinib Teva,imatinib,L01EA01,Merckle GmbH,"Graf-Arco-Str. 3, 89079 Ulm
+Germany",Germany,2,topup
+Imatinib Teva,imatinib,L01EA01,Teva Operations Poland Sp. z.o.o,"ul. Mogilska 80. 31-546, Krakow
+Poland",Poland,2,topup
+Imatinib Teva,imatinib,L01EA01,TEVA Pharmaceutical Works Private Limited Company,"Pallagi út 13, 4042 Debrecen
+Hungary",Hungary,2,topup
+Imatinib Teva,imatinib,L01EA01,TEVA PHARMA S.L.U.,"C/C, n. 4, Poligono Industrial Malpica, 50016 Zaragoza
+Spain",Spain,2,topup
+Imatinib Teva,imatinib,L01EA01,PLIVA Croatia Ltd.,"Prilaz baruna Filipovića 25
+10000 Zagreb
+Croatia",Croatia,2,topup
+Nivestim,filgrastim,L03AA02,Hospira Zagreb d.o.o.,"Prudnička cesta 60
+10291 Prigorje Brdovečko
+Croatia",Croatia,1,topup
+Retacrit,epoetin zeta,B03XA01,Norbitec GmbH,"Pinnauallee 4
+D-25436 Uetersen
+Germany",Germany,1,topup
+Retacrit,epoetin zeta,B03XA01,STADA Arzneimittel AG,"Stadastrasse 2-18
+D-61118 Bad Vilbel
+Germany",Germany,2,topup
+Retacrit,epoetin zeta,B03XA01,Hospira Zagreb d.o.o.,"Prudnička cesta 60
+10291 Prigorje Brdovečko
+Croatia",Croatia,2,topup
+Herceptin,trastuzumab,L01FD01,Roche Diagnostics GmbH,"Pharma Biotech Penzberg
+Nonnenwald 2
+D-82377 Penzberg
+Germany",Germany,1,topup
+Herceptin,trastuzumab,L01FD01,Roche Singapore Technical Operations Pte. Ltd.,"10 Tuas Bay Link
+637394 Singapore
+Singapore",Singapore,1,topup
+Herceptin,trastuzumab,L01FD01,Lonza Biologics Tuas Pte Ltd,"35 Tuas South Ave. 6
+637377 Singapore
+Singapore",Singapore,1,topup
+Herceptin,trastuzumab,L01FD01,Lonza Portsmouth,"101 International Dr.
+Portsmouth, NH 03801
+USA",United States,1,topup
+Herceptin,trastuzumab,L01FD01,Roche Pharma AG,"Emil-Barell-Strasse 1
+79639 Grenzach-Wyhlen
+Germany",Germany,2,topup
+Steqeyma,ustekinumab,L04AC05,CELLTRION INC.,"20 Academy-ro 51 beon-gil
+Yeonsu-gu
+22014 Incheon
+Republic of Korea",Republic of Korea,1,topup
+Steqeyma,ustekinumab,L04AC05,Nuvisan France SARL,"2400, Route des Colles
+06410, Biot
+France",France,2,topup
+Steqeyma,ustekinumab,L04AC05,MIDAS Pharma GmbH,"Rheinstrasse 49
+55218 West Ingelheim Am Rhein
+Rhineland-Palatinate
+Germany
+Kymos S.L.
+Ronda De Can Fatjo 7b
+Parc Tecnologic Del Valles
+08290 Cerdanyola Del Valles
+Barcelona
+Spain",Spain,2,topup
+Vivlipeg,pegfilgrastim,L03AA13,"Electronics City, Bengaluru","Biocon
+Block No. B1, B2, B3, Q13 of Q1
+Special
+Plot No: 2, 3, 4 & 5,
+Bengaluru –",India,1,topup
+Vivlipeg,pegfilgrastim,L03AA13,Biologics Limited,"M6, Q1 (QC3 and QC10) and W3, 20th KM, Hosur Road,
+- 560 100, India
+Biologics Limited
+W20 & Unit S18, 1st Floor, Block B4
+Economic Zone
+Phase – IV Bommasandra-Jigani Link Road, Bommasandra Post,
+560 099, India",India,1,topup
+Vivlipeg,pegfilgrastim,L03AA13,Biosimilar Collaborations Ireland Limited,"Block B, The Crescent Building, Santry Demesne,
+Dublin
+D09 C6X8
+Ireland",Ireland,2,topup
+Zoledronic Acid Accord,zoledronic acid monohydrate,M05BA08,"Accord Healthcare Polska Sp.z o.o.,","ul. Lutomierska 50,95-200 Pabianice, Poland",Poland,2,topup
+Zoledronic Acid Accord,zoledronic acid monohydrate,M05BA08,Accord Healthcare Single Member S.A.,"64th Km National Road Athens,
+Lamia, Schimatari, 32009, Greece",Greece,2,topup
+Lenalidomide Accord,lenalidomide,L04AX04,Pharmadox Healthcare Limited,"KW20A Kordin Industrial Park,
+Paola
+PLA 3000,
+Malta",Malta,NA,topup
+Lenalidomide Accord,lenalidomide,L04AX04,"Accord Healthcare Polska Sp.z o.o.,","ul. Lutomierska 50,95-200 Pabianice, Poland",Poland,NA,topup
+Lenalidomide Accord,lenalidomide,L04AX04,"Accord Healthcare B.V.,","Winthontlaan 200,
+3526 KV Utrecht,
+The Netherlands",Netherlands,NA,topup
+Fymskina,ustekinumab,L04AC05,Rentschler Biopharma SE,"Erwin-Rentschler-Str. 21
+88471 Laupheim
+Germany",Germany,1,topup
+Fymskina,ustekinumab,L04AC05,Formycon AG,"Fraunhoferstraße 15
+82152 Martinsried/Planegg
+Germany",Germany,2,topup
+Ogivri,trastuzumab,L01FD01,"Unit S18, 1st","Special Economic Zone Plot Nos.
+Phase-IV-Bommasandra-Jigani Link
+Bengaluru -",India,1,topup
+Ogivri,trastuzumab,L01FD01,Biologics Limited,"W20 &
+Floor, Block B4
+2, 3, 4 & 5
+Road-Bommasandra Post
+560 099
+INDIA",India,1,topup
+Ogivri,trastuzumab,L01FD01,Biosimilar Collaborations Ireland Limited,"Block B, The Crescent Building, Santry Demesne
+Dublin
+D09 C6X8
+Ireland",Ireland,2,topup
+Semglee,insulin glargine,A10AE04,Biosimilar Collaborations Ireland Limited,"Block B, The Crescent Building, Santry Demesne
+Dublin
+D09 C6X8
+IRELAND",Ireland,2,topup
+Vfend,voriconazole,J02AC03,R-Pharm Germany GmbH,"Heinrich-Mack-Str. 35, 89257 Illertissen
+Germany",Germany,2,topup
+Vfend,voriconazole,J02AC03,Pfizer Italia S.r.l.,"Località Marino del Tronto
+63100 Ascoli Piceno (AP)
+Italy",Italy,2,topup
+Vfend,voriconazole,J02AC03,Fareva Amboise,"Zone Industrielle
+29 route des Industries
+37530 Pocé-sur-Cisse
+France",France,2,topup
+Enrylaze,crisantaspase,L01XX02,"AGC Biologics, Inc. (legal name CMC Biologics, Inc.)","Vandtaarnsvej 83B Soeborg
+Copenhagen DK-2860
+Denmark",Denmark,1,topup
+Enrylaze,crisantaspase,L01XX02,Jazz Pharmaceuticals Ireland Ltd,"5th Floor
+Waterloo Exchange
+Waterloo Road
+Dublin 4
+D04 E5W7
+Ireland",Ireland,2,topup
+Fulphila,pegfilgrastim,L03AA13,"Electronics City, Bengaluru","Biocon
+Block No. B1, B2, B3, Q13 of Q1
+Special
+Plot No: 2, 3, 4 & 5,
+Bengaluru –",India,1,topup
+Fulphila,pegfilgrastim,L03AA13,Biologics Limited,"M6, Q1 (QC3 and QC10) and W3, 20th KM, Hosur Road,
+- 560 100, India
+Biologics Limited
+W20 & Unit S18, 1st Floor, Block B4
+Economic Zone
+Phase – IV Bommasandra-Jigani Link Road, Bommasandra Post,
+560 099, India",India,1,topup
+Fulphila,pegfilgrastim,L03AA13,Biosimilar Collaborations Ireland Limited,"Block B, The Crescent Building,
+Santry Demesne Dublin
+D09 C6X8
+Ireland",Ireland,2,topup
+Hulio,adalimumab,L04AB04,"Kyowa Kirin Co., Ltd.","Takasaki Plant
+100-1 Hagiwara-machi
+Takasaki
+Gunma
+370-0013
+Japan",Japan,1,topup
+Hulio,adalimumab,L04AB04,Biosimilar Collaborations Ireland Limited,"Block B, The Crescent Building, Santry Demesne
+Dublin
+D09 C6X8
+Ireland",Ireland,2,topup
+Wezenla,ustekinumab,L04AC05,Immunex Rhode Island Corporation,"40 Technology Way
+West Greenwich
+Rhode Island, 02817
+United States",United States,1,topup
+Wezenla,ustekinumab,L04AC05,"Amgen Technology (Ireland) UC,","Pottery Road,
+Dun Laoghaire,
+Co Dublin,
+Ireland",Ireland,2,topup
+Wezenla,ustekinumab,L04AC05,Amgen Europe B.V.,"Minervum 7061
+4817 ZK Breda
+The Netherlands",Netherlands,2,topup
+Wezenla,ustekinumab,L04AC05,Amgen NV,"Telecomlaan 5-7
+1831 Diegem
+Belgium",Belgium,2,topup
+Usrenty,ustekinumab,L04AC05,"Unit S 18,","Special
+Plot No.2. 3, 4
+Bommasandra-Jigani
+Bommasandra
+Bengaluru-560",India,1,topup
+Usrenty,ustekinumab,L04AC05,Biologics Limited.,"W20 &
+1st Floor, Block B4
+Economic Zone,
+& 5, Phase IV,
+Link Road,
+Post,
+099
+India",India,1,topup
+Usrenty,ustekinumab,L04AC05,Biosimilar Collaborations Ireland Limited,"Block B,
+The Crescent Building,
+Santry Demesne,
+Dublin,
+D09 C6X8
+Ireland",Ireland,2,topup
+Usrenty,ustekinumab,L04AC05,Biosimilar Collaborations Ireland Limited,"Block B, The Crescent Building, Santry Demesne
+Dublin
+D09 C6X8
+Ireland
+Marketed by:",Ireland,NA,topup
+Usrenty,ustekinumab,L04AC05,Biosimilar Collaborations Ireland Limited,"Unit 35/36 Grange Parade,
+Baldoyle Industrial Estate,
+Dublin 13, DUBLIN
+Ireland, D13 R20R
+80
+Package leaflet: Information for the user",Ireland,NA,topup
+Usrenty,ustekinumab,L04AC05,Your doctor will decide when you should receive your next dose.,"Children and adolescents aged 6 years or older
+Psoriasis
+• The doctor will work out the right dose for you, including the amount (volume) of Usrenty to be
+injected to give the right dose. The right dose for you will depend on your body weight at the time
+each dose is given.
+• A 45 mg vial is available for children who need to receive less than the full 45 mg dose.
+• If you weigh less than 60 kg, the recommended dose is 0.75 mg of Usrenty per kg body weight.
+• If you weigh 60 kg to 100 kg, the recommended dose is 45 mg Usrenty.
+• If you weigh more than 100 kg, the recommended dose is 90 mg Usrenty.
+• After the starting dose, you will have the next dose 4 weeks later, and then every 12 weeks.
+How Usrenty is given",Ireland,NA,topup
+Usrenty,ustekinumab,L04AC05,If you use more Usrenty than you should,"If you have used or been given too much Usrenty, talk to a doctor or pharmacist straight away. Always
+have the outer carton of the medicine with you, even if it is empty.
+If you forget to use Usrenty
+If you forget a dose, contact your doctor or pharmacist. Do not take a double dose to make up for a
+forgotten dose.
+If you stop using Usrenty
+It is not dangerous to stop using Usrenty. However, if you stop, your symptoms may come back.
+If you have any further questions on the use of this medicine, ask your doctor or pharmacist.
+84
+4. Possible side effects
+Like all medicines, this medicine can cause side effects, although not everybody gets them.
+Serious side effects
+Some patients may have serious side effects that may need urgent treatment.
+Allergic reactions – these may need urgent treatment. Tell your doctor or get emergency medical
+help straight away if you notice any of the following signs.
+• Serious allergic reactions (‘anaphylaxis’) are rare in people taking Usrenty (may affect up to 1 in
+1 000 people). Signs include:
+difficulty breathing or swallowing
+o
+low blood pressure, which can cause dizziness or light-headedness
+o
+swelling of the face, lips, mouth or throat.
+o
+• Common signs of an allergic reaction include skin rash and hives (these may affect up to 1 in 100
+people).
+In rare cases, allergic lung reactions and lung inflammation have been reported in patients who
+receive ustekinumab. Tell your doctor right away if you develop symptoms such as cough,
+shortness of breath, and fever.
+If you have a serious allergic reaction, your doctor may decide that you should not use Usrenty again.
+Infections – these may need urgent treatment. Tell your doctor straight away if you notice any of
+the following signs.
+• Infections of the nose or throat and common cold are common (may affect up to 1 in 10 people)
+• Infections of the chest are uncommon (may affect up to 1 in 100 people)
+• Inflammation of tissue under the skin (‘cellulitis’) is uncommon (may affect up to 1 in 100 people)
+• Shingles (a type of painful rash with blisters) are uncommon (may affect up to 1 in 100 people)
+Usrenty may make you less able to fight infections. Some infections could become serious and may
+include infections caused by viruses, fungi, bacteria (including tuberculosis), or parasites, including
+infections that mainly occur in people with a weakened immune system (opportunistic infections).
+Opportunistic infections of the brain (encephalitis, meningitis), lungs, and eye have been reported in
+patients receiving treatment with ustekinumab.
+You must look out for signs of infection while you are using Usrenty. These include:
+• fever, flu-like symptoms, night sweats, weight loss
+• feeling tired or short of breath; cough which will not go away
+• warm, red and painful skin, or a painful skin rash with blisters
+• burning when passing water
+• diarrhoea
+• visual disturbance or vision loss
+• headache, neck stiffness, light sensitivity, nausea or confusion.
+Tell your doctor straight away if you notice any of these signs of infection. These may be signs of
+infections such as chest infections, skin infections, shingles or opportunistic infections that could
+have serious complications. Tell your doctor if you have any kind of infection that will not go away
+or keeps coming back. Your doctor may decide that you should not use Usrenty until the infection
+goes away. Also tell your doctor if you have any open cuts or sores as they might get infected.
+Shedding of skin – increase in redness and shedding of skin over a larger area of the body may be
+symptoms of erythrodermic psoriasis or exfoliative dermatitis, which are serious skin conditions.
+You should tell your doctor straight away if you notice any of these signs.
+Other side effects
+85
+Common side effects (may affect up to 1 in 10 people):
+• Diarrhoea
+• Nausea
+• Vomiting
+• Feeling tired
+• Feeling dizzy
+• Headache
+• Itching (‘pruritus’)
+• Back, muscle or joint pain
+• Sore throat",Ireland,NA,topup
+Usrenty,ustekinumab,L04AC05,Biosimilar Collaborations Ireland Limited,"Unit 35/36,
+Grange Parade,
+Baldoyle Industrial Estate,
+Dublin 13, DUBLIN
+Ireland, D13 R20R
+93
+Package leaflet: Information for the user",Ireland,NA,topup
+Usrenty,ustekinumab,L04AC05,If you use more Usrenty than you should,"If you have used or been given too much Usrenty, talk to a doctor or pharmacist straight away. Always
+have the outer carton of the medicine with you, even if it is empty.
+If you forget to use Usrenty
+If you forget a dose, contact your doctor or pharmacist. Do not take a double dose to make up for a
+forgotten dose.
+If you stop using Usrenty
+It is not dangerous to stop using Usrenty. However, if you stop, your symptoms may come back. If you
+have any further questions on the use of this medicine, ask your doctor or pharmacist.
+97
+4. Possible side effects
+Like all medicines, this medicine can cause side effects, although not everybody gets them.
+Serious side effects
+Some patients may have serious side effects that may need urgent treatment.
+Allergic reactions – these may need urgent treatment. Tell your doctor or get emergency medical
+help straight away if you notice any of the following signs.
+• Serious allergic reactions (‘anaphylaxis’) are rare in people taking Usrenty (may affect up to 1 in
+1 000 people). Signs include:
+difficulty breathing or swallowing
+o
+low blood pressure, which can cause dizziness or light-headedness
+o
+swelling of the face, lips, mouth or throat.
+o
+• Common signs of an allergic reaction include skin rash and hives (these may affect up to 1 in 100
+people).
+In rare cases, allergic lung reactions and lung inflammation have been reported in patients who
+receive ustekinumab. Tell your doctor right away if you develop symptoms such as cough,
+shortness of breath, and fever.
+If you have a serious allergic reaction, your doctor may decide that you should not use Usrenty again.
+Infections – these may need urgent treatment. Tell your doctor straight away if you notice any of
+the following signs.
+• Infections of the nose or throat and common cold are common (may affect up to 1 in 10 people)
+• Infections of the chest are uncommon (may affect up to 1 in 100 people)
+• Inflammation of tissue under the skin (‘cellulitis’) is uncommon (may affect up to 1 in 100 people)
+• Shingles (a type of painful rash with blisters) are uncommon (may affect up to 1 in 100 people)
+Usrenty may make you less able to fight infections. Some infections could become serious and may
+include infections caused by viruses, fungi, bacteria (including tuberculosis), or parasites, including
+infections that mainly occur in people with a weakened immune system (opportunistic infections).
+Opportunistic infections of the brain (encephalitis, meningitis), lungs, and eye have been reported in
+patients receiving treatment with ustekinumab.
+You must look out for signs of infection while you are using Usrenty. These include:
+• fever, flu-like symptoms, night sweats, weight loss
+• feeling tired or short of breath; cough which will not go away
+• warm, red and painful skin, or a painful skin rash with blisters
+• burning when passing water
+• diarrhoea
+• visual disturbance or vision loss
+• headache, neck stiffness, light sensitivity, nausea or confusion.
+Tell your doctor straight away if you notice any of these signs of infection. These may be signs of
+infections such as chest infections, skin infections, shingles or opportunistic infections that could have
+serious complications. Tell your doctor if you have any kind of infection that will not go away or keeps
+coming back. Your doctor may decide that you should not use Usrenty until the infection goes away.
+Also tell your doctor if you have any open cuts or sores as they might get infected.
+Shedding of skin – increase in redness and shedding of skin over a larger area of the body may be
+symptoms of erythrodermic psoriasis or exfoliative dermatitis, which are serious skin conditions.
+You should tell your doctor straight away if you notice any of these signs.
+Other side effects
+98
+Common side effects (may affect up to 1 in 10 people):
+• Diarrhoea
+• Nausea
+• Vomiting
+• Feeling tired
+• Feeling dizzy
+• Headache
+• Itching (‘pruritus’)
+• Back, muscle or joint pain
+• Sore throat",Ireland,NA,topup
+Usrenty,ustekinumab,L04AC05,"1 single-dose, glass 1 mL pre-filled syringe. Each pre-filled syringe contains 90 mg ustekinumab in 1 mL",NA,Ireland,NA,topup
+Usrenty,ustekinumab,L04AC05,Biosimilar Collaborations Ireland Limited,"Unit 35/36 Grange Parade,
+Baldoyle Industrial Estate,
+Dublin 13, DUBLIN
+Ireland, D13 R20R
+106",Ireland,NA,topup
+Yesintek,ustekinumab,L04AC05,"Unit S 18,","Special
+Plot No.2. 3, 4
+Bommasandra-Jigani
+Bommasandra
+Bengaluru-560",India,1,topup
+Yesintek,ustekinumab,L04AC05,Biologics Limited.,"W20 &
+1st Floor, Block B4
+Economic Zone,
+& 5, Phase IV,
+Link Road,
+Post,
+099
+India",India,1,topup
+Yesintek,ustekinumab,L04AC05,Biosimilar Collaborations Ireland Limited,"Block B,The Crescent Building,
+Santry Demesne,
+Dublin,
+D09 C6X8
+Ireland",Ireland,2,topup
+Yesintek,ustekinumab,L04AC05,Biosimilar Collaborations Ireland Limited,"Block B, The Crescent Building, Santry Demesne
+Dublin
+D09 C6X8
+Ireland
+Marketed by:",Ireland,NA,topup
+Yesintek,ustekinumab,L04AC05,Biosimilar Collaborations Ireland Limited,"Unit 35/36 Grange Parade,
+Baldoyle Industrial Estate,
+Dublin 13, DUBLIN
+Ireland, D13 R20R
+108
+Package leaflet: Information for the user",Ireland,NA,topup
+Yesintek,ustekinumab,L04AC05,"However, there is limited experience with Yesintek in pregnant women. It is therefore","preferable to avoid the use of Yesintek in pregnancy.
+• If you are a woman of childbearing potential, you are advised to avoid becoming pregnant and
+must use adequate contraception while using Yesintek and for at least 15 weeks after the last
+Yesintek treatment.
+• Yesintek can pass across the placenta to the unborn baby. If you received Yesintek during
+your pregnancy, your baby may have a higher risk for getting an infection. It is important that
+you tell your baby’s doctors and other health care professionals if you received Yesintek
+during your pregnancy before the baby receives any vaccine. Live vaccines such as the BCG
+vaccine (used to prevent tuberculosis) are not recommended for your baby in the first twelve
+months after birth if you received Yesintek during the pregnancy unless your baby’s doctor
+recommends otherwise.
+• Ustekinumab may pass into breast milk in very small amounts. Talk to your doctor if you are
+breast-feeding or are planning to breast-feed. You and your doctor should decide if you should
+breast-feed or use Yesintek - do not do both.
+Driving and using machines
+Yesintek has no or negligible influence on the ability to drive and use machines.
+Yesintek contains Polysorbate 80 (E 433)
+This medicine contains 0.02 mg of polysorbate 80 (E 433) in each 45 mg/0.5 mL PFS/vial which is
+equivalent to 0.02 mg/0.5 mL (0.0003 mg/kg/day). Polysorbates may cause allergic reactions. Tell your
+doctor if you have or your child has any known allergies.
+111
+3. How to use Yesintek
+Yesintek is intended for use under the guidance and supervision of a doctor experienced in treating
+conditions for which Yesintek is intended.
+Always use this medicine exactly as your doctor has told you. Check with your doctor if you are not
+sure. Talk to your doctor about when you will have your injections and follow-up appointments.
+How much Yesintek is given
+Your doctor will decide how much Yesintek you need to use and for how long.
+Adults aged 18 years or older
+Psoriasis or Psoriatic Arthritis
+• The recommended starting dose is 45 mg Yesintek. Patients who weigh more than 100
+kilograms (kg) may start on a dose of 90 mg instead of 45 mg.
+• After the starting dose, you will have the next dose 4 weeks later, and then every 12 weeks.
+The following doses are usually the same as the starting dose.
+Crohn’s disease
+• During treatment, the first dose of approximately 6 mg/kg Yesintek will be given by your",Ireland,NA,topup
+Yesintek,ustekinumab,L04AC05,If you use more Yesintek than you should,"If you have used or been given too much Yesintek, talk to a doctor or pharmacist straight away.
+Always have the outer carton of the medicine with you, even if it is empty.
+If you forget to use Yesintek
+If you forget a dose, contact your doctor or pharmacist. Do not take a double dose to make up for a
+forgotten dose.
+If you stop using Yesintek
+112
+It is not dangerous to stop using Yesintek. However, if you stop, your symptoms may come back.
+If you have any further questions on the use of this medicine, ask your doctor or pharmacist.
+4. Possible side effects
+Like all medicines, this medicine can cause side effects, although not everybody gets them.
+Serious side effects
+Some patients may have serious side effects that may need urgent treatment.
+Allergic reactions – these may need urgent treatment. Tell your doctor or get emergency
+medical help straight away if you notice any of the following signs.
+• Serious allergic reactions (‘anaphylaxis’) are rare in people taking Yesintek (may affect up to
+1 in 1 000 people). Signs include:
+difficulty breathing or swallowing
+o
+low blood pressure, which can cause dizziness or light-headedness
+o
+swelling of the face, lips, mouth or throat.
+o
+• Common signs of an allergic reaction include skin rash and hives (these may affect up to 1 in
+100 people).
+In rare cases, allergic lung reactions and lung inflammation have been reported in patients who
+receive ustekinumab. Tell your doctor right away if you develop symptoms such as cough,
+shortness of breath, and fever.
+If you have a serious allergic reaction, your doctor may decide that you should not use Yesintek
+again.
+Infections – these may need urgent treatment. Tell your doctor straight away if you notice any
+of the following signs.
+• Infections of the nose or throat and common cold are common (may affect up to 1 in 10
+people)
+• Infections of the chest are uncommon (may affect up to 1 in 100 people)
+• Inflammation of tissue under the skin (‘cellulitis’) is uncommon (may affect up to 1 in 100
+people)
+• Shingles (a type of painful rash with blisters) are uncommon (may affect up to 1 in 100
+people)
+Yesintek may make you less able to fight infections. Some infections could become serious and may
+include infections caused by viruses, fungi, bacteria (including tuberculosis), or parasites, including
+infections that mainly occur in people with a weakened immune system (opportunistic infections).
+Opportunistic infections of the brain (encephalitis, meningitis), lungs, and eye have been reported in
+patients receiving treatment with ustekinumab.
+You must look out for signs of infection while you are using Yesintek. These include:
+• fever, flu-like symptoms, night sweats, weight loss
+• feeling tired or short of breath; cough which will not go away
+• warm, red and painful skin, or a painful skin rash with blisters
+• burning when passing water
+• diarrhoea
+• visual disturbance or vision loss
+• headache, neck stiffness, light sensitivity, nausea or confusion.
+Tell your doctor straight away if you notice any of these signs of infection. These may be signs of
+infections such as chest infections, skin infections, shingles or opportunistic infections that could
+have serious complications. Tell your doctor if you have any kind of infection that will not go away
+113
+or keeps coming back. Your doctor may decide that you should not use Yesintek until the infection
+goes away. Also tell your doctor if you have any open cuts or sores as they might get infected.
+Shedding of skin – increase in redness and shedding of skin over a larger area of the body may
+be symptoms of erythrodermic psoriasis or exfoliative dermatitis, which are serious skin
+conditions. You should tell your doctor straight away if you notice any of these signs.
+Other side effects
+Common side effects (may affect up to 1 in 10 people):
+• Diarrhoea
+• Nausea
+• Vomiting
+• Feeling tired
+• Feeling dizzy
+• Headache
+• Itching (‘pruritus’)
+• Back, muscle or joint pain
+• Sore throat",Ireland,NA,topup
+Yesintek,ustekinumab,L04AC05,Biosimilar Collaborations Ireland Limited,"Unit 35/36, Grange Parade,
+Baldoyle Industrial Estate,
+Dublin 13, DUBLIN
+Ireland, D13 R20R
+.
+122
+Package leaflet: Information for the user",Ireland,NA,topup
+Yesintek,ustekinumab,L04AC05,"However, there is limited experience with Yesintek in pregnant women. It is therefore","preferable to avoid the use of Yesintek in pregnancy.
+• If you are a woman of childbearing potential, you are advised to avoid becoming pregnant and
+must use adequate contraception while using Yesintek and for at least 15 weeks after the last
+Yesintek treatment.
+• Yesintek can pass across the placenta to the unborn baby. If you received Yesintek during your
+pregnancy, your baby may have a higher risk for getting an infection.
+• It is important that you tell your baby’s doctors and other health care professionals if you
+received Yesintek during your pregnancy before the baby receives any vaccine. Live vaccines
+such as the BCG vaccine (used to prevent tuberculosis) are not recommended for your baby in
+the first twelve months after birth if you received Yesintek during the pregnancy unless your
+baby’s doctor recommends otherwise.
+• Ustekinumab may pass into breast milk in very small amounts. Talk to your doctor if you are
+breast-feeding or are planning to breast-feed. You and your doctor should decide if you should
+breast-feed or use Yesintek -do not do both.
+Driving and using machines
+Yesintek has no or negligible influence on the ability to drive and use machines.
+Yesintek contains Polysorbate 80 (E 433)
+This medicine contains 0.04 mg of polysorbate 80 (E 433) in each 90mg/1mL PFS which is equivalent
+to 0.04 mg/mL (0.0004 mg/kg/day). Polysorbates may cause allergic reactions. Tell your doctor if you
+have or your child has any known allergies.
+125
+3. How to use Yesintek
+Yesintek is intended for use under the guidance and supervision of a doctor experienced in treating
+conditions for which Yesintek is intended.
+Always use this medicine exactly as your doctor has told you. Check with your doctor if you are not
+sure. Talk to your doctor about when you will have your injections and follow-up appointments.
+How much Yesintek is given
+Your doctor will decide how much Yesintek you need to use and for how long.
+Adults aged 18 years or older Psoriasis or Psoriatic Arthritis
+• The recommended starting dose is 45 mg Yesintek. Patients who weigh more than 100
+kilograms (kg) may start on a dose of 90 mg instead of 45 mg.
+• After the starting dose, you will have the next dose 4 weeks later, and then every 12 weeks. The
+following doses are usually the same as the starting dose.
+•
+• Crohn’s disease
+• During treatment, the first dose of approximately 6 mg/kg Yesintek will be given by your doctor",Ireland,NA,topup
+Yesintek,ustekinumab,L04AC05,If you use more Yesintek than you should,"If you have used or been given too much Yesintek, talk to a doctor or pharmacist straight away.
+Always have the outer carton of the medicine with you, even if it is empty.
+If you forget to use Yesintek
+If you forget a dose, contact your doctor or pharmacist. Do not take a double dose to make up for a
+forgotten dose.
+If you stop using Yesintek
+It is not dangerous to stop using Yesintek. However, if you stop, your symptoms may come back. If
+you have any further questions on the use of this medicine, ask your doctor or pharmacist.
+126
+4. Possible side effects
+Like all medicines, this medicine can cause side effects, although not everybody gets them.
+Serious side effects
+Some patients may have serious side effects that may need urgent treatment.
+Allergic reactions – these may need urgent treatment. Tell your doctor or get emergency
+medical help straight away if you notice any of the following signs.
+• Serious allergic reactions (‘anaphylaxis’) are rare in people taking Yesintek (may affect up to 1
+in 1 000 people). Signs include:
+difficulty breathing or swallowing
+o
+low blood pressure, which can cause dizziness or light-headedness
+o
+swelling of the face, lips, mouth or throat.
+o
+• Common signs of an allergic reaction include skin rash and hives (these may affect up to 1 in
+100 people).
+In rare cases, allergic lung reactions and lung inflammation have been reported in patients who
+receive ustekinumab. Tell your doctor right away if you develop symptoms such as cough,
+shortness of breath, and fever.
+If you have a serious allergic reaction, your doctor may decide that you should not use Yesintek
+again.
+Infections – these may need urgent treatment. Tell your doctor straight away if you notice any
+of the following signs.
+• Infections of the nose or throat and common cold are common (may affect up to 1 in 10 people)
+• Infections of the chest are uncommon (may affect up to 1 in 100 people)
+• Inflammation of tissue under the skin (‘cellulitis’) is uncommon (may affect up to 1 in 100
+people)
+• Shingles (a type of painful rash with blisters) are uncommon (may affect up to 1 in 100 people)
+Yesintek may make you less able to fight infections. Some infections could become serious and may
+include infections caused by viruses, fungi, bacteria (including tuberculosis), or parasites, including
+infections that mainly occur in people with a weakened immune system (opportunistic infections).
+Opportunistic infections of the brain (encephalitis, meningitis), lungs, and eye have been reported in
+patients receiving treatment with ustekinumab.
+You must look out for signs of infection while you are using Yesintek. These include:
+• fever, flu-like symptoms, night sweats, weight loss
+• feeling tired or short of breath; cough which will not go away
+• warm, red and painful skin, or a painful skin rash with blisters
+• burning when passing water
+• diarrhoea
+• visual disturbance or vision loss
+• headache, neck stiffness, light sensitivity, nausea or confusion.
+Tell your doctor straight away if you notice any of these signs of infection. These may be signs of
+infections such as chest infections, skin infections, shingles or opportunistic infections that could
+have serious complications. Tell your doctor if you have any kind of infection that will not go away
+or keeps coming back. Your doctor may decide that you should not use Yesintek until the infection
+goes away. Also tell your doctor if you have any open cuts or sores as they might get infected.
+Shedding of skin – increase in redness and shedding of skin over a larger area of the body may
+be symptoms of erythrodermic psoriasis or exfoliative dermatitis, which are serious skin
+conditions. You should tell your doctor straight away if you notice any of these signs.
+127
+Other side effects
+Common side effects (may affect up to 1 in 10 people):
+• Diarrhoea
+• Nausea
+• Vomiting
+• Feeling tired
+• Feeling dizzy
+• Headache
+• Itching (‘pruritus’)
+• Back, muscle or joint pain
+• Sore throat",Ireland,NA,topup
+Yesintek,ustekinumab,L04AC05,Biosimilar Collaborations Ireland Limited,"Unit 35/36 Grange Parade,
+Baldoyle Industrial Estate,
+Dublin 13, DUBLIN
+Ireland, D13 R20R
+136
+Package leaflet: Information for the user",Ireland,NA,topup
+Yesintek,ustekinumab,L04AC05,"However, there is limited experience with Yesintek in pregnant women. It is therefore preferable","to avoid the use of Yesintek in pregnancy.
+• If you are a woman of childbearing potential, you are advised to avoid becoming pregnant and
+must use adequate contraception while using Yesintek and for at least 15 weeks after the last
+Yesintek treatment.
+• Yesintek can pass across the placenta to the unborn baby. If you received Yesintek during your
+pregnancy, your baby may have a higher risk for getting an infection.
+• It is important that you tell your baby’s doctors and other health care professionals if you received
+Yesintek during your pregnancy before the baby receives any vaccine. Live vaccines such as the
+BCG vaccine (used to prevent tuberculosis) are not recommended for your baby in the first
+twelve months after birth if you received Yesintek during the pregnancy unless your baby’s
+doctor recommends otherwise.
+• Ustekinumab may pass into breast milk in very small amounts. Talk to your doctor if you are
+breast-feeding or are planning to breast-feed. You and your doctor should decide if you should
+breast-feed or use Yesintek - do not do both.
+Driving and using machines
+Yesintek has no or negligible influence on the ability to drive and use machines.
+Yesintek contains Polysorbate 80 (E 433)
+This medicine contains 0.02 mg of polysorbate 80 (E 433) in each 45 mg/0.5 mL pre-filled pen which
+is equivalent to 0.02 mg/0.5 mL (0.0003 mg/kg/day). Polysorbates may cause allergic reactions. Tell
+your doctor if you have any known allergies
+3. How to use Yesintek
+Yesintek is intended for use under the guidance and supervision of a doctor experienced in treating
+139
+conditions for which Yesintek is intended.
+Always use this medicine exactly as your doctor has told you. Check with your doctor if you are not
+sure. Talk to your doctor about when you will have your injections and follow-up appointments.
+How much Yesintek is given
+Your doctor will decide how much Yesintek you need to use and for how long.
+Adults aged 18 years or older Psoriasis or Psoriatic Arthritis
+• The recommended starting dose is 45 mg Yesintek. Patients who weigh more than 100 kilograms
+(kg) may start on a dose of 90 mg instead of 45 mg.
+• After the starting dose, you will have the next dose 4 weeks later, and then every 12 weeks. The
+following doses are usually the same as the starting dose.
+• Crohn’s disease
+• During treatment, the first dose of approximately 6 mg/kg Yesintek will be given by your doctor",Ireland,NA,topup
+Yesintek,ustekinumab,L04AC05,If you use more Yesintek than you should,"If you have used or been given too much Yesintek, talk to a doctor or pharmacist straight away.
+Always have the outer carton of the medicine with you, even if it is empty.
+If you forget to use Yesintek
+If you forget a dose, contact your doctor or pharmacist. Do not take a double dose to make up for a
+forgotten dose.
+If you stop using Yesintek
+It is not dangerous to stop using Yesintek. However, if you stop, your symptoms may come back. If
+you have any further questions on the use of this medicine, ask your doctor or pharmacist.
+4. Possible side effects
+Like all medicines, this medicine can cause side effects, although not everybody gets them.
+Serious side effects
+Some patients may have serious side effects that may need urgent treatment.
+Allergic reactions – these may need urgent treatment. Tell your doctor or get emergency medical
+help straight away if you notice any of the following signs.
+• Serious allergic reactions (‘anaphylaxis’) are rare in people taking ustekinumab (may affect up to
+1 in 1000 people). Signs include:
+• difficulty breathing or swallowing
+• low blood pressure, which can cause dizziness or light-headedness
+• swelling of the face, lips, mouth or throat.
+140
+• Common signs of an allergic reaction include skin rash and hives (these may affect up to 1 in 100
+people).
+In rare cases, allergic lung reactions and lung inflammation have been reported in patients who
+receive ustekinumab. Tell your doctor right away if you develop symptoms such as cough,
+shortness of breath, and fever.
+If you have a serious allergic reaction, your doctor may decide that you should not use Yesintek again.
+Infections – these may need urgent treatment. Tell your doctor straight away if you notice any of
+the following signs.
+• Infections of the nose or throat and common cold are common (may affect up to 1 in 10 people)
+• Infections of the chest are uncommon (may affect up to 1 in 100 people)
+• Inflammation of tissue under the skin (‘cellulitis’) is uncommon (may affect up to 1 in 100
+people)
+• Shingles (a type of painful rash with blisters) are uncommon (may affect up to 1 in 100 people)
+Yesintek may make you less able to fight infections. Some infections could become serious and may
+include infections caused by viruses, fungi, bacteria (including tuberculosis), or parasites, including
+infections that mainly occur in people with a weakened immune system (opportunistic infections).
+Opportunistic infections of the brain (encephalitis, meningitis), lungs, and eye have been reported in
+patients receiving treatment with ustekinumab.
+You must look out for signs of infection while you are using Yesintek. These include:
+• fever, flu-like symptoms, night sweats, weight loss
+• feeling tired or short of breath; cough which will not go away
+• warm, red and painful skin, or a painful skin rash with blisters
+• burning when passing water
+• diarrhoea
+• visual disturbance or vision loss
+• headache, neck stiffness, light sensitivity, nausea or confusion.
+Tell your doctor straight away if you notice any of these signs of infection. These may be signs of
+infections such as chest infections, or skin infections or shingles or opportunistic infections that could
+have serious complications. Tell your doctor if you have any kind of infection that will not go away or
+keeps coming back. Your doctor may decide that you should not use Yesintek until the infection goes
+away. Also tell your doctor if you have any open cuts or sores as they might get infected.
+Shedding of skin – increase in redness and shedding of skin over a larger area of the body may
+be symptoms of erythrodermic psoriasis or exfoliative dermatitis, which are serious skin
+conditions. You should tell your doctor straight away if you notice any of these signs.
+Other side effects
+Common side effects (may affect up to 1 in 10 people):
+• Diarrhoea
+• Nausea
+• Vomiting
+• Feeling tired
+• Feeling dizzy
+• Headache
+• Itching (‘pruritus’)
+• Back, muscle or joint pain
+• Sore throat",Ireland,NA,topup
+Hefiya,adalimumab,L04AB04,Novartis Pharmaceutical Manufacturing GmbH,"Biochemiestrasse 10
+6336 Langkampfen
+Austria",Austria,1,topup
+Hefiya,adalimumab,L04AB04,Novartis Pharmaceutical Manufacturing LLC,"Kolodvorska Cesta 27
+1234 Mengeš
+Slovenia",Slovenia,1,topup
+Hefiya,adalimumab,L04AB04,Sandoz GmbH,"Biochemiestrasse 10
+6336 Langkampfen
+Austria",Austria,2,topup
+Ibuprofen Gen.Orph,Ibuprofen,C01EB16,Haupt Pharma,"1 rue Comte de Sinard
+26250 Livron-sur-Drôme
+France",France,2,topup
+Lytenava,bevacizumab,S01LA08,"FUJIFILM Diosynth Biotechnologies Texas, LLC","3939 Biomedical Way
+College Station, Texas (TX) 77845
+United States (USA)",United States,1,topup
+Lytenava,bevacizumab,S01LA08,MIAS Pharma Limited,"Suite 1, Stafford House, Strand Road
+Portmarnock
+Dublin
+D13 WC83
+Ireland",Ireland,2,topup
+Tuznue,trastuzumab,L01FD01,"Prestige Biologics Co., Ltd.","197 Osongsaengmyeong 1-ro, Osong-eup,
+Heungdeok-gu, Cheongju-si, Chungcheongbuk-do,
+28161 Republic of Korea",Republic of Korea,1,topup
+Tuznue,trastuzumab,L01FD01,"Kymos Pharma Services, S.L.","Parc Tecnològic del Vallès, Ronda Can Fatjó,
+7B, Cerdanyola del Vallès,
+08290 Barcelona, Spain",Spain,2,topup
+Tuznue,trastuzumab,L01FD01,"Laboratorio Reig Jofre, S.A.","Gran Capitán, 10, Sant Joan Despí,
+08970 Barcelona, Spain",Spain,2,topup
+Exforge HCT,valsartan;hydrochlorothiazide;amlodipine besilate,C09DX01,Novartis Farma S.p.A.,"Via Provinciale Schito 131
+80058 Torre Annunziata (NA)
+Italy",Italy,2,topup
+Exforge HCT,valsartan;hydrochlorothiazide;amlodipine besilate,C09DX01,Novartis Farmacéutica S.A.,"Gran Via de les Corts Catalanes, 764
+08013 Barcelona
+Spain",Spain,2,topup
+Exforge HCT,valsartan;hydrochlorothiazide;amlodipine besilate,C09DX01,Novartis Pharma GmbH,"Sophie-Germain-Strasse 10
+90443 Nuremberg
+Germany",Germany,2,topup
+Dafiro HCT,valsartan;hydrochlorothiazide;amlodipine besilate,C09DX01,Novartis Farma S.p.A.,"Via Provinciale Schito 131
+80058 Torre Annunziata (NA)
+Italy",Italy,2,topup
+Dafiro HCT,valsartan;hydrochlorothiazide;amlodipine besilate,C09DX01,Novartis Farmacéutica S.A.,"Gran Via de les Corts Catalanes, 764
+08013 Barcelona
+Spain",Spain,2,topup
+Dafiro HCT,valsartan;hydrochlorothiazide;amlodipine besilate,C09DX01,Novartis Pharma GmbH,"Sophie-Germain-Strasse 10
+90443 Nuremberg
+Germany",Germany,2,topup
+Copalia HCT,amlodipine;valsartan;hydrochlorothiazide,C09DX01,Novartis Farma S.p.A.,"Via Provinciale Schito 131
+80058 Torre Annunziata (NA)
+Italy",Italy,2,topup
+Copalia HCT,amlodipine;valsartan;hydrochlorothiazide,C09DX01,Novartis Farmacéutica S.A.,"Gran Via de les Corts Catalanes, 764
+08013 Barcelona
+Spain",Spain,2,topup
+Copalia HCT,amlodipine;valsartan;hydrochlorothiazide,C09DX01,Novartis Pharma GmbH,"Sophie-Germain-Strasse 10
+90443 Nuremberg
+Germany",Germany,2,topup
+Exjade,deferasirox,V03AC03,Novartis,"Gran Via de
+08013
+Novartis
+Str. Livezeni
+540472
+Novartis
+Sophie-Germain-Strasse
+90443
+EXJADE 90 mg, 180 mg
+Novartis
+Gran Via de
+08013
+Novartis
+Sophie-Germain-Strasse
+90443",Germany,2,topup
+Exjade,deferasirox,V03AC03,Farmacéutica S.A.,"les Corts Catalanes 764
+Barcelona
+Spain
+Pharmaceuticals S.R.L.
+nr. 7A
+Targu Mures
+Romania
+Pharma GmbH
+10
+Nuremberg
+Germany
+360 mg granules in sachet
+Farmacéutica S.A.
+les Corts Catalanes 764
+Barcelona
+Spain
+Pharma GmbH
+10
+Nuremberg
+Germany",Germany,2,topup
+Dasatinib Accord Healthcare,Dasatinib monohydrate,L01EA02,Accord Healthcare Polska Sp. z o.o.,"ul. Lutomierska 50
+Pabianice, 95-200
+Poland",Poland,2,topup
+Dasatinib Accord Healthcare,Dasatinib monohydrate,L01EA02,Accord Healthcare B.V.,"Winthontlaan 200
+Utrecht, 3526 KV
+Netherlands",Netherlands,2,topup
+Dasatinib Accord Healthcare,Dasatinib monohydrate,L01EA02,Pharmadox Healthcare Limited,"Kw20a Kordin Industrial Park
+Paola, PLA 3000
+Malta",Malta,2,topup
+Dasatinib Accord Healthcare,Dasatinib monohydrate,L01EA02,"Accord Healthcare Single Member S.A.,","64th Km National Road Athens,
+Lamia, Schimatari, 32009, Greece",Greece,2,topup
+Yuflyma,adalimumab,L04AB04,CELLTRION INC.,"20 Academy-ro 51 beon-gil
+Yeonsu-gu
+22014 Incheon
+Republic of Korea",Republic of Korea,1,topup
+Yuflyma,adalimumab,L04AB04,Nuvisan France SARL,"2400, Route des Colles
+06410, Biot
+France",France,2,topup
+Yuflyma,adalimumab,L04AB04,Nuvisan GmbH,"Wegenerstrasse 13
+89231 Neu-Ulm
+Germany",Germany,2,topup
+Yuflyma,adalimumab,L04AB04,Midas Pharma GmbH,"Rheinstr. 49
+55218 Ingelheim
+Germany
+KYMOS S.L.
+Ronda Can Fatjó, 7B.
+08290 Cerdanyola del Vallès
+Barcelona
+Spain",Spain,2,topup
+Imraldi,adalimumab,L04AB04,FUJIFILM Diosynth Biotechnologies Denmark ApS,"Biotek Allé 1
+Hillerød, 3400
+Denmark",Denmark,1,topup
+Imraldi,adalimumab,L04AB04,Samsung Biologics Co. Ltd,"300, Songdo bio-daero,
+Yeonsu-gu, Incheon, 21987,
+Korea, Republic of",Republic of Korea,1,topup
+Imraldi,adalimumab,L04AB04,Biogen Netherlands B.V.,"Prins Mauritslaan 13
+1171 LP Badhoevedorp
+The Netherlands",Netherlands,2,topup
+Imraldi,adalimumab,L04AB04,Samsung Bioepis NL B.V.,"Olof Palmestraat 10
+2616 LR Delft
+The Netherlands",Netherlands,2,topup
+Trazimera,trastuzumab,L01FD01,Boehringer Ingelheim Pharma GmbH & Co KG,"Birkendorfer Straße 65
+88397 Biberach an der Riss
+Germany",Germany,1,topup
+Trazimera,trastuzumab,L01FD01,Pfizer Ireland Pharmaceuticals Unlimited Company,"Grange Castle Business Park
+Nangor Road
+Dublin 22
+D22 V8F8
+Ireland",Ireland,1,topup
+Trazimera,trastuzumab,L01FD01,Samsung Biologics Co. Ltd.,"300, Songdo bio-daero
+Yeonsu-gu, Incheon, 21987
+Republic of Korea",Republic of Korea,1,topup
+Trazimera,trastuzumab,L01FD01,Pfizer Manufacturing Belgium NV,"Rijksweg 12
+2870 Puurs-Sint-Amands
+Belgium",Belgium,2,topup
+Trisenox,arsenic trioxide,L01XX27,"Almac Pharma Services Limited,","Almac House,
+20 Seagoe Industrial Estate,
+Craigavon,
+BT63 5QD,
+United Kingdom",United Kingdom,2,topup
+Trisenox,arsenic trioxide,L01XX27,Almac Pharma Services (Ireland) Limited,"Finnabair Industrial Estate,
+Dundalk, Co. Louth,
+A91 P9KD,
+Ireland",Ireland,2,topup
+Trisenox,arsenic trioxide,L01XX27,Merckle GmbH,"Graf-Arco-Str-3,
+89079 Ulm,
+Germany",Germany,2,topup
+Trisenox,arsenic trioxide,L01XX27,S.C. Sindan-Pharma S.R.L.,"B-dul Ion Mihalache nr 11, sector 1,
+Cod 011171, Bucharest,
+Romania",Romania,2,topup
+Qdenga,"Dengue virus, serotype 2, expressing Dengue virus, serotype 1, surface proteins, live, attenuated;Dengue virus, serotype 2, expressing Dengue virus, serotype 3, surface proteins, live, attenuated;Dengue virus, serotype 2, expressing Dengue virus, serotype 4, surface proteins, live, attenuated;Dengue virus, serotype 2, live, attenuated",J07BX04,IDT Biologika GmbH,"Am Pharmapark
+06861 Dessau-Rosslau
+Germany",Germany,1,topup
+Qdenga,"Dengue virus, serotype 2, expressing Dengue virus, serotype 1, surface proteins, live, attenuated;Dengue virus, serotype 2, expressing Dengue virus, serotype 3, surface proteins, live, attenuated;Dengue virus, serotype 2, expressing Dengue virus, serotype 4, surface proteins, live, attenuated;Dengue virus, serotype 2, live, attenuated",J07BX04,Takeda GmbH,"Production site Singen
+Robert-Bosch-Str. 8
+78224 Singen
+Germany",Germany,2,topup
+Insulin lispro Sanofi,insulin lispro,A10AB04,Sanofi-Aventis Deutschland GmbH,"Brüningstrasse 50
+Industriepark Höchst
+65926 Frankfurt am Main
+Germany",Germany,1,topup
+Insulin lispro Sanofi,insulin lispro,A10AB04,Sanofi-Aventis,"Brüningstrasse
+Industriepark
+65926 Frankfurt
+Sanofi-Aventis Private
+Budapest Logistics
+Bdg. DC5,
+Budapest,",Germany,2,topup
+Insulin lispro Sanofi,insulin lispro,A10AB04,Deutschland GmbH,"50
+Höchst
+am Main
+Germany
+Co. Ltd.,
+Distribution Platform
+Campona utca 1.,
+1225, Hungary",Hungary,2,topup
+Hukyndra,adalimumab,L04AB04,Alvotech Hf,"Sæmundargata 15-19
+Reykjavik, 102
+Iceland",Iceland,1,topup
+Hukyndra,adalimumab,L04AB04,Ivers-Lee CSM,"Marie-Curie-Str.8
+79539 Lörrach
+Germany
+Alvotech Hf
+Sæmundargata 15-19
+Reykjavik, 102
+Iceland",Iceland,2,topup
+Hukyndra,adalimumab,L04AB04,STADA Arzneimittel AG,"Stadastrasse 2–18
+61118 Bad Vilbel
+Germany",Germany,2,topup
+Herzuma,trastuzumab,L01FD01,CELLTRION INC.,"20 Academy -ro 51 beon-gil
+Yeonsu-gu
+22014 Incheon
+REPUBLIC OF KOREA",Republic of Korea,1,topup
+Herzuma,trastuzumab,L01FD01,Nuvisan GmbH,"Wegenerstraße 13,
+89231 Neu Ulm,
+Germany
+Nuvisan France SARL
+2400, Route des Colles,
+06410, Biot,
+France
+Kymos S.L.
+Ronda Can Fatjó 7B
+(Parque Tecnológico del Vallès)
+Cerdanyola del Vallès,
+08290 Barcelona,
+Spain",Spain,2,topup
+Herzuma,trastuzumab,L01FD01,Midas Pharma GmbH,"Rheinstr. 49,
+55218 Ingelheim,
+Germany",Germany,2,topup
+Rybelsus,semaglutide,A10BJ06,Novo Nordisk A/S,"Hallas Allé
+DK-4400 Kalundborg
+Denmark",Denmark,1,topup
+Rybelsus,semaglutide,A10BJ06,Hovione FarmaCiencia S.A.,"Quinta Sao Pedro, Sete Casas
+PT-2674-506 Loures
+Portugal",Portugal,1,topup
+Rybelsus,semaglutide,A10BJ06,Novo Nordisk Pharmaceutical Industries Inc.,"3612 Powhatan Road
+Clayton
+North Carolina 27527-9217
+United States",United States,1,topup
+Rybelsus,semaglutide,A10BJ06,Novo Nordisk A/S,"Novo Allé
+DK-2800 Bagsværd
+Denmark",Denmark,2,topup
+Levetiracetam Actavis,levetiracetam,N03AX14,Teva Operations Poland Sp. z. o. o.,"ul. Mogilska 80
+31-546 Kraków
+Poland",Poland,2,topup
+Levetiracetam Actavis,levetiracetam,N03AX14,Tjoapack Netherlands B.V.,"Nieuwe Donk 9
+ETTEN-LEUR, 4879AC
+Netherlands",Netherlands,2,topup
+Levetiracetam Teva,levetiracetam,N03AX14,Teva Pharmaceutical Works Private Limited Company,"Pallagi út 13
+HU-4042 Debrecen
+Hungary",Hungary,2,topup
+Levetiracetam Teva,levetiracetam,N03AX14,Teva Czech Industries s.r.o.,"Ostravska 29
+c.p. 305
+74770 Opava-Komarov
+Czech Republic",Czech Republic,2,topup
+Levetiracetam Teva,levetiracetam,N03AX14,Teva Operations Poland Sp. z o.o.,"ul. Mogilska 80
+31-546 Krakow
+Poland",Poland,2,topup
+Levetiracetam Teva,levetiracetam,N03AX14,"TEVA PHARMA, S.L.U.","C/C, n. 4, Poligono Industrial Malpica
+50016 Zaragoza
+Spain",Spain,2,topup
+Levetiracetam Teva,levetiracetam,N03AX14,Pharmachemie B.V.,"Swensweg 5
+2031 GA Haarlem
+The Netherlands",Netherlands,2,topup
+Levetiracetam Actavis Group,levetiracetam,N03AX14,Balkanpharma – Troyan AD,"1 Krayrechna Str.
+BG-5600 Troyan
+Bulgaria",Bulgaria,2,topup
+Levetiracetam ratiopharm,levetiracetam,N03AX14,Merckle GmbH,"Ludwig-Merckle-Strasse 3
+89143 Blaubeuren
+Germany",Germany,2,topup
+Triumeq,dolutegravir sodium;lamivudine;abacavir (as sulfate),J05AR13,"GLAXO WELLCOME, S.A.,","Avda. Extremadura, 3
+Pol. Ind. Allendeduero
+Aranda de Duero
+Burgos, 09400
+Spain",Spain,2,topup
+Triumeq,dolutegravir sodium;lamivudine;abacavir (as sulfate),J05AR13,Delpharm Poznań Spółka Akcyjna,"UL.Grunwaldzka 189
+60-322 Poznan
+Poland
+Dispersible Tablets:
+GLAXO WELLCOME, S.A.,
+Avda. Extremadura, 3
+Pol. Ind. Allendeduero
+Aranda de Duero
+Burgos, 09400
+Spain",Spain,2,topup
+Ontruzant,trastuzumab,L01FD01,FUJIFILM Diosynth Biotechnologies Denmark ApS,"Biotek Allé 1
+Hillerød, 3400
+Denmark",Denmark,1,topup
+Ontruzant,trastuzumab,L01FD01,Samsung Biologics Co. Ltd,"300, Songdo bio-daero,
+Yeonsu-gu, Incheon, 21987,
+Korea, Republic of",Republic of Korea,1,topup
+Ontruzant,trastuzumab,L01FD01,Samsung Bioepis NL B.V.,"Olof Palmestraat 10
+2616 LR Delft
+The Netherlands",Netherlands,2,topup
+Lyumjev (previously Liumjev),insulin lispro,A10AB04,Eli Lilly,"Lilly del
+12.3 KM
+Puerto",United States,1,topup
+Lyumjev (previously Liumjev),insulin lispro,A10AB04,"Caribe, Inc.","65th Infantry Road
+Carolina
+00985
+Rico",United States,1,topup
+Lyumjev (previously Liumjev),insulin lispro,A10AB04,"Lilly France,","Rue du Colonel Lilly
+67640 Fegersheim
+France",France,2,topup
+Liprolog,insulin lispro,A10AB04,Eli Lilly,"Lilly del Caribe, Inc., Puerto Rico Industrial
+Puerto
+Granule
+Eli Lilly
+Lilly del Caribe, Inc., Puerto Rico Industrial
+Puerto
+Lilly S.A., Avda. de la
+Lilly France S.A.S., Rue du
+Eli Lilly Italia S.p.A., Via Gramsci
+Liprolog 100 units/ml KwikPen, Liprolog Mix25
+KwikPen Liprolog
+Lilly France S.A.S., Rue du
+Eli Lilly Italia S.p.A., Via Gramsci
+Liprolog 100
+Lilly France S.A.S., Rue du",France,NA,topup
+Liprolog,insulin lispro,A10AB04,"Company, Lilly Technology Center Building 333 and 324, Indianapolis, Indiana, USA","Park, 12.3 KM (PR05), 65th Infantry Road, Carolina,
+Rico 00985
+Recovery
+Company, Lilly Technology Center Building 130, Indianapolis, Indiana, USA
+Park, 12.3 KM (PR05), 65th Infantry Road, Carolina,
+Rico 00985
+Vials
+Industria 30, 28108 Alcobendas, Madrid, Spain.
+Cartridges
+Colonel Lilly, 67640 Fegersheim, France.
+731-733, 50019 Sesto Fiorentino, (FI) Italy.
+100 units/ml KwikPen, Liprolog Mix50 100 units/ml
+200 units/ml KwikPen
+Colonel Lilly, 67640 Fegersheim, France.
+731-733, 50019 Sesto Fiorentino, (FI) Italy.
+units/ml Junior KwikPen
+Colonel Lilly, 67640 Fegersheim, France.",France,NA,topup
+Humalog,insulin lispro,A10AB04,Eli Lilly,"Lilly del Caribe, Inc., Puerto Rico Industrial
+Puerto
+Granule
+Eli Lilly
+Lilly del Caribe, Inc., Puerto Rico Industrial
+Puerto
+Lilly S.A., Avda. de la
+Lilly France S.A.S., Rue du
+Eli Lilly Italia S.p.A., Via Gramsci
+Humalog 100 units/ml KwikPen, Humalog Mix25
+KwikPen
+Lilly France S.A.S., Rue du
+Eli Lilly Italia S.p.A., Via Gramsci
+Humalog 100 units/ml Junior KwikPen
+Lilly France S.A.S., Rue du",France,NA,topup
+Humalog,insulin lispro,A10AB04,"Company, Lilly Technology Center Building 333 and 324, Indianapolis, Indiana, USA","Park, 12.3 KM (PR05), 65th Infantry Road, Carolina,
+Rico 00985
+Recovery
+Company, Lilly Technology Center Building 130, Indianapolis, Indiana, USA
+Park, 12.3 KM (PR05), 65th Infantry Road, Carolina,
+Rico 00985
+Vials
+Industria 30, 28108 Alcobendas, Madrid, Spain.
+Cartridges
+Colonel Lilly, 67640 Fegersheim, France.
+731-733, 50019 Sesto Fiorentino, (FI) Italy.
+100 units/ml KwikPen, Humalog Mix50 100 units/ml
+Humalog 200 units/ml KwikPen
+Colonel Lilly, 67640 Fegersheim, France.
+731-733, 50019 Sesto Fiorentino, (FI) Italy.
+Humalog 100 units/ml Tempo Pen
+Colonel Lilly, 67640 Fegersheim, France.",France,NA,topup
+Abasaglar (previously Abasria),insulin glargine,A10AE04,Lilly del,"12.3 km
+Carolina,
+Puerto
+Eli Lilly
+Indiana",India,1,topup
+Abasaglar (previously Abasria),insulin glargine,A10AE04,"Caribe, Inc.","65th Infantry Road
+PR 00985
+Rico
+Company
+Indianapolis
+46285
+USA",United States,1,topup
+Abasaglar (previously Abasria),insulin glargine,A10AE04,Lilly France S.A.S.,"2, rue du Colonel Lilly
+F-67640 Fegersheim
+France",France,2,topup
+Abasaglar (previously Abasria),insulin glargine,A10AE04,"Eli Lilly Italia S.p.A.,","Via Gramsci 731-733,
+50019 Sesto Fiorentino, (FI)
+Italy.",Italy,2,topup
+Nyvepria,pegfilgrastim,L03AA13,Hospira Zagreb d.o.o.,"Prudnička cesta 60
+10291 Prigorje Brdovečko
+Croatia",Croatia,1,topup
+Abiraterone Mylan,abiraterone acetate,L02BX03,Remedica Ltd.,"Aharnon Street,
+Limassol Industrial Estate,
+3056 Limassol
+Cyprus",Cyprus,2,topup
+Zercepac,trastuzumab,L01FD01,"Shanghai Henlius Biopharmaceutical Co., Ltd.","Building D, 1289 Yishan Road
+Shanghai
+China",China,1,topup
+Zercepac,trastuzumab,L01FD01,Intas Pharmaceuticals Limited,"(Biopharma Division)
+Plot No. 423/P/A
+Sarkhej - Bavla Highway,
+Moraiya (Village), Sanand (Taluka),
+Ahmedabad - 382213, Gujarat, India",India,1,topup
+Zercepac,trastuzumab,L01FD01,Accord Healthcare Polska Sp. z.o.o,"ul Lutomierska 50, 95-200 Pabianice
+Poland",Poland,2,topup
+Abiraterone Krka,abiraterone acetate,L02BX03,"KRKA, d.d., Novo mesto","Šmarješka cesta 6
+8501 Novo mesto
+Slovenia",Slovenia,2,topup
+Abiraterone Krka,abiraterone acetate,L02BX03,TAD Pharma GmbH,"Heinz-Lohmann-Straße 5
+27472 Cuxhaven
+Germany",Germany,2,topup
+Abiraterone Krka,abiraterone acetate,L02BX03,KRKA-FARMA d.o.o.,"V. Holjevca 20/E
+10450 Jastrebarsko
+Croatia",Croatia,2,topup
+Entecavir Viatris (previously Entecavir Mylan),entecavir monohydrate,J05AF10,Mylan Hungary Kft.,"Mylan utca 1,
+Komárom - 2900
+Hungary",Hungary,2,topup
+Entecavir Viatris (previously Entecavir Mylan),entecavir monohydrate,J05AF10,Mylan Germany GmbH,"Zweigniederlassung Bad Homburg v. d. Hoehe, Benzstrasse 1
+Bad Homburg v. d. Hoehe
+Hessen, 61352,
+Germany",Germany,2,topup
+Blincyto,blinatumomab,L01FX07,Lonza Biologics plc,"228 Bath Road
+Slough
+Berkshire, SL1 4DX
+UK",UK,1,topup
+Blincyto,blinatumomab,L01FX07,Amgen Inc,"One Amgen Center Drive
+Thousand Oaks, CA 91320
+USA",United States,1,topup
+Blincyto,blinatumomab,L01FX07,Amgen Europe B.V.,"Minervum 7061
+4817 ZK Breda
+The Netherlands",Netherlands,2,topup
+Blincyto,blinatumomab,L01FX07,Amgen NV,"Telecomlaan 5-7
+1831 Diegem
+Belgium",Belgium,2,topup
+Abiraterone Accord,abiraterone acetate,L02BX03,Synthon Hispania S.L.,"Castelló 1
+Polígono Las Salinas
+08830 Sant Boi de Llobregat
+Spain",Spain,2,topup
+Abiraterone Accord,abiraterone acetate,L02BX03,Synthon B.V.,"Microweg 22
+6545 CM Nijmegen
+The Netherlands
+LABORATORI FUNDACIÓ DAU
+C/ C, 12-14 Pol. Ind. Zona Franca, Barcelona,
+08040 Barcelona, Spain",Spain,2,topup
+Abiraterone Accord,abiraterone acetate,L02BX03,Accord Healthcare Polska Sp. z.o.o.,"ul.Lutomierska 50,
+95-200, Pabianice,
+Poland",Poland,2,topup
+Abiraterone Accord,abiraterone acetate,L02BX03,Pharmadox Healthcare Limited,"KW20A Kordin Industrial Park,
+Paola PLA 3000, Malta",Malta,2,topup
+Aranesp,darbepoetin alfa,B03XA02,Amgen Europe B.V.,"Minervum 7061
+4817 ZK Breda
+The Netherlands",Netherlands,2,topup
+Aranesp,darbepoetin alfa,B03XA02,Amgen Technology (Ireland) Unlimited Company,"Pottery Road
+Dun Laoghaire
+Co Dublin
+Ireland",Ireland,2,topup
+Aranesp,darbepoetin alfa,B03XA02,Amgen NV,"Telecomlaan 5-7
+1831 Diegem
+Belgium",Belgium,2,topup
+Mavenclad,cladribine,L04AA40,NerPharMa S.R.L.,"Viale Pasteur, 10
+20014 Nerviano (MI)
+Italy",Italy,2,topup
+Mavenclad,cladribine,L04AA40,R-Pharm Germany GmbH,"Heinrich-Mack-Strasse 35
+89257 Illertissen
+Germany",Germany,2,topup
+Mavenclad,cladribine,L04AA40,Merck S.L.,"Polígono Merck
+08100 Mollet del Vallés (Barcelona)
+Spain",Spain,2,topup
+Usymro,ustekinumab,L04AC05,"Bio-Thera Solutions, Ltd.","155 Yaotianhe Street
+Huangpu District
+Guangzhou, Guangdong
+China 511356",China,1,topup
+Usymro,ustekinumab,L04AC05,Gedeon Richter Plc.,"Gyömrői út 19-21.
+1103 Budapest
+Hungary",Hungary,2,topup
+Rotarix,"human rotavirus, live attenuated",J07BH01,GlaxoSmithKline Biologicals SA,"Parc de la Noire Epine
+Rue Fleming, 20
+1300 Wavre Belgium",Belgium,1,topup
+Rotarix,"human rotavirus, live attenuated",J07BH01,GlaxoSmithKline Biologicals SA,"Rue de l’Institut 89
+1330 Rixensart
+Belgium",Belgium,2,topup
+Voriconazole Hikma (previously Voriconazole Hospira),voriconazole,J02AC03,Hikma Italia S.p.A.,"Viale Certosa, 10
+27100 Pavia
+Italy",Italy,2,topup
+Levetiracetam Sun,levetiracetam,N03AX14,Sun Pharmaceutical Industries Europe B.V.,"Polarisavenue 87
+NL-2132 JH Hoofddorp
+The Netherlands",Netherlands,2,topup
+Matever,levetiracetam,N03AX14,Pharmathen S.A.,"6, Dervenakion
+EL-15351 Pallini Attiki
+Greece",Greece,2,topup
+Matever,levetiracetam,N03AX14,Pharmathen International S.A.,"Industrial Park Sapes,
+Rodopi Prefecture, Block No 5,
+Rodopi 69300,
+Greece",Greece,2,topup
+Levetiracetam Hospira,levetiracetam,N03AX14,Pfizer Service Company BV,"Hermeslaan 11
+1932 Zaventem
+Belgium",Belgium,2,topup
+Darunavir Viatris (previously Darunavir Mylan),darunavir,J05AE10,Mylan Hungary Kft,"Mylan utca 1, Komárom, 2900,
+Hungary",Hungary,2,topup
+Darunavir Viatris (previously Darunavir Mylan),darunavir,J05AE10,McDermott Laboratories Limited trading as Gerard Laboratories,"35/36 Baldoyle Industrial Estate, Grange Road, Dublin 13
+Ireland",Ireland,2,topup
+Darunavir Viatris (previously Darunavir Mylan),darunavir,J05AE10,Mylan Germany GmbH,"Zweigniederlassung Bad Homburg v. d. Hoehe, Benzstrasse 1
+Bad Homburg v. d. Hoehe
+Hessen, 61352
+Germany",Germany,2,topup
+Hyrimoz,adalimumab,L04AB04,Novartis Pharmaceutical Manufacturing GmbH,"Biochemiestrasse 10
+6336 Langkampfen
+Austria",Austria,1,topup
+Hyrimoz,adalimumab,L04AB04,Novartis Pharmaceutical Manufacturing LLC,"Kolodvorska Cesta 27
+1234 Mengeš
+Slovenia",Slovenia,1,topup
+Hyrimoz,adalimumab,L04AB04,Sandoz GmbH,"Biochemiestrasse 10
+6336 Langkampfen
+Austria",Austria,2,topup
+Pandemic influenza vaccine H5N1 AstraZeneca (previously Pandemic influenza vaccine H5N1 Medimmune),reassortant influenza virus (live attenuated) of the following strain: A/Vietnam/1203/2004 (H5N1) strain,J07BB03,MedImmune UK Limited,"Plot 6, Renaissance Way
+Boulevard Industry Park
+Speke
+Liverpool L24 9JW
+United Kingdom",United Kingdom,1,topup
+Pandemic influenza vaccine H5N1 AstraZeneca (previously Pandemic influenza vaccine H5N1 Medimmune),reassortant influenza virus (live attenuated) of the following strain: A/Vietnam/1203/2004 (H5N1) strain,J07BB03,"AstraZeneca Nijmegen B.V.,","Lagelandseweg 78
+Nijmegen, 6545CG
+Netherlands",Netherlands,2,topup
+Levetiracetam Accord,levetiracetam,N03AX14,"Accord Healthcare Polska Sp.z o.o.,","ul. Lutomierska 50,95-200 Pabianice, Poland",Poland,2,topup
+Levetiracetam Accord,levetiracetam,N03AX14,Accord Healthcare Single Member S.A.,"64th Km National Road Athens, Lamia, 32009, Greece",Greece,2,topup
+Neulasta,pegfilgrastim,L03AA13,Amgen Inc.,"One Amgen Center Drive
+Thousand Oaks
+CA 91320
+USA",United States,1,topup
+Neulasta,pegfilgrastim,L03AA13,Amgen Manufacturing Limited LLC,"Road 31 km. 24.6
+Juncos
+Puerto Rico 00777
+USA",United States,1,topup
+Neulasta,pegfilgrastim,L03AA13,Amgen Europe B.V.,"Minervum 7061
+4817 ZK Breda
+The Netherlands",Netherlands,2,topup
+Neulasta,pegfilgrastim,L03AA13,Amgen Technology (Ireland) Unlimited Company,"Pottery Road
+Dun Laoghaire
+Co Dublin
+Ireland",Ireland,2,topup
+Neulasta,pegfilgrastim,L03AA13,Amgen NV,"Telecomlaan 5-7
+1831 Diegem
+Belgium",Belgium,2,topup
+Baraclude,Entecavir,J05AF10,"Swords Laboratories Unlimited Company T/A Bristol-Myers Squibb Pharmaceutical Operations,","External Manufacturing, Plaza 254, Blanchardstown Corporate Park 2, Dublin 15, D15 T867, Ireland",Ireland,2,topup
+Baraclude,Entecavir,J05AF10,"CATALENT ANAGNI S.R.L., Loc. Fontana del Ceraso snc, Strada Provinciale 12 Casilina, 41,","03012 Anagni (FR), Italy",Italy,2,topup
+Oczyesa,octreotide hydrochloride,H01CB02,Rechon Life Science AB,"Soldattorpsvägen 5
+SE- 216 13 Limhamn
+Sweden",Sweden,2,topup
+mResvia,Respiratory syncytial virus mRNA vaccine (nucleoside modified),J07BX05,"ModernaTX, Inc.","One Moderna Way
+Norwood, MA 02062
+USA",United States,1,topup
+mResvia,Respiratory syncytial virus mRNA vaccine (nucleoside modified),J07BX05,"MODERNA BIOTECH SPAIN, S.L.","C/ Julián Camarillo n° 31
+28037 Madrid
+Spain",Spain,2,topup
+Refixia,nonacog beta pegol,B02BD04,Novo Nordisk A/S,"Brennum Park 25K
+DK-3400 Hillerød
+Denmark
+Novo Nordisk A/S
+Hagedornsvej 1
+DK-2820 Gentofte
+Denmark",Denmark,1,topup
+Refixia,nonacog beta pegol,B02BD04,Novo Nordisk A/S,"Novo Alle
+DK-2880 Bagsværd
+Denmark",Denmark,2,topup
+Accofil,filgrastim,L03AA02,Intas Pharmaceuticals Ltd.,"Plot no: 423/P/A
+Sarkhej Bavla Highway
+Village Moraiya; Taluka Sanand,
+Ahmedabad – 382213 Gujarat
+India",India,1,topup
+Accofil,filgrastim,L03AA02,"Accord Healthcare Polska Sp.z o.o.,","ul. Lutomierska 50,95-200 Pabianice, Poland",Poland,2,topup
+Accofil,filgrastim,L03AA02,"Accord Healthcare Single Member S.A.,","64th Km National Road Athens Lamia,Schimatari,
+32009, Greece",Greece,2,topup
+Pedea,Ibuprofen,C01EB16,Recordati Rare Diseases,"Tour Hekla
+52, avenue du Général de Gaulle
+F- 92800 Puteaux,
+France",France,2,topup
+Pedea,Ibuprofen,C01EB16,Recordati Rare Diseases,"Eco River Parc
+30, rue des Peupliers
+F-92000 Nanterre
+France",France,2,topup
+Pyzchiva,ustekinumab,L04AC05,AGC Biologics A/S,"Vandtårnsvej 83B
+Søborg, 2860
+Denmark",Denmark,1,topup
+Pyzchiva,ustekinumab,L04AC05,Samsung Bioepis NL B.V.,"Olof Palmestraat 10,
+2616 LR Delft
+Netherlands",Netherlands,2,topup
+Usgena,ustekinumab,L04AC05,"Alvotech Hf,","Saemundargata 15-19
+Reykjavik, 102
+Iceland",Iceland,1,topup
+Usgena,ustekinumab,L04AC05,STADA Arzneimittel AG,"Stadastrasse 2–18
+61118 Bad Vilbel
+Germany",Germany,2,topup
+Maviret,glecaprevir;pibrentasvir,J05AP57,AbbVie Deutschland GmbH & Co. KG,"Knollstrasse
+67061 Ludwigshafen
+GERMANY",Germany,2,topup
+Maviret,glecaprevir;pibrentasvir,J05AP57,AbbVie Logistics B.V,"Zuiderzeelaan 53
+8017 JV Zwolle
+NETHERLANDS",Netherlands,2,topup
+Maviret,glecaprevir;pibrentasvir,J05AP57,AbbVie S.r.l.,"S.R. 148 Pontina km 52 SNC
+04011 Campoverde di Aprilia (LT)
+Italy",Italy,2,topup
+Viread,tenofovir disoproxil fumarate,J05AF07,Takeda GmbH,"Lehnitzstrasse 70-98
+D-16515 Oranienburg
+Germany
+Gilead Sciences Ireland UC
+IDA Business & Technology Park
+Carrigtohill
+County Cork
+Ireland",Ireland,2,topup
+Efavirenz/Emtricitabine/Tenofovir disoproxil Mylan,efavirenz;emtricitabine;tenofovir disoproxil maleate,J05AR06,Mylan Hungary Kft,"Mylan utca 1, Komárom 2900,
+Hungary",Hungary,2,topup
+Efavirenz/Emtricitabine/Tenofovir disoproxil Mylan,efavirenz;emtricitabine;tenofovir disoproxil maleate,J05AR06,Mylan Germany GmbH,"Zweigniederlassung Bad Homburg v. d. Hoehe,
+Benzstrasse 1,
+Bad Homburg v. d. Hoehe,
+Hessen, 61352,
+Germany",Germany,2,topup
+Truvada,emtricitabine;tenofovir disoproxil fumarate,J05AR03,Gilead Sciences Ireland UC,"IDA Business & Technology Park
+Carrigtohill
+County Cork
+Ireland",Ireland,2,topup
+Isentress,raltegravir,J05AJ01,Merck Sharp & Dohme B.V.,"Waarderweg 39
+2031 BN Haarlem
+The Netherlands",Netherlands,2,topup
+Zavicefta,avibactam sodium;ceftazidime pentahydrate,J01DD52,ACS Dobfar S.p.A,"VIA A. FLEMING, 2
+VERONA 37135
+ITALY",Italy,2,topup
+Glivec,imatinib,L01EA01,Novartis Pharmaceutical Manufacturing LLC,"Verovskova Ulica 57
+Ljubljana, 1000
+Slovenia
+Lek d.d, PE PROIZVODNJA LENDAVA
+Trimlini 2D
+Lendava, 9220
+Slovenia",Slovenia,2,topup
+Glivec,imatinib,L01EA01,"Novartis Farmacéutica, S.A.","Gran Via de les Corts Catalanes, 764
+08013 Barcelona
+Spain",Spain,2,topup
+Glivec,imatinib,L01EA01,Novartis Pharma GmbH,"Sophie-Germain-Strasse 10
+90443 Nuremberg
+Germany",Germany,2,topup
+Ivemend,fosaprepitant,A04AD12,Merck Sharp & Dohme B. V.,"Waarderweg 39
+2031 BN Haarlem
+The Netherlands",Netherlands,2,topup
+Emend,aprepitant,A04AD12,Merck Sharp & Dohme B. V.,"Waarderweg 39
+2031 BN Haarlem
+The Netherlands",Netherlands,2,topup
+Amsparity,adalimumab,L04AB04,Division of Wyeth Pharmaceuticals LLC,"One Burtt Road
+Andover, MA 01810
+USA",United States,1,topup
+Amsparity,adalimumab,L04AB04,Pfizer Service Company BV,"Hermeslaan 11
+1932 Zaventem
+Belgium",Belgium,2,topup
+Amsparity,adalimumab,L04AB04,Pfizer Manufacturing Belgium NV,"Rijksweg 12
+2870 Puurs-Sint-Amands
+Belgium",Belgium,2,topup
+Voriconazole Accord,voriconazole,J02AC03,Pharmadox Healthcare Ltd.,"KW20A Kordin Industrial Park,
+Paola, PLA 3000
+Malta",Malta,2,topup
+Voriconazole Accord,voriconazole,J02AC03,"Accord Healthcare Polska Sp.z o.o.,","ul. Lutomierska 50,95-200 Pabianice, Poland",Poland,2,topup
+Voriconazole Accord,voriconazole,J02AC03,"Accord Healthcare B.V.,","Winthontlaan 200,
+3526 KV Utrecht,
+The Netherlands",Netherlands,2,topup
+Voriconazole Accord,voriconazole,J02AC03,"Accord Healthcare single member S.A.,","64th Km National Road Athens,
+Lamia, Schimatari, 32009, Greece",Greece,2,topup
+Aqumeldi,Enalapril (maleate),C09AA02,Pharbil Waltrop GmbH,"Im Wirrigen 25
+45731 Waltrop
+Germany",Germany,2,topup
+Idacio,adalimumab,L04AB04,Merck Serono S.A.,"Succursale de Corsier-sur-Vevey
+Chemin du Fenil
+Zone Industrielle B
+1804 Corsier-sur-Vevey
+Switzerland",Switzerland,1,topup
+Idacio,adalimumab,L04AB04,Fresenius Kabi Austria GmbH,"Hafnerstraße 36,
+8055 Graz
+Austria",Austria,2,topup
+Gardasil,human papillomavirus type 6 L1 protein;human papillomavirus type 11 L1 protein;human papillomavirus type 16 L1 protein;human papillomavirus type 18 L1 protein,J07BM01,Merck Sharp & Dohme LLC,"770 Sumneytown Pike
+West Point, Pennsylvania 19486
+USA",United States,1,topup
+Gardasil,human papillomavirus type 6 L1 protein;human papillomavirus type 11 L1 protein;human papillomavirus type 16 L1 protein;human papillomavirus type 18 L1 protein,J07BM01,Merck Sharp & Dohme LLC,"2778 South East Side Highway
+Elkton, Virginia 22827
+USA",United States,1,topup
+Gardasil,human papillomavirus type 6 L1 protein;human papillomavirus type 11 L1 protein;human papillomavirus type 16 L1 protein;human papillomavirus type 18 L1 protein,J07BM01,Boehringer Ingelheim RCV GmbH & Co KG,"Dr. Boehringer-Gasse 5-11
+Meidling, Vienna, 1121
+Austria",Austria,1,topup
+Gardasil,human papillomavirus type 6 L1 protein;human papillomavirus type 11 L1 protein;human papillomavirus type 16 L1 protein;human papillomavirus type 18 L1 protein,J07BM01,Merck Sharp & Dohme B.V.,"Waarderweg 39
+2031 BN Haarlem
+The Netherlands",Netherlands,2,topup
+Qoyvolma,ustekinumab,L04AC05,CELLTRION INC.,"20 Academy-ro 51 beon-gil
+Yeonsu-gu
+22014 Incheon
+Republic of Korea",Republic of Korea,1,topup
+Qoyvolma,ustekinumab,L04AC05,Nuvisan France SARL,"2400, Route des Colles
+06410, Biot
+France",France,2,topup
+Qoyvolma,ustekinumab,L04AC05,MIDAS Pharma GmbH,"Rheinstrasse 49
+55218 West Ingelheim Am Rhein
+Rhineland-Palatinate
+Germany
+Kymos S.L.
+Ronda De Can Fatjo 7b
+Parc Tecnologic Del Valles
+08290 Cerdanyola Del Valles
+Barcelona
+Spain",Spain,2,topup
+Bortezomib Sun,bortezomib,L01XG01,Sun Pharmaceutical Industries Europe B.V.,"Polarisavenue 87
+2132JH HOOFDDORP
+NETHERLANDS",Netherlands,2,topup
+Menveo,"meningococcal group A, C, W-135 and Y conjugate vaccine",J07AH08,GSK Vaccines S.r.l.,"Bellaria-Rosia
+53018 Sovicille (SI)
+Italy",Italy,1,topup
+Arikayce liposomal,amikacin sulfate,J01GB06,Almac Pharma Services (Ireland) Ltd.,"Finnabair Industrial Estate,
+Dundalk, Co. Louth, A91 P9KD,
+Ireland",Ireland,2,topup
+Okedi,risperidone,N05AX08,"ROVI Pharma Industrial Services, S.A.","Julián Camarillo, 35
+28037 Madrid.
+Spain",Spain,2,topup
+Mycamine,micafungin,J02AX05,Astellas Ireland Co. Ltd,"Killorglin
+Co. Kerry
+Ireland",Ireland,2,topup
+Mycamine,micafungin,J02AX05,Haupt Pharma Latina S.r.l.,"Strada Statale 156 Km 47,600
+04100 Borgo San Michele,
+Latina Italy",Italy,2,topup
+Rixathon,rituximab,L01FA01,Novartis Pharmaceutical Manufacturing GmbH,"Biochemiestr. 10
+6336 Langkampfen
+AUSTRIA",Austria,1,topup
+Rixathon,rituximab,L01FA01,Boehringer Ingelheim Pharma GmbH & Co. KG,"Birkendorfer Strasse 65
+88397 Biberach an der Riss
+GERMANY",Germany,1,topup
+Rixathon,rituximab,L01FA01,Sandoz GmbH Schaftenau,"Biochemiestr. 10
+6336 Langkampfen
+AUSTRIA",Austria,2,topup
+Rixathon,rituximab,L01FA01,Lek Pharmaceuticals d.d. Ljubljana,"Verovškova 57
+1526 Ljubljana
+SLOVENIA",Slovenia,2,topup
+Deferasirox Accord,deferasirox,V03AC03,Accord Healthcare Polska Sp.z.o.o.,"Ul. Lutomierska 50,
+96-200, Pabianice, Poland",Poland,2,topup
+Deferasirox Accord,deferasirox,V03AC03,Pharmadox Healthcare Limited,"KW20A Kordin Industrial Park,
+Paola PLA 3000, Malta
+LABORATORI FUNDACIÓ DAU
+C/ C, 12-14 Pol. Ind. Zona Franca,
+Barcelona, 08040 Barcelona, Spain",Spain,2,topup
+Deferasirox Mylan,deferasirox,V03AC03,Mylan Hungary Kft.,"Mylan utca 1
+2900 Komarom
+HUNGARY",Hungary,2,topup
+Deferasirox Mylan,deferasirox,V03AC03,Mylan Germany GmbH,"Zweigniederlassung Bad Homburg v. d. Hoehe
+Benzstrasse 1, Bad Homburg v. d. Hoehe, Hessen, 61352
+GERMANY",Germany,2,topup
+Zefylti,filgrastim,L03AA02,"CuraTeQ Biologics Private Limited,","Survey No. 77/78, Indrakaran Village,
+Kandi Mandal, Sangareddy District,
+Telangana, Hyderabad - 502329,
+India.",India,1,topup
+Zefylti,filgrastim,L03AA02,"APL Swift Services Malta Ltd. HF26, Hal Far Industrial Estate,","Qasam Industrijali Hal Far,
+Birzebbugia, BBG 3000
+Malta",Malta,2,topup
+Truxima,rituximab,L01FA01,"CELLTRION Inc. (Plant I, CLT1),","23 Academy–ro
+Yeonsu-gu, Incheon, 22014, Republic of Korea",Republic of Korea,1,topup
+Truxima,rituximab,L01FA01,"CELLTRION Inc. (Plant II, CLT2),","20, Academy-ro, 51 beon-gil,
+Yeonsu-gu, Incheon, 22014, Republic of Korea",Republic of Korea,1,topup
+Truxima,rituximab,L01FA01,Nuvisan GmbH,"Wegenerstrasse 13, Ludwigsfeld
+89231 Neu-Ulm, Bavaria
+Germany
+Nuvisan France SARL
+2400, Route des Colles,
+06410, Biot,
+France
+KYMOS S.L.
+Ronda de Can Fatjó, 7B Parc Tecnològic del Vallès
+08290 – Cerdanyola del Vallès, Barcelona,
+Spain",Spain,2,topup
+Truxima,rituximab,L01FA01,Midas Pharma GmbH,"Rheinstrasse 49, West Ingelheim Am Rhein,
+Rhineland-Palatinate 55218 Ingelheim
+Germany",Germany,2,topup
+ellaOne,ulipristal,G03AD02,Cenexi,"17 Rue de Pontoise
+95520 Osny
+France",France,2,topup
+ellaOne,ulipristal,G03AD02,Delpharm Lille S.A.S.,"Parc d’activités Roubaix-Est
+22, rue de Toufflers
+CS 50070
+59452 Lys-Lez-Lannoy
+France
+Tablet only:",France,2,topup
+ellaOne,ulipristal,G03AD02,Laboratorios León Farma S.A.,"C/ La Vallina, s/n Pol. Ind. Navatejera
+24008 Navatejera, León
+Spain",Spain,2,topup
+Blitzima,rituximab,L01FA01,"CELLTRION Inc. (Plant I, CLT1),","23 Academy–ro
+Yeonsu-gu, Incheon, 22014, Republic of Korea",Republic of Korea,1,topup
+Blitzima,rituximab,L01FA01,"CELLTRION Inc. (Plant II, CLT2),","20, Academy-ro, 51 beon-gil,
+Yeonsu-gu, Incheon, 22014, Republic of Korea",Republic of Korea,1,topup
+Blitzima,rituximab,L01FA01,Nuvisan GmbH,"Wegenerstrasse 13, Ludwigsfeld
+89231 Neu-Ulm, Bavaria
+Germany
+Nuvisan France SARL
+2400, Route des Colles, 06410, Biot,
+France
+KYMOS S.L.
+Ronda de Can Fatjó, 7B Parc Tecnològic del Vallès
+08290 – Cerdanyola del Vallès, Barcelona,
+Spain",Spain,2,topup
+Blitzima,rituximab,L01FA01,Midas Pharma GmbH,"Rheinstrasse 49, West Ingelheim Am Rhein,
+Rhineland-Palatinate 55218 Ingelheim
+Germany",Germany,2,topup
+Zoledronic acid Teva,zoledronic acid,M05BA08,Pharmachemie B.V.,"Swensweg 5
+2031 GA Haarlem
+The Netherlands",Netherlands,2,topup
+Zoledronic acid Teva,zoledronic acid,M05BA08,PLIVA Croatia Ltd,"Prilaz baruna Filipovića 25
+10 000 Zagreb
+Croatia",Croatia,2,topup
+Xaluprine (previously Mercaptopurine Nova Laboratories),6-mercaptopurine monohydrate,L01BB02,Pronav Clinical Ltd.,"Unit 5
+Dublin Road Business Park
+Carraroe, Sligo
+F91 D439
+Ireland",Ireland,2,topup
+Xaluprine (previously Mercaptopurine Nova Laboratories),6-mercaptopurine monohydrate,L01BB02,Lipomed GmbH,"Hegenheimer Strasse 2
+79576 Weil am Rhein
+Germany",Germany,2,topup
+Jayempi,azathioprine,L04AX01,Lipomed GmbH,"Hegenheimer Strasse 2
+79576 Weil am Rhein
+Germany",Germany,2,topup
+Ogluo,Glucagon,H04AA01,"AcertiPharma B.V.,","Boschstraat 51,
+Breda, 4811 GC,
+Netherlands",Netherlands,2,topup
+Baqsimi,Glucagon,H04AA01,Amphastar France Pharmaceuticals,"Usine Saint Charles
+Eragny Sur Epte
+60590
+France",France,2,topup
+Thalidomide Lipomed,thalidomide,L04AX02,Lipomed GmbH,"Hegenheimer Strasse 2
+79576 Weil am Rhein
+Germany",Germany,2,topup
+Champix,varenicline,N07BA03,Pfizer Manufacturing Deutschland GmbH,"Mooswaldallee 1
+79108 Freiburg Im Breisgau
+Germany",Germany,2,topup
+Champix,varenicline,N07BA03,Pfizer Italia S.r.l.,"Località Marino del Tronto, 63100
+Ascoli Piceno (AP)
+Italy",Italy,2,topup
+Ryjunea,atropine sulfate,S01FA01,Santen Oy,"Kelloportinkatu 1
+33100 Tampere
+Finland",Finland,2,topup
+Hemlibra,emicizumab,B02BX06,"Chugai Pharma Manufacturing Co., Ltd.","5-1, Ukima 5-Chome
+Kita-Ku, Tokyo
+115-8543
+Japan",Japan,1,topup
+Hemlibra,emicizumab,B02BX06,F. Hoffmann-La Roche Ltd.,"Grenzacherstrasse 124
+4070 Basel
+Switzerland",Switzerland,1,topup
+Hemlibra,emicizumab,B02BX06,Roche Pharma AG,"Emil-Barell-Strasse 1
+79639 Grenzach-Wyhlen
+Germany",Germany,2,topup
+Revlimid,lenalidomide,L04AX04,Celgene Distribution B.V.,"Orteliuslaan 1000
+3528 BD Utrecht
+Netherlands",Netherlands,2,topup
+Tenofovir disoproxil Viatris (previously Tenofovir disoproxil Mylan),tenofovir disoproxil,J05AF07,Mylan Hungary Kft,"Mylan utca 1,
+Komarom, 2900,
+Hungary",Hungary,2,topup
+Tenofovir disoproxil Viatris (previously Tenofovir disoproxil Mylan),tenofovir disoproxil,J05AF07,Mylan Germany GmbH,"Zweigniederlassung Bad Homburg v. d. Hoehe,
+Benzstrasse 1,
+Bad Homburg v. d. Hoehe,
+Hessen, 61352,
+Germany",Germany,2,topup
+Lopinavir/Ritonavir Viatris (previously Ritonavir Mylan),lopinavir;ritonavir,J05AR10,Mylan Hungary Kft,"H-2900 Komárom, Mylan utca 1
+Hungary",Hungary,2,topup
+Eurartesim,piperaquine tetraphosphate;artenimol,P01BF05,Alfasigma S.p.A.,"Via Pontina Km 30.400
+IT-00071 Pomezia (RM)
+Italy",Italy,2,topup
+Ebilfumin,oseltamivir,J05AH02,Dupnitsa 2600,Bulgaria,Bulgaria,2,topup
+Exparel liposomal,bupivacaine,N01BB01,Millmount Healthcare Limited,"Block-7
+City North Business Campus
+Stamullen, Co. Meath
+K32 YD60
+Ireland",Ireland,2,topup
+Dazublys,trastuzumab,L01FD01,"CuraTeQ Biologics Private Limited,","Survey No. 77/78, Indrakaran Village, Kandi Mandal, SangaReddy District
+Hyderabad - 502329,
+India",India,1,topup
+Dazublys,trastuzumab,L01FD01,"APL Swift Services Malta Ltd. HF26, Hal Far Industrial Estate,","Qasam Industrijali Hal Far,
+Birzebbugia, BBG 3000
+Malta",Malta,2,topup
+Dyrupeg,pegfilgrastim,L03AA13,"CuraTeQ Biologics Private Limited, Survey No.","77/78, Indrakaran Village, Hyderabad 502329,
+India",India,1,topup
+Dyrupeg,pegfilgrastim,L03AA13,APL Swift Services (Malta) Ltd,"HF26, Hal Far Industrial Estate,
+Qasam Industrijali Hal Far,
+Birzebbugia, BBG 3000
+Malta",Malta,2,topup
+Zometa,zoledronic acid;zoledronic acid monohydrate,M05BA08,Sanochemia Pharmazeutika GmbH,"Landegger-Straße 7
+2491 Neufeld an der Leitha
+Burgenland
+Austria",Austria,2,topup
+Zometa,zoledronic acid;zoledronic acid monohydrate,M05BA08,LABORATORI FUNDACIÓ DAU,"Pol. Ind. Consorci Zona Franca. c/ C, 12-14
+08040 Barcelona
+Spain",Spain,2,topup
+Zometa,zoledronic acid;zoledronic acid monohydrate,M05BA08,Novartis Pharma GmbH,"Roonstrasse 25
+D-90429 Nuremberg
+Germany",Germany,2,topup
+Riximyo,rituximab,L01FA01,Novartis Pharmaceutical Manufacturing GmbH,"Biochemiestr. 10
+6336 Langkampfen
+AUSTRIA",Austria,1,topup
+Riximyo,rituximab,L01FA01,Boehringer Ingelheim Pharma GmbH & Co. KG,"Birkendorfer Strasse 65
+88397 Biberach an der Riss
+GERMANY",Germany,1,topup
+Riximyo,rituximab,L01FA01,Sandoz GmbH Schaftenau,"Biochemiestr. 10
+6336 Langkampfen
+AUSTRIA",Austria,2,topup
+Riximyo,rituximab,L01FA01,Lek Pharmaceuticals d.d. Ljubljana,"Verovškova 57
+1526 Ljubljana
+SLOVENIA",Slovenia,2,topup
+Docetaxel Kabi,docetaxel,L01CD02,Fresenius Kabi Deutschland GmbH,"Pfingstweide 53
+61169 Friedberg
+Germany",Germany,2,topup
+Kalydeco,ivacaftor,R07AX02,Almac Pharma Services (Ireland) Limited,"Finnabair Industrial Estate
+Dundalk
+Co. Louth
+A91 P9KD
+Ireland",Ireland,2,topup
+Kalydeco,ivacaftor,R07AX02,Almac Pharma Services Limited,"Seagoe Industrial Estate
+Craigavon
+Northern Ireland
+BT63 5UA
+United Kingdom",United Kingdom,2,topup
+Kalydeco,ivacaftor,R07AX02,Millmount Healthcare Limited,"Block-7, City North Business Campus
+Stamullen
+Co. Meath
+K32 YD60
+Ireland",Ireland,2,topup
+Nordimet,methotrexate,L04AX03,Cenexi - Laboratoires Thissen S.A. Sever Pharma Solutions AB,"Rue de la Papyrée 2-6 Agneslundsvagen 27
+B-1420 Braine-L'Alleud P.O. Box 590
+Belgium SE-201 25 Malmo
+Sweden",Sweden,2,topup
+Nordimet,methotrexate,L04AX03,FUJIFILM Diosynth Biotechnologies Denmark ApS,"Biotek Allé 1
+3400 Hillerød
+Denmark",Denmark,2,topup
+Fluenz,"influenza virus A/Victoria/4897/2022  (H1N1)pdm09 - like strain (A/Norway/31694/2022, MEDI 369815),    A A/Croatia/10136RV/2023 (H3N2)-like strain (A/Perth/722/2024, MEDI 392611)  B/Austria/1359417/2021 - like strain (B/ Austria/1359417/2021, MEDI 355292)",J07BB03,"MedImmune, UK Limited","Plot 6, Renaissance Way
+Boulevard Industry Park
+Speke
+Liverpool L24 9JW
+United Kingdom",United Kingdom,1,topup
+Fluenz,"influenza virus A/Victoria/4897/2022  (H1N1)pdm09 - like strain (A/Norway/31694/2022, MEDI 369815),    A A/Croatia/10136RV/2023 (H3N2)-like strain (A/Perth/722/2024, MEDI 392611)  B/Austria/1359417/2021 - like strain (B/ Austria/1359417/2021, MEDI 355292)",J07BB03,"AstraZeneca Nijmegen B.V.,","Lagelandseweg 78
+Nijmegen, 6545CG
+Netherlands",Netherlands,2,topup
+Epoetin Alfa Hexal,epoetin alfa,B03XA01,Novartis Pharmaceutical Manufacturing LLC,"Kolodvorska cesta 27
+1234 Menges
+Slovenia",Slovenia,1,topup
+Epoetin Alfa Hexal,epoetin alfa,B03XA01,Sandoz GmbH,"Biochemiestr. 10
+6250 Kundl
+Austria",Austria,2,topup
+Binocrit,epoetin alfa,B03XA01,Novartis Pharmaceutical Manufacturing LLC,"Kolodvorska cesta 27
+1234 Menges
+Slovenia",Slovenia,1,topup
+Binocrit,epoetin alfa,B03XA01,Sandoz GmbH,"Biochemiestr. 10
+6250 Kundl
+Austria",Austria,2,topup
+Abseamed,epoetin alfa,B03XA01,Novartis Pharmaceutical Manufacturing LLC,"Kolodvorska cesta 27
+1234 Menges
+Slovenia",Slovenia,1,topup
+Abseamed,epoetin alfa,B03XA01,Sandoz GmbH,"Biochemiestr. 10
+6250 Kundl
+Austria",Austria,2,topup
+Capecitabine Teva,capecitabine,L01BC06,Teva Czech Industries s.r.o.,"Ostravska 29, c.p. 305,
+74770 Opava-Komarov
+Czech Republic",Czech Republic,2,topup
+Ituxredi,rituximab,L01FA01,"Dr. Reddy’s Laboratories Ltd.,","Biologics, Survey No. 47 & 44 (Part),
+Bachupally Village,
+Bachupally Mandal, Medchal-Malkajgiri District,
+Pincode 500090,
+Telangana State,
+India.",India,1,topup
+Filgrastim Hexal,filgrastim,L03AA02,Novartis Pharmaceutical Manufacturing GmbH,"Biochemiestrasse 10
+6250 Kundl
+Austria",Austria,1,topup
+Filgrastim Hexal,filgrastim,L03AA02,Sandoz GmbH,"Biochemiestrasse 10
+6336 Langkampfen
+Austria",Austria,2,topup
+Filgrastim Hexal,filgrastim,L03AA02,Novartis Pharmaceutical Manufacturing GmbH,"Biochemiestrasse 10
+6336 Langkampfen
+Austria",Austria,2,topup
+Zarzio,filgrastim,L03AA02,Novartis Pharmaceutical Manufacturing GmbH,"Biochemiestrasse 10
+6250 Kundl
+Austria",Austria,1,topup
+Zarzio,filgrastim,L03AA02,Sandoz GmbH,"Biochemiestrasse 10
+6336 Langkampfen
+Austria",Austria,2,topup
+Zarzio,filgrastim,L03AA02,Novartis Pharmaceutical Manufacturing GmbH,"Biochemiestrasse 10
+6336 Langkampfen
+Austria",Austria,2,topup
+Neoatricon,dopamine hydrochloride;Dopamine,C01CA04,Pharmadox Healthcare Ltd.,"KW20A Kordin Industrial Park,
+Paola PLA3000,
+Malta.",Malta,2,topup
+Emtricitabine/Tenofovir disoproxil Mylan,emtricitabine;tenofovir disoproxil maleate,J05AR03,Mylan Hungary Kft,"Mylan utca 1, Komárom, 2900,
+Hungary
+Medis International a.s
+Bolatice, Prumyslova 961/16,
+747 23 Bolatice, Czech Republic",Czech Republic,2,topup
+Emtricitabine/Tenofovir disoproxil Mylan,emtricitabine;tenofovir disoproxil maleate,J05AR03,Mylan Germany GmbH,"Zweigniederlassung Bad Homburg v. d. Hoehe, Benzstrasse 1
+Bad Homburg v. d. Hoehe
+Hessen, 61352,
+Germany",Germany,2,topup
+Tresiba,insulin degludec,A10AE06,Novo Nordisk A/S,"Hallas Alle 1
+DK-4400 Kalundborg
+Denmark
+Novo Nordisk A/S
+Novo Alle 1
+DK-2880 Bagsvaerd
+Denmark",Denmark,1,topup
+Tresiba,insulin degludec,A10AE06,Tresiba Penfill,"Novo
+Novo
+DK-2880
+Tresiba FlexTouch
+Novo
+Novo
+DK-2880
+Novo Nordisk
+45 Avenue
+28000
+Tresiba FlexPen
+Novo
+Novo
+DK-2880
+Novo Nordisk
+45 Avenue
+28000",Denmark,2,topup
+Tresiba,insulin degludec,A10AE06,Nordisk A/S,"Alle 1
+Bagsvaerd
+Denmark
+200 units/mL
+Nordisk A/S
+Alle 1
+Bagsvaerd
+Denmark
+Production SAS
+D Orleans
+Chartres
+France
+FlexTouch 100 units/mL
+Nordisk A/S
+Alle 1
+Bagsvaerd
+Denmark
+Production SAS
+D Orleans
+Chartres
+France",France,2,topup
+Tolucombi,telmisartan;hydrochlorothiazide,C09DA07,KRKA-POLSKA Sp.z. o.o.,"ul. Równoległa 5
+02-235 Warszawa
+Poland",Poland,2,topup
+Tolucombi,telmisartan;hydrochlorothiazide,C09DA07,"KRKA, d.d., Novo mesto","Šmarješka cesta 6
+8501 Novo mesto
+Slovenia",Slovenia,2,topup
+Tolucombi,telmisartan;hydrochlorothiazide,C09DA07,TAD Pharma GmbH,"Heinz-Lohmann-Straße 5
+27472 Cuxhaven
+Germany",Germany,2,topup
+Colobreathe,Colistimethate sodium,J01XB01,Teva Pharmaceuticals Europe BV,"Swensweg 5
+2031 GA Haarlem
+The Netherlands",Netherlands,2,topup
+Colobreathe,Colistimethate sodium,J01XB01,Millmount Healthcare Limited,"Block 7, City North Business Campus
+Stamullen
+Co Meath
+K32 YD60
+Ireland",Ireland,2,topup
+Colobreathe,Colistimethate sodium,J01XB01,Merckle GmbH,"Ludwig-Merckle-Str-3
+89143 Blaubeuren
+Germany",Germany,2,topup
+Colobreathe,Colistimethate sodium,J01XB01,"Laboratorios Liconsa, S.A.","Avda. Miralcampo, 7, Pol. Ind.
+Miralcampo
+19200 Azuqueca de Henares (Guadalajara)
+Spain",Spain,2,topup
+Phelinun,melphalan hydrochloride,L01AA03,NERPHARMA S.R.L.,"Viale Pasteur, 10
+20014 Nerviano (MI)
+Italy
+ADIENNE S.r.l. S.U.
+Via Galileo Galilei, 19
+20867 Caponago (MB) Italy",Italy,2,topup
+Zerbaxa,ceftolozane sulfate;tazobactam sodium,J01DI54,FAREVA Mirabel,"Route de Marsat
+Riom
+63963, Clermont-Ferrand Cedex 9
+France",France,2,topup
+Nyxoid,naloxone hydrochloride dihydrate,V03AB15,Mundipharma DC B.V.,"Leusderend 16
+3832 RC Leusden
+Netherlands",Netherlands,2,topup
+Zeffix,lamivudine,J05AF05,Delpharm Poznań Spółka Akcyjna,"ul. Grunwaldzka 189
+60-322 Poznan
+Poland",Poland,2,topup
+Zeffix,lamivudine,J05AF05,GlaxoSmithKline Trading Services Limited,"12 Riverwalk
+Citywest Business Campus
+Dublin 24
+Ireland
+D24 YK11",Ireland,2,topup
+Privigen,human normal immunoglobulin (IVIg),J06BA02,CSL Behring AG,"Wankdorfstrasse 10, 3000 Bern 22
+Switzerland",Switzerland,1,topup
+Privigen,human normal immunoglobulin (IVIg),J06BA02,CSL Behring (Australia) Pty Ltd,"189-209 Camp Road
+Broadmeadows, Vic 3047, Australia",Australia,1,topup
+Privigen,human normal immunoglobulin (IVIg),J06BA02,CSL Behring GmbH,"Emil-von-Behring-Strasse 76
+D-35041 Marburg
+Germany",Germany,2,topup
+Pelgraz,pegfilgrastim,L03AA13,Intas Pharmaceuticals Limited,"Plot no 423 / P/A
+Sarkhej Bavla Highway
+Village Moraiya, Taluka Sanand,
+Ahmedabad – 382213
+Gujarat
+INDIA",India,1,topup
+Pelgraz,pegfilgrastim,L03AA13,"Accord Healthcare Polska Sp.z o.o.,","ul. Lutomierska 50,95-200 Pabianice, Poland",Poland,2,topup
+Pelgraz,pegfilgrastim,L03AA13,"Accord Healthcare Single Member S.A.,","64th Km National Road Athens
+Lamia, Schimatari, 32009, Greece",Greece,2,topup
+Bortezomib Hospira,bortezomib,L01XG01,"Pfizer Service Company BV,","Hoge Wei 10,
+1930 Zaventem,
+Belgium",Belgium,2,topup
+Deqsiga,human normal immunoglobulin,J06BA02,Baxalta Belgium Manufacturing SA,"Boulevard René Branquart 80
+7860 Lessines
+Belgium",Belgium,1,topup
+Actelsar HCT,telmisartan;hydrochlorothiazide,C09DA07,Actavis Ltd.,"BLB016
+Bulebel Industrial Estate
+Zejtun ZTN 3000
+Malta",Malta,2,topup
+Tacforius,tacrolimus monohydrate,L04AD02,Merckle GmbH,"Ludwig-Merckle-Strasse 3
+89143 Blaubeuren
+Germany",Germany,2,topup
+Tacforius,tacrolimus monohydrate,L04AD02,PLIVA Hrvatska d.o.o.,"Prilaz baruna Filipovica 25
+10 000 Zagreb
+Croatia",Croatia,2,topup
+Tacforius,tacrolimus monohydrate,L04AD02,TEVA Czech Industries s.r.o.,"Ostravská 29, č.p. 305
+Opava - Komárov
+747 70
+Czech Republic",Czech Republic,2,topup
+Tacforius,tacrolimus monohydrate,L04AD02,Teva Operations Poland Sp. z o.o.,"ul. Mogilska 80
+31-546 Krakow
+Poland",Poland,2,topup
+Tacforius,tacrolimus monohydrate,L04AD02,Teva Pharma S.L.U.,"C/C, n. 4, Poligono Industrial Malpica
+ES-50016 Zaragoza
+Spain",Spain,2,topup
+Tacforius,tacrolimus monohydrate,L04AD02,Teva Pharmaceutical Works Private Limited Company,"Pallagi Ut 13
+4042 Debrecen
+Hungary",Hungary,2,topup
+Imatinib Accord,imatinib,L01EA01,"Accord Healthcare Polska Sp.z o.o.,","ul. Lutomierska 50,95-200 Pabianice, Poland",Poland,2,topup
+Imatinib Accord,imatinib,L01EA01,Accord Healthcare Single Member S.A.,"64th Km National Road Athens,
+Lamia, Schimatari, 32009, Greece",Greece,2,topup
+Ecansya (previously Capecitabine Krka),capecitabine,L01BC06,"KRKA, d.d., Novo mesto","Šmarješka cesta 6
+8501 Novo mesto
+Slovenia",Slovenia,2,topup
+Capecitabine Accord,capecitabine,L01BC06,"Accord Healthcare Polska Sp.z o.o.,","ul. Lutomierska 50,95-200 Pabianice, Poland",Poland,2,topup
+Capecitabine Accord,capecitabine,L01BC06,"Accord Healthcare B.V.,","Winthontlaan 200,
+3526 KV Utrecht,
+The Netherlands",Netherlands,2,topup
+Capecitabine Accord,capecitabine,L01BC06,Accord Healthcare Single Member S.A.,"64th Km National Road Athens,
+Lamia, 32009,
+Greece",Greece,2,topup
+NeoRecormon,epoetin beta,B03XA01,Roche Diagnostics GmbH,"Nonnenwald 2
+D-82377 Penzberg
+Germany",Germany,1,topup
+NeoRecormon,epoetin beta,B03XA01,Roche Pharma AG,"Emil-Barell-Strasse 1
+D-79639 Grenzach-Wyhlen
+Germany",Germany,2,topup
+Xeloda,capecitabine,L01BC06,Excella GmbH & Co. KG,"Nuernberger Str. 12
+90537 Feucht
+Germany",Germany,2,topup
+Xeloda,capecitabine,L01BC06,CHEPLAPHARM Arzneimittel GmbH,"Ziegelhof 23-24
+17489 Greifswald
+Germany",Germany,2,topup
+Alprolix,eftrenonacog alfa,B02BD04,Biogen Inc.,"5000 Davis Drive
+Research Triangle Park
+North Carolina
+27709-4627
+United States",United States,1,topup
+Alprolix,eftrenonacog alfa,B02BD04,Lonza Biologics Inc.,"101 International Drive
+Portsmouth
+New Hampshire
+03801
+United States",United States,1,topup
+Alprolix,eftrenonacog alfa,B02BD04,Swedish Orphan Biovitrum AB (publ),"Norra Stationsgatan 93, 113 64
+Stockholm
+Sweden",Sweden,2,topup
+Twynsta,telmisartan;amlodipine,C09DB04,Boehringer Ingelheim Pharma GmbH & Co. KG,"Binger Strasse 173
+55216 Ingelheim am Rhein
+Germany",Germany,2,topup
+Twynsta,telmisartan;amlodipine,C09DB04,Rottendorf Pharma GmbH,"Ostenfelder Straße 51 - 61
+59320 Ennigerloh
+Germany",Germany,2,topup
+Twynsta,telmisartan;amlodipine,C09DB04,Boehringer Ingelheim France,"100-104 Avenue de France
+75013 Paris
+France",France,2,topup
+Tamiflu,oseltamivir,J05AH02,Roche Pharma AG,"Emil-Barell-Str. 1
+D- 79639 Grenzach –Wyhlen
+Germany",Germany,2,topup
+Mircera,Methoxy polyethylene glycol-epoetin beta,B03XA03,Roche Diagnostics GmbH,"Werk Penzberg
+Nonnenwald 2
+82377 Penzberg
+Germany",Germany,1,topup
+Mircera,Methoxy polyethylene glycol-epoetin beta,B03XA03,Roche Pharma AG,"Emil-Barrell-Strasse 1
+79639 Grenzach-Wyhlen
+Germany",Germany,2,topup
+Stelara,ustekinumab,L04AC05,Janssen BiologicsB.V.,"Einsteinweg 101
+NL-2333 CB Leiden
+The Netherlands
+JanssenSciences Ireland UC
+Barnahely
+Ringaskiddy
+Co. Cork
+Ireland",Ireland,1,topup
+Stelara,ustekinumab,L04AC05,Janssen BiologicsB.V.,"Einsteinweg 101
+NL-2333 CB Leiden
+The Netherlands",Netherlands,2,topup
+Quinsair,levofloxacin,J01MA12,Adare Pharmaceuticals S.r.l.,"Via Martin Luther King, 13
+20060 Pessano con Bornago (MI)
+Italy",Italy,2,topup
+Amgevita,adalimumab,L04AB04,Amgen Inc,"One Amgen Center Drive
+Thousand Oaks, California
+91320
+United States
+Immunex Rhode Island Corporation
+40 Technology Way
+West Greenwich
+Rhode Island, 02817
+United States",United States,1,topup
+Amgevita,adalimumab,L04AB04,Amgen Europe B.V.,"Minervum 7061
+4817 ZK Breda
+The Netherlands",Netherlands,2,topup
+Amgevita,adalimumab,L04AB04,Amgen Technology Ireland UC,"Pottery Road
+Dun Laoghaire, Co Dublin
+Ireland",Ireland,2,topup
+Amgevita,adalimumab,L04AB04,Amgen NV,"Telecomlaan 5-7
+1831 Diegem
+Belgium",Belgium,2,topup
+Tenofovir disoproxil Zentiva,tenofovir disoproxil phosphate,J05AF07,S.C. Zentiva S.A.,"50 Theodor Pallady Blvd.
+Bucharest 032266
+Romania",Romania,2,topup
+Tenofovir disoproxil Zentiva,tenofovir disoproxil phosphate,J05AF07,Winthrop Arzneimittel GmbH,"Brüningstraße 50
+65926 Frankfurt am Main
+Germany",Germany,2,topup
+Emtricitabine/Tenofovir disoproxil Zentiva,emtricitabine;tenofovir disoproxil phosphate,J05AR03,S.C. Zentiva S.A.,"50 Theodor Pallady Blvd.
+Bucharest 032266
+Romania",Romania,2,topup
+Efavirenz/Emtricitabine/Tenofovir disoproxil Zentiva,efavirenz;emtricitabine;tenofovir disoproxil phosphate,J05AR06,S.C. Zentiva S.A.,"Bvd. Theodor Pallady, nr. 50
+Sector 3
+032266 Bucharest
+Romania",Romania,2,topup
+Gencebok,Caffeine citrate,N06BC01,Cenexi,"52 rue Marcel et Jacques Gaucher
+94120 Fontenay Sous-Bois
+France",France,2,topup
+Gencebok,Caffeine citrate,N06BC01,Gennisium Pharma,"Swen Parc de Vitrolles (Bâtiment E)
+Chemin de la Bastide Blanche
+13127 Vitrolles
+France",France,2,topup
+BeneFIX,nonacog alfa,B02BD04,Division of Wyeth Pharmaceuticals LLC,"One Burtt Road
+Andover MA 01810
+USA",United States,1,topup
+BeneFIX,nonacog alfa,B02BD04,Wyeth Farma S.A.,"Autovia del Norte. A-1, Km. 23. Desvio Algete, Km. 1, 28700 San Sebastian de los Reyes, Madrid
+Spain",Spain,2,topup
+Tarceva,erlotinib,L01EB02,Delpharm Milano S.r.l.,"Via Carnevale 1
+20054 Segrate
+Italy",Italy,2,topup
+Tarceva,erlotinib,L01EB02,CHEPLAPHARM Registration GmbH,"Weiler Straße 5e
+79540 Lörrach
+Germany",Germany,2,topup
+Modigraf,tacrolimus,L04AD02,Astellas Ireland Co. Ltd,"Killorglin
+Co. Kerry, V93FC86
+Ireland",Ireland,2,topup
+Envarsus,tacrolimus,L04AD02,Chiesi Farmaceutici S.p.A.,"Via San Leonardo 96
+43122 Parma
+Italy",Italy,2,topup
+Envarsus,tacrolimus,L04AD02,Rottendorf Pharma GmbH,"Ostenfelder Strasse 51-61
+D-59320 Ennigerloh
+Germany",Germany,2,topup
+Envarsus,tacrolimus,L04AD02,Chiesi Pharmaceuticals GmbH,"Gonzagagasse 16/16
+1010 Wien
+Austria",Austria,2,topup
+Advagraf,tacrolimus,L04AD02,Astellas Ireland Co. Ltd,"Killorglin
+Co. Kerry, V93FC86
+Ireland",Ireland,2,topup
+GoResp Digihaler (previously Budesonide/Formoterol Teva Pharma B.V.),Budesonide;formoterol fumarate dihydrate,R03AK07,Teva Operations Poland,"Mogilska
+31-546",Poland,2,topup
+Bortezomib Fresenius Kabi,bortezomib,L01XG01,Fresenius Kabi Deutschland GmbH,"Pfingstweide 53
+61169 Friedberg,
+Germany",Germany,2,topup
+Bortezomib Fresenius Kabi,bortezomib,L01XG01,"Fresenius Kabi Polska Sp. z.o.o.,","ul. Sienkiewicza 25, Kutno,
+99-300, Poland",Poland,2,topup
+Docetaxel Accord,docetaxel,L01CD02,"Accord Healthcare Polska Sp.z o.o.,","ul. Lutomierska 50,95-200 Pabianice, Poland",Poland,2,topup
+Docetaxel Accord,docetaxel,L01CD02,Accord Healthcare Single Member S.A.,"64th Km National Road Athens, Lamia, Schimatari, 32009, Greece",Greece,2,topup
+Nimenrix,Neisseria meningitidis group A polysaccharide conjugated to tetanus toxoid;Neisseria meningitidis group C polysaccharide conjugated to tetanus toxoid;Neisseria meningitidis group W-135 polysaccharide conjugated to tetanus toxoid;Neisseria meningitidis group Y polysaccharide conjugated to tetanus toxoid,J07AH08,Pfizer Ireland Pharmaceuticals Unlimited Company,"Grange Castle Business Park
+Nangor Road
+Dublin 22
+D22 V8F8
+Ireland",Ireland,1,topup
+Nimenrix,Neisseria meningitidis group A polysaccharide conjugated to tetanus toxoid;Neisseria meningitidis group C polysaccharide conjugated to tetanus toxoid;Neisseria meningitidis group W-135 polysaccharide conjugated to tetanus toxoid;Neisseria meningitidis group Y polysaccharide conjugated to tetanus toxoid,J07AH08,Pfizer Manufacturing Belgium NV,"Rijksweg 12
+2870 Puurs-Sint-Amands
+Belgium",Belgium,2,topup
+Emtricitabine/Tenofovir disoproxil Krka d.d.,emtricitabine;tenofovir disoproxil succinate,J05AR03,"KRKA, d.d., Novo mesto","Šmarješka cesta 6
+8501 Novo mesto
+Slovenia",Slovenia,2,topup
+Emtricitabine/Tenofovir disoproxil Krka d.d.,emtricitabine;tenofovir disoproxil succinate,J05AR03,TAD Pharma GmbH,"Heinz-Lohmann-Straße 5
+27472 Cuxhaven
+Germany",Germany,2,topup
+Emtricitabine/Tenofovir disoproxil Krka,emtricitabine;tenofovir disoproxil succinate,J05AR03,"KRKA, d.d., Novo mesto","Šmarješka cesta 6
+8501 Novo mesto
+Slovenia",Slovenia,2,topup
+Emtricitabine/Tenofovir disoproxil Krka,emtricitabine;tenofovir disoproxil succinate,J05AR03,TAD Pharma GmbH,"Heinz-Lohmann-Straße 5
+27472 Cuxhaven
+Germany",Germany,2,topup
+Darunavir Krka,darunavir,J05AE10,"KRKA, d.d., Novo mesto","Šmarješka cesta 6
+8501 Novo mesto
+Slovenia",Slovenia,2,topup
+Darunavir Krka,darunavir,J05AE10,TAD Pharma GmbH,"Heinz-Lohmann-Straße 5
+27472 Cuxhaven
+Germany",Germany,2,topup
+Thalidomide BMS (previously Thalidomide Celgene),thalidomide,L04AX02,Celgene Distribution B.V.,"Orteliuslaan 1000
+3528 BD Utrecht
+Netherlands",Netherlands,2,topup
+Efavirenz/Emtricitabine/Tenofovir disoproxil Krka,efavirenz;emtricitabine;tenofovir disoproxil succinate,J05AR06,"KRKA, d.d., Novo mesto","Šmarješka cesta 6
+8501 Novo mesto
+Slovenia",Slovenia,2,topup
+Efavirenz/Emtricitabine/Tenofovir disoproxil Krka,efavirenz;emtricitabine;tenofovir disoproxil succinate,J05AR06,TAD Pharma GmbH,"Heinz-Lohmann-Straße5
+27472 Cuxhaven
+Germany",Germany,2,topup
+Kinzalkomb,telmisartan;hydrochlorothiazide,C09DA07,Bayer AG,"Kaiser-Wilhelm-Allee
+51368 Leverkusen
+Germany",Germany,2,topup
+PritorPlus,telmisartan;hydrochlorothiazide,C09DA07,Bayer AG,"Kaiser-Wilhelm-Allee
+51368 Leverkusen
+Germany",Germany,2,topup
+Idelvion,albutrepenonacog alfa,B02BD04,CSL Behring GmbH,"Emil-von-Behring Strasse 76
+35041 Marburg
+Germany",Germany,1,topup
+Onivyde pegylated liposomal (previously Onivyde),irinotecan anhydrous free-base,L01CE02,Ipsen Pharma Biotech,"Parc d’Activités du Plateau de Signes
+Chemin Départemental 402
+83870 Signes
+France
+Les Laboratoires Servier Industrie
+905 Route de Saran
+45520 Gidy
+France",France,2,topup
+Rixubis,nonacog gamma,B02BD04,Takeda Manufacturing Austria AG,"Uferstrasse15
+2304Orthan der Donau
+Austria",Austria,1,topup
+Rixubis,nonacog gamma,B02BD04,Takeda Manufacturing Singapore Pte. Ltd.,"2A Woodlands Industrial Park D Street 2
+Singapore 737779",Singapore,1,topup
+Rixubis,nonacog gamma,B02BD04,Baxalta Belgium Manufacturing SA,"Boulevard RenéBranquart80
+B-7860Lessines
+Belgium",Belgium,2,topup
+Buccolam,midazolam,N05CD08,"Neuraxpharm Pharmaceuticals, S.L.","Avda. Barcelona 69
+08970 Sant Joan Despí
+Barcelona - Spain",Spain,2,topup
+Zytiga,abiraterone acetate,L02BX03,Janssen-Cilag SpA,"Via C. Janssen
+IT-04100 Borgo San Michele
+Latina
+Italy",Italy,2,topup
+Velcade,bortezomib,L01XG01,Janssen Pharmaceutica NV,"Turnhoutseweg 30
+B-2340 Beerse
+Belgium",Belgium,2,topup
+Peyona (previously Nymusa),Caffeine citrate,N06BC01,Alfasigma S.p.A.,"Via Enrico Fermi
+IT-65020 Alanno (PE)
+Italy",Italy,2,topup
+Peyona (previously Nymusa),Caffeine citrate,N06BC01,Chiesi Pharmaceuticals GmbH,"Gonzagagasse 16/16
+1010 Wien
+Austria",Austria,2,topup
+Tevagrastim,filgrastim,L03AA02,UAB Teva Baltics,"Molėtų pl. 5
+08409 Vilnius
+Lithuania",Lithuania,1,topup
+Tevagrastim,filgrastim,L03AA02,Merckle GmbH,"Graf-Arco-Straße 3
+89079 Ulm
+Germany",Germany,2,topup
+Ratiograstim,filgrastim,L03AA02,UAB Teva Baltics,"Molėtų pl. 5
+08409 Vilnius
+Lithuania",Lithuania,1,topup
+Ratiograstim,filgrastim,L03AA02,Merckle GmbH,"Graf-Arco-Straße 3
+89079 Ulm
+Germany",Germany,2,topup
+Fasturtec,rasburicase,V03AF07,Sanofi Winthrop Industrie,"Route d’Avignon
+30390 Aramon
+France",France,1,topup
+Fasturtec,rasburicase,V03AF07,Sanofi S.r.l.,"Via Valcanello, 4
+03012 Anagni (FR)
+Italy",Italy,2,topup
+Aclasta,zoledronic acid,M05BA08,Novartis Pharma GmbH,"Roonstraße 25
+D-90429 Nuremberg
+Germany",Germany,2,topup
+Aclasta,zoledronic acid,M05BA08,"LEK Pharmaceuticals d.d.,","Verovškova ulica 57,
+1526 Ljubljana,
+Slovenia",Slovenia,2,topup
+Taxotere,docetaxel,L01CD02,Sanofi-Aventis Deutschland GmbH,"Industriepark Höchst
+65926 Frankfurt am Main
+Germany",Germany,2,topup
+Taxotere,docetaxel,L01CD02,Sanofi-Aventis Zrt.,"(Harbor Park) 1, Campona utca
+Budapest 1225
+Hungary",Hungary,2,topup
+Prezista,darunavir,J05AE10,Janssen Pharmaceutica NV Janssen-Cilag SpA,"Turnhoutseweg30 Via C. Janssen
+B-2340Beerse Borgo San Michele
+Belgium 04100 Latina
+Italy",Italy,2,topup
+Entecavir Accord,Entecavir,J05AF10,Pharmadox Healthcare Ltd.,"KW20A Kordin Industrial Park
+Paola, PLA 3000
+Malta",Malta,2,topup
+Entecavir Accord,Entecavir,J05AF10,"Accord Healthcare Polska Sp.z o.o.,","ul. Lutomierska 50,95-200 Pabianice, Poland",Poland,2,topup
+DuoResp Spiromax,Budesonide;formoterol fumarate dihydrate,R03AK07,Norton (Waterford) Limited,"Unit 27/35 IDA Industrial Park
+Cork Road
+Waterford
+Republic of Ireland",Ireland,2,topup
+DuoResp Spiromax,Budesonide;formoterol fumarate dihydrate,R03AK07,Teva Operations Poland Sp. z o.o.,"Mogilska 80 Str. 31-546 Kraków
+Poland",Poland,2,topup
+BiResp Spiromax,Budesonide;formoterol fumarate dihydrate,R03AK07,Norton (Waterford) Limited,"Unit 27/35 IDA Industrial Park
+Cork Road
+Waterford
+Republic of Ireland",Ireland,2,topup
+Byannli (previously Paliperidone Janssen-Cilag International),paliperidone palmitate,N05AX13,Janssen Pharmaceutica NV,"Turnhoutseweg 30
+B-2340 Beerse
+Belgium",Belgium,2,topup
+Trevicta (previously Paliperidone Janssen),paliperidone palmitate,N05AX13,Janssen Pharmaceutica NV,"Turnhoutseweg 30
+B-2340 Beerse
+Belgium",Belgium,2,topup
+Xeplion,paliperidone palmitate,N05AX13,Janssen Pharmaceutica NV,"Turnhoutseweg 30
+B-2340 Beerse
+Belgium",Belgium,2,topup
+Invega,paliperidone,N05AX13,Janssen-Cilag SpA,"Via C. Janssen
+IT-04100Borgo San Michele
+Latina
+Italy",Italy,2,topup
+Lamivudine Teva,lamivudine,J05AF05,Teva Pharmaceutical Works Private Limited Company,"Pallagi út 13
+Debrecen H-4042
+Hungary",Hungary,2,topup
+Lamivudine Teva,lamivudine,J05AF05,Pharmachemie B.V.,"Swensweg 5
+2031 GA Haarlem
+The Netherlands",Netherlands,2,topup
+Lamivudine Teva,lamivudine,J05AF05,Teva Operations Poland Sp.z o. o.,"Mogilska 80 Str.
+31-546 Kraków
+Poland",Poland,2,topup
+Niapelf,paliperidone palmitate,N05AX13,"Neuraxpharm Pharmaceuticals, S.L.","Avda. Barcelona 69
+08970 Sant Joan Despí
+Barcelona - Spain",Spain,2,topup
+Catiolanze,Latanoprost,S01EE01,Santen Oy,"Kelloportinkatu 1
+33100 Tampere
+Finland",Finland,2,topup
+Flebogamma DIF (previously Flebogammadif),human normal immunoglobulin,J06BA02,"Instituto Grifols, S.A.","Polígono Levante
+Can Guasc, 2,
+E-08150 Parets del Vallès
+Barcelona, Spain",Spain,1,topup
+Flebogamma DIF (previously Flebogammadif),human normal immunoglobulin,J06BA02,"Instituto Grifols, S.A.","Polígono Levante
+Can Guasc, 2
+E-08150 Parets del Vallès
+Barcelona, Spain",Spain,2,topup
+Spectrila,asparaginase,L01XX02,Wacker Biotech GmbH,"Hans-Knoell-Str. 3
+07745 Jena
+Germany",Germany,1,topup
+Eporatio,epoetin theta,B03XA01,Teva Biotech GmbH,"Dornierstraße 10
+89079 Ulm
+Germany",Germany,1,topup
+Eporatio,epoetin theta,B03XA01,Merckle GmbH,"Graf-Arco-Straße 3
+89079 Ulm
+Germany",Germany,2,topup
+Biopoin,epoetin theta,B03XA01,Teva Biotech GmbH,"Dornierstraße 10
+89079 Ulm
+Germany",Germany,1,topup
+Biopoin,epoetin theta,B03XA01,Merckle GmbH,"Graf-Arco-Straße 3
+89079 Ulm
+Germany",Germany,2,topup
+Zoledronic acid Actavis,zoledronic acid monohydrate,M05BA08,Actavis Italy S.p.A,"Via Pasteur, 10
+20014 Nerviano (MI)
+Italy",Italy,2,topup
+Stocrin,efavirenz,J05AG03,Merck Sharp & Dohme B.V.,"Waarderweg 39
+PO Box 581
+2003 PC Haarlem
+The Netherlands",Netherlands,2,topup
+Lamivudine Teva Pharma B.V.,lamivudine,J05AF05,Teva Pharmaceutical Works Private Limited Company,"Pallagi út 13
+Debrecen H-4042
+Hungary",Hungary,2,topup
+Lamivudine Teva Pharma B.V.,lamivudine,J05AF05,Pharmachemie B.V.,"Swensweg 5
+2031 GA Haarlem
+The Netherlands",Netherlands,2,topup
+Efavirenz Teva,efavirenz,J05AG03,PLIVA Hrvatska d.o.o. (PLIVA Croatia Ltd.),"Prilaz baruna Filipovića 25
+10000 Zagreb,
+Croatia",Croatia,2,topup
+Hemangiol,propranolol hydrochloride,C07AA05,Farmea,"10, rue Bouché Thomas
+ZAC d'Orgemont
+F-49000 Angers
+France
+PIERRE FABRE MEDICAMENT PRODUCTION
+Site PROGIPHARM, Rue du Lycée
+45500 GIEN
+France",France,2,topup
+Epivir,lamivudine,J05AF05,Delpharm Poznań Spółka Akcyjna,"ul. Grunwaldzka 189
+60-322 Poznan
+Poland",Poland,2,topup
+Epivir,lamivudine,J05AF05,ViiV Healthcare Trading Services UK Limited,"12 Riverwalk,
+Citywest Business Campus
+Dublin 24,
+Ireland",Ireland,2,topup
+Combivir,lamivudine;zidovudine,J05AR01,Delpharm Poznań Spółka Akcyjna,"ul. Grunwaldzka 189
+60-322 Poznan
+Poland",Poland,2,topup
+Kiovig,human normal immunoglobulin (IVIg),J06BA02,Baxalta Belgium ManufacturingSA,"Boulevard René Branquart80
+B-7860Lessines
+Belgium",Belgium,1,topup
+Kiovig,human normal immunoglobulin (IVIg),J06BA02,Baxalta Belgium Manufacturing SA,"Boulevard René Branquart80
+B-7860Lessines
+Belgium",Belgium,2,topup
+Dukoral,recombinant cholera toxin B subunit;vibrio cholerae 01,J07AE01,Valneva Sweden AB,"Gunnar Asplunds allé 16
+SE-171 69 Solna
+Sweden",Sweden,1,topup
+Stimufend,pegfilgrastim,L03AA13,FUJIFILM Diosynth Biotechnologies UK Ltd,"Belasis Avenue
+Billingham TS23 1LH
+United Kingdom",United Kingdom,1,topup
+Stimufend,pegfilgrastim,L03AA13,Fresenius Kabi Austria GmbH,"Hafnerstrasse 36
+8055 Graz
+Austria",Austria,2,topup
+Lenalidomide Krka d.d. Novo mesto (previously Lenalidomide Krka),lenalidomide hydrochloride monohydrate,L04AX04,"KRKA, d.d., Novo mesto","Šmarješka cesta 6
+8501 Novo mesto
+Slovenia",Slovenia,2,topup
+Lenalidomide Krka d.d. Novo mesto (previously Lenalidomide Krka),lenalidomide hydrochloride monohydrate,L04AX04,KRKA –FARMA d.o.o.,"V. Holjevca 20/E
+10450 Jastrebarsko
+Croatia",Croatia,2,topup
+Lenalidomide Krka d.d. Novo mesto (previously Lenalidomide Krka),lenalidomide hydrochloride monohydrate,L04AX04,TAD Pharma GmbH,"Heinz-Lohmann-Straße 5
+27472 Cuxhaven
+Germany",Germany,2,topup
+Zoledronic Acid Hospira,zoledronic acid monohydrate,M05BA08,Pfizer Service Company BVBA,"Hoge Wei 10
+1930 Zaventem
+Belgium",Belgium,2,topup
+Levemir,Insulin detemir,A10AE05,Novo Nordisk A/S,"Novo Allé
+DK-2880 Bagsværd
+Denmark
+Novo Nordisk A/S
+Hallas Allé
+DK-4400 Kalundborg
+Denmark",Denmark,1,topup
+Levemir,Insulin detemir,A10AE05,Levemir InnoLet,"Novo
+Novo
+DK-2880
+Levemir Penfill
+Novo
+Novo
+DK-2880
+Novo Nordisk
+45,
+F-28000",Denmark,2,topup
+Levemir,Insulin detemir,A10AE05,FlexTouch,"Nordisk A/S
+Allé
+Bagsværd
+Denmark
+FlexPen
+Nordisk A/S
+Allé
+Bagsværd
+Denmark
+Production SAS
+Avenue d’Orléans
+Chartres
+France",France,2,topup
+Silapo,epoetin zeta,B03XA01,Norbitec GmbH,"Pinnauallee 4
+D-25436 Uetersen
+Germany",Germany,1,topup
+Silapo,epoetin zeta,B03XA01,STADA Arzneimittel AG,"Stadastrasse 2-18
+D-61118 Bad Vilbel
+Germany",Germany,2,topup
+Insulatard,Insulin human,A10AC01,Novo Nordisk A/S Novo Nordisk A/S,"Novo Allé Hallas Allé
+DK-2880 Bagsværd DK-4400 Kalundborg
+Denmark Denmark",Denmark,1,topup
+Insulatard,Insulin human,A10AC01,Insulatard vial (40 international units/ml),"Novo
+Novo
+DK-2880
+Insulatard vial (100 international units/ml), Penfill
+Novo
+Novo
+DK-2880
+Novo Nordisk
+45,
+F-28000",Denmark,2,topup
+Insulatard,Insulin human,A10AC01,InnoLet:,"Nordisk A/S
+Allé
+Bagsværd
+Denmark
+FlexPen:
+Nordisk A/S
+Allé
+Bagsværd
+Denmark
+Production SAS
+Avenue d’Orléans
+Chartres
+France",France,2,topup
+Protaphane,Insulin human,A10AC01,Novo Nordisk A/S Novo Nordisk A/S,"Novo Allé Hallas Allé
+DK-2880 Bagsværd DK-4400 Kalundborg
+Denmark Denmark",Denmark,1,topup
+Protaphane,Insulin human,A10AC01,Protaphane vial (40 international units/ml),"Novo
+Novo
+DK-2880
+Protaphane vial (100 international units/ml), Penfill
+Novo
+Novo
+DK-2880
+Novo Nordisk
+45,
+F-28000",Denmark,2,topup
+Protaphane,Insulin human,A10AC01,InnoLet:,"Nordisk A/S
+Allé
+Bagsværd
+Denmark
+FlexPen:
+Nordisk A/S
+Allé
+Bagsværd
+Denmark
+Production SAS
+Avenue d’Orléans
+Chartres
+France",France,2,topup

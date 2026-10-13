@@ -1,0 +1,137 @@
+atc_code,eml_medicine,eml_atc_origin
+A01AA04,fluoride,eml_direct
+A02BA02,ranitidine,eml_direct
+A06AA02,docusate sodium,eml_direct
+A07EA01,prednisolone,eml_direct
+A07EA02,hydrocortisone,eml_direct
+A11AA01,multiple micronutrient powder; multiple micronutrient supplement,eml_direct
+B01AD01,streptokinase,eml_direct
+B03AD03,ferrous salt + folic acid,eml_direct
+B05AA05,dextran 70,eml_direct
+B05XA02,sodium hydrogen carbonate,eml_direct
+B05XA05,magnesium sulfate,eml_direct
+C02DB02,hydralazine,eml_direct
+C03DB01,amiloride,eml_direct
+C05AA09,dexamethasone,eml_direct
+C09AA02,enalapril,eml_direct
+C09BB03,lisinopril + amlodipine,eml_direct
+D01AE13,selenium sulfide,eml_direct
+D01BA01,griseofulvin,eml_direct
+D05AX02,calcipotriol,eml_direct
+D08AE05,chloroxylenol,eml_direct
+D08AG03,potassium iodide,eml_direct
+D08AX06,potassium permanganate,eml_direct
+G02AB03,ergometrine,eml_direct
+G02BA02,copper-containing intrauterine device,eml_direct
+G02CB03,cabergoline,eml_direct
+G03AA05,ethinylestradiol + norethisterone,eml_direct
+G03AA08,estradiol cypionate + medroxyprogesterone acetate,eml_direct
+G03GB02,clomifene,eml_direct
+G03XB51,mifepristone - misoprostol,eml_direct
+J01AA02,doxycycline,eml_direct
+J01BA01,chloramphenicol,eml_direct
+J01CA01,ampicillin,eml_direct
+J01CA04,amoxicillin,eml_direct
+J01CE01,benzylpenicillin,eml_direct
+J01CE02,phenoxymethylpenicillin,eml_direct
+J01CE08,benzathine benzylpenicillin,eml_direct
+J01CE09,procaine benzylpenicillin,eml_direct
+J01CF02,cloxacillin; dicloxacillin; flucloxacillin; meticillin; nafcillin; oxacillin,eml_direct
+J01CR02,amoxicillin + clavulanic acid,eml_direct
+J01CR05,piperacillin + tazobactam,eml_direct
+J01DC02,cefuroxime,eml_direct
+J01DD01,cefotaxime,eml_direct
+J01DD02,ceftazidime,eml_direct
+J01DD04,ceftriaxone,eml_direct
+J01DD08,cefixime,eml_direct
+J01DD52,ceftazidime + avibactam,eml_direct
+J01DI54,ceftolozane + tazobactam,eml_direct
+J01EA01,trimethoprim,eml_direct
+J01EE01,sulfamethoxazole + trimethoprim,eml_direct
+J01FA09,clarithromycin; erythromycin,eml_direct
+J01FA10,azithromycin,eml_direct
+J01FF01,clindamycin,eml_direct
+J01GA01,streptomycin (injection),eml_direct
+J01GB03,gentamicin,eml_direct
+J01GB06,amikacin,eml_direct
+J01GB14,plazomicin,eml_direct
+J01MA02,ciprofloxacin,eml_direct
+J01MA12,levofloxacin,eml_direct
+J01XA01,vancomycin,eml_direct
+J01XB01,colistin (injection),eml_direct
+J01XB02,polymyxin B (injection),eml_direct
+J01XX01,fosfomycin (injection),eml_direct
+J01XX04,spectinomycin,eml_direct
+J04AA01,p-aminosalicylate sodium,eml_direct
+J04AB01,cycloserine,eml_direct
+J04AB05,rifapentine,eml_direct
+J04AD03,ethionamide,eml_direct
+J04AM02,isoniazid + rifampicin,eml_direct
+J04AM05,isoniazid + pyrazinamide + rifampicin,eml_direct
+J04AM06,ethambutol + isoniazid + pyrazinamide + rifampicin,eml_direct
+J04BA01,clofazimine,eml_direct
+J05AP01,ribavirin,eml_direct
+J05AP07,daclatasvir; daclatasvir + sofosbuvir,eml_direct
+J05AP13,ravidasvir,eml_direct
+J05AR11,efavirenz + lamivudine + tenofovir,eml_direct
+J05AR23,atazanavir + ritonavir,eml_direct
+J05AR27,dolutegravir + lamivudine + tenofovir,eml_direct
+J06AA01,diphtheria antitoxin,eml_direct
+J06BD04,ansuvimab,eml_direct
+J07AF01,diphtheria vaccine,eml_direct
+J07AH01,meningococcal meningitis vaccine,eml_direct
+J07AH02,meningococcal meningitis vaccine,eml_direct
+J07AH03,meningococcal meningitis vaccine,eml_direct
+J07AH04,meningococcal meningitis vaccine,eml_direct
+J07AH05,meningococcal meningitis vaccine,eml_direct
+J07AH06,meningococcal meningitis vaccine,eml_direct
+J07AH10,meningococcal meningitis vaccine,eml_direct
+J07BA03,Japanese encephalitis vaccine,eml_direct
+J07BD01,measles vaccine,eml_direct
+J07BE01,mumps vaccine,eml_direct
+J07BF01,poliomyelitis vaccine,eml_direct
+J07BF02,poliomyelitis vaccine,eml_direct
+J07BF04,poliomyelitis vaccine,eml_direct
+J07BJ01,rubella vaccine,eml_direct
+J07BX01,mpox vaccine,eml_direct
+J07XA01,malaria vaccine,eml_direct
+L01FF02,pembrolizumab,eml_direct
+L01FX07,blinatumomab,eml_direct
+L04AX01,azathioprine,eml_direct
+N03AX09,lamotrigine,eml_direct
+N04BA02,levodopa + carbidopa,eml_direct
+N05AH04,quetiapine,eml_direct
+N06AA04,clomipramine,eml_direct
+P01AC01,diloxanide,eml_direct
+P01BA03,primaquine,eml_direct
+P01BA06,amodiaquine - sulfadoxine + pyrimethamine,eml_direct
+P01BC01,quinine,eml_direct
+P01BD51,amodiaquine - sulfadoxine + pyrimethamine; sulfadoxine + pyrimethamine,eml_direct
+P01BE02,artemether,eml_direct
+P01BF02,artesunate + mefloquine,eml_direct
+P01BF03,artesunate + amodiaquine,eml_direct
+P01BF06,artesunate + pyronaridine,eml_direct
+P01BF09,artesunate - sulfadoxine + pyrimethamine,eml_direct
+P01CA02,benznidazole,eml_direct
+P01CA03,fexinidazole,eml_direct
+P01CB01,meglumine antimoniate,eml_direct
+P01CB02,sodium stibogluconate,eml_direct
+P01CD01,melarsoprol,eml_direct
+P01CX03,eflornithine,eml_direct
+P01CX04,miltefosine,eml_direct
+P02BA02,oxamniquine,eml_direct
+P02BX04,triclabendazole,eml_direct
+P02CB02,diethylcarbamazine,eml_direct
+P02CE01,levamisole,eml_direct
+R06AE03,cyclizine,eml_direct
+S01AA09,tetracycline,eml_direct
+S01AA10,natamycin,eml_direct
+S01AA17,erythromycin,eml_direct
+S01EA01,epinephrine,eml_direct
+S01HA03,tetracaine,eml_direct
+S02AA10,acetic acid,eml_direct
+S02AA14,gentamicin,eml_direct
+V03AB03,sodium calcium edetate,eml_direct
+V03AB08,sodium nitrite,eml_direct
+V03AB09,dimercaprol,eml_direct
+V08AC02,meglumine iotroxate,eml_direct

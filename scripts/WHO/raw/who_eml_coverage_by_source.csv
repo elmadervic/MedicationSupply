@@ -1,0 +1,599 @@
+atc_code,eml_medicine,eml_atc_origin,n_germany,n_ireland,n_cep,n_ema,on_eu_list
+A01AA01,fluoride,eml_direct,20,0,0,0,FALSE
+A01AA04,fluoride,eml_direct,0,0,0,0,FALSE
+A01AB17,metronidazole,eml_direct,4,0,0,0,FALSE
+A02BA02,ranitidine,eml_direct,0,0,0,0,FALSE
+A02BC01,omeprazole,eml_direct,491,39,0,0,FALSE
+A03BA01,atropine,eml_direct,0,3,1,0,FALSE
+A03BB01,hyoscine butylbromide,eml_direct,45,1,0,0,FALSE
+A03FA01,metoclopramide,eml_direct,0,7,0,0,FALSE
+A04AA01,ondansetron,eml_direct,386,18,0,0,FALSE
+A04AA05,palonosetron,name_lookup_hpra,54,1,0,3,FALSE
+A04AD01,hyoscine hydrobromide,eml_direct,3,0,0,0,FALSE
+A04AD12,aprepitant,eml_direct,190,3,0,2,FALSE
+A06AA02,docusate sodium,eml_direct,0,0,0,0,FALSE
+A06AB06,senna,eml_direct,4,0,0,0,FALSE
+A06AD11,lactulose,eml_direct,34,0,0,0,FALSE
+A06AX01,glycerol,name_lookup_hpra,27,1,0,0,FALSE
+A07AA02,nystatin,eml_direct,9,1,0,0,FALSE
+A07AA06,paromomycin,eml_direct,20,0,0,0,FALSE
+A07AA09,vancomycin,eml_direct,29,4,0,0,FALSE
+A07BA01,activated charcoal,eml_direct,0,1,0,0,FALSE
+A07CA,oral rehydration salts; oral rehydration salts - zinc sulfate,eml_direct,0,0,0,0,FALSE
+A07DA03,loperamide,eml_direct,99,4,0,0,FALSE
+A07EA01,prednisolone,eml_direct,0,0,0,0,FALSE
+A07EA02,hydrocortisone,eml_direct,0,0,0,0,FALSE
+A07EC01,sulfasalazine,eml_direct,34,0,0,0,FALSE
+A07EC02,mesalazine,name_lookup_hpra,480,22,0,0,FALSE
+A09AA02,pancreatic enzymes,eml_direct,117,11,0,0,FALSE
+A10AB04,"insulin (analogue, rapid-acting)",eml_direct,244,0,0,10,FALSE
+A10AB05,"insulin (analogue, rapid-acting)",eml_direct,0,0,0,6,FALSE
+A10AB06,"insulin (analogue, rapid-acting)",eml_direct,112,0,0,1,FALSE
+A10AC01,"insulin (human, intermediate-acting); insulin (human, short-acting)",eml_direct,0,4,0,7,FALSE
+A10AE04,"insulin (analogue, long-acting); insulin glargine",eml_direct,143,0,0,9,FALSE
+A10AE05,"insulin (analogue, long-acting)",eml_direct,44,0,0,3,FALSE
+A10AE06,"insulin (analogue, long-acting)",eml_direct,0,0,0,3,FALSE
+A10BA02,metformin,eml_direct,744,38,0,0,FALSE
+A10BB09,gliclazide,eml_direct,78,3,0,0,FALSE
+A10BJ02,liraglutide,eml_other_row_same_medicine,113,4,0,5,FALSE
+A10BJ06,semaglutide,eml_direct,150,0,0,13,FALSE
+A10BK01,dapagliflozin,name_lookup_hpra,270,4,0,6,FALSE
+A10BK03,empagliflozin,eml_direct,37,0,0,4,FALSE
+A11AA01,multiple micronutrient powder; multiple micronutrient supplement,eml_direct,0,0,0,0,FALSE
+A11CA01,retinol,eml_direct,2,0,0,0,FALSE
+A11CC01,ergocalciferol,eml_direct,14,0,0,0,FALSE
+A11CC04,calcitriol,eml_other_row_same_medicine,85,0,0,0,FALSE
+A11CC05,colecalciferol,eml_direct,204,8,0,0,FALSE
+A11DA01,thiamine,eml_direct,21,0,0,0,FALSE
+A11GA01,ascorbic acid,eml_direct,82,0,0,0,FALSE
+A11HA01,nicotinamide,eml_direct,1,0,0,0,FALSE
+A11HA02,pyridoxine,eml_direct,16,0,0,0,FALSE
+A11HA04,riboflavin,eml_direct,5,0,0,0,FALSE
+A12AA03,calcium gluconate,eml_direct,6,0,0,0,FALSE
+A12AA20,calcium,eml_direct,6,0,0,0,FALSE
+A12BA01,potassium chloride,eml_direct,1,1,0,0,FALSE
+A12CB01,zinc sulfate,eml_direct,22,0,0,0,FALSE
+B01AA03,warfarin,eml_direct,0,12,0,0,FALSE
+B01AB01,heparin sodium,eml_direct,0,11,0,0,FALSE
+B01AB05,enoxaparin,eml_direct,696,14,0,3,FALSE
+B01AC04,clopidogrel,eml_direct,0,15,0,6,FALSE
+B01AC06,acetylsalicylic acid,eml_direct,84,2,0,0,FALSE
+B01AD01,streptokinase,eml_direct,0,0,0,0,FALSE
+B01AD02,alteplase,eml_direct,0,8,0,0,FALSE
+B01AE07,dabigatran,eml_direct,0,23,0,5,FALSE
+B01AF01,rivaroxaban,name_lookup_hpra,0,35,0,10,FALSE
+B01AF02,apixaban,name_lookup_hpra,703,43,0,8,FALSE
+B01AF03,edoxaban,name_lookup_hpra,247,16,0,1,FALSE
+B02AA02,tranexamic acid,eml_direct,0,7,8,0,FALSE
+B02BA01,phytomenadione,eml_direct,0,2,0,0,FALSE
+B02BD01,"coagulation factor IX, plasma-derived",eml_direct,0,8,0,0,FALSE
+B02BD02,"coagulation factor VIII, plasma-derived; coagulation factor VIII, recombinant",eml_direct,0,12,0,15,FALSE
+B02BD04,"coagulation factor IX, plasma-derived; coagulation factor IX, recombinant",eml_direct,0,0,0,11,FALSE
+B02BX06,emicizumab,eml_direct,23,0,0,3,FALSE
+B03AA02,ferrous salt,eml_direct,4,1,0,0,FALSE
+B03AA07,ferrous salt,eml_direct,32,0,0,0,FALSE
+B03AD02,ferrous salt + folic acid,eml_direct,1,0,0,0,FALSE
+B03AD03,ferrous salt + folic acid,eml_direct,0,1,0,0,FALSE
+B03AD05,ferrous salt + folic acid,eml_direct,1,0,0,0,FALSE
+B03BA03,hydroxocobalamin,eml_direct,0,3,0,0,FALSE
+B03BB01,folic acid,eml_direct,20,3,0,0,FALSE
+B03XA01,erythropoiesis-stimulating agents,eml_direct,349,0,0,17,FALSE
+B03XA02,erythropoiesis-stimulating agents,eml_direct,353,0,0,3,FALSE
+B03XA03,erythropoiesis-stimulating agents,eml_direct,121,0,0,2,FALSE
+B05AA02,cryoprecipitate (pathogen-reduced),eml_direct,0,0,0,0,FALSE
+B05AA05,dextran 70,eml_direct,0,0,0,0,FALSE
+B05AA06,polygeline,eml_other_row_same_medicine,0,1,0,0,FALSE
+B05AX01,red blood cells,eml_direct,207,0,0,0,FALSE
+B05AX02,platelets,eml_direct,482,0,0,0,FALSE
+B05AX03,fresh-frozen plasma,eml_direct,232,0,0,0,FALSE
+B05BB01,compound sodium lactate solution,eml_direct,0,32,0,0,FALSE
+B05BB02,glucose + sodium chloride,eml_direct,132,5,0,0,FALSE
+B05BC01,mannitol,eml_direct,0,8,3,0,FALSE
+B05CX01,glucose,eml_direct,15,0,0,0,FALSE
+B05XA01,potassium chloride,eml_direct,0,11,4,0,FALSE
+B05XA02,sodium hydrogen carbonate,eml_direct,0,0,0,0,FALSE
+B05XA03,sodium chloride,eml_direct,16,1,0,0,FALSE
+B05XA05,magnesium sulfate,eml_direct,0,1,0,0,FALSE
+C01AA05,digoxin,eml_direct,0,5,6,0,FALSE
+C01BB01,lidocaine,eml_direct,0,0,8,0,FALSE
+C01BD01,amiodarone,eml_direct,0,7,0,0,FALSE
+C01CA04,dopamine,eml_direct,0,3,0,1,FALSE
+C01CA24,epinephrine,eml_direct,0,15,5,2,FALSE
+C01CA26,ephedrine,eml_direct,0,9,0,0,FALSE
+C01DA02,glyceryl trinitrate,eml_direct,0,22,0,0,FALSE
+C01DA08,isosorbide dinitrate,eml_direct,59,0,0,0,FALSE
+C01EA01,alprostadil (prostaglandin E1),eml_direct,25,0,0,0,FALSE
+C01EB16,ibuprofen,eml_direct,3,0,0,3,FALSE
+C02AB01,methyldopa,eml_direct,0,0,0,0,FALSE
+C02DB02,hydralazine,eml_direct,0,0,0,0,FALSE
+C02DD01,sodium nitroprusside,eml_direct,0,0,0,0,FALSE
+C03AA03,hydrochlorothiazide,eml_direct,99,0,0,0,FALSE
+C03CA01,furosemide,eml_direct,0,29,9,0,FALSE
+C03CA02,bumetanide,name_lookup_hpra,0,2,0,0,FALSE
+C03CA04,torasemide,name_lookup_hpra,362,2,0,0,FALSE
+C03DA01,spironolactone,eml_direct,116,5,0,1,FALSE
+C03DB01,amiloride,eml_direct,0,0,0,0,FALSE
+C05AA09,dexamethasone,eml_direct,0,0,0,0,FALSE
+C07AA05,propranolol,eml_direct,0,12,0,1,FALSE
+C07AB02,metoprolol,name_lookup_hpra,234,4,0,0,FALSE
+C07AB03,atenolol,eml_other_row_same_medicine,56,6,0,0,FALSE
+C07AB07,bisoprolol,eml_direct,14,94,0,0,FALSE
+C07AG02,carvedilol,name_lookup_hpra,330,5,0,0,FALSE
+C08CA01,amlodipine,eml_direct,5,49,0,0,FALSE
+C08CA05,nifedipine,eml_direct,43,0,0,0,FALSE
+C08DA01,verapamil,eml_direct,0,11,0,0,FALSE
+C09AA02,enalapril,eml_direct,0,22,0,1,FALSE
+C09BA03,lisinopril + hydrochlorothiazide,eml_direct,169,6,0,0,FALSE
+C09BB03,lisinopril + amlodipine,eml_direct,0,0,0,0,FALSE
+C09BX01,perindopril + amlodipine + indapamide,eml_direct,87,12,0,0,FALSE
+C09CA01,losartan,eml_direct,441,20,0,0,FALSE
+C09DA07,telmisartan + hydrochlorothiazide,eml_direct,154,6,0,9,FALSE
+C09DB04,telmisartan + amlodipine,eml_direct,32,0,0,3,FALSE
+C09DX01,valsartan + amlodipine + hydrochlorothiazide,eml_direct,11,18,0,9,FALSE
+C10AA01,simvastatin,eml_direct,4,70,0,0,FALSE
+C10AA03,pravastatin,name_lookup_hpra,0,21,0,0,FALSE
+C10AA04,fluvastatin,name_lookup_hpra,0,3,0,0,FALSE
+C10AA05,atorvastatin,name_lookup_hpra,40,116,0,0,FALSE
+C10BX06,acetylsalicylic acid + atorvastatin + ramipril,eml_direct,14,0,0,0,FALSE
+C10BX11,atorvastatin + perindopril + amlodipine,eml_direct,60,0,0,0,FALSE
+D01AC02,miconazole,eml_direct,2,1,0,0,FALSE
+D01AE12,salicylic acid,eml_direct,1,0,0,0,FALSE
+D01AE13,selenium sulfide,eml_direct,0,0,0,0,FALSE
+D01AE15,terbinafine,eml_direct,24,5,0,0,FALSE
+D01BA01,griseofulvin,eml_direct,0,0,0,0,FALSE
+D02AB,calamine,eml_direct,0,0,0,0,FALSE
+D02AE01,urea,eml_direct,3,0,0,0,FALSE
+D05AA,coal tar,eml_direct,0,0,0,0,FALSE
+D05AX02,calcipotriol,eml_direct,0,2,0,0,FALSE
+D06AX09,mupirocin,eml_direct,4,0,0,0,FALSE
+D06BA01,silver sulfadiazine,eml_direct,17,0,0,0,FALSE
+D06BB04,podophyllum resin,eml_direct,40,0,0,0,FALSE
+D07AA02,hydrocortisone,eml_direct,85,0,0,0,FALSE
+D07AC01,betamethasone,eml_direct,95,9,0,0,FALSE
+D07AC13,mometasone,name_lookup_hpra,67,2,0,0,FALSE
+D08AC02,chlorhexidine,eml_direct,2,0,0,0,FALSE
+D08AE05,chloroxylenol,eml_direct,0,0,0,0,FALSE
+D08AG02,povidone iodine,eml_direct,28,2,0,0,FALSE
+D08AG03,potassium iodide,eml_direct,0,0,0,0,FALSE
+D08AX06,potassium permanganate,eml_direct,0,0,0,0,FALSE
+D08AX08,alcohol based hand rub; ethanol,eml_direct,33,0,0,0,FALSE
+D10AE01,benzoyl peroxide,eml_direct,28,0,0,0,FALSE
+G01AF02,clotrimazole,eml_direct,79,3,0,0,FALSE
+G02AB03,ergometrine,eml_direct,0,0,0,0,FALSE
+G02AD02,dinoprostone (prostaglandin E2),eml_other_row_same_medicine,0,4,0,0,FALSE
+G02AD06,misoprostol,eml_direct,10,1,0,0,FALSE
+G02BA02,copper-containing intrauterine device,eml_direct,0,0,0,0,FALSE
+G02BA03,levonorgestrel,eml_direct,90,7,0,0,FALSE
+G02BB01,ethinylestradiol + etonogestrel,eml_direct,23,0,0,0,FALSE
+G02CB03,cabergoline,eml_direct,0,3,0,0,FALSE
+G03AA05,ethinylestradiol + norethisterone,eml_direct,0,0,0,0,FALSE
+G03AA07,ethinylestradiol + levonorgestrel,eml_direct,416,7,0,0,FALSE
+G03AA08,estradiol cypionate + medroxyprogesterone acetate,eml_direct,0,0,0,0,FALSE
+G03AC01,norethisterone; norethisterone enantate,eml_direct,6,1,0,0,FALSE
+G03AC03,levonorgestrel; levonorgestrel-releasing implant,eml_direct,15,0,0,0,FALSE
+G03AC06,medroxyprogesterone acetate,eml_direct,42,1,0,0,FALSE
+G03AC08,etonogestrel-releasing implant,eml_direct,5,5,0,0,FALSE
+G03AD01,levonorgestrel,eml_direct,27,3,0,0,FALSE
+G03AD02,ulipristal,eml_direct,44,2,0,3,FALSE
+G03BA03,testosterone,eml_direct,169,8,0,0,FALSE
+G03DA02,medroxyprogesterone acetate,eml_direct,5,0,0,0,FALSE
+G03DA04,progesterone vaginal ring,eml_direct,151,12,0,0,FALSE
+G03DC02,norethisterone,eml_other_row_same_medicine,0,0,0,0,FALSE
+G03GB02,clomifene,eml_direct,0,0,0,0,FALSE
+G03XB51,mifepristone - misoprostol,eml_direct,0,0,0,0,FALSE
+H01BA02,desmopressin,eml_direct,0,11,11,0,FALSE
+H01BB02,oxytocin,eml_direct,0,5,6,0,FALSE
+H01BB03,carbetocin,eml_direct,0,1,0,0,FALSE
+H01CB02,octreotide,eml_direct,302,14,0,1,FALSE
+H02AA02,fludrocortisone,eml_direct,0,2,0,0,FALSE
+H02AB02,dexamethasone,eml_direct,265,6,0,1,FALSE
+H02AB04,methylprednisolone,eml_direct,0,8,8,0,FALSE
+H02AB06,prednisolone,eml_direct,0,10,12,0,FALSE
+H02AB08,triamcinolone hexacetonide,eml_direct,115,0,0,0,FALSE
+H02AB09,hydrocortisone,eml_direct,0,15,13,3,FALSE
+H03AA01,levothyroxine,eml_direct,982,16,0,0,FALSE
+H03BA02,propylthiouracil,eml_direct,0,1,2,0,FALSE
+H03BB02,methimazole,eml_direct,0,0,2,0,FALSE
+H03CA,iodine; iodine + potassium iodide (Lugol's solution),eml_direct,3,0,0,0,FALSE
+H04AA01,glucagon,eml_direct,0,1,0,2,FALSE
+J01AA02,doxycycline,eml_direct,0,9,0,0,FALSE
+J01BA01,chloramphenicol,eml_direct,0,0,0,0,FALSE
+J01CA01,ampicillin,eml_direct,0,0,0,0,FALSE
+J01CA04,amoxicillin,eml_direct,0,19,0,0,FALSE
+J01CE01,benzylpenicillin,eml_direct,0,10,0,0,FALSE
+J01CE02,phenoxymethylpenicillin,eml_direct,0,10,0,0,FALSE
+J01CE08,benzathine benzylpenicillin,eml_direct,0,0,0,0,FALSE
+J01CE09,procaine benzylpenicillin,eml_direct,0,0,0,0,FALSE
+J01CF02,cloxacillin; dicloxacillin; flucloxacillin; meticillin; nafcillin; oxacillin,eml_direct,0,0,0,0,FALSE
+J01CR02,amoxicillin + clavulanic acid,eml_direct,0,39,0,0,FALSE
+J01CR05,piperacillin + tazobactam,eml_direct,0,14,0,0,FALSE
+J01DB01,cefalexin,eml_direct,25,1,0,0,FALSE
+J01DB04,cefazolin,eml_direct,78,0,0,0,FALSE
+J01DC02,cefuroxime,eml_direct,0,28,0,0,FALSE
+J01DD01,cefotaxime,eml_direct,0,12,0,0,FALSE
+J01DD02,ceftazidime,eml_direct,0,11,0,0,FALSE
+J01DD04,ceftriaxone,eml_direct,0,10,0,0,FALSE
+J01DD08,cefixime,eml_direct,0,2,0,0,FALSE
+J01DD52,ceftazidime + avibactam,eml_direct,0,0,0,1,FALSE
+J01DH02,imipenem + cilastatin; meropenem,eml_direct,196,13,0,0,FALSE
+J01DH52,meropenem + vaborbactam,eml_direct,2,0,0,0,FALSE
+J01DI04,cefiderocol,eml_direct,1,0,0,0,FALSE
+J01DI54,ceftolozane + tazobactam,eml_direct,0,0,0,1,FALSE
+J01EA01,trimethoprim,eml_direct,0,6,6,0,FALSE
+J01EC02,sulfadiazine,eml_direct,2,0,0,0,FALSE
+J01EE01,sulfamethoxazole + trimethoprim,eml_direct,0,6,0,0,FALSE
+J01FA09,clarithromycin; erythromycin,eml_direct,0,49,15,0,FALSE
+J01FA10,azithromycin,eml_direct,0,15,18,0,FALSE
+J01FF01,clindamycin,eml_direct,0,14,0,0,FALSE
+J01GA01,streptomycin (injection),eml_direct,0,0,0,0,FALSE
+J01GB01,tobramycin,name_lookup_hpra,0,8,4,2,FALSE
+J01GB03,gentamicin,eml_direct,0,6,0,0,FALSE
+J01GB06,amikacin,eml_direct,0,5,0,1,FALSE
+J01GB14,plazomicin,eml_direct,0,0,0,0,FALSE
+J01MA02,ciprofloxacin,eml_direct,0,29,8,0,FALSE
+J01MA12,levofloxacin,eml_direct,0,10,0,1,FALSE
+J01MA14,moxifloxacin,eml_direct,96,1,0,0,FALSE
+J01XA01,vancomycin,eml_direct,0,19,0,0,FALSE
+J01XB01,colistin (injection),eml_direct,0,14,0,4,FALSE
+J01XB02,polymyxin B (injection),eml_direct,0,0,0,0,FALSE
+J01XD01,metronidazole,eml_direct,0,3,5,0,FALSE
+J01XE01,nitrofurantoin,eml_direct,22,9,0,0,FALSE
+J01XX01,fosfomycin (injection),eml_direct,0,8,0,0,FALSE
+J01XX04,spectinomycin,eml_direct,0,0,0,0,FALSE
+J01XX08,linezolid,eml_direct,126,7,0,0,FALSE
+J02AA01,amphotericin B,eml_direct,0,4,6,0,FALSE
+J02AC01,fluconazole,eml_direct,0,27,13,0,FALSE
+J02AC02,itraconazole,eml_direct,68,2,0,0,FALSE
+J02AC03,voriconazole,eml_direct,317,13,0,8,FALSE
+J02AX01,flucytosine,eml_direct,2,0,0,0,FALSE
+J02AX04,caspofungin,name_lookup_hpra,172,8,0,2,FALSE
+J02AX05,micafungin,eml_direct,54,0,0,2,FALSE
+J02AX06,anidulafungin,name_lookup_hpra,36,4,0,1,FALSE
+J04AA01,p-aminosalicylate sodium,eml_direct,0,0,0,0,FALSE
+J04AB01,cycloserine,eml_direct,0,0,0,0,FALSE
+J04AB02,ethambutol + isoniazid + rifampicin; rifampicin,eml_direct,0,4,1,0,FALSE
+J04AB04,rifabutin,eml_direct,0,1,0,0,FALSE
+J04AB05,rifapentine,eml_direct,0,0,0,0,FALSE
+J04AC01,ethambutol + isoniazid + rifampicin; isoniazid,eml_direct,0,0,4,0,FALSE
+J04AC51,isoniazid + pyridoxine + sulfamethoxazole + trimethoprim; isoniazid + rifapentine,eml_direct,21,0,0,0,FALSE
+J04AD03,ethionamide,eml_direct,0,0,0,0,FALSE
+J04AK01,pyrazinamide,eml_direct,0,0,3,0,FALSE
+J04AK02,ethambutol; ethambutol + isoniazid + rifampicin,eml_direct,0,2,0,0,FALSE
+J04AK05,bedaquiline,eml_direct,0,0,0,1,FALSE
+J04AK06,delamanid,eml_direct,5,0,0,2,FALSE
+J04AK08,pretomanid,eml_direct,15,0,0,0,FALSE
+J04AM02,isoniazid + rifampicin,eml_direct,0,2,0,0,FALSE
+J04AM05,isoniazid + pyrazinamide + rifampicin,eml_direct,0,1,0,0,FALSE
+J04AM06,ethambutol + isoniazid + pyrazinamide + rifampicin,eml_direct,0,0,0,0,FALSE
+J04BA01,clofazimine,eml_direct,0,0,0,0,FALSE
+J04BA02,dapsone,eml_direct,0,0,5,0,FALSE
+J05AB01,aciclovir,eml_direct,0,20,15,0,FALSE
+J05AB11,valaciclovir,name_lookup_hpra,68,10,0,0,FALSE
+J05AB14,valganciclovir,eml_direct,0,7,0,0,FALSE
+J05AE03,ritonavir,eml_direct,68,0,0,2,FALSE
+J05AE10,darunavir,eml_direct,496,0,0,6,FALSE
+J05AF01,zidovudine,eml_direct,0,4,4,0,FALSE
+J05AF05,lamivudine,eml_direct,0,0,16,9,FALSE
+J05AF06,abacavir,eml_direct,0,0,0,2,FALSE
+J05AF07,tenofovir disoproxil fumarate,eml_direct,157,1,0,5,FALSE
+J05AF10,entecavir,eml_direct,241,0,0,6,FALSE
+J05AG01,nevirapine,eml_direct,0,0,5,3,FALSE
+J05AG03,efavirenz,eml_direct,21,0,0,2,FALSE
+J05AH02,oseltamivir,eml_direct,48,0,0,2,FALSE
+J05AJ01,raltegravir,eml_direct,53,0,0,1,FALSE
+J05AJ03,dolutegravir,eml_direct,4,0,0,0,FALSE
+J05AP01,ribavirin,eml_direct,0,0,0,0,FALSE
+J05AP07,daclatasvir; daclatasvir + sofosbuvir,eml_direct,0,0,0,0,FALSE
+J05AP08,daclatasvir + sofosbuvir; sofosbuvir,eml_direct,8,0,0,0,FALSE
+J05AP13,ravidasvir,eml_direct,0,0,0,0,FALSE
+J05AP51,ledipasvir + sofosbuvir,eml_direct,8,0,0,0,FALSE
+J05AP55,sofosbuvir + velpatasvir,eml_direct,15,0,0,0,FALSE
+J05AP57,glecaprevir + pibrentasvir,eml_direct,10,0,0,3,FALSE
+J05AR01,lamivudine + zidovudine,eml_direct,55,0,0,1,FALSE
+J05AR02,abacavir + lamivudine,eml_direct,0,4,0,1,FALSE
+J05AR03,emtricitabine + tenofovir,eml_direct,161,12,0,8,FALSE
+J05AR06,efavirenz + emtricitabine + tenofovir,eml_direct,72,0,0,5,FALSE
+J05AR10,lopinavir + ritonavir,eml_direct,76,0,0,1,FALSE
+J05AR11,efavirenz + lamivudine + tenofovir,eml_direct,0,0,0,0,FALSE
+J05AR13,abacavir + dolutegravir + lamivudine,eml_direct,35,0,0,2,FALSE
+J05AR23,atazanavir + ritonavir,eml_direct,0,0,0,0,FALSE
+J05AR27,dolutegravir + lamivudine + tenofovir,eml_direct,0,0,0,0,FALSE
+J06AA01,diphtheria antitoxin,eml_direct,0,0,0,0,FALSE
+J06BA02,normal immunoglobulin,eml_direct,0,6,0,8,FALSE
+J06BB01,anti-D immunoglobulin,eml_direct,0,1,0,0,FALSE
+J06BB02,anti-tetanus immunoglobulin,eml_direct,0,1,0,0,FALSE
+J06BB05,anti-rabies immunoglobulin; equine rabies immunoglobulin,eml_direct,0,0,0,0,FALSE
+J06BD04,ansuvimab,eml_direct,0,0,0,0,FALSE
+J07AE01,cholera vaccine,eml_direct,0,0,0,1,FALSE
+J07AF01,diphtheria vaccine,eml_direct,0,0,0,0,FALSE
+J07AG01,haemophilus influenzae type b vaccine,eml_direct,10,0,0,0,FALSE
+J07AH01,meningococcal meningitis vaccine,eml_direct,0,0,0,0,FALSE
+J07AH02,meningococcal meningitis vaccine,eml_direct,0,0,0,0,FALSE
+J07AH03,meningococcal meningitis vaccine,eml_direct,0,0,0,0,FALSE
+J07AH04,meningococcal meningitis vaccine,eml_direct,0,0,0,0,FALSE
+J07AH05,meningococcal meningitis vaccine,eml_direct,0,2,0,0,FALSE
+J07AH06,meningococcal meningitis vaccine,eml_direct,0,0,0,0,FALSE
+J07AH07,meningococcal meningitis vaccine,eml_direct,0,0,0,0,FALSE
+J07AH08,meningococcal meningitis vaccine,eml_direct,44,0,0,6,FALSE
+J07AH09,meningococcal meningitis vaccine,eml_direct,0,0,0,2,FALSE
+J07AH10,meningococcal meningitis vaccine,eml_direct,0,0,0,0,FALSE
+J07AJ02,pertussis vaccine,eml_direct,1,0,0,1,FALSE
+J07AL01,pneumococcal vaccine,eml_direct,13,2,0,0,FALSE
+J07AM01,tetanus vaccine,eml_direct,2,0,0,0,FALSE
+J07AP03,typhoid vaccine,eml_direct,0,3,0,0,FALSE
+J07BA01,tick-borne encephalitis vaccine,eml_direct,44,2,0,0,FALSE
+J07BA02,Japanese encephalitis vaccine,eml_direct,0,0,0,3,FALSE
+J07BA03,Japanese encephalitis vaccine,eml_direct,0,0,0,0,FALSE
+J07BB01,influenza vaccine (seasonal),eml_direct,0,0,0,0,FALSE
+J07BB02,influenza vaccine (seasonal),eml_direct,0,11,0,8,FALSE
+J07BB03,influenza vaccine (seasonal),eml_direct,7,0,0,4,FALSE
+J07BC01,hepatitis B vaccine,eml_direct,0,1,0,1,FALSE
+J07BC02,hepatitis A vaccine,eml_direct,0,7,0,0,FALSE
+J07BD01,measles vaccine,eml_direct,0,0,0,0,FALSE
+J07BE01,mumps vaccine,eml_direct,0,0,0,0,FALSE
+J07BF01,poliomyelitis vaccine,eml_direct,0,0,0,0,FALSE
+J07BF02,poliomyelitis vaccine,eml_direct,0,0,0,0,FALSE
+J07BF03,poliomyelitis vaccine,eml_direct,0,0,0,0,FALSE
+J07BF04,poliomyelitis vaccine,eml_direct,0,0,0,0,FALSE
+J07BG01,rabies vaccine,eml_direct,0,3,0,0,FALSE
+J07BH01,rotavirus vaccine,eml_direct,65,0,0,2,FALSE
+J07BH02,rotavirus vaccine,eml_direct,0,0,0,4,FALSE
+J07BJ01,rubella vaccine,eml_direct,0,0,0,0,FALSE
+J07BK01,varicella vaccine,eml_direct,0,1,0,0,FALSE
+J07BL01,yellow fever vaccine,eml_direct,0,3,0,0,FALSE
+J07BM01,human papilloma virus (HPV) vaccine,eml_direct,0,0,0,4,FALSE
+J07BX01,mpox vaccine,eml_direct,0,0,0,0,FALSE
+J07BX02,Ebola vaccine,eml_direct,2,0,0,0,FALSE
+J07BX04,dengue vaccine,eml_direct,20,0,0,2,FALSE
+J07BX05,respiratory syncytial virus vaccine,eml_direct,34,0,0,6,FALSE
+J07XA01,malaria vaccine,eml_direct,0,0,0,0,FALSE
+L01AA01,cyclophosphamide; dexamethasone; doxorubicin,eml_direct,0,7,0,0,FALSE
+L01AA02,chlorambucil,eml_direct,0,1,1,0,FALSE
+L01AA03,melphalan,eml_direct,0,4,2,1,FALSE
+L01AA06,ifosfamide,eml_direct,0,2,1,0,FALSE
+L01AA09,bendamustine,eml_direct,71,10,0,0,FALSE
+L01AX04,dacarbazine,eml_direct,0,6,3,0,FALSE
+L01BA01,methotrexate,eml_direct,0,34,7,0,FALSE
+L01BB02,mercaptopurine,eml_direct,0,8,0,2,FALSE
+L01BB03,tioguanine,eml_direct,0,1,0,0,FALSE
+L01BB05,fludarabine,eml_direct,0,3,0,0,FALSE
+L01BC01,cytarabine,eml_direct,0,6,5,0,FALSE
+L01BC02,fluorouracil,eml_direct,0,4,3,0,FALSE
+L01BC05,gemcitabine,eml_direct,0,11,0,0,FALSE
+L01BC06,capecitabine,eml_direct,200,0,0,7,FALSE
+L01CA01,vinblastine,eml_direct,0,1,0,0,FALSE
+L01CA02,vincristine,eml_direct,0,1,0,0,FALSE
+L01CA04,vinorelbine,eml_direct,125,10,0,0,FALSE
+L01CB01,etoposide,eml_direct,0,7,6,0,FALSE
+L01CD01,paclitaxel,eml_direct,0,5,24,4,FALSE
+L01CD02,docetaxel,eml_direct,161,0,0,5,FALSE
+L01CE02,irinotecan,eml_direct,63,0,0,1,FALSE
+L01DA01,dactinomycin,eml_direct,6,0,0,0,FALSE
+L01DB01,doxorubicin; doxorubicin (as pegylated liposomal),eml_direct,0,8,0,2,FALSE
+L01DB02,daunorubicin,eml_direct,0,1,0,0,FALSE
+L01DC01,bleomycin,eml_direct,0,0,0,0,FALSE
+L01EA01,imatinib,eml_direct,210,0,0,11,FALSE
+L01EA02,dasatinib,eml_direct,349,0,0,5,FALSE
+L01EA03,nilotinib,eml_direct,0,12,0,4,FALSE
+L01EB02,erlotinib,eml_direct,87,0,0,2,FALSE
+L01EG02,everolimus,eml_direct,282,0,0,0,FALSE
+L01EL01,ibrutinib,eml_direct,0,0,0,2,FALSE
+L01EL03,zanubrutinib,eml_other_row_same_medicine,5,0,0,1,FALSE
+L01FA01,rituximab,eml_direct,7,0,0,17,FALSE
+L01FD01,trastuzumab,eml_direct,16,0,0,26,FALSE
+L01FF01,nivolumab,eml_direct,0,0,0,1,FALSE
+L01FF02,pembrolizumab,eml_direct,0,0,0,8,FALSE
+L01FF05,atezolizumab,eml_other_row_same_medicine,0,0,0,0,FALSE
+L01FF06,cemiplimab,eml_direct,3,0,0,0,FALSE
+L01FX07,blinatumomab,eml_direct,0,0,0,4,FALSE
+L01XA01,cisplatin,eml_direct,0,3,12,0,FALSE
+L01XA02,carboplatin,eml_direct,0,4,11,0,FALSE
+L01XA03,oxaliplatin,eml_direct,0,3,18,0,FALSE
+L01XB01,procarbazine,eml_direct,0,0,0,0,FALSE
+L01XC18,atezolizumab,eml_other_row_same_medicine,0,0,0,0,FALSE
+L01XF01,all-trans retinoic acid,eml_direct,0,3,0,0,FALSE
+L01XG01,bortezomib,eml_direct,128,0,0,5,FALSE
+L01XX02,asparaginase,eml_direct,5,1,0,3,FALSE
+L01XX05,hydroxyurea (hydroxycarbamide),eml_direct,0,2,5,3,FALSE
+L01XX24,pegaspargase,eml_direct,0,0,0,2,FALSE
+L01XX27,arsenic trioxide,eml_direct,15,0,0,5,FALSE
+L02AE02,leuprorelin,eml_direct,230,10,0,0,FALSE
+L02AE03,goserelin,name_lookup_hpra,90,5,0,0,FALSE
+L02AE04,triptorelin,name_lookup_hpra,70,4,0,0,FALSE
+L02BA01,tamoxifen,eml_direct,0,6,0,0,FALSE
+L02BB03,bicalutamide,eml_direct,241,4,0,0,FALSE
+L02BB04,enzalutamide,eml_other_row_same_medicine,200,26,0,7,FALSE
+L02BG03,anastrozole,eml_direct,99,14,0,0,FALSE
+L02BG04,letrozole,eml_direct,149,17,0,0,FALSE
+L02BX03,abiraterone,eml_direct,303,3,0,9,FALSE
+L03AA02,filgrastim,eml_direct,317,3,0,16,FALSE
+L03AA13,pegfilgrastim,eml_direct,184,0,0,33,FALSE
+L03AX03,BCG vaccine,eml_direct,0,2,0,0,FALSE
+L03AX13,glatiramer acetate,eml_direct,0,15,0,0,FALSE
+L04AA40,cladribine,eml_direct,14,0,0,3,FALSE
+L04AB04,adalimumab,eml_direct,174,0,0,31,FALSE
+L04AC05,ustekinumab,eml_direct,533,0,0,51,FALSE
+L04AD01,ciclosporin,eml_direct,0,8,8,0,FALSE
+L04AD02,tacrolimus,eml_direct,0,8,0,11,FALSE
+L04AX01,azathioprine,eml_direct,0,13,0,1,FALSE
+L04AX02,thalidomide,eml_direct,0,0,0,2,FALSE
+L04AX03,methotrexate,eml_direct,0,13,7,2,FALSE
+L04AX04,lenalidomide,eml_direct,917,77,0,10,FALSE
+M01AE01,ibuprofen,eml_direct,7,54,0,0,FALSE
+M01AE02,naproxen,name_lookup_hpra,84,1,0,0,FALSE
+M01CC01,penicillamine,eml_direct,0,0,3,0,FALSE
+M03AB01,suxamethonium,eml_direct,0,6,0,0,FALSE
+M03AC03,vecuronium,eml_direct,7,0,0,0,FALSE
+M03AC04,atracurium,eml_direct,0,6,0,0,FALSE
+M03BX01,baclofen,eml_direct,145,3,0,0,FALSE
+M04AA01,allopurinol,eml_direct,12,34,0,0,FALSE
+M05BA08,zoledronic acid,eml_direct,7,3,0,12,FALSE
+N01AB06,isoflurane,eml_direct,8,0,0,0,FALSE
+N01AB08,sevoflurane,eml_direct,6,2,0,0,FALSE
+N01AH01,fentanyl,eml_direct,0,5,12,0,FALSE
+N01AX03,ketamine,eml_direct,0,2,0,0,FALSE
+N01AX10,propofol,eml_direct,0,21,10,0,FALSE
+N01AX13,nitrous oxide,eml_direct,42,3,0,0,FALSE
+N01BB01,bupivacaine,eml_direct,10,1,0,1,FALSE
+N01BB02,lidocaine,eml_direct,163,12,0,0,FALSE
+N01BB52,lidocaine + epinephrine,eml_direct,46,6,0,0,FALSE
+N02AA01,morphine,eml_direct,0,18,0,0,FALSE
+N02AA03,hydromorphone,name_lookup_hpra,50,4,0,0,FALSE
+N02AA05,oxycodone,name_lookup_hpra,1322,10,0,0,FALSE
+N02AE01,buprenorphine,name_lookup_hpra,3,8,0,0,FALSE
+N02BA01,acetylsalicylic acid,eml_direct,262,3,0,0,FALSE
+N02BE01,paracetamol (acetaminophen),eml_direct,0,87,16,0,FALSE
+N02CC01,sumatriptan,eml_direct,4,15,0,0,FALSE
+N02CC06,eletriptan,name_lookup_hpra,50,2,0,0,FALSE
+N03AA02,phenobarbital,eml_direct,0,2,6,0,FALSE
+N03AB02,phenytoin,eml_direct,0,9,2,0,FALSE
+N03AD01,ethosuximide,eml_direct,0,5,1,0,FALSE
+N03AF01,carbamazepine,eml_direct,0,11,17,0,FALSE
+N03AG01,valproic acid (sodium valproate),eml_direct,0,15,8,0,FALSE
+N03AX09,lamotrigine,eml_direct,0,26,0,0,FALSE
+N03AX14,levetiracetam,eml_direct,420,25,0,17,FALSE
+N04AA01,trihexyphenidyl,eml_other_row_same_medicine,0,0,0,0,FALSE
+N04AA02,biperiden,eml_direct,0,2,0,0,FALSE
+N04BA02,levodopa + carbidopa,eml_direct,0,3,0,0,FALSE
+N04BC01,bromocriptine,eml_other_row_same_medicine,5,0,0,0,FALSE
+N05AA01,chlorpromazine,eml_other_row_same_medicine,0,3,0,0,FALSE
+N05AB02,fluphenazine,eml_direct,20,0,0,0,FALSE
+N05AD01,haloperidol,eml_direct,0,4,6,0,FALSE
+N05AH02,clozapine,eml_direct,254,24,0,0,FALSE
+N05AH03,olanzapine,eml_direct,0,63,24,15,FALSE
+N05AH04,quetiapine,eml_direct,0,131,0,0,FALSE
+N05AN01,lithium carbonate,eml_direct,0,5,0,0,FALSE
+N05AX08,risperidone,eml_direct,53,36,0,1,FALSE
+N05AX12,aripiprazole,name_lookup_hpra,1567,6,0,13,FALSE
+N05AX13,paliperidone,eml_direct,150,6,0,5,FALSE
+N05BA01,diazepam,eml_direct,0,10,6,0,FALSE
+N05BA06,lorazepam,eml_direct,0,7,6,0,FALSE
+N05CD08,midazolam,eml_direct,0,31,7,1,FALSE
+N06AA04,clomipramine,eml_direct,0,1,0,0,FALSE
+N06AA09,amitriptyline,eml_direct,118,6,0,0,FALSE
+N06AB03,fluoxetine,eml_direct,91,17,0,0,FALSE
+N06AB04,citalopram,name_lookup_hpra,402,26,0,0,FALSE
+N06AB05,paroxetine,name_lookup_hpra,114,12,0,0,FALSE
+N06AB06,sertraline,name_lookup_hpra,2,24,0,0,FALSE
+N06AB08,fluvoxamine,name_lookup_hpra,18,2,0,0,FALSE
+N06AB10,escitalopram,name_lookup_hpra,3,46,0,0,FALSE
+N06AX12,bupropion,eml_direct,171,1,0,0,FALSE
+N06BC01,caffeine citrate,eml_direct,0,0,5,4,FALSE
+N07AA01,neostigmine,eml_direct,0,0,0,0,FALSE
+N07AA02,pyridostigmine,eml_direct,18,1,0,0,FALSE
+N07BA01,nicotine replacement therapy,eml_direct,2,22,0,0,FALSE
+N07BA03,varenicline,eml_direct,176,1,0,2,FALSE
+N07BA04,cytisine (cytisinicline),eml_direct,23,2,0,0,FALSE
+N07BB03,acamprosate calcium,eml_direct,21,3,0,0,FALSE
+N07BB04,naltrexone,eml_direct,27,5,0,0,FALSE
+N07BC01,buprenorphine,name_lookup_hpra,252,3,0,1,FALSE
+N07BC02,methadone,eml_direct,73,4,0,0,FALSE
+P01AB01,metronidazole,eml_direct,0,3,5,0,FALSE
+P01AC01,diloxanide,eml_direct,0,0,0,0,FALSE
+P01BA01,chloroquine,eml_direct,3,0,0,0,FALSE
+P01BA02,hydroxychloroquine,eml_direct,31,1,0,0,FALSE
+P01BA03,primaquine,eml_direct,0,0,0,0,FALSE
+P01BA06,amodiaquine - sulfadoxine + pyrimethamine,eml_direct,0,0,0,0,FALSE
+P01BC01,quinine,eml_direct,0,2,0,0,FALSE
+P01BC02,mefloquine,eml_direct,4,0,0,0,FALSE
+P01BD01,pyrimethamine,eml_direct,4,0,0,0,FALSE
+P01BD51,amodiaquine - sulfadoxine + pyrimethamine; sulfadoxine + pyrimethamine,eml_direct,0,0,0,0,FALSE
+P01BE02,artemether,eml_direct,0,0,0,0,FALSE
+P01BE03,artesunate,eml_direct,2,0,0,1,FALSE
+P01BF01,artemether + lumefantrine,eml_direct,9,0,0,0,FALSE
+P01BF02,artesunate + mefloquine,eml_direct,0,0,0,0,FALSE
+P01BF03,artesunate + amodiaquine,eml_direct,0,0,0,0,FALSE
+P01BF05,dihydroartemisinin + piperaquine,eml_direct,9,0,0,1,FALSE
+P01BF06,artesunate + pyronaridine,eml_direct,0,0,0,0,FALSE
+P01BF09,artesunate - sulfadoxine + pyrimethamine,eml_direct,0,0,0,0,FALSE
+P01CA02,benznidazole,eml_direct,0,0,0,0,FALSE
+P01CA03,fexinidazole,eml_direct,0,0,0,0,FALSE
+P01CB01,meglumine antimoniate,eml_direct,0,0,0,0,FALSE
+P01CB02,sodium stibogluconate,eml_direct,0,0,0,0,FALSE
+P01CC01,nifurtimox,eml_direct,8,0,0,0,FALSE
+P01CD01,melarsoprol,eml_direct,0,0,0,0,FALSE
+P01CX01,pentamidine,eml_direct,0,1,0,0,FALSE
+P01CX02,suramin sodium,eml_direct,2,0,0,0,FALSE
+P01CX03,eflornithine,eml_direct,0,0,0,0,FALSE
+P01CX04,miltefosine,eml_direct,0,0,0,0,FALSE
+P02BA01,praziquantel,eml_direct,9,0,0,0,FALSE
+P02BA02,oxamniquine,eml_direct,0,0,0,0,FALSE
+P02BX04,triclabendazole,eml_direct,0,0,0,0,FALSE
+P02CA01,mebendazole,eml_direct,43,2,0,0,FALSE
+P02CA03,albendazole,eml_direct,0,0,6,0,FALSE
+P02CB02,diethylcarbamazine,eml_direct,0,0,0,0,FALSE
+P02CC01,pyrantel,eml_direct,13,0,0,0,FALSE
+P02CE01,levamisole,eml_direct,0,0,0,0,FALSE
+P02CF01,ivermectin,eml_direct,89,1,0,0,FALSE
+P02DA01,niclosamide,eml_direct,2,0,0,0,FALSE
+P03AC04,permethrin,eml_direct,35,0,0,0,FALSE
+P03AX01,benzyl benzoate,eml_direct,2,1,0,0,FALSE
+R01AA07,xylometazoline,eml_direct,83,2,0,0,FALSE
+R01AD05,budesonide,eml_direct,8,0,0,0,FALSE
+R01AD08,fluticasone,name_lookup_hpra,0,2,0,0,FALSE
+R01AD09,mometasone,name_lookup_hpra,72,4,0,0,FALSE
+R03AA01,epinephrine,eml_direct,2,0,0,0,FALSE
+R03AC02,salbutamol,eml_direct,0,14,0,0,FALSE
+R03AC03,terbutaline,name_lookup_hpra,6,1,0,0,FALSE
+R03AK07,budesonide + formoterol,eml_direct,295,10,0,4,FALSE
+R03BA01,beclometasone,eml_other_row_same_medicine,131,7,0,0,FALSE
+R03BA02,budesonide,eml_direct,207,8,0,0,FALSE
+R03BA05,fluticasone,name_lookup_hpra,0,11,0,0,FALSE
+R03BA07,mometasone,name_lookup_hpra,4,2,0,0,FALSE
+R03BA08,ciclesonide,name_lookup_hpra,54,3,0,0,FALSE
+R03BB01,ipratropium bromide,eml_direct,0,3,0,0,FALSE
+R03BB04,tiotropium bromide,eml_direct,125,8,0,0,FALSE
+R05DA04,codeine,eml_other_row_same_medicine,55,7,0,0,FALSE
+R06AE03,cyclizine,eml_direct,0,0,0,0,FALSE
+R06AE07,cetirizine,name_lookup_hpra,76,9,0,0,FALSE
+R06AX13,loratadine,eml_direct,29,4,0,0,FALSE
+R06AX26,fexofenadine,name_lookup_hpra,99,6,0,0,FALSE
+R07AA02,beractant; porcatant alfa,eml_direct,6,2,0,0,FALSE
+R07AX02,ivacaftor,eml_direct,44,0,0,3,FALSE
+R07AX32,elexacaftor + tezacaftor + ivacaftor,eml_direct,14,0,0,2,FALSE
+S01AA09,tetracycline,eml_direct,0,0,0,0,FALSE
+S01AA10,natamycin,eml_direct,0,0,0,0,FALSE
+S01AA17,erythromycin,eml_direct,0,0,0,0,FALSE
+S01AA26,azithromycin,eml_direct,5,0,0,0,FALSE
+S01AD03,aciclovir,eml_direct,16,0,0,0,FALSE
+S01AE01,ofloxacin,eml_direct,77,0,0,0,FALSE
+S01BA04,prednisolone,eml_direct,42,1,0,0,FALSE
+S01EA01,epinephrine,eml_direct,0,0,0,0,FALSE
+S01EB01,pilocarpine,eml_direct,0,1,0,0,FALSE
+S01EC01,acetazolamide,eml_direct,0,4,6,0,FALSE
+S01ED01,timolol,eml_direct,144,1,0,0,FALSE
+S01EE01,latanoprost,eml_direct,177,3,0,1,FALSE
+S01FA01,atropine,eml_direct,19,1,0,1,FALSE
+S01FA04,cyclopentolate,name_lookup_hpra,0,1,0,0,FALSE
+S01FA05,homatropine,eml_other_row_same_medicine,0,0,0,0,FALSE
+S01FA06,tropicamide,eml_direct,12,2,0,0,FALSE
+S01HA03,tetracaine,eml_direct,0,2,0,0,FALSE
+S01JA01,fluorescein,eml_direct,5,2,0,0,FALSE
+S01LA08,bevacizumab,eml_direct,1,0,0,2,FALSE
+S02AA10,acetic acid,eml_direct,0,0,0,0,FALSE
+S02AA14,gentamicin,eml_direct,0,0,0,0,FALSE
+S02AA15,ciprofloxacin,eml_direct,0,1,8,0,FALSE
+V03AB03,sodium calcium edetate,eml_direct,0,0,0,0,FALSE
+V03AB06,sodium thiosulfate,eml_direct,0,2,0,0,FALSE
+V03AB08,sodium nitrite,eml_direct,0,2,0,0,FALSE
+V03AB09,dimercaprol,eml_direct,0,0,0,0,FALSE
+V03AB14,protamine sulfate,eml_direct,0,1,0,0,FALSE
+V03AB15,naloxone,eml_direct,0,5,0,1,FALSE
+V03AB17,methylthioninium chloride,eml_direct,0,0,0,2,FALSE
+V03AB21,potassium iodide,eml_direct,0,0,0,0,FALSE
+V03AB23,acetylcysteine,eml_direct,0,1,12,0,FALSE
+V03AB31,potassium ferric hexacyanoferrate (Prussian blue),eml_direct,2,0,0,0,FALSE
+V03AB34,fomepizole,eml_direct,0,2,0,0,FALSE
+V03AC01,deferoxamine,eml_direct,0,1,0,0,FALSE
+V03AC03,deferasirox,eml_direct,403,0,0,6,FALSE
+V03AF01,mesna,eml_direct,0,4,0,0,FALSE
+V03AF03,calcium folinate (leucovorin calcium),eml_direct,0,6,0,0,FALSE
+V03AF07,rasburicase,eml_direct,0,0,0,2,FALSE
+V03AH01,diazoxide,eml_direct,4,0,0,0,FALSE
+V03AN01,oxygen,eml_direct,130,0,0,0,FALSE
+V04CF01,"tuberculin, purified protein derivative",eml_direct,0,1,0,0,FALSE
+V07AV,chlorine base compound; glutaral; hypochlorous acid,eml_direct,0,0,0,0,FALSE
+V08AA01,amidotrizoate,eml_direct,14,2,0,0,FALSE
+V08AB02,iohexol,eml_direct,32,7,0,0,FALSE
+V08AC02,meglumine iotroxate,eml_direct,0,0,0,0,FALSE
+V08BA01,barium sulfate,eml_direct,1,0,0,0,FALSE
