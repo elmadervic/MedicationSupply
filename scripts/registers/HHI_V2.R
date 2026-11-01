@@ -1,6 +1,6 @@
 # ---------------------------------------------------------------
 # Country-level HHI per critical ATC code, per source, computed from
-# Data/manufacturer_registers_combined.csv (built by 01_combine_sources.R).
+# data/registers/processed/manufacturer_registers_combined.csv (built by 01_combine_sources.R).
 #
 #   1. Step-1 priority: for sources with step data (Germany, EPAR, GMDP),
 #      per ATC code keep only step-1 (API) producers if the code has any;
@@ -15,7 +15,7 @@
 # file has no BfArM pu_nummer), so Germany's site counts can differ
 # slightly from the old pu_nummer-based version.
 #
-# Outputs (Results/<LIST> folder, file names end in _<LIST>, e.g. _WHO):
+# Outputs (results/<LIST> folder, file names end in _<LIST>, e.g. _WHO):
 #   hhi_step1_priority_final.csv       -- HHI per ATC code, all 5 sources
 #   hhi_highest_by_source_final.csv    -- "highest HHI" counts, main sources
 #   hhi_highest_by_source.tex          -- the same as a LaTeX table (caption + label)
@@ -34,11 +34,11 @@ library(stringr)
 ## "EU" = EU Union list, "WHO" = WHO EML, "overlap" = on both lists.
 ## run_all_lists.R sets LIST and runs this script once per list.
 if (!exists("LIST")) LIST <- "EU"
-DATA_DIR <- "Data"
-OUT_DIR  <- file.path("Results", LIST)          # outputs go to Results/EU, /WHO, /overlap
+source("scripts/registers/paths.R", local = TRUE)
+OUT_DIR  <- file.path(RESULTS_DIR, LIST)
 dir.create(OUT_DIR, recursive = TRUE, showWarnings = FALSE)
 
-## output file name with the list added: out_file("plot.png") -> Results/WHO/plot_WHO.png
+## output file name with the list added: out_file("plot.png") -> results/WHO/plot_WHO.png
 out_file <- function(name) file.path(OUT_DIR, sub("(\\.[A-Za-z]+)$", paste0("_", LIST, "\\1"), name))
 
 keep_list <- function(df) {
@@ -62,7 +62,7 @@ source_pal    <- c(Germany = "#B9861A", EPAR = "#1D6F5C", GMDP = "#6B4C9A",
 source_map <- c(ema = "EPAR", germany = "Germany", gmdp = "GMDP",
                 cep = "CEP", ireland = "Ireland")
 
-data <- read.csv(file.path(DATA_DIR, "manufacturer_registers_combined.csv"),
+data <- read.csv(file.path(PROC_DIR, "manufacturer_registers_combined.csv"),
                  stringsAsFactors = FALSE) %>%
   keep_list() %>%
   mutate(

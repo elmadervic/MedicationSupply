@@ -1,10 +1,10 @@
 # ---------------------------------------------------------------
 # Manufacturing sites by ATC chapter, split into EEA / Non-EEA and by
 # manufacturing step (API = step 1, batch release = step 2, or not
-# disclosed), computed from Data/manufacturer_registers_combined.csv
+# disclosed), computed from data/registers/processed/manufacturer_registers_combined.csv
 # (built by 01_combine_sources.R).
 #
-# Figures (Results/<LIST> folder, file names end in _<LIST>, e.g. _WHO):
+# Figures (results/<LIST> folder, file names end in _<LIST>, e.g. _WHO):
 #   manufacturing_sites_by_chapter_step_source.png -- Germany, EPAR, GMDP, CEP
 #   manufacturing_sites_by_chapter_step_Ireland.png -- Ireland on its own
 #
@@ -33,11 +33,11 @@ library(stringr)
 ## "EU" = EU Union list, "WHO" = WHO EML, "overlap" = on both lists.
 ## run_all_lists.R sets LIST and runs this script once per list.
 if (!exists("LIST")) LIST <- "EU"
-DATA_DIR <- "Data"
-OUT_DIR  <- file.path("Results", LIST)          # outputs go to Results/EU, /WHO, /overlap
+source("scripts/registers/paths.R", local = TRUE)
+OUT_DIR  <- file.path(RESULTS_DIR, LIST)
 dir.create(OUT_DIR, recursive = TRUE, showWarnings = FALSE)
 
-## output file name with the list added: out_file("plot.png") -> Results/WHO/plot_WHO.png
+## output file name with the list added: out_file("plot.png") -> results/WHO/plot_WHO.png
 out_file <- function(name) file.path(OUT_DIR, sub("(\\.[A-Za-z]+)$", paste0("_", LIST, "\\1"), name))
 
 keep_list <- function(df) {
@@ -86,7 +86,7 @@ EEA <- c("Austria","Belgium","Bulgaria","Croatia","Cyprus","Czech Republic","Den
 # ---------------------------------------------------------------
 # Load the combined data
 # ---------------------------------------------------------------
-sites <- read.csv(file.path(DATA_DIR, "manufacturer_registers_combined.csv"),
+sites <- read.csv(file.path(PROC_DIR, "manufacturer_registers_combined.csv"),
                   stringsAsFactors = FALSE) %>%
   keep_list() %>%
   mutate(

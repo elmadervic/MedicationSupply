@@ -5,13 +5,13 @@
 ##   V1: Germany  |  V2: Germany + EPAR  |  V3: Germany + EPAR + CEP + GMP API sites
 ##
 ## Runs everything from the input files (no saved results needed) and writes
-## to the Results folder:
+## to the results folder:
 ##   shortage_analysis_all_codes.csv    one row per ATC code, metrics + list flags
 ##   shortage_models_all_lists.csv      all model numbers (OR, CI, p, N, AUC, R2), main + regional
 ##   shortage_models_all_lists.tex      LaTeX table, main model
 ##   shortage_models_all_lists_regional.tex  LaTeX table, regional model (EU/EEA = reference)
 ##
-## Needs Data/manufacturer_registers_combined.csv from 01_combine_sources.R
+## Needs data/registers/processed/manufacturer_registers_combined.csv from 01_combine_sources.R
 ## (run that first). List membership comes from its on_eu_list / on_who_eml
 ## flags and the GMDP API sites from its source == "gmdp" rows, so the
 ## numbers per list are the same as Shortage.R run with LIST set.
@@ -25,12 +25,12 @@ library(purrr)
 library(lubridate)
 ## pROC is used via pROC::, so it only needs to be installed
 
-## ---- paths (relative to the project folder that contains Data/) ------
-DATA_DIR       <- "Data"
-OUT_DIR        <- "Results"
+## ---- paths (relative to the repository root) ------
+source("scripts/registers/paths.R", local = TRUE)
+OUT_DIR        <- RESULTS_DIR
 dir.create(OUT_DIR, showWarnings = FALSE)
-path_mfr       <- file.path(DATA_DIR, "manufacturer_registers_combined.csv")
-path_shortages <- file.path(DATA_DIR, "LEMeldungen_2026-09-09-13-30-43.csv")
+path_mfr       <- file.path(PROC_DIR, "manufacturer_registers_combined.csv")
+path_shortages <- file.path(SHORTAGE_DIR, "LEMeldungen_2026-09-09-13-30-43.csv")
 
 out_analysis   <- file.path(OUT_DIR, "shortage_analysis_all_codes.csv")
 out_csv        <- file.path(OUT_DIR, "shortage_models_all_lists.csv")

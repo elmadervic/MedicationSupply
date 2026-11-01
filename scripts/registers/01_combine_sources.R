@@ -1,9 +1,9 @@
 ## =================================================================
 ## 01_combine_sources.R
 ## Combine the manufacturer registers for BOTH critical-medicine lists:
-##   - EU Union list of critical medicines   (Data/critical.csv)
-##   - WHO Model List of Essential Medicines (Data/eml_export.xlsx)
-## into one table, Data/manufacturer_registers_combined.csv, with one
+##   - EU Union list of critical medicines   (data/registers/raw/critical.csv)
+##   - WHO Model List of Essential Medicines (data/registers/raw/eml_export.xlsx)
+## into one table, data/registers/processed/manufacturer_registers_combined.csv, with one
 ## row per ATC code x manufacturer x source and two flags:
 ##   on_eu_list, on_who_eml
 ## The analysis scripts pick EU, WHO or the overlap (on both lists)
@@ -18,7 +18,7 @@
 ## the same as in the EU-only analysis. A missing top-up file is skipped
 ## with a message.
 ##
-## Also writes (Data folder):
+## Also writes (data/registers/processed):
 ##   list_codes.csv                         every code on either list + flags (treemaps)
 ##   who_eml_coverage_by_source.csv         rows per WHO EML code and source
 ##   who_eml_medicines_without_atc.csv      EML medicines without an ATC code
@@ -32,7 +32,7 @@ library(stringr)
 library(tidyr)
 library(purrr)
 
-DATA_DIR <- "Data"
+source("scripts/registers/paths.R", local = TRUE)
 
 ## ---- input files (all in DATA_DIR) -----------------------------------
 EU_LIST_FILE         <- "critical.csv"
@@ -66,12 +66,13 @@ gmdp_production_codes   <- "^3\\.(1|2|3|4)\\.|^3\\.5\\.1$"
 ## results.
 TOPUP_EU_CODES <- FALSE
 
-in_data <- function(f) file.path(DATA_DIR, f)
+in_data <- function(f) file.path(RAW_DIR, f)
+in_proc <- function(f) file.path(PROC_DIR, f)
 missing_topup_files <- character(0)
 have    <- function(f) {
   ok <- file.exists(in_data(f))
   if (!ok) {
-    cat("NOTE:", f, "not found in", DATA_DIR, "-- skipped (WHO codes from this file missing)\n")
+    cat("NOTE:", f, "not found in", RAW_DIR, "-- skipped (WHO codes from this file missing)\n")
     missing_topup_files <<- union(missing_topup_files, f)
   }
   ok
@@ -179,12 +180,12 @@ if (!EML_DIRECT_ONLY && MAP_EML_ALTERNATIVES_BY_NAME && nrow(eml_no_atc) > 0 && 
 
   eml_atc    <- bind_rows(eml_atc, eml_atc_lookup)
   eml_no_atc <- eml_no_atc |> filter(!medicine_key %in% eml_atc_lookup$medicine_key)
-  write_csv(eml_atc_lookup, in_data("who_eml_atc_name_lookup_REVIEW.csv"))
+  write_csv(eml_atc_lookup, in_proc("who_eml_atc_name_lookup_REVIEW.csv"))
   cat("EML medicines without ATC mapped by INN name (review file written):",
       n_distinct(eml_atc_lookup$medicine_key), "\n")
 }
 
-write_csv(eml_no_atc, in_data("who_eml_medicines_without_atc.csv"))
+write_csv(eml_no_atc, in_proc("who_eml_medicines_without_atc.csv"))
 cat("EML medicines without an ATC code (excluded, listed in file):", nrow(eml_no_atc), "\n")
 
 ## one row per EML code; if several origins, keep the most direct one
@@ -308,7 +309,7 @@ cat("Germany rows:", nrow(germany_std), "\n")
 ## WHO codes with no BfArM result in either download -> list for a follow-up query
 germany_to_query <- eml_codes |>
   filter(nchar(atc_code) == 7, !atc_code %in% c(germany_raw$search_atc, germany_raw$atc_code))
-write_csv(germany_to_query, in_data("germany_eml_codes_without_bfarm_result.csv"))
+write_csv(germany_to_query, in_proc("germany_eml_codes_without_bfarm_result.csv"))
 cat("WHO EML codes without any BfArM result (written to file):", nrow(germany_to_query), "\n")
 
 ## =================================================================
@@ -422,7 +423,11 @@ cat("CEP rows:", nrow(cep_std), "\n")
 ##    to one row per ATC code x site. The is_critical column in the files
 ##    is not used; list membership comes from the flags below.
 ## =================================================================
-gmdp_files <- GMDP_FILES[c(TRUE, have(GMDP_FILES[["topup"]]))]
+has_gmdp_curated <- file.exists(in_data(GMDP_FILES[["curated"]]))
+if (!has_gmdp_curated)
+  cat("NOTE:", GMDP_FILES[["curated"]], "not found in", RAW_DIR,
+      "-- EU-list codes use", GMDP_FILES[["topup"]], "instead\n")
+gmdp_files <- GMDP_FILES[c(has_gmdp_curated, have(GMDP_FILES[["topup"]]))]
 
 gmdp_raw <- imap(gmdp_files, \(f, origin)
                  read_csv(in_data(f), show_col_types = FALSE,
@@ -530,7 +535,8 @@ region_of_country <- c(
 manufacturer_registers <- bind_rows(ema_std, germany_std, ireland_std, cep_std, gmdp_std) |>
   filter(on_any(atc_code)) |>
   ## EU-list codes use the EU files only (see TOPUP_EU_CODES)
-  filter(TOPUP_EU_CODES | !(data_origin == "topup" & on_eu(atc_code))) |>
+  filter(TOPUP_EU_CODES | !(data_origin == "topup" & on_eu(atc_code)) |
+           (source == "gmdp" & !has_gmdp_curated)) |>
   mutate(
     on_eu_list  = on_eu(atc_code),
     on_who_eml  = on_who(atc_code),
@@ -565,7 +571,7 @@ cat("Rows by region (Germany, EMA, CEP, GMDP):\n")
 print(table(manufacturer_registers$mfr_region[manufacturer_registers$source != "ireland"],
             useNA = "ifany"))
 
-write_csv(manufacturer_registers, in_data("manufacturer_registers_combined.csv"))
+write_csv(manufacturer_registers, in_proc("manufacturer_registers_combined.csv"))
 
 ## =================================================================
 ## 9. Extra outputs
@@ -579,7 +585,7 @@ list_codes <- tibble(atc_code = sort(unique(c(eu_codes, who_codes)))) |>
          in_eml     = atc_code %in% who_codes,
          on_who_eml = in_eml | (on_eu_list & on_who(atc_code))) |>
   left_join(select(eml_codes, atc_code, eml_medicine), by = "atc_code")
-write_csv(list_codes, in_data("list_codes.csv"))
+write_csv(list_codes, in_proc("list_codes.csv"))
 cat("list_codes.csv: EU", sum(list_codes$on_eu_list), "| WHO", sum(list_codes$atc_code %in% who_codes),
     "| on both", sum(list_codes$on_eu_list & list_codes$on_who_eml), "\n")
 
@@ -594,16 +600,24 @@ eml_coverage <- eml_codes |>
     by = c("atc_code" = "eml_code")) |>
   mutate(across(starts_with("n_"), ~ coalesce(.x, 0L)),
          on_eu_list = on_eu(atc_code))
-write_csv(eml_coverage, in_data("who_eml_coverage_by_source.csv"))
+write_csv(eml_coverage, in_proc("who_eml_coverage_by_source.csv"))
 cat("WHO EML codes with data from at least one source:",
     sum(rowSums(select(eml_coverage, starts_with("n_"))) > 0), "of", nrow(eml_coverage), "\n")
 
 ## ---- repeat any missing WHO file at the very end, where it is seen ----
 if (length(missing_topup_files) > 0) {
   cat("\n", strrep("!", 70), "\n",
-      "WARNING: these WHO files are missing from ", DATA_DIR, "/:\n   ",
+      "WARNING: these WHO files are missing from ", RAW_DIR, "/:\n   ",
       paste(missing_topup_files, collapse = "\n   "), "\n",
       "Medicines that are only on the WHO list get no data from them, so the\n",
       "WHO results are incomplete (close to the overlap list). Add the files\n",
       "and rerun this script.\n", strrep("!", 70), "\n", sep = "")
+}
+if (!has_gmdp_curated) {
+  cat("\n", strrep("!", 70), "\n",
+      "WARNING: ", GMDP_FILES[["curated"]], " is missing from ", RAW_DIR, "/.\n",
+      "EU-list codes take their EudraGMDP sites from ", GMDP_FILES[["topup"]], ",\n",
+      "which covers fewer of them, so every result that uses EudraGMDP\n",
+      "(V3 models, GMDP panels, pooled counts) differs from the paper.\n",
+      strrep("!", 70), "\n", sep = "")
 }

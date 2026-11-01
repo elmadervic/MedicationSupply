@@ -1,6 +1,6 @@
 """
 Compare the replication pipeline's per-ATC-code concentration with the
-register analysis (results/tables/hhi_step1_priority.csv), for the two
+register analysis (results/EU/hhi_step1_priority_final_EU.csv), for the two
 sources both pipelines cover: EDQM CEP and EMA EPAR.
 """
 import sys
@@ -12,7 +12,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "common"))
 
 from config import OUT, ROOT
 
-REGISTERS_HHI = ROOT / "results" / "tables" / "hhi_step1_priority.csv"
+REGISTERS_HHI = ROOT / "results" / "EU" / "hhi_step1_priority_final_EU.csv"
 CRITICAL = ROOT / "data" / "registers" / "raw" / "critical.csv"
 
 PAIRS = {

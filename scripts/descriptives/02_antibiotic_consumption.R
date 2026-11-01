@@ -6,7 +6,7 @@ library(forcats)
 
 source("scripts/registers/paths.R")
 
-data_dir <- "data/consumption"
+data_dir <- CONSUMPTION_DIR
 
 xlsx_files <- list.files(
   path       = data_dir,

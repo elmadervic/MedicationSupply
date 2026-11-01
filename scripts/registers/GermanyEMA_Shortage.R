@@ -11,22 +11,22 @@
 ##
 ## A second stream, GermanyEMAall, counts EVERY code ever on the EMA list
 ## (status and dates ignored; German part unchanged). Outputs:
-## Results/GermanyEMAallShortage/*_GermanyEMAall_<LIST>.*
+## results/GermanyEMAallShortage/*_GermanyEMAall_<LIST>.*
 ## Choose which streams to run in EMA_STREAMS below.
 ##
 ## Each run uses its own environment, so OUTCOME never carries over to a
 ## later plain Shortage.R run (which stays German-only).
 ##
-## Inputs (Data folder), on top of those Shortage.R already uses:
+## Inputs (data/shortages), on top of those Shortage.R already uses:
 ##   Medicines_output_shortages_en.json  EMA shortage list download
 ##   ema_shortages_atc_crosswalk.csv     EMA record -> ATC code(s), curated;
 ##                                       a new EMA download stops the run
 ##                                       until its new records are added
-## Outputs: Results/GermanyEMAShortage/*_GermanyEMA_<LIST>.*
+## Outputs: results/GermanyEMAShortage/*_GermanyEMA_<LIST>.*
 ##   same files as the German stream, plus ema_shortage_atc_matches.csv;
 ##   the analysis CSV keeps currently_active_de and ema_active separately
 ##
-## Run from the project folder: source("GermanyEMA_Shortage.R")
+## Run from the repository root: source("scripts/registers/GermanyEMA_Shortage.R")
 ## Requires (on top of Shortage.R's packages): install.packages("jsonlite")
 ## =================================================================
 LISTS       <- c("EU", "WHO", "overlap")
@@ -39,6 +39,6 @@ for (O in EMA_STREAMS) for (L in LISTS) {
   env$LIST    <- L
   env$OUTCOME <- O
   env$EMA_COUNT_DISCONTINUED <- FALSE   # GermanyEMA only; TRUE: count "Medicine discontinued"
-  sys.source("Shortage.R", envir = env)
+  sys.source("scripts/registers/Shortage.R", envir = env)
 }
-cat("\nDone ->", paste0("Results/", EMA_STREAMS, "Shortage", collapse = ", "), "\n")
+cat("\nDone ->", paste0("results/", EMA_STREAMS, "Shortage", collapse = ", "), "\n")

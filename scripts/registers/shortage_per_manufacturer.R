@@ -24,22 +24,23 @@
 ##                (GermanyEMA_Shortage.R)
 ##
 ## Input (written by Shortage.R / GermanyEMA_Shortage.R, one per list):
-##   Results/<LIST>/atc_shortage_concentration_analysis_<LIST>.csv
-##   Results/GermanyEMAShortage/atc_shortage_concentration_analysis_GermanyEMA_<LIST>.csv
+##   results/<LIST>/atc_shortage_concentration_analysis_<LIST>.csv
+##   results/GermanyEMAShortage/atc_shortage_concentration_analysis_GermanyEMA_<LIST>.csv
 ## Output:
-##   Results/shortage_per_manufacturer_effect.csv  (all outcomes, lists, versions)
+##   results/shortage_per_manufacturer_effect.csv  (all outcomes, lists, versions)
 ##
-## Run from the project folder: source("shortage_per_manufacturer.R")
+## Run from the repository root: source("scripts/registers/shortage_per_manufacturer.R")
 ## Requires: install.packages(c("dplyr", "readr", "MASS"))
 ## =================================================================
 library(dplyr)
 library(readr)
+source("scripts/registers/paths.R", local = TRUE)
 
 LISTS    <- c("EU", "WHO", "overlap")   # lists to compute (skipped if the file is missing)
 OUTCOMES <- c("Germany", "GermanyEMA")  # shortage outcome streams (skipped if missing)
 analysis_path <- function(outcome, L) switch(outcome,
-  Germany    = file.path("Results", L, paste0("atc_shortage_concentration_analysis_", L, ".csv")),
-  GermanyEMA = file.path("Results", "GermanyEMAShortage",
+  Germany    = file.path(RESULTS_DIR, L, paste0("atc_shortage_concentration_analysis_", L, ".csv")),
+  GermanyEMA = file.path(RESULTS_DIR, "GermanyEMAShortage",
                          paste0("atc_shortage_concentration_analysis_GermanyEMA_", L, ".csv")))
 VERSIONS <- c("v1", "v2", "v3")
 N_DRAWS  <- 4000
@@ -107,8 +108,8 @@ for (O in OUTCOMES) for (L in LISTS) {
 }
 
 out <- bind_rows(results)
-dir.create("Results", showWarnings = FALSE)
-write_csv(out, file.path("Results", "shortage_per_manufacturer_effect.csv"))
+dir.create(RESULTS_DIR, showWarnings = FALSE)
+write_csv(out, file.path(RESULTS_DIR, "shortage_per_manufacturer_effect.csv"))
 
 ## ---- readable summary --------------------------------------------------
 cat("\nOne manufacturer moved to China/India (total number unchanged):\n")
@@ -119,4 +120,4 @@ for (i in seq_len(nrow(out))) {
               r$risk_change_pct, r$risk_change_lo, r$risk_change_hi,
               r$abs_change_pp, r$abs_change_lo, r$abs_change_hi))
 }
-cat("\nSaved: Results/shortage_per_manufacturer_effect.csv\n")
+cat("\nSaved:", file.path(RESULTS_DIR, "shortage_per_manufacturer_effect.csv"), "\n")

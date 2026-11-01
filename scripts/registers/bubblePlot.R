@@ -5,7 +5,7 @@
 # Styled after a reference plot with grouped columns, bold/boxed
 # non-EU countries, and a blue size+color legend.
 #
-# Outputs (Results/<LIST> folder, file names end in _<LIST>, e.g. _WHO):
+# Outputs (results/<LIST> folder, file names end in _<LIST>, e.g. _WHO):
 #   bubble_matrix_Germany.png, _EPAR.png, _GMDP.png, _CEP.png -- one per source
 #   bubble_matrix_by_source.png -- Germany, EPAR, GMDP, CEP in a 2x2 grid
 #   bubble_matrix_Ireland.png   -- Ireland on its own (not in the grid)
@@ -25,11 +25,11 @@ library(purrr)
 ## "EU" = EU Union list, "WHO" = WHO EML, "overlap" = on both lists.
 ## run_all_lists.R sets LIST and runs this script once per list.
 if (!exists("LIST")) LIST <- "EU"
-DATA_DIR <- "Data"
-OUT_DIR  <- file.path("Results", LIST)          # outputs go to Results/EU, /WHO, /overlap
+source("scripts/registers/paths.R", local = TRUE)
+OUT_DIR  <- file.path(RESULTS_DIR, LIST)
 dir.create(OUT_DIR, recursive = TRUE, showWarnings = FALSE)
 
-## output file name with the list added: out_file("plot.png") -> Results/WHO/plot_WHO.png
+## output file name with the list added: out_file("plot.png") -> results/WHO/plot_WHO.png
 out_file <- function(name) file.path(OUT_DIR, sub("(\\.[A-Za-z]+)$", paste0("_", LIST, "\\1"), name))
 
 keep_list <- function(df) {
@@ -65,7 +65,7 @@ bold_unicode <- function(x) {
 # Reads the combined file produced by 01_combine_sources.R (EMA, Germany,
 # Ireland, CEP, GMDP). It is already restricted to critical ATC codes, so
 # no critical.csv re-filter is needed here.
-data <- read.csv(file.path(DATA_DIR, "manufacturer_registers_combined.csv"),
+data <- read.csv(file.path(PROC_DIR, "manufacturer_registers_combined.csv"),
                  stringsAsFactors = FALSE) %>%
   keep_list()
 cat("rows read from manufacturer_registers_combined.csv:", nrow(data), "\n")

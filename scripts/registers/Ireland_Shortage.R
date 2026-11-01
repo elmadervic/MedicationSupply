@@ -24,21 +24,20 @@
 ##    model) is 0 for every code and cannot be estimated: those terms are
 ##    left out of the V1 models and marked "not estimable" in the table.
 ##
-## Outputs -- all lists in one folder, Results/IrelandShortage/, with the
+## Outputs -- all lists in one folder, results/IrelandShortage/, with the
 ## list (EU, WHO or overlap) in every file name:
 ##   shortage_models_V1_V2_V3_Ireland_<LIST>.csv   main + regional models
 ##   shortage_region_counts_Ireland_<LIST>.csv
 ##   atc_shortage_concentration_analysis_Ireland_<LIST>.csv, plot_v*_Ireland_<LIST>.png
 ##
-## Run from the project folder (needs Shortage.R in the same folder):
-##   LIST <- "WHO"; source("Ireland_Shortage.R")
+## Run from the repository root:
+##   LIST <- "WHO"; source("scripts/registers/Ireland_Shortage.R")
 ## run_all_lists.R runs it for every chosen list.
 ## =================================================================
 if (!exists("LIST")) LIST <- "EU"
 
-shortage_script <- if (file.exists("Shortage.R")) "Shortage.R" else
-  list.files(".", pattern = "^Shortage\\.R$", recursive = TRUE)[1]
-if (is.na(shortage_script)) stop("Shortage.R not found in the project folder", call. = FALSE)
+shortage_script <- "scripts/registers/Shortage.R"
+if (!file.exists(shortage_script)) stop(shortage_script, " not found; run from the repository root", call. = FALSE)
 
 ## an older Shortage.R ignores BASE and would silently run Germany again
 if (!any(grepl("base_source", readLines(shortage_script, warn = FALSE), fixed = TRUE)))

@@ -1,106 +1,141 @@
-# Medication Supply: Manufacturing Concentration of EU Critical Medicines
+# Medication Supply: Manufacturing Concentration of EU Critical and WHO Essential Medicines
 
 This repository contains the data, code and figures for the paper by
 E. Dervic, A. Pesce, L. Melnikova and P. Klimek (Supply Chain Intelligence Institute Austria,
 Complexity Science Hub, Medical University of Vienna, TU Wien).
 
-The paper builds the first open dataset that merges manufacturing-site information for the
-299 medicines on the EU list of critical medicines from four public sources: the EMA's European
-Public Assessment Reports (EPAR), the German BfArM manufacturer register, the Irish HPRA product
-register and the EDQM database of Certificates of Suitability (CEP). It uses this dataset to measure
-how geographically concentrated the manufacturing of each medicine is, to relate that concentration
-to current shortages, to check apparently single-sourced medicines against FDA records, and to
-estimate how exposed EU member states are to a halt in Chinese and Indian antibiotic exports.
+The paper builds an open dataset of manufacturing sites for the medicines on two lists, the EU
+Union list of critical medicines (299 ATC codes) and the WHO Model List of Essential Medicines
+(540 ATC codes, 187 of them on both lists), from five public sources: the EMA's European Public
+Assessment Reports (EPAR), the German BfArM manufacturer register, the Irish HPRA product
+register, the EDQM database of Certificates of Suitability (CEP) and the EudraGMDP database of GMP
+certificates. It uses the dataset to measure how geographically concentrated the manufacturing of
+each medicine is, to relate that concentration to current shortages in Germany, to check
+single-source medicines against FDA records, and to estimate how exposed EU member states are to a
+halt in Chinese and Indian antibiotic exports.
 
 ## Table of Contents
 
 - [Overview](#overview)
 - [Repository structure](#repository-structure)
 - [Data](#data)
-- [Data collection](#data-collection)
+- [How to reproduce](#how-to-reproduce)
 - [Methods and scripts](#methods-and-scripts)
 - [Paper figures and tables](#paper-figures-and-tables)
-- [How to reproduce](#how-to-reproduce)
+- [Data collection](#data-collection)
 - [Independent replication (Python)](#independent-replication-python)
-- [Contact](#contact)
 
 ## Overview
 
-![Analysis overview](figures/flowchart.png)
+```mermaid
+flowchart TD
+    EPAR[EPAR<br/>EMA reports] --> C
+    DE[Germany<br/>BfArM register] --> C
+    IE[Ireland<br/>HPRA register] --> C
+    CEP[CEP<br/>EDQM database] --> C
+    GMDP[EudraGMDP<br/>API GMP certificates] --> C
+    EU[EU Union list<br/>299 ATC codes] --> C
+    WHO[WHO EML<br/>540 ATC codes] --> C
+    C[01_combine_sources.R<br/>combined register table] --> D[Descriptives and HHI<br/>per list]
+    C --> S[Shortage models V1-V3<br/>BfArM shortage register]
+    C --> F[Single-source check<br/>FDA records]
+    T[BACI 2024 trade data] --> R[Trade-based risk<br/>antibiotic export shock]
+```
 
 | Paper section | Status in this repository |
 |---|---|
-| Manufacturing registers and the Herfindahl-Hirschman Index | complete: data, scripts, figures and Table 1 |
-| Data: manufacturing registers (descriptive overview) | complete |
-| Shortage risk model (BfArM shortage register, logistic regression) | data, script and results for V1 and V2; V3 needs the EudraGMDP input |
-| Data: critical medicines (treemap) and EU antibiotic consumption (ECDC) | complete: data, scripts and figures |
+| Data overview, manufacturing registers and HHI (figures, coverage, Supplementary HHI table) | scripts and inputs included; EudraGMDP results for the EU list differ from the paper, see [EudraGMDP](#eudragmdp) |
+| Shortage models V1 and V2 (German register alone, German register + EPAR), all three lists | reproduces the paper exactly |
+| Shortage models V3 (+ CEP + EudraGMDP), main-text Table 3 and V3 columns of the Supplementary tables | script included; does not reproduce the paper, see [EudraGMDP](#eudragmdp) |
+| Irish register as base register (Supplementary) | V1 and V2 reproduce the paper (terms the paper reports as not estimable appear in the CSV with extreme odds ratios); V3 as above |
+| Antibiotic consumption (ECDC) and treemap of the two lists | scripts and data included |
 | Trade-based risk comparison (BACI) | notebook and figures included; its input data are not stored in the repository |
-| Single-source medicines and alternative capacity (FDA cross-check) | to be added |
-| Data collection (scraping the four registers) | scripts included; their output was corrected by hand, so they do not reproduce the register files exactly |
+| Single-source medicines and alternative capacity (FDA cross-check, Table 2) | not included |
+| Counts and percentages of the Data overview and Table 1 (entries, manufacturers, countries, Gini coefficient, cross-source correlations) | not produced by a script in this repository |
 
 ## Repository structure
 
 ```
 data/
 ├── registers/
-│   ├── raw/           the four manufacturer registers and the critical-medicines list (read-only)
-│   └── processed/     combined, standardised register table written by the scripts
+│   ├── raw/           manufacturer registers and the two medicine lists (inputs, read-only)
+│   └── processed/     combined register table and helper tables written by 01_combine_sources.R
 ├── shortages/         BfArM shortage reports, pulled 9 September 2026
 ├── consumption/       ECDC antibiotic (J01) consumption, one file per year 2016–2024
 ├── trade/             trade-analysis inputs (git-ignored, see "Inputs not stored in the repository")
-└── replication/       inputs of the independent Python replication (see below)
+└── replication/       inputs of the independent Python replication
 scripts/
-├── run_all.R          runs every R analysis script in order
-├── data_collection/   scrapers and download scripts that produced the raw register files
-│   ├── BfArM/  CEP/  EPAR/  EudraGMDP/  HPRA/
 ├── registers/         R analysis of the registers
-│   ├── paths.R
-│   ├── 01_combine_sources.R … 08_api_diversification.R
-│   └── 09_shortage_model.R
-├── descriptives/      01_critical_treemap.R, 02_antibiotic_consumption.R
+│   ├── run_all_lists.R          runs the whole R pipeline
+│   ├── paths.R                  every input and output folder
+│   ├── 01_combine_sources.R     builds the combined register table
+│   ├── PlotbySource_V2.R  bubblePlot.R  atc_summary_report_plot.R  HHI_V2.R
+│   ├── api_diversification_by_source.R  EEAnonEEASteps_V2.R  IndiaChina_Steps_V2.R
+│   ├── Shortage.R  Ireland_Shortage.R  02_shortage_models_all_lists.R  TreeMaps.R
+│   └── GermanyEMA_Shortage.R  shortage_per_manufacturer.R  summarise_models.R   (not in the paper)
+├── descriptives/      02_antibiotic_consumption.R
 ├── trade/             baci_systemic_risk.ipynb (trade-based risk, Python)
+├── data_collection/   scrapers and download scripts that produced the raw register files
 └── replication/       Python replication pipeline
-figures/               figures used in the paper, file names as in the manuscript
+figures/               figures of the paper, file names as in the manuscript (written by run_all_lists.R)
 ├── trade/             trade figures of the paper and the Supplementary Information
-└── additional/        per-source variants and diagnostic plots, not in the paper
+└── additional/        consumption heatmap and small multiples
 results/
-├── tables/            HHI per ATC code and source, Table 1, antibiotic consumption summary
-├── shortage/          shortage model: merged per-code table and full model output
-└── replication/       tables and figures of the Python replication
+├── EU/  WHO/  overlap/     every output of the per-list scripts, file names ending in _EU, _WHO, _overlap
+├── IrelandShortage/        shortage models with the Irish register as base register
+├── tables/                 antibiotic consumption summary
+└── replication/            tables and figures of the Python replication
 ```
+
+`overlap` denotes the medicines on both lists.
 
 ## Data
 
-### Critical medicines
+### Medicine lists
 
-`data/registers/raw/critical.csv` lists the 299 ATC level-5 codes of the Union list of critical
-medicines published by the EMA and the Medicine Shortages Steering Group (MSSG). Every analysis is
-restricted to these codes and is carried out per ATC level-5 code.
+| File in `data/registers/raw/` | Content |
+|---|---|
+| `critical.csv` | the 299 ATC level-5 codes of the Union list of critical medicines (EMA and the Medicine Shortages Steering Group) |
+| `eml_export.xlsx` | export of the WHO Model List of Essential Medicines: medicine, section, formulations, ATC codes and status. The analysis uses the 540 ATC codes on current (`Added`) rows, 535 at level 5 and 5 at level 4; a register code under one of the level-4 codes counts as essential |
 
 ### Manufacturer registers
 
-| File in `data/registers/raw/` | Source | Collected | Content |
+Each source has a file restricted to the EU list (used for every code on the EU list) and, except
+CEP, a second file used only for codes that are on the WHO list but not on the EU list.
+
+| Source | EU-list file | WHO-only file | Collected |
 |---|---|---|---|
-| `EMA_data_critical.csv` | EMA EPAR product information, Annex II | May 2026 | one row per medicine × manufacturing site, with country and manufacturing step (1 = active substance, 2 = finished product / batch release); restricted to critical ATC codes |
-| `bfarm_api_origin_critical_rest_LONG.csv` | German BfArM register (AMGuiFree) | 25–26 June 2026 | one row per product × role × company; role is *Zulassungsinhaber* (marketing-authorisation holder), *Wirkstoffherstellung* (active-substance manufacture) or *Hersteller/Endfreigabe* (manufacture / batch release); country names in German; covers the critical ATC codes except the 35 J01 antibiotics, which were scraped separately |
-| `ireland_critical_atc_review.csv` | Irish HPRA product register | 2026 | one row per product with "\|"-separated lists of manufacturers and their countries; no manufacturing-step field;  restricted to critical ATC codes |
-| `EXPORT_WEB_CEP.txt` | EDQM CEP certification database export | August 2026 | all certificates: substance, holder (name, city and ISO-2 country code in one field), status |
-| `EXPORT_WEB_CEP_with_ATC_drugbank.csv` | `EXPORT_WEB_CEP.txt` with ATC codes attached via DrugBank | August 2026 | as above plus an `atc_code` column (comma-separated when several apply) |
+| EPAR (EMA product information, Annex II) | `EMA_data_critical.csv` | `data.csv` (all centrally authorised medicines, semicolon-separated) | May 2026 (EU-list file) |
+| Germany (BfArM, AMGuiFree) | `bfarm_api_origin_critical_rest_LONG.csv` | `bfarm_api_origin_eml_LONG.csv` | 25–26 June 2026 (EU list) |
+| Ireland (HPRA) | `ireland_critical_atc_review.csv` | `hpra_final.csv` | 2026 |
+| CEP (EDQM) | `EXPORT_WEB_CEP_with_ATC_drugbank.csv` (all certificates, ATC codes attached via DrugBank) | — | August 2026 |
+| EudraGMDP (API GMP certificates) | `Critical_API_sites_activities_LONG.csv` — **not in the repository**, see below | `gmdp_EML_API_sites_activities_LONG.csv` | June 2026 |
 
-All four registers were obtained from the publicly available online sources. Records were checked
-manually and some rows were corrected by hand, so re-collecting the registers today will not give a
-byte-identical result; the analysis in the paper uses the files in this folder.
+`EXPORT_WEB_CEP.txt` is the raw EDQM export from which the CEP file was built.
 
-After restriction to critical medicines the four sources cover:
+The BfArM files list one row per product × role × company. Roles are *Zulassungsinhaber*
+(marketing-authorisation holder), *Wirkstoffherstellung* (active-substance manufacture),
+*Hersteller/Endfreigabe* (manufacture and batch release), *Vertreiber* (distributor) and
+*Örtlicher Vertreter* (local representative); only the two manufacturing roles are used. Country
+names are in German. The register files were checked by hand after collection and some rows were
+corrected, so re-collecting them today does not give the same files.
 
-| Source | ATC codes | Manufacturers | Countries |
-|---|---|---|---|
-| Germany (BfArM) | 251 | 1,824 | 48 |
-| Ireland (HPRA) | 205 | 523 | 29 |
-| CEP (EDQM) | 79 | 313 | 29 |
-| EPAR (EMA) | 51 | 140 | 26 |
+### EudraGMDP
 
-Together they cover 291 of the 299 critical ATC codes.
+The EudraGMDP data were built in three steps. `scripts/data_collection/EudraGMDP/scrape_eudragmdp_2026.py`
+downloads every compliant GMP certificate (snapshot of 23 June 2026) into JSON files with the sites,
+certificate types, substances and API activity codes. A conversion step, which is not in this
+repository, matched the substances to ATC codes and wrote one row per site × certificate × activity:
+`gmdp_EML_API_sites_activities_LONG.csv` for the WHO list and `Critical_API_sites_activities_LONG.csv`
+for the EU list. The EU-list file was then edited
+extensively by hand and is not distributed. Without it, `01_combine_sources.R` prints a warning
+and takes the EudraGMDP sites of EU-list codes from the WHO file
+`gmdp_EML_API_sites_activities_LONG.csv`, which covers 149 of the 200 critical medicines with
+EudraGMDP sites in the paper. Everything that uses EudraGMDP therefore differs from the paper:
+the GMDP panels of the figures, the EudraGMDP row of Table 1, the V3 shortage models and the V3
+models with the Irish register. Placing the original file in `data/registers/raw/` restores the
+paper's input. Results that do not use EudraGMDP (V1, V2, all Germany, EPAR, CEP and Ireland
+panels) are unaffected.
 
 ### Shortages
 
@@ -121,161 +156,156 @@ the file name.
 
 The trade analysis uses CEPII's BACI database (2024), restricted to the four HS-6 lines that carry
 antibiotic active substances: 294110 (penicillins), 294130 (tetracyclines), 294150 (erythromycin and
-macrolides) and 294190 (other antibiotics). These inputs are not stored in the repository; see below.
+macrolides) and 294190 (other antibiotics).
 
 ### Inputs not stored in the repository
 
 | File | Content | How to obtain |
 |---|---|---|
-| `data/registers/raw/DrugBank_FullDatabase.xml` | DrugBank full database, 795 MB; its licence does not permit redistribution | Create a free academic account at <https://go.drugbank.com/releases/latest> and download "All drugs" (XML). Only `scripts/data_collection/CEP/cep_atc_drugbank.R` reads it. |
+| `data/registers/raw/Critical_API_sites_activities_LONG.csv` | EudraGMDP API sites for the EU list, edited by hand | not distributed; `scripts/data_collection/EudraGMDP/` re-downloads the certificates, see [EudraGMDP](#eudragmdp) |
+| `data/registers/raw/DrugBank_FullDatabase.xml` | DrugBank full database, 795 MB; its licence does not permit redistribution | Create a free academic account at <https://go.drugbank.com/releases/latest> and download "All drugs" (XML). Only the CEP scripts in `scripts/data_collection/CEP/` read it. |
 | `data/trade/baci_2024_antibiotics_bilateral.csv` | BACI 2024 flows for the four HS-6 lines: `year`, `hs6_code`, `exporter_iso3`, `exporter_name`, `importer_iso3`, `importer_name`, `value_1000_usd`, `quantity_tonnes` | Download BACI (HS-6) from <https://www.cepii.fr/CEPII/en/bdd_modele/bdd_modele_item.asp?id=37> and keep the 2024 rows for HS 294110, 294130, 294150 and 294190. |
 | `data/trade/cep_antibiotics_clean.csv` | valid CEPs for the four antibiotic HS-6 classes, with holder country | Run `scripts/data_collection/CEP/download_cep.py` and `cep_clean.ipynb` (the paper uses the CEP export of 28 July 2026) and copy the output here. |
-| `data/registers/raw/bfarm_api_origin_critical_J01_LONG.csv` | BfArM register for the 35 J01 antibiotics, read by section 6 of the trade notebook | `python scrape_bfarm_api_origin.py --j01` in `scripts/data_collection/BfArM/`. |
-| `data/registers/raw/Critical_API_sites_activities_LONG.csv` | EudraGMDP API sites for critical codes, one row per site × certificate × activity (`atc`, `site_name`, `country`, `cert_type`, `activity_code`, `withdrawn`, `is_critical`) | Built from the output of `scripts/data_collection/EudraGMDP/scrape_eudragmdp_2026.py`. Needed for the V3 shortage model. |
+| `data/registers/raw/bfarm_api_origin_critical_J01_LONG.csv` | BfArM register for the 35 J01 antibiotics, read by section 6 of the trade notebook (not in the paper) | `python scrape_bfarm_api_origin.py --j01` in `scripts/data_collection/BfArM/` |
+| `data/shortages/Medicines_output_shortages_en.json`, `data/shortages/ema_shortages_atc_crosswalk.csv` | EMA shortage list and its ATC crosswalk, read only by `GermanyEMA_Shortage.R` (not in the paper) | EMA shortages download |
 | `data/trade/sys_risk/*.parquet` | systemic trade risk scores (`str`) per HS code, importer and exporter | From a separate systemic-risk pipeline. The notebook loads them in its setup cell for the risk-adjusted (`str`) variants. |
 
-## Data collection
+## How to reproduce
 
-`scripts/data_collection/` contains the scripts that produced the raw register files. They document
-how the data were obtained. They are not part of `run_all.R`: they scrape live websites, take hours,
-and their output was checked and corrected by hand before it became the files in
-`data/registers/raw/`. A new run gives the current state of each register, not the snapshot used in
-the paper. See `scripts/data_collection/README.md` and the README in each subfolder.
+Requirements: R ≥ 4.3 and, for the trade notebook and the replication, Python ≥ 3.11.
 
-| Register file | Produced by | Snapshot |
-|---|---|---|
-| `EMA_data_critical.csv` | `EPAR/ema_epar_pipeline.ipynb`: downloads the EMA medicines table, finds each medicine's product-information PDF, extracts the Annex II manufacturer blocks, parses name, address, country and step, and geocodes addresses | May 2026 |
-| `bfarm_api_origin_critical_rest_LONG.csv` | `BfArM/scrape_bfarm_api_origin.py --rest`: opens the detail page of every product authorised in Germany for each critical code and records every company with its role and country | 25–26 June 2026 |
-| `ireland_critical_atc_review.csv` | `HPRA/hpra_scraper.ipynb`: collects product information and package-leaflet links (phase 1), downloads the leaflets (phase 2) and extracts manufacturer, address and country (phase 3), then restricts to critical codes | 2026 |
-| `EXPORT_WEB_CEP.txt` | `CEP/download_cep.py`: the EDQM "download the online certification database" export | August 2026 |
-| `EXPORT_WEB_CEP_with_ATC_drugbank.csv` | `CEP/cep_atc_drugbank.R`: keeps valid certificates, matches substance names to DrugBank names and synonyms to get ATC codes, drops level-3/4 combination-product codes, cross-checks the remaining codes against NLM RxNav/RxClass, and attaches the codes to every row of the export | August 2026 |
+```r
+install.packages(c("readr", "readxl", "dplyr", "tidyr", "stringr", "purrr", "janitor", "ggplot2",
+                   "patchwork", "scales", "ggrepel", "ggh4x", "hexbin", "tidytext", "forcats",
+                   "treemapify", "xtable", "lubridate", "broom", "car", "pROC", "MASS", "jsonlite"))
+```
 
-`EudraGMDP/scrape_eudragmdp_2026.py` downloads all EU GMP compliance certificates (June 2026); its API
-sites for critical codes feed the V3 shortage model. `CEP/cep_clean.ipynb` prepares the CEP antibiotics
-table for the trade notebook.
+On macOS with a Homebrew R, `car` builds its dependency `nloptr` from source, which needs CMake
+(`brew install cmake`).
 
-`cep_atc_drugbank.R` runs from the repository root, needs DrugBank in `data/registers/raw/`, writes
-its intermediate tables to `data/registers/processed/cep_atc/`, and **overwrites**
-`data/registers/raw/EXPORT_WEB_CEP_with_ATC_drugbank.csv`. The RxNav step makes about two API calls
-per matched substance and caches them, so an interrupted run resumes.
+From the repository root:
+
+```bash
+Rscript scripts/registers/run_all_lists.R
+```
+
+This runs, in about four minutes:
+
+1. `01_combine_sources.R`, which writes `data/registers/processed/manufacturer_registers_combined.csv`;
+2. for each list (EU, WHO, overlap): `PlotbySource_V2.R`, `bubblePlot.R`, `atc_summary_report_plot.R`,
+   `HHI_V2.R`, `api_diversification_by_source.R`, `EEAnonEEASteps_V2.R`, `IndiaChina_Steps_V2.R`,
+   `Shortage.R` and `Ireland_Shortage.R`, writing to `results/<list>/` and `results/IrelandShortage/`;
+3. `TreeMaps.R`, `02_shortage_models_all_lists.R` and `scripts/descriptives/02_antibiotic_consumption.R`;
+4. copies the figures of the paper from `results/` to `figures/` under their manuscript names.
+
+Lists given on the command line override the default of all three
+(`Rscript scripts/registers/run_all_lists.R WHO`); the switches at the top of `run_all_lists.R`
+turn the individual steps on or off. Every script reads its folders from `scripts/registers/paths.R`
+and can also be run alone from the repository root once `01_combine_sources.R` has run, e.g.
+`LIST <- "WHO"; source("scripts/registers/HHI_V2.R")`.
+
+**Locale.** The country-name maps contain non-ASCII names ("Vereinigtes Königreich", "Österreich").
+In a non-UTF-8 locale, eight German country names are not translated and their rows lose their
+region. `run_all_lists.R` therefore switches to `en_US.UTF-8` and stops if no UTF-8 locale is
+available. Run single scripts from RStudio or a UTF-8 terminal.
+
+The trade notebook needs Python with `pandas numpy scipy matplotlib pyarrow jupyter` and its input data:
+
+```bash
+cd scripts/trade && jupyter nbconvert --to notebook --execute --inplace baci_systemic_risk.ipynb
+```
 
 ## Methods and scripts
 
-All R analysis scripts are run from the repository root. Input and output folders are set once in
-`scripts/registers/paths.R`.
-
-### Harmonising the four sources — `01_combine_sources.R`
+### Combining the registers — `01_combine_sources.R`
 
 Writes `data/registers/processed/manufacturer_registers_combined.csv`: one row per ATC code ×
-manufacturer × country × manufacturing step × source, with the ATC level-1 chapter attached.
+manufacturer × country × manufacturing step × source, with the flags `on_eu_list` and `on_who_eml`,
+the ATC level-1 chapter and the world region of the manufacturer's country. It also writes
+`list_codes.csv` (every code on either list), `who_eml_coverage_by_source.csv`,
+`who_eml_medicines_without_atc.csv` and `germany_eml_codes_without_bfarm_result.csv` to the same
+folder.
 
-- **EPAR.** Manufacturer name, country and step are used as published. Rows whose "manufacturer"
-  has no country are fragments of the PDF text (e.g. "B. CONDITIONS") and are dropped.
-- **Germany.** Marketing-authorisation holders are not manufacturers and are dropped.
-  *Wirkstoffherstellung* becomes step 1 and *Hersteller/Endfreigabe* step 2. German country names are
-  translated to English, and both "Vereinigtes Königreich" variants map to United Kingdom.
-- **Ireland.** The clean `matched_critical_atc` column is used, not the free-text `atc_code`; one row
-  with two codes in that column is split. The parallel "|"-separated manufacturer and country lists are
-  paired up element by element. Where the two lists differ in length, the row is kept unsplit rather
-  than guessing a pairing. Trailing full stops in country names are removed.
-- **CEP.** The export is not pre-filtered, so cells holding several ATC codes are split first and the
-  result is then restricted to the critical codes. The holder's country is the trailing ISO-2 code of
-  the holder field.
-- In all sources whitespace in names is collapsed, so names that differ only by an embedded line break
-  count as one manufacturer. Country spellings are unified across sources ("Italy." to Italy,
-  "SPAIN" to Spain, "UK" to United Kingdom, "USA" to United States, "Republic of Korea" to South Korea).
-- If `critical.csv` is missing, the scripts fall back to the union of ATC codes in the EPAR,
-  German and Irish files, which are already restricted to critical medicines.
+- **Lists.** EU-list codes come from `critical.csv`; WHO codes from the ATC codes of the current
+  (`Added`) rows of the EML export. EML medicines without an ATC code are excluded.
+- **EU and WHO-only files.** Codes on the EU list use the EU-list file of each source only; the
+  WHO-only files fill in codes that are on the WHO list alone, so EU and overlap results do not
+  depend on them (`TOPUP_EU_CODES <- FALSE`).
+- **EPAR.** Manufacturer name, country and step as published.
+- **Germany.** Only *Wirkstoffherstellung* (step 1) and *Hersteller/Endfreigabe* (step 2) are kept;
+  marketing-authorisation holders, distributors and local representatives are dropped. German
+  country names are translated to English.
+- **Ireland.** The parallel "|"-separated manufacturer and country lists are paired element by
+  element; rows where the two lists differ in length are kept unsplit. No step information.
+- **CEP.** Cells with several ATC codes are split; the holder's country is the trailing ISO-2 code
+  of the holder field. All holders count as step 1.
+- **EudraGMDP.** Valid API certificates only; a site is kept for a code if it is certified for
+  manufacture or processing of the substance (activity codes 3.1–3.4 and 3.5.1), not for packaging
+  or testing only. All sites count as step 1.
+- **Regions.** China, India, other Asia & Oceania, North America, non-EU Europe, rest of the world
+  (Latin America and Africa), and the EU/EEA as reference.
 
-### Site identity and manufacturing step
+### Step-1 priority
 
-A manufacturing site is identified by the BfArM site number (`pu_nummer`) for Germany, by
-manufacturer name for EPAR and Ireland, and by certificate holder for CEP.
+EPAR and Germany distinguish active-substance manufacture (step 1) from finished-product
+manufacture and batch release (step 2). For the concentration measures, step-1 records are used for
+every ATC code with at least one of them, and step-2 records only for codes without any. CEP and
+EudraGMDP contain step-1 manufacturers only; Ireland has no step field and all its manufacturers
+are used.
 
-EPAR and Germany distinguish active-substance manufacture (step 1) from finished-product manufacture
-and batch release (step 2). For the concentration measures (HHI, API diversification) a
-**step-1 priority** rule applies: for each ATC code, step-1 records are used whenever at least one
-exists, and step-2 records only for codes with no step-1 disclosure at all. Ireland has no step field
-and all its manufacturers are used. CEP certificates identify the active-substance manufacturer directly, so no step distinction
-applies.
+### Descriptive and concentration figures
 
-### Country-level concentration — `03_hhi.R`
+All scripts run once per list and write to `results/<list>/`, with the list appended to every file name.
+
+| Script | What it computes |
+|---|---|
+| `PlotbySource_V2.R` | ATC codes, manufacturers and countries per source; manufacturers and countries per ATC code; top 10 countries; the Irish register separately |
+| `bubblePlot.R` | unique sites (dot size) and ATC codes (colour) per country × ATC chapter, per source; non-EU/EEA countries in bold |
+| `atc_summary_report_plot.R` | distinct manufacturers against distinct countries per ATC code (hexagonal bins), per source |
+| `HHI_V2.R` | country-level HHI per ATC code and source, its distribution and its breakdown by ATC chapter, and how often each source gives the highest HHI (`hhi_highest_by_source_<list>.tex`) |
+| `api_diversification_by_source.R` | per substance, distinct API sites against the share of those sites in China or India |
+| `IndiaChina_Steps_V2.R` | share of unique sites per ATC chapter in China, India, the EU/EEA and elsewhere, by step |
+| `EEAnonEEASteps_V2.R` | share of unique sites per ATC chapter in and outside the EU/EEA, by step (not in the paper) |
+| `TreeMaps.R` | ATC codes per ATC level-1 chapter on each list |
+| `scripts/descriptives/02_antibiotic_consumption.R` | J01 consumption per country and year, EU/EEA mean with country trajectories, heatmap, small multiples and a per-country summary in `results/tables/` |
 
 For each ATC code and source the Herfindahl-Hirschman Index is
 
 $$\mathrm{HHI} = 10\,000 \sum_{i=1}^{n} s_i^2,$$
 
-where $s_i$ is the share of the code's manufacturing sites located in country $i$. HHI is 10,000 when
-all sites are in one country. The dashed lines in the figures mark 1,500 and 2,500, the conventional
-thresholds for moderate and high concentration.
+where $s_i$ is the share of the code's manufacturing sites in country $i$. The dashed lines in the
+figures mark 1,500 and 2,500.
 
-Writes `results/tables/hhi_step1_priority.csv` (one row per ATC code and source: number of
-countries and sites, HHI, effective number of countries $10\,000/\mathrm{HHI}$). It also writes
-`results/tables/hhi_highest_by_source.csv`: for each source, how often it
-reports the highest HHI among all sources covering that code. Ties count for every tied source.
+### Shortage models — `Shortage.R`, `Ireland_Shortage.R`, `02_shortage_models_all_lists.R`
 
-### Descriptive and geographic figures
+- **Outcome.** Multi-code cells of the BfArM shortage register are split. Reports with only an ATC
+  level-4 code (21) or no ATC code (16) are dropped. A code is *currently in shortage* if any of its
+  reports started on or before 9 September 2026 and has no end date or ends on or after it.
+- **Manufacturer data.** V1: the German register; V2: Germany + EPAR; V3: Germany + EPAR + CEP +
+  EudraGMDP, with company names harmonised (lower case, no punctuation or legal-form suffixes,
+  combined with the country) so that a site listed in several registers counts once. Step-1
+  priority as above.
+- **Models.** Logistic regression of shortage status on log(1 + manufacturers), HHI/10,000 and either
+  the combined China + India share (pooled model) or the shares of the six regions with the EU/EEA as
+  reference (regional model). Likelihood-ratio tests, profile-likelihood confidence intervals,
+  McFadden's pseudo-R², in-sample AUC, shortages per predictor and variance inflation factors.
+  Terms affected by quasi-complete separation are reported as not estimable.
+- `Shortage.R` writes all models per list to `results/<list>/shortage_models_V1_V2_V3_<list>.csv`
+  together with the per-code table `atc_shortage_concentration_analysis_<list>.csv`.
+  `Ireland_Shortage.R` runs it with the Irish register in place of the German one
+  (`results/IrelandShortage/`). `02_shortage_models_all_lists.R` fits the models for all three lists
+  and writes the Supplementary tables `results/shortage_models_all_lists.tex` (pooled) and
+  `results/shortage_models_all_lists_regional.tex` (regional).
 
-| Script | What it computes |
-|---|---|
-| `02_plots_by_source.R` | totals of ATC codes, manufacturers and countries per source; manufacturers and countries per ATC code; top 10 manufacturing countries |
-| `04_atc_summary.R` | number of distinct manufacturers against number of distinct countries per ATC code (hexagonal bins), per source |
-| `05_bubble_matrix.R` | unique sites (dot size) and unique critical ATC codes (colour) per country × ATC chapter; non-EU/EEA countries in bold |
-| `06_eea_by_step.R` | share of unique sites per ATC chapter that are EEA step 1, EEA step 2 or non-EEA. No step-2 records are dropped here: a site counts as step 1 if it has any step-1 record |
-| `07_country_groups.R` | the same shares split into China / India / EU-EEA / Other, darker shade for step 1 |
-| `08_api_diversification.R` | per substance, distinct API sites against share of those sites in China or India, step-1 priority. Substances with at most 30 sites and more than 65 % China+India share are labelled. For Ireland the product name stands in for the substance, since the register has no substance field |
-
-### Shortage risk — `09_shortage_model.R`
-
-Links the register data to the BfArM shortage register and asks which feature of a medicine's supply
-base predicts that it is currently in shortage.
-
-- **Outcome.** Multi-code cells in the shortage register are split. Reports carrying only an ATC
-  level-4 code (21) or no ATC code (16) cannot be matched to one critical code and are dropped. A code
-  is *currently in shortage* if any of its reports started on or before 9 September 2026 (the pull date)
-  and has no end date or ends on or after it.
-- **Predictors**, per ATC code, with the step-1 priority rule: number of distinct manufacturers,
-  country-level HHI, and share of manufacturers located in China or India.
-- **Bases.** V1 uses the German register alone (251 codes, 34 in shortage); V2 pools Germany and EPAR
-  (259 codes, 35 in shortage). Ireland and CEP are left out because the German register is both the
-  deepest source and the origin of the shortage data. V3 combines Germany with CEP certificate holders
-  and EudraGMDP API sites (sites certified for chemical synthesis, extraction, biological or sterile API
-  manufacture, or physical processing, not for packaging or testing only). CEP and EudraGMDP rows count
-  as step 1, and company names are harmonised across the three registers (legal forms and site suffixes
-  dropped, first two words of the name plus country), so one firm listed in several registers counts
-  once. V3 runs only if the EudraGMDP file is present.
-- **Model.** Logistic regression of shortage status on log(1 + manufacturers), HHI/10,000 and the
-  China+India share. Terms are tested with likelihood-ratio tests (type II), confidence intervals are
-  profile-likelihood intervals, and the script reports McFadden's pseudo-R², in-sample AUC, variance
-  inflation factors and confusion matrices. It also runs univariate Wilcoxon and point-biserial tests
-  and Fisher tests of single-source status against shortage, which the paper does not report.
-
-Outputs: `results/shortage/shortage_model_output.txt` (the full console output), 
-`results/shortage/atc_shortage_concentration_analysis.csv` (one row per critical code with all
-predictors and the shortage flag) and diagnostic plots in `figures/additional/shortage/`.
-
-Results from the data in this repository:
-
-| | V1: Germany | V2: Germany + EPAR |
-|---|---|---|
-| China+India share, OR (95 % CI) | 8.6 (2.4–32.0), p < 0.001 | 9.6 (2.7–35.5), p < 0.001 |
-| log manufacturers, p | 0.65 | 0.85 |
-| HHI, p | 0.12 | 0.05 |
-| McFadden's pseudo-R² | 0.08 | 0.08 |
-| in-sample AUC | 0.71 | 0.71 |
-
-### Critical medicines and antibiotic consumption — `scripts/descriptives/`
-
-| Script | What it computes |
-|---|---|
-| `01_critical_treemap.R` | number and share of the 299 critical ATC codes per ATC level-1 chapter, as a treemap |
-| `02_antibiotic_consumption.R` | J01 consumption per country and year (zeros are treated as missing), the EU/EEA mean per year with all country trajectories, a country × year heatmap, small multiples, and a per-country summary (min, max, mean, linear trend) in `results/tables/antibacterial_consumption_summary.csv` |
+Not in the paper: `GermanyEMA_Shortage.R` adds the EMA shortage list to the outcome and needs the
+EMA files listed above; `shortage_per_manufacturer.R` and `summarise_models.R` summarise the model
+outputs in `results/`.
 
 ### Trade-based risk — `scripts/trade/baci_systemic_risk.ipynb`
 
 Python notebook (pandas, numpy, scipy, matplotlib, pyarrow). It builds the sourcing-share matrix $S$
-(each importer's import shares by exporter, pooled over the four HS-6 lines, by value and by volume) and
-then computes, in order:
+(each importer's import shares by exporter, pooled over the four HS-6 lines, by value and by volume)
+and then computes, in order:
 
 Shares are computed by value and by volume, and for the comparisons that need only imports also by
 risk-adjusted value (`str`). Then, in order:
@@ -292,87 +322,71 @@ risk-adjusted value (`str`). Then, in order:
 7. CEP holders against EU-27 imports, with (7b) the non-EU split of Supplementary Table `cep_split`;
 8. an exploratory unit-value screen (not in the paper).
 
-The notebook resolves all paths from its own folder, so run it from `scripts/trade/` (Jupyter does
-this by default). It reads the inputs listed under
-[Inputs not stored in the repository](#inputs-not-stored-in-the-repository) from `data/trade/` and
-writes figures to `figures/trade/`. The figures in `figures/trade/` are those in the manuscript, and the
-notebook keeps the outputs of its last run.
+The notebook resolves all paths from its own folder, so run it from `scripts/trade/`. It reads its
+inputs from `data/trade/` and writes figures to `figures/trade/`. The figures in `figures/trade/` are those
+in the manuscript, and the notebook keeps the outputs of its last run.
 
 ## Paper figures and tables
 
+Main text:
+
 | In the paper | File | Script |
 |---|---|---|
-| Fig. `fig:atc_summary_report` — manufacturers vs. countries per ATC code | `figures/atc_summary_report_plot_v2.png` | `04_atc_summary.R` |
-| Fig. `fig:bubble_matrix_by_source` — country × ATC chapter footprint | `figures/bubble_matrix_by_source.png` | `05_bubble_matrix.R` |
-| Fig. `fig:manufacturing_sites_by_chapter_step_source` — EEA / non-EEA by step | `figures/manufacturing_sites_by_chapter_step_source.png` | `06_eea_by_step.R` |
-| Fig. `fig:manufacturing_sites_by_chapter_country_group_source` — China / India / EU-EEA / Other | `figures/manufacturing_sites_by_chapter_country_group_source.png` | `07_country_groups.R` |
-| Fig. `fig:api_diversification_germany` — API diversification, Germany | `figures/api_diversification_Germany.png` | `08_api_diversification.R` |
-| Fig. `fig:hhi_step1_priority_by_source` — HHI distribution per source | `figures/hhi_step1_priority_by_source.png` | `03_hhi.R` |
-| Fig. `fig:hhi_by_chapter_by_source` — HHI by ATC chapter | `figures/hhi_by_chapter_by_source.png` | `03_hhi.R` |
-| Table `tab:hhi_highest_by_sourceT` — source with the highest HHI | `results/tables/hhi_highest_by_source.tex` | `03_hhi.R` |
-| Shortage model results (Results, no figure) | `results/shortage/shortage_model_output.txt` | `09_shortage_model.R` |
-| Fig. `fig:cep_trade_scatter` — CEP holders vs. EU-27 import volume | `figures/trade/cep_vs_trade_scatter_volume_spearman.png` | trade notebook, §7 |
-| Fig. `fig:exposure_fragility` (a) — import exposure | `figures/trade/exposure_volume.png` | trade notebook, §2 |
-| Fig. `fig:exposure_fragility` (b) — fragility map | `figures/trade/fragility_volume.png` | trade notebook, §4 |
-| Fig. `fig:shock` — China + India export stop | `figures/trade/shock_volume.png` | trade notebook, §5 |
-| Fig. `fig:treemap_chapters` — critical APIs by ATC chapter | `figures/plot4_treemap_chapters.png` | `01_critical_treemap.R` |
-| Fig. `fig:eu_antibiotic_trend` — J01 consumption 2016–2024 | `figures/eu_average_trend.png` | `02_antibiotic_consumption.R` |
-| Fig. `fig:plots_by_source` — descriptive overview per source | `figures/plots_by_source.png` | `02_plots_by_source.R` |
-| Single-source medicines and FDA cross-check | — | to be added |
+| Table `tab:datasets` — coverage per source | console output (`n_atc_codes`) | `PlotbySource_V2.R` |
+| Table `tab:datasets` — entries, manufacturers, countries | — | not included |
+| Table `tab:single_source` — single-source medicines and FDA records | — | not included |
+| Figs. `fig:hhi_step1_priority_by_source`, `fig:hhi_step1_priority_by_sourceWHO` | `figures/hhi_step1_priority_by_source_EU.png`, `_WHO.png` | `HHI_V2.R` |
+| Figs. `fig:manufacturing_sites_by_chapter_country_group_source`, `…WHO` | `figures/manufacturing_sites_by_chapter_country_group_source_EU.png`, `_WHO.png` | `IndiaChina_Steps_V2.R` |
+| Fig. `fig:api_diversification_germany` | `figures/api_diversification_Germany_EU.png` | `api_diversification_by_source.R` |
+| Table `tab:shortage_regional_v3` | `results/shortage_models_all_lists_regional.tex` (V3 columns) | `02_shortage_models_all_lists.R` |
+| Fig. `fig:exposure_fragility` (a), (b) | `figures/trade/exposure_volume.png`, `fragility_volume.png` | trade notebook, §2, §4 |
+| Fig. `fig:shock` | `figures/trade/shock_volume.png` | trade notebook, §5 |
+| Fig. `fig:eu_antibiotic_trend` | `figures/eu_average_trend.png` | `02_antibiotic_consumption.R` |
+| Fig. `fig:plots_by_source` | `figures/plots_by_source_EU.png` | `PlotbySource_V2.R` |
 
 Supplementary Information:
 
 | In the SI | File | Script |
 |---|---|---|
-| Table `tab:cep_split` — non-EU partners with and without CEP holders | printed by the notebook | trade notebook, §7b |
-| Figs. `fig:single`, `fig:single_val` — single-sourcing | `figures/trade/single_sourcing_volume.png`, `single_sourcing_value.png` | trade notebook, §3 |
-| Fig. `fig:cosinenull` — sourcing-similarity null | `figures/trade/cosine_null.png` | trade notebook, §1b |
-| Figs. `fig:exposure_val`, `fig:fragility_val`, `fig:shock_val` — value counterparts | `figures/trade/exposure_value.png`, `fragility_value.png`, `shock_value.png` | trade notebook, §2, §4, §5 |
-| Fig. `fig:cosine` — cosine similarity matrices | `figures/trade/cosine.png` | trade notebook, §1 |
+| Fig. `fig:treemap_chapters` | `figures/plot4_treemap_chapters_eu_who.png` | `TreeMaps.R` |
+| Figs. `fig:hhi_by_chapter_by_source`, `…WHO` | `figures/hhi_by_chapter_by_source_EU.png`, `_WHO.png` | `HHI_V2.R` |
+| Figs. `fig:atc_summary_report`, `…WHO` | `figures/atc_summary_report_plot_v2_EU.png`, `_WHO.png` | `atc_summary_report_plot.R` |
+| Figs. `fig:bubble_matrix_by_source`, `…WHO` | `figures/bubble_matrix_by_source_EU.png`, `_WHO.png` | `bubblePlot.R` |
+| Table `tab:hhi_highest_by_source` | `results/EU/hhi_highest_by_source_EU.tex`, `results/WHO/hhi_highest_by_source_WHO.tex` | `HHI_V2.R` |
+| Table `tab:si_shortage_regional` | `results/shortage_models_all_lists_regional.tex` | `02_shortage_models_all_lists.R` |
+| Table `tab:si_shortage_pooled` | `results/shortage_models_all_lists.tex` | `02_shortage_models_all_lists.R` |
+| Fig. `fig:data_ireland` | `figures/data_ireland_EU.png` | `PlotbySource_V2.R` |
+| Fig. `fig:hhi_ireland` | `figures/hhi_step1_priority_Ireland_EU.png` | `HHI_V2.R` |
+| Table `tab:si_shortage_pooled_ireland` | `results/IrelandShortage/shortage_models_V1_V2_V3_Ireland_<list>.csv` (model `main`) | `Ireland_Shortage.R` |
+| Table `tab:cep_split` | printed by the notebook | trade notebook, §7b |
+| Fig. `fig:cep_trade_scatter` | `figures/trade/cep_vs_trade_scatter_volume_spearman.png` | trade notebook, §7 |
+| Figs. `fig:single`, `fig:single_val` | `figures/trade/single_sourcing_volume.png`, `single_sourcing_value.png` | trade notebook, §3 |
+| Fig. `fig:cosinenull` | `figures/trade/cosine_null.png` | trade notebook, §1b |
+| Figs. `fig:exposure_val`, `fig:fragility_val`, `fig:shock_val` | `figures/trade/exposure_value.png`, `fragility_value.png`, `shock_value.png` | trade notebook, §2, §4, §5 |
+| Fig. `fig:cosine` | `figures/trade/cosine.png` | trade notebook, §1 |
 
-The single-source variants (`bubble_matrix_<source>.png`, `hhi_by_chapter_<source>.png`,
-`api_diversification_<source>.png`), the earlier two-panel `atc_summary_report_plot.png`, the
-consumption heatmap and small multiples, and the shortage-model diagnostic plots are in
-`figures/additional/`.
+The per-source variants of the figures, the step figures, the shortage diagnostic plots and the
+CSV tables behind every figure are in `results/<list>/`.
 
-## How to reproduce
+## Data collection
 
-Requirements: R ≥ 4.3 and, for the replication only, Python ≥ 3.11. The results in this repository
-were produced with R 4.6.0 and Python 3.14.
+`scripts/data_collection/` contains the scripts that produced the raw register files. They are not
+part of `run_all_lists.R`: they scrape live websites, take hours, and their output was checked and
+corrected by hand before it became the files in `data/registers/raw/`. A new run gives the current
+state of each register, not the snapshot used in the paper. See `scripts/data_collection/README.md`
+and the README in each subfolder.
 
-```r
-install.packages(c("readr", "dplyr", "tidyr", "ggplot2", "janitor", "stringr", "purrr",
-                   "patchwork", "tidytext", "forcats", "scales", "ggrepel", "xtable", "hexbin",
-                   "lubridate", "broom", "car", "pROC", "readxl", "treemapify"))
-```
+| Register file | Produced by |
+|---|---|
+| `EMA_data_critical.csv`, `data.csv` | `EPAR/ema_epar_pipeline.ipynb`: downloads the EMA medicines table, finds each medicine's product-information PDF, extracts the Annex II manufacturer blocks, parses name, address, country and step, and geocodes addresses |
+| `bfarm_api_origin_critical_rest_LONG.csv`, `bfarm_api_origin_eml_LONG.csv` | `BfArM/scrape_bfarm_api_origin.py`: opens the detail page of every product authorised in Germany for each code and records every company with its role and country |
+| `ireland_critical_atc_review.csv`, `hpra_final.csv` | `HPRA/hpra_scraper.ipynb`: collects product information and package-leaflet links, downloads the leaflets and extracts manufacturer, address and country |
+| `EXPORT_WEB_CEP.txt` | `CEP/download_cep.py`: the EDQM "download the online certification database" export |
+| `EXPORT_WEB_CEP_with_ATC_drugbank.csv` | `CEP/cep_atc_drugbank.R`: keeps valid certificates, matches substance names to DrugBank names and synonyms to get ATC codes, drops level-3/4 combination-product codes, cross-checks the remaining codes against NLM RxNav/RxClass, keeps the codes on the EU list and attaches them to every row of the export |
+| `gmdp_EML_API_sites_activities_LONG.csv`, `Critical_API_sites_activities_LONG.csv` | `EudraGMDP/scrape_eudragmdp_2026.py`: downloads all compliant GMP certificates from EudraGMDP with site, country, certificate type, substances and API activity codes, as JSON. The conversion of the JSON to these files (substance → ATC code, one row per activity) is not in this repository, and the EU-list file was also edited by hand |
 
-On macOS with a Homebrew R, `car` builds its dependency `nloptr` from source, which needs CMake
-(`brew install cmake`). `cep_atc_drugbank.R` additionally needs `xml2`, `httr` and `jsonlite`.
-
-From the repository root:
-
-```bash
-Rscript scripts/run_all.R
-```
-
-This runs `scripts/registers/01_…` to `09_…` and then `scripts/descriptives/01_…` and `02_…`
-(about 15 seconds) and rewrites `data/registers/processed/`, `figures/` (except `figures/trade/`),
-`results/tables/` and `results/shortage/`. `02`, `05` and `09` read the output of `01`; every other
-script reads its raw data directly, so a single figure can be rebuilt with, for example,
-`Rscript -e 'source("scripts/registers/03_hhi.R", encoding = "UTF-8")'`. Random label placement and
-jitter are seeded, so repeated runs give identical files.
-
-The trade notebook needs Python with `pandas numpy scipy matplotlib pyarrow jupyter` and its input data:
-
-```bash
-cd scripts/trade && jupyter nbconvert --to notebook --execute --inplace baci_systemic_risk.ipynb
-```
-
-**Locale.** The country-name maps contain non-ASCII names ("Vereinigtes Königreich"). In a non-UTF-8
-locale, R reads these names in the scripts differently from the names in the data. The 1,276 German
-rows for the United Kingdom then lose their country and the HHI of a few codes changes. `run_all.R`
-therefore switches to a UTF-8 locale and stops if none is available. Run single scripts from RStudio
-or a UTF-8 terminal.
+`CEP/cep_atc_drugbank_eu_who.R` is the same procedure keeping the codes of both lists; it writes
+`data/registers/processed/EXPORT_WEB_CEP_with_ATC_drugbank_eu_who.csv` and is not used by the analysis.
 
 ## Independent replication (Python)
 
@@ -383,7 +397,7 @@ on the hand-curated files above.
 
 | Source | Codes (registers) | Codes (replication) | Codes in both | Spearman ρ, HHI | Spearman ρ, number of countries | Same number of countries | Single-country share (registers / replication) |
 |---|---|---|---|---|---|---|---|
-| CEP | 79 | 169 | 79 | 0.93 | 0.95 | 89 % | 5 % / 5 % |
+| CEP | 79 | 169 | 79 | 0.80 | 0.86 | 57 % | 10 % / 5 % |
 | EPAR | 51 | 100 | 50 | 0.81 | 0.84 | 64 % | 42 % / 34 % |
 
 The replication covers more codes because it maps substance names to ATC codes through several
@@ -428,7 +442,7 @@ python scripts/replication/04-comparison/compare_with_registers.py
 | `analyse.py` | `results/replication/`: `summary.txt`, `substance_supply.csv`, `country_totals.csv`, `distribution.csv`, `sensitivity.csv`, `atc_supply.csv`, `atc_chapter_totals.csv` |
 | `plots.py` | `results/replication/figures/`: counterparts of the register figures, with role in place of source |
 | `qc.py` | PASS / WARN / FAIL checks on country resolution, ATC coverage and format, duplicates, normalisation and Union-list coverage; exits non-zero on failure |
-| `compare_with_registers.py` | `results/replication/comparison_with_registers.csv`: the table above |
+| `compare_with_registers.py` | `results/replication/comparison_with_registers.csv`: the table above; reads `results/EU/hhi_step1_priority_final_EU.csv`, so `run_all_lists.R` must have run first |
 
 ### Design decisions
 

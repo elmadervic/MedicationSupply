@@ -6,7 +6,7 @@
 # local representatives are left out, and manufacturer names are compared
 # ignoring upper/lower case and spacing.
 #
-# Outputs (Results/<LIST> folder, file names end in _<LIST>, e.g. _WHO):
+# Outputs (results/<LIST> folder, file names end in _<LIST>, e.g. _WHO):
 #   plots_by_source.png -- Germany, EPAR, GMDP and CEP side by side
 #   data_ireland.png    -- the same four panels for the Ireland data set alone (2 x 2)
 #
@@ -28,11 +28,11 @@ library(purrr)
 ## "EU" = EU Union list, "WHO" = WHO EML, "overlap" = on both lists.
 ## run_all_lists.R sets LIST and runs this script once per list.
 if (!exists("LIST")) LIST <- "EU"
-DATA_DIR <- "Data"
-OUT_DIR  <- file.path("Results", LIST)          # outputs go to Results/EU, /WHO, /overlap
+source("scripts/registers/paths.R", local = TRUE)
+OUT_DIR  <- file.path(RESULTS_DIR, LIST)
 dir.create(OUT_DIR, recursive = TRUE, showWarnings = FALSE)
 
-## output file name with the list added: out_file("plot.png") -> Results/WHO/plot_WHO.png
+## output file name with the list added: out_file("plot.png") -> results/WHO/plot_WHO.png
 out_file <- function(name) file.path(OUT_DIR, sub("(\\.[A-Za-z]+)$", paste0("_", LIST, "\\1"), name))
 
 keep_list <- function(df) {
@@ -55,7 +55,7 @@ integer_breaks <- function(n = 5) {
   }
 }
 
-data <- read.csv(file.path(DATA_DIR, "manufacturer_registers_combined.csv"),
+data <- read.csv(file.path(PROC_DIR, "manufacturer_registers_combined.csv"),
                  stringsAsFactors = FALSE) %>%
   keep_list()
 
