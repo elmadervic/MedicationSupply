@@ -20,8 +20,7 @@
 #    the combined file. Sites are identified by manufacturer name in all
 #    sources (the combined file has no BfArM pu_nummer).
 #  - EPAR rows with a missing step are treated as step 2 (as before).
-#  - Chapter order follows Germany's total site count, the same
-#    reference as in EEAnonEEASteps_V2.R, so both figures match.
+#  - Chapter order follows Germany's total site count.
 #
 # Requires: install.packages(c("dplyr","ggplot2","stringr"))
 # ---------------------------------------------------------------

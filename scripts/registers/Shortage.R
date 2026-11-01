@@ -41,7 +41,8 @@
 ## next run; its output files contain _Ireland_<LIST>.
 ##
 ## Shortage outcome: Germany (BfArM), always, when you run this script.
-## GermanyEMA_Shortage.R runs it with OUTCOME = "GermanyEMA": a code counts
+## With OUTCOME = "GermanyEMA" (set in the environment passed to sys.source,
+## as Ireland_Shortage.R does for BASE; not in the paper), a code counts
 ## as in shortage if it is on the German BfArM register OR on the EMA
 ## shortage list (Medicines_output_shortages_en.json, matched to ATC codes
 ## through data/shortages/ema_shortages_atc_crosswalk.csv). Same separate-environment
@@ -113,7 +114,7 @@ lbl <- function(x) gsub("Germany", BASE, x, fixed = TRUE)   # labels follow the 
 ## ---- shortage outcome ---------------------------------------------------
 ## "Germany"    = on the German BfArM register (default)
 ## "GermanyEMA" = on the German BfArM register OR on the EMA shortage list
-##                (active on the reference date; GermanyEMA_Shortage.R sets this)
+##                (active on the reference date)
 ## "GermanyEMAall" = German BfArM register OR ever on the EMA shortage list
 ##                (all EMA records, status and dates ignored)
 ## Same guard as BASE: a leftover OUTCOME in the R session must not turn a

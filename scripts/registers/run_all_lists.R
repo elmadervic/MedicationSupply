@@ -35,7 +35,6 @@ per_list_scripts <- c(
   "atc_summary_report_plot.R",
   "HHI_V2.R",
   "api_diversification_by_source.R",
-  "EEAnonEEASteps_V2.R",
   "IndiaChina_Steps_V2.R",
   "Shortage.R",           # V1-V3 with the German register (BfArM)
   "Ireland_Shortage.R"     # V1-V3 with the Irish register (HPRA)

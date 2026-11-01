@@ -9,7 +9,6 @@ ingredients (APIs) of critical medicines are manufactured. There is one folder p
 | [`EudraGMDP/`](EudraGMDP/) | EMA EudraGMDP (EU GMP certificates) | every GMP-compliant site: substances, manufacturing scope, issuing authority, dates | `scrape_eudragmdp_2026.py` (+ `scrape_eudragmdp.py`, which it imports) |
 | [`CEP/`](CEP/) | EDQM Certificates of Suitability | full CEP database; holder country per substance | `download_cep.py` → `cep_clean.ipynb` |
 | [`CEP/`](CEP/) | EDQM CEP export + DrugBank + NLM RxNav | ATC codes for every CEP substance (`data/registers/raw/EXPORT_WEB_CEP_with_ATC_drugbank.csv`) | `cep_atc_drugbank.R` |
-| [`CEP/`](CEP/) | as above, keeping the codes of the EU list and the WHO EML | `data/registers/processed/EXPORT_WEB_CEP_with_ATC_drugbank_eu_who.csv`, not used by the analysis | `cep_atc_drugbank_eu_who.R` |
 | [`EudraGMDP/`](EudraGMDP/) | EudraGMDP GMP certificates | every compliant GMP certificate: site, country, certificate type, substances and API activity codes (JSON) | `scrape_eudragmdp_2026.py` (imports `scrape_eudragmdp.py`) |
 | [`EPAR/`](EPAR/) | EMA EPAR product information, Annex II | manufacturers and manufacturing step per centrally authorised medicine | `ema_epar_pipeline.ipynb` |
 | [`HPRA/`](HPRA/) | HPRA product register and package leaflets | manufacturers and countries per Irish product (`ireland_critical_atc_review.csv`) | `hpra_scraper.ipynb` |
