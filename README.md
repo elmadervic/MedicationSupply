@@ -109,7 +109,7 @@ CEP, a second file used only for codes that are on the WHO list but not on the E
 | Germany (BfArM, AMGuiFree) | `bfarm_api_origin_critical_rest_LONG.csv` | `bfarm_api_origin_eml_LONG.csv` | 25–26 June 2026 (EU list) |
 | Ireland (HPRA) | `ireland_critical_atc_review.csv` | `hpra_final.csv` | 2026 |
 | CEP (EDQM) | `EXPORT_WEB_CEP_with_ATC_drugbank.csv` (all certificates, ATC codes attached via DrugBank) | — | August 2026 |
-| EudraGMDP (API GMP certificates) | `Critical_API_sites_activities_LONG.csv` — **not in the repository**, see below | `gmdp_EML_API_sites_activities_LONG.csv` | 2026 |
+| EudraGMDP (API GMP certificates) | `Critical_API_sites_activities_LONG.csv` — **not in the repository**, see below | `gmdp_EML_API_sites_activities_LONG.csv` | June 2026 |
 
 `EXPORT_WEB_CEP.txt` is the raw EDQM export from which the CEP file was built.
 
@@ -122,7 +122,12 @@ corrected, so re-collecting them today does not give the same files.
 
 ### EudraGMDP
 
-The EudraGMDP file for the EU list, `Critical_API_sites_activities_LONG.csv`, was edited
+The EudraGMDP data were built in three steps. `scripts/data_collection/EudraGMDP/scrape_eudragmdp_2026.py`
+downloads every compliant GMP certificate (snapshot of 23 June 2026) into JSON files with the sites,
+certificate types, substances and API activity codes. A conversion step, which is not in this
+repository, matched the substances to ATC codes and wrote one row per site × certificate × activity:
+`gmdp_EML_API_sites_activities_LONG.csv` for the WHO list and `Critical_API_sites_activities_LONG.csv`
+for the EU list. The EU-list file was then edited
 extensively by hand and is not distributed. Without it, `01_combine_sources.R` prints a warning
 and takes the EudraGMDP sites of EU-list codes from the WHO file
 `gmdp_EML_API_sites_activities_LONG.csv`, which covers 149 of the 200 critical medicines with
@@ -157,7 +162,7 @@ macrolides) and 294190 (other antibiotics).
 
 | File | Content | How to obtain |
 |---|---|---|
-| `data/registers/raw/Critical_API_sites_activities_LONG.csv` | EudraGMDP API sites for the EU list, edited by hand | not distributed, see [EudraGMDP](#eudragmdp) |
+| `data/registers/raw/Critical_API_sites_activities_LONG.csv` | EudraGMDP API sites for the EU list, edited by hand | not distributed; `scripts/data_collection/EudraGMDP/` re-downloads the certificates, see [EudraGMDP](#eudragmdp) |
 | `data/registers/raw/DrugBank_FullDatabase.xml` | DrugBank full database, 795 MB; its licence does not permit redistribution | Create a free academic account at <https://go.drugbank.com/releases/latest> and download "All drugs" (XML). Only the CEP scripts in `scripts/data_collection/CEP/` read it. |
 | `data/trade/baci_2024_antibiotics_bilateral.csv` | BACI 2024 flows for the four HS-6 lines: `year`, `hs6_code`, `exporter_iso3`, `exporter_name`, `importer_iso3`, `importer_name`, `value_1000_usd`, `quantity_tonnes` | Download BACI (HS-6) from <https://www.cepii.fr/CEPII/en/bdd_modele/bdd_modele_item.asp?id=37> and keep the 2024 rows for HS 294110, 294130, 294150 and 294190. |
 | `data/trade/cep_antibiotics_clean.csv` | valid CEPs for the four antibiotic HS-6 classes, with holder country | Run `scripts/data_collection/CEP/download_cep.py` and `cep_clean.ipynb` (the paper uses the CEP export of 28 July 2026) and copy the output here. |
@@ -373,7 +378,7 @@ and the README in each subfolder.
 | `ireland_critical_atc_review.csv`, `hpra_final.csv` | `HPRA/hpra_scraper.ipynb`: collects product information and package-leaflet links, downloads the leaflets and extracts manufacturer, address and country |
 | `EXPORT_WEB_CEP.txt` | `CEP/download_cep.py`: the EDQM "download the online certification database" export |
 | `EXPORT_WEB_CEP_with_ATC_drugbank.csv` | `CEP/cep_atc_drugbank.R`: keeps valid certificates, matches substance names to DrugBank names and synonyms to get ATC codes, drops level-3/4 combination-product codes, cross-checks the remaining codes against NLM RxNav/RxClass, keeps the codes on the EU list and attaches them to every row of the export |
-| `gmdp_EML_API_sites_activities_LONG.csv`, `Critical_API_sites_activities_LONG.csv` | EudraGMDP API GMP certificates; the scraper is not part of this repository |
+| `gmdp_EML_API_sites_activities_LONG.csv`, `Critical_API_sites_activities_LONG.csv` | `EudraGMDP/scrape_eudragmdp_2026.py`: downloads all compliant GMP certificates from EudraGMDP with site, country, certificate type, substances and API activity codes, as JSON. The conversion of the JSON to these files (substance → ATC code, one row per activity) is not in this repository, and the EU-list file was also edited by hand |
 
 `CEP/cep_atc_drugbank_eu_who.R` is the same procedure keeping the codes of both lists; it writes
 `data/registers/processed/EXPORT_WEB_CEP_with_ATC_drugbank_eu_who.csv` and is not used by the analysis.

@@ -9,13 +9,15 @@ ingredients (APIs) of critical medicines are manufactured. There is one folder p
 | [`CEP/`](CEP/) | EDQM Certificates of Suitability | full CEP database; holder country per substance | `download_cep.py` → `cep_clean.ipynb` |
 | [`CEP/`](CEP/) | EDQM CEP export + DrugBank + NLM RxNav | ATC codes for every CEP substance (`data/registers/raw/EXPORT_WEB_CEP_with_ATC_drugbank.csv`) | `cep_atc_drugbank.R` |
 | [`CEP/`](CEP/) | as above, keeping the codes of the EU list and the WHO EML | `data/registers/processed/EXPORT_WEB_CEP_with_ATC_drugbank_eu_who.csv`, not used by the analysis | `cep_atc_drugbank_eu_who.R` |
+| [`EudraGMDP/`](EudraGMDP/) | EudraGMDP GMP certificates | every compliant GMP certificate: site, country, certificate type, substances and API activity codes (JSON) | `scrape_eudragmdp_2026.py` (imports `scrape_eudragmdp.py`) |
 | [`EPAR/`](EPAR/) | EMA EPAR product information, Annex II | manufacturers and manufacturing step per centrally authorised medicine | `ema_epar_pipeline.ipynb` |
 | [`HPRA/`](HPRA/) | HPRA product register and package leaflets | manufacturers and countries per Irish product (`ireland_critical_atc_review.csv`) | `hpra_scraper.ipynb` |
 
-BfArM and CEP have their own README covering usage, outputs and caveats; EPAR, HPRA and `cep_atc_drugbank.R` are described in the main README.
-The EudraGMDP files (`gmdp_EML_API_sites_activities_LONG.csv` and the EU-list file
-`Critical_API_sites_activities_LONG.csv`, which is not distributed) were not produced by a script in
-this folder; see the EudraGMDP section of the main README. The register
+BfArM, CEP and EudraGMDP have their own README covering usage, outputs and caveats; EPAR, HPRA and `cep_atc_drugbank.R` are described in the main README.
+The EudraGMDP scraper produces certificate JSON files. The step that turned them into
+`gmdp_EML_API_sites_activities_LONG.csv` and the EU-list file `Critical_API_sites_activities_LONG.csv`
+(substance → ATC code, one row per activity) is not in this folder, and the EU-list file, which was
+also edited by hand, is not distributed; see the EudraGMDP section of the main README. The register
 files used in the paper are in `data/registers/raw/`. They were checked by hand
 after scraping and some rows were corrected, so a new run of these scripts does
 not reproduce them exactly. The registers are also live: a new run gives the
@@ -26,7 +28,7 @@ README and in the main README.
 
 ```bash
 pip install requests beautifulsoup4 playwright pandas numpy
-playwright install chromium        # headless browser for BfArM
+playwright install chromium        # headless browser for BfArM and EudraGMDP
 ```
 
 ## Input: critical-medicines list
