@@ -37,7 +37,10 @@ library(jsonlite)
 ## ===================================================================
 ## STEP 1 -- READ RAW CEP EXPORT, KEEP VALID STATUS ONLY
 ## ===================================================================
-cep_path <- "Data/EXPORT_WEB_CEP.txt"
+source("scripts/registers/paths.R")
+CEP_WORK_DIR <- file.path(PROC_DIR, "cep_atc")
+dir.create(CEP_WORK_DIR, recursive = TRUE, showWarnings = FALSE)
+cep_path <- file.path(RAW_DIR, "EXPORT_WEB_CEP.txt")
 
 cep_raw <- read_tsv(
   cep_path,
@@ -117,7 +120,7 @@ cat("Total (substance, candidate) pairs to try against DrugBank:",
 ## ===================================================================
 ## STEP 3 -- PARSE THE DRUGBANK XML
 ## ===================================================================
-xml_path <- "Data/DrugBank_FullDatabase.xml"
+xml_path <- file.path(RAW_DIR, "DrugBank_FullDatabase.xml")
 doc <- read_xml(xml_path)
 ns <- xml_ns(doc)
 print(ns)  # confirm namespace prefix (usually "d1")
@@ -196,7 +199,7 @@ drugbank_atc <- drugbank_atc |>
   ) |>
   distinct(synonym_norm, atc_code, .keep_all = TRUE)
 
-write_csv(drugbank_atc, "drugbank_name_atc_lookup.csv")
+write_csv(drugbank_atc, file.path(CEP_WORK_DIR, "drugbank_name_atc_lookup.csv"))
 
 ## ===================================================================
 ## STEP 4 -- MATCH SUBSTANCES TO DRUGBANK, FILTER COMBO CODES
@@ -252,7 +255,7 @@ atc_map_final <- bind_rows(
     )
 )
 
-write_csv(atc_map_final, "cep_substance_atc_lookup_drugbank.csv")
+write_csv(atc_map_final, file.path(CEP_WORK_DIR, "cep_substance_atc_lookup_drugbank.csv"))
 cat("\nquery_status breakdown:\n")
 print(atc_map_final |> distinct(base_substance, .keep_all = TRUE) |> count(query_status, sort = TRUE))
 
@@ -305,7 +308,7 @@ get_rxnav_atc_codes <- function(rxcui) {
   classes[str_detect(classes, atc_level4_pattern)]
 }
 
-cache_path <- "rxnav_atc_cache.csv"
+cache_path <- file.path(CEP_WORK_DIR, "rxnav_atc_cache.csv")
 if (file.exists(cache_path)) {
   rxnav_cache <- read_csv(cache_path, show_col_types = FALSE)
   cat("Resuming from existing RxNav cache:", nrow(rxnav_cache), "substances already queried\n")
@@ -350,12 +353,12 @@ verified <- matched |>
 cat("\nVerification status breakdown:\n")
 print(count(verified, verification_status, sort = TRUE))
 
-write_csv(verified, "cep_substance_atc_lookup_rxnav_verified.csv")
+write_csv(verified, file.path(CEP_WORK_DIR, "cep_substance_atc_lookup_rxnav_verified.csv"))
 
 ## Drop flagged cross-group mismatches; keep verified + unconfirmed
 ## (unconfirmed is not the same as wrong -- RxNav simply had no data)
 clean_atc_map <- verified |> filter(verification_status != "rxnav_group_mismatch_flagged")
-write_csv(clean_atc_map, "cep_substance_atc_lookup_drugbank_rxnav_clean.csv")
+write_csv(clean_atc_map, file.path(CEP_WORK_DIR, "cep_substance_atc_lookup_drugbank_rxnav_clean.csv"))
 
 ## ===================================================================
 ## STEP 6 -- FILTER TO CRITICAL ATC CODES: EU Union list OR WHO EML
@@ -363,10 +366,10 @@ write_csv(clean_atc_map, "cep_substance_atc_lookup_drugbank_rxnav_clean.csv")
 ## EU Union list (critical.csv) plus the ATC codes on current ("Added")
 ## WHO EML rows; a WHO level-4 code (e.g. A07CA) also keeps every
 ## level-5 code under it. Same list definitions as 01_combine_sources.R.
-eu_codes <- read_csv("Data/critical.csv", show_col_types = FALSE)$`ATC level 5`
+eu_codes <- read_csv(file.path(RAW_DIR, "critical.csv"), show_col_types = FALSE)$`ATC level 5`
 eu_codes <- unique(str_trim(eu_codes[!is.na(eu_codes) & str_trim(eu_codes) != ""]))
 
-who_codes <- readxl::read_excel("Data/eml_export.xlsx") |>
+who_codes <- readxl::read_excel(file.path(RAW_DIR, "eml_export.xlsx")) |>
   filter(Status == "Added", !is.na(`ATC codes`)) |>
   pull(`ATC codes`) |>
   str_split("[,;]\\s*") |>
@@ -414,7 +417,7 @@ cat("\nFinal output: rows =", nrow(cep_with_atc),
     sum(str_detect(coalesce(cep_with_atc$`ATC code`, ""), ",")), "\n")
 
 names(cep_with_atc)[12] <- "atc_code"
-write_csv(cep_with_atc, "Data/EXPORT_WEB_CEP_with_ATC_drugbank.csv")
+write_csv(cep_with_atc, file.path(PROC_DIR, "EXPORT_WEB_CEP_with_ATC_drugbank_eu_who.csv"))
 
 cat("\nWrote:\n",
     " - drugbank_name_atc_lookup.csv                      (full DrugBank name/synonym -> ATC table)\n",

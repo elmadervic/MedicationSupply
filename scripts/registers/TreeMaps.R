@@ -3,17 +3,17 @@
 ## (replaces TreeMapCritical.R, TreeMapWHOEML.R, TreeMapWHOEMLandCritical.R
 ## and TreeMapBoth.R -- same colour per chapter in every figure)
 ##
-## Input:  Data/list_codes.csv (from 01_combine_sources.R): every code on
+## Input:  data/registers/processed/list_codes.csv (from 01_combine_sources.R): every code on
 ##         the EU Union list and/or the WHO EML, with on_eu_list, in_eml
 ##         and on_who_eml flags. Counts are list codes, whether or not a
 ##         register covers them.
 ## Outputs:
-##   Results/EU/treemap_chapters_EU.png    EU Union list (299 codes)
-##   Results/WHO/treemap_chapters_WHO.png  WHO EML (540 codes as given in the EML,
+##   results/EU/treemap_chapters_EU.png    EU Union list (299 codes)
+##   results/WHO/treemap_chapters_WHO.png  WHO EML (540 codes as given in the EML,
 ##                                         incl. 5 level-4 codes)
-##   Results/overlap/treemap_chapters_overlap.png  codes on both lists
-##   Results/treemap_chapters_EU_vs_WHO.png  EU and WHO side by side, one legend
-##   Data/atc_in_both_lists.csv            the overlap codes
+##   results/overlap/treemap_chapters_overlap.png  codes on both lists
+##   results/treemap_chapters_EU_vs_WHO.png  EU and WHO side by side, one legend
+##   data/registers/processed/atc_in_both_lists.csv            the overlap codes
 ##
 ## Requires: install.packages(c("dplyr","readr","ggplot2","treemapify"))
 ## =================================================================
@@ -22,8 +22,8 @@ library(dplyr)
 library(ggplot2)
 library(treemapify)
 
-DATA_DIR <- "Data"
-codes <- read_csv(file.path(DATA_DIR, "list_codes.csv"), show_col_types = FALSE)
+source("scripts/registers/paths.R", local = TRUE)
+codes <- read_csv(file.path(PROC_DIR, "list_codes.csv"), show_col_types = FALSE)
 
 lists <- list(
   EU      = list(codes = codes$atc_code[codes$on_eu_list],
@@ -33,7 +33,7 @@ lists <- list(
   overlap = list(codes = codes$atc_code[codes$on_eu_list & codes$on_who_eml],
                  title = "On both lists")
 )
-write_csv(filter(codes, on_eu_list, on_who_eml), file.path(DATA_DIR, "atc_in_both_lists.csv"))
+write_csv(filter(codes, on_eu_list, on_who_eml), file.path(PROC_DIR, "atc_in_both_lists.csv"))
 cat("EU:", length(lists$EU$codes), "| WHO EML:", length(lists$WHO$codes),
     "| on both:", length(lists$overlap$codes), "\n")
 
@@ -108,7 +108,7 @@ for (l in names(lists)) {
   tm <- chapter_counts(lists[[l]]$codes, lists[[l]]$title)
   cat("\n", lists[[l]]$title, "\n")
   print(tm |> arrange(desc(n)) |> mutate(pct = round(100 * share, 1)) |> select(chapter, n, pct))
-  out_dir <- file.path("Results", l)
+  out_dir <- file.path(RESULTS_DIR, l)
   dir.create(out_dir, recursive = TRUE, showWarnings = FALSE)
   ggsave(file.path(out_dir, paste0("treemap_chapters_", l, ".png")), treemap_plot(tm),
          width = 8, height = 7.5, dpi = 300, bg = "white")
@@ -119,6 +119,6 @@ tm_both <- bind_rows(chapter_counts(lists$EU$codes,  lists$EU$title),
                      chapter_counts(lists$WHO$codes, lists$WHO$title)) |>
   mutate(panel = factor(panel, levels = unique(panel)))
 p <- treemap_plot(tm_both)
-ggsave(file.path("Results", "treemap_chapters_EU_vs_WHO.png"), p,
+ggsave(file.path(RESULTS_DIR, "treemap_chapters_EU_vs_WHO.png"), p,
        width = 13, height = 7.5, dpi = 300, bg = "white")
 print(p)

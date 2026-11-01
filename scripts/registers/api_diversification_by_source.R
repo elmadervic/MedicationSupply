@@ -1,6 +1,6 @@
 # ---------------------------------------------------------------
 # API-producer diversification plot, one per source, computed from
-# Data/manufacturer_registers_combined.csv (built by 01_combine_sources.R):
+# data/registers/processed/manufacturer_registers_combined.csv (built by 01_combine_sources.R):
 #   x = number of distinct producer sites for the substance (ATC code)
 #   y = share of those sites located in China + India (%)
 # Substances above the threshold share are highlighted in red (most
@@ -20,7 +20,7 @@
 # column of the combined file (falls back to the ATC code if missing).
 # Sites are identified by manufacturer name in every source.
 #
-# Outputs (Results/<LIST> folder, file names end in _<LIST>, e.g. _WHO), one PNG per source, Ireland included as its own file:
+# Outputs (results/<LIST> folder, file names end in _<LIST>, e.g. _WHO), one PNG per source, Ireland included as its own file:
 #   api_diversification_Germany.png (+ .pdf), _EPAR, _GMDP, _CEP, _Ireland
 #
 # Requires: install.packages(c("dplyr","ggplot2","stringr","ggrepel"))
@@ -34,11 +34,11 @@ library(ggrepel)
 ## "EU" = EU Union list, "WHO" = WHO EML, "overlap" = on both lists.
 ## run_all_lists.R sets LIST and runs this script once per list.
 if (!exists("LIST")) LIST <- "EU"
-DATA_DIR <- "Data"
-OUT_DIR  <- file.path("Results", LIST)          # outputs go to Results/EU, /WHO, /overlap
+source("scripts/registers/paths.R", local = TRUE)
+OUT_DIR  <- file.path(RESULTS_DIR, LIST)
 dir.create(OUT_DIR, recursive = TRUE, showWarnings = FALSE)
 
-## output file name with the list added: out_file("plot.png") -> Results/WHO/plot_WHO.png
+## output file name with the list added: out_file("plot.png") -> results/WHO/plot_WHO.png
 out_file <- function(name) file.path(OUT_DIR, sub("(\\.[A-Za-z]+)$", paste0("_", LIST, "\\1"), name))
 
 keep_list <- function(df) {
@@ -67,7 +67,7 @@ all_sources   <- c(main_sources, "Ireland")
 source_map <- c(ema = "EPAR", germany = "Germany", gmdp = "GMDP",
                 cep = "CEP", ireland = "Ireland")
 
-data <- read.csv(file.path(DATA_DIR, "manufacturer_registers_combined.csv"),
+data <- read.csv(file.path(PROC_DIR, "manufacturer_registers_combined.csv"),
                  stringsAsFactors = FALSE) %>%
   keep_list() %>%
   mutate(

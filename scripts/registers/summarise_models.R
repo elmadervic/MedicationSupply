@@ -2,7 +2,7 @@
 ## summarise_models.R -- writes ONE readable text report of all model
 ## results, so the CSV files don't have to be read:
 ##
-##   Results/model_summary.txt
+##   results/model_summary.txt
 ##
 ## Contents:
 ##   1. Overview: China + India odds ratio for every outcome, list, version
@@ -10,25 +10,26 @@
 ##   3. Full results: main and regional model per outcome, list, version
 ##
 ## Reads whatever exists of:
-##   Results/<LIST>/shortage_models_V1_V2_V3_<LIST>.csv            (Germany)
-##   Results/GermanyEMAShortage/shortage_models_V1_V2_V3_GermanyEMA_<LIST>.csv
-##   Results/GermanyEMAallShortage/shortage_models_V1_V2_V3_GermanyEMAall_<LIST>.csv
-##   Results/IrelandShortage/shortage_models_V1_V2_V3_Ireland_<LIST>.csv
-##   Results/shortage_per_manufacturer_effect.csv
+##   results/<LIST>/shortage_models_V1_V2_V3_<LIST>.csv            (Germany)
+##   results/GermanyEMAShortage/shortage_models_V1_V2_V3_GermanyEMA_<LIST>.csv
+##   results/GermanyEMAallShortage/shortage_models_V1_V2_V3_GermanyEMAall_<LIST>.csv
+##   results/IrelandShortage/shortage_models_V1_V2_V3_Ireland_<LIST>.csv
+##   results/shortage_per_manufacturer_effect.csv
 ##
 ## Which streams and which file: set SUMMARY_STREAMS / SUMMARY_FILE before
-## sourcing (defaults: all streams found -> Results/model_summary.txt), e.g.
+## sourcing (defaults: all streams found -> results/model_summary.txt), e.g.
 ##   SUMMARY_STREAMS <- c("Germany", "GermanyEMAall")
-##   SUMMARY_FILE    <- "Results/model_summary_EMA_all.txt"
+##   SUMMARY_FILE    <- "results/model_summary_EMA_all.txt"
 ##
 ## Run AFTER Shortage.R / GermanyEMA_Shortage.R / shortage_per_manufacturer.R:
-##   source("summarise_models.R")
+##   source("scripts/registers/summarise_models.R")
 ## =================================================================
 library(dplyr)
 library(readr)
+source("scripts/registers/paths.R", local = TRUE)
 
 LISTS   <- c("EU", "WHO", "overlap")
-OUT     <- if (exists("SUMMARY_FILE")) SUMMARY_FILE else file.path("Results", "model_summary.txt")
+OUT     <- if (exists("SUMMARY_FILE")) SUMMARY_FILE else file.path(RESULTS_DIR, "model_summary.txt")
 
 list_names <- c(EU = "EU Union list of critical medicines", WHO = "WHO Essential Medicines List",
                 overlap = "On both lists (overlap)")
@@ -63,10 +64,10 @@ model_names <- c(main         = "Main model",
 
 ## ---- read all model files that exist ---------------------------------
 model_file <- function(stream, L) switch(stream,
-                                         Germany    = file.path("Results", L, paste0("shortage_models_V1_V2_V3_", L, ".csv")),
-                                         GermanyEMA = file.path("Results", "GermanyEMAShortage", paste0("shortage_models_V1_V2_V3_GermanyEMA_", L, ".csv")),
-                                         GermanyEMAall = file.path("Results", "GermanyEMAallShortage", paste0("shortage_models_V1_V2_V3_GermanyEMAall_", L, ".csv")),
-                                         Ireland    = file.path("Results", "IrelandShortage", paste0("shortage_models_V1_V2_V3_Ireland_", L, ".csv")))
+                                         Germany    = file.path(RESULTS_DIR, L, paste0("shortage_models_V1_V2_V3_", L, ".csv")),
+                                         GermanyEMA = file.path(RESULTS_DIR, "GermanyEMAShortage", paste0("shortage_models_V1_V2_V3_GermanyEMA_", L, ".csv")),
+                                         GermanyEMAall = file.path(RESULTS_DIR, "GermanyEMAallShortage", paste0("shortage_models_V1_V2_V3_GermanyEMAall_", L, ".csv")),
+                                         Ireland    = file.path(RESULTS_DIR, "IrelandShortage", paste0("shortage_models_V1_V2_V3_Ireland_", L, ".csv")))
 
 streams_wanted <- if (exists("SUMMARY_STREAMS")) SUMMARY_STREAMS else names(stream_names)
 models <- list()
@@ -172,7 +173,7 @@ if (any(models$model == "main_atc")) {
 }
 
 ## ---- 2. per-manufacturer effect -------------------------------------------
-pm_file <- file.path("Results", "shortage_per_manufacturer_effect.csv")
+pm_file <- file.path(RESULTS_DIR, "shortage_per_manufacturer_effect.csv")
 out(rule("="))
 out("2. EFFECT OF MOVING ONE MANUFACTURER TO CHINA/INDIA (total number unchanged)")
 out(rule("="))
@@ -242,6 +243,6 @@ out("")
 out(rule("="))
 out("End of summary")
 
-dir.create("Results", showWarnings = FALSE)
+dir.create(RESULTS_DIR, showWarnings = FALSE)
 writeLines(lines, OUT)
 cat("Saved:", OUT, "(", length(lines), "lines )\n")

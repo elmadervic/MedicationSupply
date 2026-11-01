@@ -3,7 +3,7 @@
 ## is currently on Germany's shortage list (BfArM "Lieferengpass"
 ## register)?
 ##
-## Inputs (all in the Data folder):
+## Inputs (data/registers/processed and data/shortages):
 ##   - manufacturer_registers_combined.csv   (built by 01_combine_sources.R:
 ##                                             EPAR/Germany/Ireland/CEP/GMDP,
 ##                                             critical ATC codes only).
@@ -44,15 +44,15 @@
 ## GermanyEMA_Shortage.R runs it with OUTCOME = "GermanyEMA": a code counts
 ## as in shortage if it is on the German BfArM register OR on the EMA
 ## shortage list (Medicines_output_shortages_en.json, matched to ATC codes
-## through Data/ema_shortages_atc_crosswalk.csv). Same separate-environment
+## through data/shortages/ema_shortages_atc_crosswalk.csv). Same separate-environment
 ## approach as Ireland; output files contain _GermanyEMA_<LIST> and go to
-## Results/GermanyEMAShortage.
+## results/GermanyEMAShortage.
 ## OUTCOME = "GermanyEMAall" is the same, but counts EVERY code on the EMA
 ## list, whatever its status (ongoing, resolved, discontinued) and dates;
 ## the German part stays "active on the reference date". Outputs contain
-## _GermanyEMAall_<LIST> and go to Results/GermanyEMAallShortage.
+## _GermanyEMAall_<LIST> and go to results/GermanyEMAallShortage.
 ##
-## Outputs (Results/<LIST> folder, file names end in _<LIST>, e.g. _WHO):
+## Outputs (results/<LIST> folder, file names end in _<LIST>, e.g. _WHO):
 ##   shortage_models_V1_V2_V3.csv   all model results, main + regional, each
 ##                                  also with ATC chapter dummies (main_atc,
 ##                                  regional_atc)
@@ -87,14 +87,14 @@ clean_names_simple <- function(df) {
 }
 
 ## -----------------------------------------------------------------
-## 0. Paths (relative to the project folder that contains Data/)
+## 0. Paths (relative to the repository root)
 ## -----------------------------------------------------------------
 ## ---- which list -------------------------------------------------------
 ## "EU" = EU Union list, "WHO" = WHO EML, "overlap" = on both lists.
 ## run_all_lists.R sets LIST and runs this script once per list.
 if (!exists("LIST")) LIST <- "EU"
-DATA_DIR <- "Data"
-OUT_DIR  <- file.path("Results", LIST)          # outputs go to Results/EU, /WHO, /overlap
+source("scripts/registers/paths.R", local = TRUE)
+OUT_DIR  <- file.path(RESULTS_DIR, LIST)
 
 ## ---- base register ------------------------------------------------------
 ## The national register V1-V3 are built on: "Germany" (BfArM, default) or
@@ -135,16 +135,16 @@ if (!exists("EMA_COUNT_DISCONTINUED", inherits = FALSE)) EMA_COUNT_DISCONTINUED 
 
 ## output file name with base (if not Germany), outcome (if not Germany)
 ## and list added:
-##   out_file("plot.png") -> Results/WHO/plot_WHO.png, plot_Ireland_WHO.png,
+##   out_file("plot.png") -> results/WHO/plot_WHO.png, plot_Ireland_WHO.png,
 ##                           or plot_GermanyEMA_WHO.png
 file_tag <- paste0(if (BASE != "Germany") paste0("_", BASE),
                    if (OUTCOME != "Germany") paste0("_", OUTCOME), "_", LIST)
-## Ireland: all lists in one separate folder, Results/IrelandShortage;
-## GermanyEMA outcome: Results/GermanyEMAShortage (both: IrelandShortage_GermanyEMA)
-if (BASE == "Ireland") OUT_DIR <- file.path("Results", "IrelandShortage")
+## Ireland: all lists in one separate folder, results/IrelandShortage;
+## GermanyEMA outcome: results/GermanyEMAShortage (both: IrelandShortage_GermanyEMA)
+if (BASE == "Ireland") OUT_DIR <- file.path(RESULTS_DIR, "IrelandShortage")
 if (uses_ema)
-  OUT_DIR <- if (BASE == "Ireland") file.path("Results", paste0("IrelandShortage_", OUTCOME)) else
-    file.path("Results", paste0(OUTCOME, "Shortage"))
+  OUT_DIR <- if (BASE == "Ireland") file.path(RESULTS_DIR, paste0("IrelandShortage_", OUTCOME)) else
+    file.path(RESULTS_DIR, paste0(OUTCOME, "Shortage"))
 dir.create(OUT_DIR, recursive = TRUE, showWarnings = FALSE)
 out_file <- function(name) file.path(OUT_DIR, sub("(\\.[A-Za-z]+)$", paste0(file_tag, "\\1"), name))
 
@@ -158,10 +158,10 @@ keep_list <- function(df) {
 cat("List:", LIST, "-> outputs in", OUT_DIR, "
 ")
 cat("Shortage outcome:", outcome_label, "\n")
-path_mfr       <- file.path(DATA_DIR, "manufacturer_registers_combined.csv")
-path_shortages <- file.path(DATA_DIR, "LEMeldungen_2026-09-09-13-30-43.csv")
-path_ema       <- file.path(DATA_DIR, "Medicines_output_shortages_en.json")
-path_ema_atc   <- file.path(DATA_DIR, "ema_shortages_atc_crosswalk.csv")
+path_mfr       <- file.path(PROC_DIR, "manufacturer_registers_combined.csv")
+path_shortages <- file.path(SHORTAGE_DIR, "LEMeldungen_2026-09-09-13-30-43.csv")
+path_ema       <- file.path(SHORTAGE_DIR, "Medicines_output_shortages_en.json")
+path_ema_atc   <- file.path(SHORTAGE_DIR, "ema_shortages_atc_crosswalk.csv")
 
 ## -----------------------------------------------------------------
 ## 1. Load the manufacturer register (already critical-ATC-filtered)
@@ -824,7 +824,7 @@ for (v in names(fits_regional)) {
 
 ## -----------------------------------------------------------------
 ## 6d. Save all model results (main + regional, V1-V3) to one CSV:
-##     Results/<LIST>/shortage_models_V1_V2_V3.csv
+##     results/<LIST>/shortage_models_V1_V2_V3.csv
 ##     odds ratio, profile-likelihood 95% CI (Wald CI if profiling fails),
 ##     likelihood-ratio p per term, N codes, N shortages, events per
 ##     variable, AUC, McFadden R^2, AIC
