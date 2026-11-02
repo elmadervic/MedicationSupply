@@ -423,11 +423,7 @@ cat("CEP rows:", nrow(cep_std), "\n")
 ##    to one row per ATC code x site. The is_critical column in the files
 ##    is not used; list membership comes from the flags below.
 ## =================================================================
-has_gmdp_curated <- file.exists(in_data(GMDP_FILES[["curated"]]))
-if (!has_gmdp_curated)
-  cat("NOTE:", GMDP_FILES[["curated"]], "not found in", RAW_DIR,
-      "-- EU-list codes use", GMDP_FILES[["topup"]], "instead\n")
-gmdp_files <- GMDP_FILES[c(has_gmdp_curated, have(GMDP_FILES[["topup"]]))]
+gmdp_files <- GMDP_FILES[c(TRUE, have(GMDP_FILES[["topup"]]))]
 
 gmdp_raw <- imap(gmdp_files, \(f, origin)
                  read_csv(in_data(f), show_col_types = FALSE,
@@ -535,8 +531,7 @@ region_of_country <- c(
 manufacturer_registers <- bind_rows(ema_std, germany_std, ireland_std, cep_std, gmdp_std) |>
   filter(on_any(atc_code)) |>
   ## EU-list codes use the EU files only (see TOPUP_EU_CODES)
-  filter(TOPUP_EU_CODES | !(data_origin == "topup" & on_eu(atc_code)) |
-           (source == "gmdp" & !has_gmdp_curated)) |>
+  filter(TOPUP_EU_CODES | !(data_origin == "topup" & on_eu(atc_code))) |>
   mutate(
     on_eu_list  = on_eu(atc_code),
     on_who_eml  = on_who(atc_code),
@@ -612,12 +607,4 @@ if (length(missing_topup_files) > 0) {
       "Medicines that are only on the WHO list get no data from them, so the\n",
       "WHO results are incomplete (close to the overlap list). Add the files\n",
       "and rerun this script.\n", strrep("!", 70), "\n", sep = "")
-}
-if (!has_gmdp_curated) {
-  cat("\n", strrep("!", 70), "\n",
-      "WARNING: ", GMDP_FILES[["curated"]], " is missing from ", RAW_DIR, "/.\n",
-      "EU-list codes take their EudraGMDP sites from ", GMDP_FILES[["topup"]], ",\n",
-      "which covers fewer of them, so every result that uses EudraGMDP\n",
-      "(V3 models, GMDP panels, pooled counts) differs from the paper.\n",
-      strrep("!", 70), "\n", sep = "")
 }

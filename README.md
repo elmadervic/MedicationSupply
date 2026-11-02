@@ -44,10 +44,10 @@ flowchart TD
 
 | Paper section | Status in this repository |
 |---|---|
-| Data overview, manufacturing registers and HHI (figures, coverage, Supplementary HHI table) | scripts and inputs included; EudraGMDP results for the EU list differ from the paper, see [EudraGMDP](#eudragmdp) |
+| Data overview, manufacturing registers and HHI (figures, coverage, Supplementary HHI table) | scripts and inputs included |
 | Shortage models V1 and V2 (German register alone, German register + EPAR), all three lists | reproduces the paper exactly |
-| Shortage models V3 (+ CEP + EudraGMDP), main-text Table 3 and V3 columns of the Supplementary tables | script included; does not reproduce the paper, see [EudraGMDP](#eudragmdp) |
-| Irish register as base register (Supplementary) | V1 and V2 reproduce the paper (terms the paper reports as not estimable appear in the CSV with extreme odds ratios); V3 as above |
+| Shortage models V3 (+ CEP + EudraGMDP), main-text Table 3 and V3 columns of the Supplementary tables | reproduces the paper |
+| Irish register as base register (Supplementary) | V1 and V2 reproduce the paper (terms the paper reports as not estimable appear in the CSV with extreme odds ratios); V3 from the same inputs as the German-register V3 |
 | Antibiotic consumption (ECDC) and treemap of the two lists | scripts and data included |
 | Trade-based risk comparison (BACI) | notebook and figures included; its input data are not stored in the repository |
 | Single-source medicines and alternative capacity (FDA cross-check, Table 2) | not included |
@@ -108,7 +108,7 @@ CEP, a second file used only for codes that are on the WHO list but not on the E
 | Germany (BfArM, AMGuiFree) | `bfarm_api_origin_critical_rest_LONG.csv` | `bfarm_api_origin_eml_LONG.csv` | 25–26 June 2026 (EU list) |
 | Ireland (HPRA) | `ireland_critical_atc_review.csv` | `hpra_final.csv` | 2026 |
 | CEP (EDQM) | `EXPORT_WEB_CEP_with_ATC_drugbank.csv` (all certificates, ATC codes attached via DrugBank) | — | August 2026 |
-| EudraGMDP (API GMP certificates) | `Critical_API_sites_activities_LONG.csv` — **not in the repository**, see below | `gmdp_EML_API_sites_activities_LONG.csv` | June 2026 |
+| EudraGMDP (API GMP certificates) | `Critical_API_sites_activities_LONG.csv` | `gmdp_EML_API_sites_activities_LONG.csv` | June 2026 |
 
 `EXPORT_WEB_CEP.txt` is the raw EDQM export from which the CEP file was built.
 
@@ -126,15 +126,11 @@ downloads every compliant GMP certificate (snapshot of 23 June 2026) into JSON f
 certificate types, substances and API activity codes. A conversion step, which is not in this
 repository, matched the substances to ATC codes and wrote one row per site × certificate × activity:
 `gmdp_EML_API_sites_activities_LONG.csv` for the WHO list and `Critical_API_sites_activities_LONG.csv`
-for the EU list. The EU-list file was then edited
-extensively by hand and is not distributed. Without it, `01_combine_sources.R` prints a warning
-and takes the EudraGMDP sites of EU-list codes from the WHO file
-`gmdp_EML_API_sites_activities_LONG.csv`, which covers 149 of the 200 critical medicines with
-EudraGMDP sites in the paper. Everything that uses EudraGMDP therefore differs from the paper:
-the GMDP panels of the figures, the EudraGMDP row of Table 1, the V3 shortage models and the V3
-models with the Irish register. Placing the original file in `data/registers/raw/` restores the
-paper's input. Results that do not use EudraGMDP (V1, V2, all Germany, EPAR, CEP and Ireland
-panels) are unaffected.
+for the EU list. The EU-list file was then edited extensively by hand, so re-running the scraper
+and a new conversion does not give the same file. Both files are in `data/registers/raw/`;
+`01_combine_sources.R` takes the EudraGMDP sites of EU-list codes from
+`Critical_API_sites_activities_LONG.csv` and those of WHO-only codes from
+`gmdp_EML_API_sites_activities_LONG.csv`.
 
 ### Shortages
 
@@ -161,7 +157,6 @@ macrolides) and 294190 (other antibiotics).
 
 | File | Content | How to obtain |
 |---|---|---|
-| `data/registers/raw/Critical_API_sites_activities_LONG.csv` | EudraGMDP API sites for the EU list, edited by hand | not distributed; `scripts/data_collection/EudraGMDP/` re-downloads the certificates, see [EudraGMDP](#eudragmdp) |
 | `data/registers/raw/DrugBank_FullDatabase.xml` | DrugBank full database, 795 MB; its licence does not permit redistribution | Create a free academic account at <https://go.drugbank.com/releases/latest> and download "All drugs" (XML). Only the CEP scripts in `scripts/data_collection/CEP/` read it. |
 | `data/trade/baci_2024_antibiotics_bilateral.csv` | BACI 2024 flows for the four HS-6 lines: `year`, `hs6_code`, `exporter_iso3`, `exporter_name`, `importer_iso3`, `importer_name`, `value_1000_usd`, `quantity_tonnes` | Download BACI (HS-6) from <https://www.cepii.fr/CEPII/en/bdd_modele/bdd_modele_item.asp?id=37> and keep the 2024 rows for HS 294110, 294130, 294150 and 294190. |
 | `data/trade/cep_antibiotics_clean.csv` | valid CEPs for the four antibiotic HS-6 classes, with holder country | Run `scripts/data_collection/CEP/download_cep.py` and `cep_clean.ipynb` (the paper uses the CEP export of 28 July 2026) and copy the output here. |
