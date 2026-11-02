@@ -78,20 +78,19 @@ cat("rows read from manufacturer_registers_combined.csv:", nrow(data), "\n")
 country_map <- c(
   "Argentinien" = "Argentina", "Australien" = "Australia", "Belgien" = "Belgium",
   "Brasilien" = "Brazil", "Bulgarien" = "Bulgaria", "Kroatien" = "Croatia",
-  "Deutschland" = "Germany", "Dänemark" = "Denmark", "Finnland" = "Finland",
+  "Deutschland" = "Germany", "Finnland" = "Finland",
   "Frankreich" = "France", "Griechenland" = "Greece", "Indien" = "India",
   "Irland" = "Ireland", "Island" = "Iceland", "Italien" = "Italy", "Kanada" = "Canada",
   "Korea, Republik" = "South Korea", "Republic of Korea" = "South Korea",
-  "Südkorea" = "South Korea", "Lettland" = "Latvia", "Litauen" = "Lithuania",
+  "Lettland" = "Latvia", "Litauen" = "Lithuania",
   "Mexiko" = "Mexico", "Niederlande" = "Netherlands", "The Netherlands" = "Netherlands",
-  "Norwegen" = "Norway", "Polen" = "Poland", "Rumänien" = "Romania",
+  "Norwegen" = "Norway", "Polen" = "Poland",
   "Schweden" = "Sweden", "Schweiz" = "Switzerland", "Singapur" = "Singapore",
-  "Slowakei" = "Slovakia", "Slowenien" = "Slovenia", "Südafrika" = "South Africa",
-  "Tschechische Republik" = "Czech Republic", "Türkei" = "Turkey",
+  "Slowakei" = "Slovakia", "Slowenien" = "Slovenia",
+  "Tschechische Republik" = "Czech Republic",
   "UK" = "United Kingdom", "USA" = "United States", "Ungarn" = "Hungary",
-  "Vereinigte Staaten" = "United States", "Vereinigtes Königreich" = "United Kingdom",
-  "Vereinigtes Königreich (Nordirland)" = "United Kingdom", "Zypern" = "Cyprus",
-  "Österreich" = "Austria",
+  "Vereinigte Staaten" = "United States",
+  "Zypern" = "Cyprus",
   # added: missing German names + common English variants/abbreviations
   "Spanien" = "Spain", "Luxemburg" = "Luxembourg", "Estland" = "Estonia",
   "Volksrepublik China" = "China", "Tschechien" = "Czech Republic",
@@ -103,7 +102,13 @@ country_map <- c(
   "US" = "United States", "United States of America" = "United States",
   "People's Republic of China" = "China", "PR China" = "China", "P.R. China" = "China",
   "Republic of Ireland" = "Ireland", "Holland" = "Netherlands",
-  "Türkiye" = "Turkey", "Turkiye" = "Turkey", "Russian Federation" = "Russia"
+  "Turkiye" = "Turkey", "Russian Federation" = "Russia",
+  setNames(
+    c("Denmark", "South Korea", "Romania", "South Africa", "Turkey", "United Kingdom",
+      "United Kingdom", "Austria", "Turkey"),
+    c("D\u00e4nemark", "S\u00fcdkorea", "Rum\u00e4nien", "S\u00fcdafrika", "T\u00fcrkei",
+      "Vereinigtes K\u00f6nigreich", "Vereinigtes K\u00f6nigreich (Nordirland)", "\u00d6sterreich",
+      "T\u00fcrkiye"))
 )
 
 # ---------------------------------------------------------------

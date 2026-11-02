@@ -100,22 +100,25 @@ data <- bind_rows(data_matched, data_fallback)
 country_map <- c(
   "Argentinien" = "Argentina", "Australien" = "Australia", "Belgien" = "Belgium",
   "Brasilien" = "Brazil", "Bulgarien" = "Bulgaria", "Kroatien" = "Croatia",
-  "Deutschland" = "Germany", "Dänemark" = "Denmark", "Finnland" = "Finland",
+  "Deutschland" = "Germany", "Finnland" = "Finland",
   "Frankreich" = "France", "Griechenland" = "Greece", "Indien" = "India",
   "Irland" = "Ireland", "Island" = "Iceland", "Italien" = "Italy", "Kanada" = "Canada",
   "Korea, Republik" = "South Korea", "Republic of Korea" = "South Korea",
   "Korea, Republic of" = "South Korea",
-  "Südkorea" = "South Korea", "Lettland" = "Latvia", "Litauen" = "Lithuania",
+  "Lettland" = "Latvia", "Litauen" = "Lithuania",
   "Mexiko" = "Mexico", "Niederlande" = "Netherlands", "The Netherlands" = "Netherlands",
-  "Norwegen" = "Norway", "Polen" = "Poland", "Rumänien" = "Romania",
+  "Norwegen" = "Norway", "Polen" = "Poland",
   "Schweden" = "Sweden", "Schweiz" = "Switzerland", "Singapur" = "Singapore",
-  "Slowakei" = "Slovakia", "Slowenien" = "Slovenia", "Südafrika" = "South Africa",
+  "Slowakei" = "Slovakia", "Slowenien" = "Slovenia",
   "Tschechische Republik" = "Czech Republic", "Czechia" = "Czech Republic",
-  "Türkei" = "Turkey",
   "UK" = "United Kingdom", "USA" = "United States", "Ungarn" = "Hungary",
-  "Vereinigte Staaten" = "United States", "Vereinigtes Königreich" = "United Kingdom",
-  "Vereinigtes Königreich (Nordirland)" = "United Kingdom", "Zypern" = "Cyprus",
-  "Österreich" = "Austria"
+  "Vereinigte Staaten" = "United States",
+  "Zypern" = "Cyprus",
+  setNames(
+    c("Denmark", "South Korea", "Romania", "South Africa", "Turkey", "United Kingdom",
+      "United Kingdom", "Austria"),
+    c("D\u00e4nemark", "S\u00fcdkorea", "Rum\u00e4nien", "S\u00fcdafrika", "T\u00fcrkei",
+      "Vereinigtes K\u00f6nigreich", "Vereinigtes K\u00f6nigreich (Nordirland)", "\u00d6sterreich"))
 )
 
 source_map <- c("ema" = "EPAR", "germany" = "Germany", "gmdp" = "GMDP",

@@ -1,3 +1,5 @@
+if (!l10n_info()$`UTF-8`) invisible(suppressWarnings(Sys.setlocale("LC_CTYPE", "en_US.UTF-8")))
+
 RAW_DIR         <- "data/registers/raw"
 PROC_DIR        <- "data/registers/processed"
 SHORTAGE_DIR    <- "data/shortages"

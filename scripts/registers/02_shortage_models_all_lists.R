@@ -78,8 +78,8 @@ cat("GMP API site rows:", nrow(gmp_api), "| codes:", n_distinct(gmp_api$atc_code
 ## =================================================================
 clean_names_simple <- function(df) {
   nm <- names(df)
-  nm <- str_replace_all(nm, c("ä" = "ae", "ö" = "oe", "ü" = "ue",
-                              "Ä" = "ae", "Ö" = "oe", "Ü" = "ue", "ß" = "ss"))
+  nm <- str_replace_all(nm, setNames(c("ae", "oe", "ue", "ae", "oe", "ue", "ss"),
+                                       c("\u00e4", "\u00f6", "\u00fc", "\u00c4", "\u00d6", "\u00dc", "\u00df")))
   nm <- str_to_lower(nm)
   nm <- str_replace_all(nm, "[^a-z0-9]+", "_")
   nm <- str_remove_all(nm, "^_+|_+$")

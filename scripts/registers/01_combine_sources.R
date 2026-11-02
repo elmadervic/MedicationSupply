@@ -263,7 +263,7 @@ cat("BfArM rows by file:\n"); print(table(germany_raw$data_origin))
 de_to_en_country <- c(
   "Argentinien" = "Argentina", "Australien" = "Australia", "Belgien" = "Belgium",
   "Brasilien" = "Brazil", "Bulgarien" = "Bulgaria", "Chile" = "Chile",
-  "China" = "China", "Deutschland" = "Germany", "Dänemark" = "Denmark",
+  "China" = "China", "Deutschland" = "Germany",
   "Finnland" = "Finland", "Frankreich" = "France", "Griechenland" = "Greece",
   "Indien" = "India", "Irland" = "Ireland", "Island" = "Iceland",
   "Israel" = "Israel", "Italien" = "Italy", "Japan" = "Japan",
@@ -271,17 +271,20 @@ de_to_en_country <- c(
   "Lettland" = "Latvia", "Litauen" = "Lithuania", "Malta" = "Malta",
   "Mexiko" = "Mexico", "Monaco" = "Monaco", "Niederlande" = "Netherlands",
   "Norwegen" = "Norway", "Polen" = "Poland", "Portugal" = "Portugal",
-  "Puerto Rico" = "Puerto Rico", "Rumänien" = "Romania", "Schweden" = "Sweden",
+  "Puerto Rico" = "Puerto Rico", "Schweden" = "Sweden",
   "Schweiz" = "Switzerland", "Singapur" = "Singapore", "Slowakei" = "Slovakia",
-  "Slowenien" = "Slovenia", "Spanien" = "Spain", "Südafrika" = "South Africa",
-  "Südkorea" = "South Korea", "Taiwan" = "Taiwan",
-  "Tschechische Republik" = "Czech Republic", "Türkei" = "Turkey",
+  "Slowenien" = "Slovenia", "Spanien" = "Spain",
+  "Taiwan" = "Taiwan",
+  "Tschechische Republik" = "Czech Republic",
   "Ukraine" = "Ukraine", "Ungarn" = "Hungary", "Vereinigte Staaten" = "United States",
-  "Vereinigtes Königreich" = "United Kingdom",
-  "Vereinigtes Königreich (Nordirland)" = "United Kingdom",
-  "Zypern" = "Cyprus", "Österreich" = "Austria",
+  "Zypern" = "Cyprus",
   "Estland" = "Estonia", "Luxemburg" = "Luxembourg", "Macao" = "Macao",
-  "Malaysia" = "Malaysia", "Serbien" = "Serbia", "Thailand" = "Thailand"
+  "Malaysia" = "Malaysia", "Serbien" = "Serbia", "Thailand" = "Thailand",
+  setNames(
+    c("Denmark", "Romania", "South Africa", "South Korea", "Turkey", "United Kingdom",
+      "United Kingdom", "Austria"),
+    c("D\u00e4nemark", "Rum\u00e4nien", "S\u00fcdafrika", "S\u00fcdkorea", "T\u00fcrkei",
+      "Vereinigtes K\u00f6nigreich", "Vereinigtes K\u00f6nigreich (Nordirland)", "\u00d6sterreich"))
 )
 
 missing_de_countries <- germany_raw |>

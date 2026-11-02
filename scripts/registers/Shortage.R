@@ -979,7 +979,7 @@ p1 <- analysis |>
   filter(!is.na(n_manufacturers_v1)) |>
   ggplot(aes(x = currently_active, y = n_manufacturers_v1)) +
   geom_boxplot(outlier.shape = NA, fill = "grey85") +
-  geom_jitter(width = 0.15, alpha = 0.4) +
+  geom_jitter(position = position_jitter(width = 0.15, seed = 1), alpha = 0.4) +
   scale_y_log10() +
   labs(x = shortage_axis, y = lbl("Distinct manufacturers (V1: Germany, log scale)"),
        title = "Manufacturer count vs. shortage status")
@@ -988,7 +988,7 @@ p2 <- analysis |>
   filter(!is.na(hhi_v1)) |>
   ggplot(aes(x = currently_active, y = hhi_v1)) +
   geom_boxplot(outlier.shape = NA, fill = "grey85") +
-  geom_jitter(width = 0.15, alpha = 0.4) +
+  geom_jitter(position = position_jitter(width = 0.15, seed = 1), alpha = 0.4) +
   labs(x = shortage_axis, y = lbl("Country-level HHI (V1: Germany)"),
        title = "Supply concentration vs. shortage status")
 
@@ -996,14 +996,14 @@ p3 <- analysis |>
   filter(!is.na(pct_china_india_v1)) |>
   ggplot(aes(x = currently_active, y = pct_china_india_v1)) +
   geom_boxplot(outlier.shape = NA, fill = "grey85") +
-  geom_jitter(width = 0.15, alpha = 0.4) +
+  geom_jitter(position = position_jitter(width = 0.15, seed = 1), alpha = 0.4) +
   scale_y_continuous(labels = percent) +
   labs(x = shortage_axis, y = lbl("Share of manufacturers in China/India (V1: Germany)"),
        title = "China+India dependence vs. shortage status")
 
 p4 <- model_data_v1 |>
   ggplot(aes(x = n_manufacturers_v1, y = as.numeric(currently_active))) +
-  geom_jitter(height = 0.03, alpha = 0.3) +
+  geom_jitter(position = position_jitter(height = 0.03, seed = 1), alpha = 0.3) +
   geom_smooth(method = "glm", method.args = list(family = "binomial"), color = "firebrick") +
   scale_x_log10() +
   labs(x = lbl("Distinct manufacturers (V1: Germany, log scale)"), y = "P(currently on shortage list)",
@@ -1013,7 +1013,7 @@ p5 <- analysis |>
   filter(!is.na(n_manufacturers_v2)) |>
   ggplot(aes(x = currently_active, y = n_manufacturers_v2)) +
   geom_boxplot(outlier.shape = NA, fill = "grey85") +
-  geom_jitter(width = 0.15, alpha = 0.4) +
+  geom_jitter(position = position_jitter(width = 0.15, seed = 1), alpha = 0.4) +
   scale_y_log10() +
   labs(x = shortage_axis, y = lbl("Distinct manufacturers (V2: Germany+EPAR, log scale)"),
        title = "Manufacturer count vs. shortage status (V2)")
@@ -1022,7 +1022,7 @@ p6 <- analysis |>
   filter(!is.na(pct_china_india_v2)) |>
   ggplot(aes(x = currently_active, y = pct_china_india_v2)) +
   geom_boxplot(outlier.shape = NA, fill = "grey85") +
-  geom_jitter(width = 0.15, alpha = 0.4) +
+  geom_jitter(position = position_jitter(width = 0.15, seed = 1), alpha = 0.4) +
   scale_y_continuous(labels = percent) +
   labs(x = shortage_axis, y = lbl("Share of manufacturers in China/India (V2: Germany+EPAR)"),
        title = "China+India dependence vs. shortage status (V2)")
@@ -1031,7 +1031,7 @@ p7 <- analysis |>
   filter(!is.na(n_manufacturers_v3)) |>
   ggplot(aes(x = currently_active, y = n_manufacturers_v3)) +
   geom_boxplot(outlier.shape = NA, fill = "grey85") +
-  geom_jitter(width = 0.15, alpha = 0.4) +
+  geom_jitter(position = position_jitter(width = 0.15, seed = 1), alpha = 0.4) +
   scale_y_log10() +
   labs(x = shortage_axis, y = sub("DE", c(Germany = "DE", Ireland = "IE")[[BASE]], "Distinct manufacturers (V3: DE+EPAR+CEP+GMP, log scale)", fixed = TRUE),
        title = "Manufacturer count vs. shortage status (V3)")
@@ -1040,7 +1040,7 @@ p8 <- analysis |>
   filter(!is.na(pct_china_india_v3)) |>
   ggplot(aes(x = currently_active, y = pct_china_india_v3)) +
   geom_boxplot(outlier.shape = NA, fill = "grey85") +
-  geom_jitter(width = 0.15, alpha = 0.4) +
+  geom_jitter(position = position_jitter(width = 0.15, seed = 1), alpha = 0.4) +
   scale_y_continuous(labels = percent) +
   labs(x = shortage_axis, y = sub("DE", c(Germany = "DE", Ireland = "IE")[[BASE]], "Share of manufacturers in China/India (V3: DE+EPAR+CEP+GMP)", fixed = TRUE),
        title = "China+India dependence vs. shortage status (V3)")
@@ -1049,7 +1049,7 @@ p9 <- analysis |>
   filter(!is.na(hhi_v3)) |>
   ggplot(aes(x = currently_active, y = hhi_v3)) +
   geom_boxplot(outlier.shape = NA, fill = "grey85") +
-  geom_jitter(width = 0.15, alpha = 0.4) +
+  geom_jitter(position = position_jitter(width = 0.15, seed = 1), alpha = 0.4) +
   labs(x = shortage_axis, y = sub("DE", c(Germany = "DE", Ireland = "IE")[[BASE]], "Country-level HHI (V3: DE+EPAR+CEP+GMP)", fixed = TRUE),
        title = "Supply concentration vs. shortage status (V3)")
 

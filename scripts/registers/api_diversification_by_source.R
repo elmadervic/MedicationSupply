@@ -149,8 +149,8 @@ make_diversification_plot <- function(df, highlight_threshold = HIGHLIGHT_THRESH
                        expand = expansion(mult = c(0.02, 0))) +
     scale_color_manual(values = c(`TRUE` = "#B33018", `FALSE` = base_color), guide = "none") +
     labs(
-      x = "Number of distinct API-producer sites  (→ more diversified)",
-      y = "Share of sites in China + India (%)  (↑ more dependent)",
+      x = "Number of distinct API-producer sites  (\u2192 more diversified)",
+      y = "Share of sites in China + India (%)  (\u2191 more dependent)",
       shape = NULL
     ) +
     theme_minimal(base_size = 14) +

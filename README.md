@@ -199,9 +199,14 @@ and can also be run alone from the repository root once `01_combine_sources.R` h
 `LIST <- "WHO"; source("scripts/registers/HHI_V2.R")`.
 
 **Locale.** The country-name maps contain non-ASCII names ("Vereinigtes Königreich", "Österreich").
-In a non-UTF-8 locale, eight German country names are not translated and their rows lose their
-region. `run_all_lists.R` therefore switches to `en_US.UTF-8` and stops if no UTF-8 locale is
-available. Run single scripts from RStudio or a UTF-8 terminal.
+The scripts write them as `\u` escapes inside `setNames()`, so they are matched in any locale,
+including the C locale of a bare `Rscript`; `paths.R` also switches to `en_US.UTF-8` where it can,
+so that plot labels with non-ASCII characters render. `run_all_lists.R` stops if no UTF-8 locale
+is available. Every script, run alone or through `run_all_lists.R`, writes the same files.
+
+**Reproducibility.** Label placement and the jitter of the shortage diagnostic plots are seeded, so
+repeated runs give byte-identical CSV, LaTeX and PNG files (apart from the date line xtable writes
+into the `.tex` files).
 
 The trade notebook needs Python with `pandas numpy scipy matplotlib pyarrow jupyter` and its input data:
 
